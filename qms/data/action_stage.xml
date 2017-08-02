@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="stage_draft"
+            model="qms.action.stage">
+        <field name="name">Draft</field>
+        <field name="sequence">0</field>
+        <field name="is_starting"
+               eval="True" />
+        <field name="is_ending"
+               eval="False" />
+    </record>
+
+    <record id="stage_open"
+            model="qms.action.stage">
+        <field name="name">In Progress</field>
+        <field name="sequence">10</field>
+        <field name="is_starting"
+               eval="False" />
+        <field name="is_ending"
+               eval="False" />
+    </record>
+
+    <record id="stage_close"
+            model="qms.action.stage">
+        <field name="name">Closed</field>
+        <field name="sequence">20</field>
+        <field name="is_starting"
+               eval="False" />
+        <field name="is_ending"
+               eval="True" />
+    </record>
+
+    <record id="stage_cancel"
+            model="qms.action.stage">
+        <field name="name">Cancelled</field>
+        <field name="sequence">30</field>
+        <field name="is_starting"
+               eval="False" />
+        <field name="is_ending"
+               eval="True" />
+    </record>
+
+</odoo>

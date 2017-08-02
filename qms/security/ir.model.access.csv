@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_tmc_action_manager,tmc.action.manager,model_tmc_action,group_manager,1,1,1,1
+access_tmc_action_user,tmc.action.user,model_tmc_action,group_user,1,0,0,0
+access_tmc_action_read_only,tmc.action.read_only,model_tmc_action,group_read_only,1,0,0,0
+access_tmc_action_stage_manager,tmc.action_stage.manager,model_tmc_action_stage,group_manager,1,1,1,1
+access_tmc_action_stage_user,tmc.action_stage.user,model_tmc_action_stage,group_user,1,0,0,0
+access_tmc_action_stage_read_only,tmc.action_stage.read_only,model_tmc_action_stage,group_read_only,1,0,0,0
