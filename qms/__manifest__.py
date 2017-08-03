@@ -19,6 +19,7 @@
         # 'security/ir.model.access.csv',
         'data/action_stage.xml',
         'views/policy.xml',
+        'views/goal.xml',
         'views/action.xml',
         'views/action_stage.xml',
         'views/menu.xml'
