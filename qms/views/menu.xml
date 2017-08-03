@@ -23,6 +23,11 @@
     <menuitem id="menu_open_action"
               action="open_qms_action_list"
               parent="qms.menu_qms_main"
+              sequence="10" />
+
+    <menuitem id="menu_open_policy"
+              action="open_qms_policy_list"
+              parent="qms.menu_qms_main"
               sequence="5" />
 
     <menuitem id="menu_config_action"
