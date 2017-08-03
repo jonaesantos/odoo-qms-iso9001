@@ -1,5 +1,5 @@
 # Odoo Quality Management System
-Odoo addon for ISO 9001 Quality Management System. This is a simplified version based on models used in the management system modules by Odoo Community Association available at https://github.com/OCA/management-system/.
+Odoo addon for ISO 9001 Quality Management System. This is a simplified and customized version based on some models used in the management system modules by Odoo Community Association available at https://github.com/OCA/management-system/.
 
 ## Translation Status
 [![Transifex Status](https://www.transifex.com/tmcrosario/odoo-qms-iso9001-10/)](https://www.transifex.com/tmcrosario/odoo-qms-iso9001-10/)
