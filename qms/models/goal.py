@@ -7,7 +7,9 @@ class Goal(models.Model):
 
     _name = "qms.goal"
 
-    name = fields.Char()
+    name = fields.Char(
+        required=True
+    )
 
     date = fields.Date()
 

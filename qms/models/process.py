@@ -7,4 +7,6 @@ class Process(models.Model):
 
     _name = "qms.process"
 
-    name = fields.Char()
+    name = fields.Char(
+        required=True
+    )

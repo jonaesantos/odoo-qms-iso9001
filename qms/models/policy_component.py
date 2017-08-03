@@ -7,4 +7,6 @@ class Policy_Component(models.Model):
 
     _name = "qms.policy_component"
 
-    name = fields.Char()
+    name = fields.Char(
+        required=True
+    )

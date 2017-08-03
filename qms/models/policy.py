@@ -7,7 +7,9 @@ class Policy(models.Model):
 
     _name = "qms.policy"
 
-    name = fields.Char()
+    name = fields.Char(
+        required=True
+    )
 
     revision = fields.Integer()
 
