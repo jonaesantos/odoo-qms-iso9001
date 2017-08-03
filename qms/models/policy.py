@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import fields, models
+from odoo import api, fields, models
 
 
 class Policy(models.Model):
@@ -21,3 +21,7 @@ class Policy(models.Model):
         comodel_name='qms.policy_component',
         required=True
     )
+
+    @api.one
+    def toggle_approved(self):
+        self.approved = not self.approved

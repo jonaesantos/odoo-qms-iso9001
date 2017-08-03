@@ -11,6 +11,7 @@
                 <field name="name" />
                 <field name="revision" />
                 <field name="date" />
+                <field name="approved" />
             </tree>
         </field>
     </record>
@@ -23,6 +24,20 @@
                type="xml">
             <form>
                 <sheet>
+                    <div class="oe_button_box"
+                         name="button_box">
+                        <button name="toggle_approved"
+                                type="object"
+                                class="oe_stat_button"
+                                icon="fa-check-square-o">
+                            <field name="approved"
+                                   widget="boolean_button"
+                                   options='{"terminology": {
+                                    "string_true": "Approved",
+                                    "string_false": "Not Approved",
+                                   }}'/>
+                        </button>
+                    </div>
                     <group>
                         <group>
                             <field name="name" />
