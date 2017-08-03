@@ -4,8 +4,8 @@
     'name': "QMS",
     'summary': 'ISO 9001 Quality Management System',
     'description': '''
-        Odoo addon for ISO 9001 Quality Management System. Based on models \
-        developed by Odoo Community Association for management systems \
+        Odoo addon for ISO 9001 Quality Management System. Based on some \
+        models developed by Odoo Community Association for management systems \
         available at https://github.com/OCA/management-system/
         ''',
     'website': 'https://www.tmcrosario.gob.ar',
