@@ -1,5 +1,6 @@
 <odoo>
 
+    <!-- TREE VIEW -->
     <record id="view_qms_action_tree"
             model="ir.ui.view">
         <field name="name">qms.action.tree</field>
@@ -17,6 +18,7 @@
         </field>
     </record>
 
+    <!-- SEARCH VIEW -->
     <record id="view_qms_action_filter"
             model="ir.ui.view">
         <field name="name">qms.action.filter</field>
@@ -37,6 +39,7 @@
         </field>
     </record>
 
+    <!-- FORM VIEW -->
     <record id="view_qms_action_form"
             model="ir.ui.view">
         <field name="name">qms.action.form</field>
@@ -72,6 +75,7 @@
         </field>
     </record>
 
+    <!-- KANBAN VIEW -->
     <record id="view_qms_action_kanban"
             model="ir.ui.view">
         <field name="name">qms.action.kanban</field>
@@ -133,6 +137,7 @@
         </field>
     </record>
 
+    <!-- WINDOW ACTION -->
     <record id="open_qms_action_list"
             model="ir.actions.act_window">
         <field name="name">Actions</field>

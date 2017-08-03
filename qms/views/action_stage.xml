@@ -1,5 +1,6 @@
 <odoo>
 
+    <!-- TREE VIEW -->
     <record model="ir.ui.view"
             id="qms_action_stage_tree_view">
         <field name="name">Management System action Stage Tree</field>
@@ -16,6 +17,7 @@
         </field>
     </record>
 
+    <!-- WINDOW ACTION -->
     <record model="ir.actions.act_window"
             id="qms_action_stage_action">
         <field name="name">Stages</field>
