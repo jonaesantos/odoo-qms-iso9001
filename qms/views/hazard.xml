@@ -1,0 +1,141 @@
+<odoo>
+
+    <!-- TREE VIEW -->
+    <record id="view_qms_hazard_tree"
+            model="ir.ui.view">
+        <field name="name">qms.hazard.tree</field>
+        <field name="model">qms.hazard</field>
+        <field name="type">tree</field>
+        <field name="arch"
+               type="xml">
+            <tree>
+                <field name="name" />
+                <field name="probability" />
+                <field name="impact" />
+                <field name="strategy" />
+                <field name="state" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- FORM VIEW -->
+    <record id="view_qms_hazard_form"
+            model="ir.ui.view">
+        <field name="name">qms.hazard.form</field>
+        <field name="model">qms.hazard</field>
+        <field name="arch"
+               type="xml">
+            <form>
+                <header>
+                    <field name="state"
+                           widget="statusbar"
+                           clickable="True" />
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="date" />
+                        </group>
+                        <group>
+                            <field name="probability" />
+                            <field name="impact" />
+                        </group>
+                        <group>
+                            <field name="strategy" />
+                        </group>
+                        <group>
+                            <field name="result" />
+                            <field name="evaluation" />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Processes"
+                              name="processes">
+                            <field name="process_ids"
+                                   nolabel="1" />
+                        </page>
+                        <page string="Policies Components"
+                              name="policy_components">
+                            <field name="policy_component_ids"
+                                   nolabel="1" />
+                        </page>
+                        <page string="Actions"
+                              name="actions">
+                            <field name="action_ids"
+                                   nolabel="1" />
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- KANBAN VIEW -->
+    <record id="view_qms_hazard_kanban"
+            model="ir.ui.view">
+        <field name="name">qms.hazard.kanban</field>
+        <field name="model">qms.hazard</field>
+        <field name="arch"
+               type="xml">
+            <kanban default_group_by="state"
+                    default_order="evaluation"
+                    class="o_kanban_small_column">
+                <field name="name" />
+                <field name="date" />
+                <field name="evaluation" />
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                            <div class="o_dropdown_kanban dropdown">
+                                <a class="dropdown-toggle btn"
+                                   data-toggle="dropdown"
+                                   href="#">
+                                        <span class="fa fa-bars fa-lg"/>
+                                    </a>
+                                <ul class="dropdown-menu"
+                                    role="menu"
+                                    aria-labelledby="dLabel">
+                                    <t t-if="widget.editable">
+                                        <li>
+                                            <a type="edit">Edit</a>
+                                        </li>
+                                    </t>
+                                </ul>
+                            </div>
+                            <div class="oe_kanban_content">
+                                <div>
+                                    <strong><field name="name"/></strong>
+                                </div>
+                                <div>
+                                    <t t-if="record.evaluation.raw_value and (record.evaluation.raw_value == 'very_high' or record.evaluation.raw_value == 'high')"
+                                       t-set="red">oe_kanban_text_red</t>
+                                    <span t-attf-class="#{red || ''}">
+                                        <field name="evaluation"/>
+                                    </span>
+                                </div>
+                                <div class="text-muted">
+                                    <field name="date" />
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- WINDOW ACTION -->
+    <record id="open_qms_hazard_list"
+            model="ir.actions.act_window">
+        <field name="name">Hazards</field>
+        <field name="res_model">qms.hazard</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
+
+</odoo>

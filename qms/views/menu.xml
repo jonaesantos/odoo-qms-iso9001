@@ -30,10 +30,15 @@
               parent="qms.menu_qms_main"
               sequence="10" />
 
+    <menuitem id="menu_open_hazard"
+              action="open_qms_hazard_list"
+              parent="qms.menu_qms_main"
+              sequence="15" />
+
     <menuitem id="menu_open_action"
               action="open_qms_action_list"
               parent="qms.menu_qms_main"
-              sequence="15" />
+              sequence="20" />
 
     <menuitem id="menu_config_action"
               name="Actions"
