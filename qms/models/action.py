@@ -117,6 +117,19 @@ class Action(models.Model):
         group_expand='_stage_groups'
     )
 
+    reference = fields.Char(
+        required=True,
+        readonly=True,
+        default='NEW'
+    )
+
+    @api.model
+    def create(self, vals):
+        seq = self.env['ir.sequence']
+        vals['reference'] = seq.next_by_code('qms.action')
+        action = super(Action, self).create(vals)
+        return action
+
     @api.model
     def _stage_groups(self, stages, domain, order):
         stage_ids = self.env['qms.action.stage'].search([])
