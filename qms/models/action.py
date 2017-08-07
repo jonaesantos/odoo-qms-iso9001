@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from odoo import api, fields, models
+from odoo import _, api, fields, models
+from odoo.exceptions import ValidationError
 
 
 class Action(models.Model):
@@ -119,6 +120,31 @@ class Action(models.Model):
         action = super(Action, self).create(vals)
         return action
 
+    @api.multi
+    def write(self, vals):
+        if vals.get('stage_id'):
+            if vals['stage_id'] == self._get_stage_new().id:
+                if self.opening_date:
+                    raise ValidationError(
+                        _('We cannot bring back the action to draft stage')
+                    )
+                vals['cancel_date'] = None
+            if vals['stage_id'] == self.env.ref('qms.stage_open').id:
+                vals['opening_date'] = fields.Datetime.now()
+                vals['date_closed'] = None
+                vals['cancel_date'] = None
+            if vals['stage_id'] == self.env.ref('qms.stage_close').id:
+                if not self.opening_date or self.cancel_date:
+                    raise ValidationError(
+                        _('You should first open the action')
+                    )
+                vals['date_closed'] = fields.Datetime.now()
+            if vals['stage_id'] == self.env.ref('qms.stage_cancel').id:
+                vals['date_closed'] = None
+                vals['opening_date'] = None
+                vals['cancel_date'] = fields.Datetime.now()
+        return super(Action, self).write(vals)
+
     @api.model
     def _stage_groups(self, stages, domain, order):
         stage_ids = self.env['qms.action.stage'].search([])
@@ -130,15 +156,3 @@ class Action(models.Model):
             [('is_starting', '=', True)],
             limit=1
         )
-
-    @api.model
-    def _get_stage_open(self):
-        return self.env.ref('qms_action.stage_open')
-
-    @api.model
-    def _get_stage_close(self):
-        return self.env.ref('qms_action.stage_close')
-
-    @api.model
-    def _get_stage_cancel(self):
-        return self.env.ref('qms_action.stage_cancel')
