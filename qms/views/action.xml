@@ -56,10 +56,11 @@
                             <field name="name" />
                             <field name="reference" />
                             <field name="type_action" />
-                            <field name="create_date" />
                         </group>
                         <group>
                             <field name="date_deadline" />
+                            <field name="opening_date" />
+                            <field name="date_closed" />
                         </group>
                     </group>
                     <notebook>
@@ -89,16 +90,7 @@
                 <templates>
                     <field name="date_deadline" />
                     <t t-name="kanban-box">
-                        <t t-set="type_action_color">#ffffff</t>
-                        <t t-if="record.type_action.raw_value and record.type_action.raw_value=='immediate'"
-                           t-set="type_action_color">oe_kanban_text_red</t>
-                        <t t-if="record.type_action.raw_value and record.type_action.raw_value=='correction'"
-                           t-set="type_action_color">#ffa500</t>
-                        <t t-if="record.type_action.raw_value and record.type_action.raw_value=='prevention'"
-                           t-set="type_action_color">#00ff00</t>
-                        <t t-if="record.type_action.raw_value and record.type_action.raw_value=='improvement'"
-                           t-set="type_action_color">#0000ff</t>
-                        <div t-attf-class="#{kanban_color( type_action_color)} oe_kanban_global_click">
+                        <div class="oe_kanban_card oe_kanban_global_click">
                             <div class="o_dropdown_kanban dropdown">
                                 <a class="dropdown-toggle btn"
                                    data-toggle="dropdown"
@@ -118,6 +110,9 @@
                             <div class="oe_kanban_content">
                                 <div>
                                     <strong><field name="name"/></strong>
+                                </div>
+                                <div>
+                                    <field name="type_action" />
                                 </div>
                                 <div class="text-muted">
                                     <t t-if="record.date_deadline.raw_value and record.date_deadline.raw_value lt (new Date())"

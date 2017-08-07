@@ -35,6 +35,7 @@ class Action(models.Model):
 
     @api.depends('opening_date',
                  'create_date')
+    @api.one
     def _compute_number_of_days_to_open(self):
         for action in self:
             action.number_of_days_to_close_open = action._elapsed_days(
@@ -44,6 +45,7 @@ class Action(models.Model):
 
     @api.depends('date_closed',
                  'create_date')
+    @api.one
     def _compute_number_of_days_to_close(self):
         for action in self:
             action.number_of_days_to_close_open = action._elapsed_days(
@@ -62,16 +64,12 @@ class Action(models.Model):
 
     date_deadline = fields.Date()
 
-    create_date = fields.Datetime(
-        readonly=True,
-        default=fields.Datetime.now()
-    )
-
     cancel_date = fields.Datetime(
         readonly=True
     )
 
     opening_date = fields.Datetime(
+        default=fields.Datetime.now(),
         readonly=True
     )
 
