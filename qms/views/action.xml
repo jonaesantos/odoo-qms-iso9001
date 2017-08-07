@@ -58,9 +58,12 @@
                             <field name="complexity" />
                         </group>
                         <group>
-                            <field name="date_deadline" />
+                            <field name="create_date" />
                             <field name="opening_date" />
+                            <field name="days_to_open" />
                             <field name="date_closed" />
+                            <field name="days_to_close" />
+                            <field name="date_deadline" />
                         </group>
                     </group>
                     <notebook>
