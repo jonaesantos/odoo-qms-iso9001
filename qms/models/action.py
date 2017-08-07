@@ -17,6 +17,14 @@ class Action(models.Model):
         ('improvement', 'Improvement Opportunity')
     ]
 
+    _complexity_levels_ = [
+        ('very_low', 'Very Low'),
+        ('low', 'Low'),
+        ('medium', 'Medium'),
+        ('high', 'High'),
+        ('very_high', 'Very High')
+    ]
+
     def _default_stage(self):
         """Return the default stage."""
         return self.env['qms.action.stage'].search(
@@ -109,6 +117,11 @@ class Action(models.Model):
         required=True,
         readonly=True,
         default='NEW'
+    )
+
+    complexity = fields.Selection(
+        selection=_complexity_levels_,
+        required=True
     )
 
     @api.model
