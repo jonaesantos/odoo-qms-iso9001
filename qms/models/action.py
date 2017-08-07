@@ -16,10 +16,6 @@ class Action(models.Model):
         ('improvement', 'Improvement Opportunity')
     ]
 
-    def _default_owner(self):
-        """Return the user."""
-        return self.env.user
-
     def _default_stage(self):
         """Return the default stage."""
         return self.env['qms.action.stage'].search(
@@ -92,13 +88,6 @@ class Action(models.Model):
         '# of days to close',
         compute=_compute_number_of_days_to_close,
         store=True
-    )
-
-    user_id = fields.Many2one(
-        comodel_name='res.users',
-        string='Responsible',
-        default=_default_owner,
-        required=True
     )
 
     description = fields.Html()
