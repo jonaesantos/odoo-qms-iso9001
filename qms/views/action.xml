@@ -30,8 +30,6 @@
                 <field name="name" />
                 <field name="create_date" />
                 <newline/>
-                <filter string="User"
-                        context="{'group_by':'user_id'}" />
                 <filter string="Type"
                         context="{'group_by':'type_action'}" />
             </search>

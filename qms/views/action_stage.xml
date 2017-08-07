@@ -8,9 +8,9 @@
         <field name="arch"
                type="xml">
             <tree string="Stages">
-                <field name="name" />
                 <field name="sequence"
                        widget="handle" />
+                <field name="name" />
                 <field name="is_starting" />
                 <field name="is_ending" />
             </tree>

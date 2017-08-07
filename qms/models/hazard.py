@@ -95,7 +95,6 @@ class Hazard(models.Model):
     evaluation = fields.Selection(
         selection=_evaluation_results_,
         compute=_compute_result_and_evaluation,
-        # store=True,
         readonly=True
     )
 
