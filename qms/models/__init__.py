@@ -4,6 +4,8 @@ import resource
 
 import action
 import action_stage
+import audit
+import audit_verification_line
 import goal
 import hazard
 import interested_party

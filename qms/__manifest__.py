@@ -18,6 +18,7 @@
         # 'security/groups.xml',
         # 'security/ir.model.access.csv',
         'data/action_sequence.xml',
+        'data/audit_sequence.xml',
         'data/action_stage.xml',
         'views/policy.xml',
         'views/interested_party.xml',
@@ -26,6 +27,8 @@
         'views/hazard.xml',
         'views/action.xml',
         'views/action_stage.xml',
+        'views/audit.xml',
+        'views/audit_verification_line.xml',
         'views/menu.xml'
     ],
     'demo': [],

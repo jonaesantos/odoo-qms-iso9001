@@ -40,6 +40,11 @@
               parent="qms.menu_qms_main"
               sequence="20" />
 
+    <menuitem id="menu_open_audit"
+              action="open_qms_audit_list"
+              parent="qms.menu_qms_main"
+              sequence="25" />
+
     <menuitem id="menu_config_action"
               name="Actions"
               parent="qms.menu_qms_configuration"
