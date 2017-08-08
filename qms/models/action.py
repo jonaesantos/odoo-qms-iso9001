@@ -101,7 +101,7 @@ class Action(models.Model):
 
     description = fields.Html()
 
-    type_action = fields.Selection(
+    response_type = fields.Selection(
         selection=_response_types_,
         string='Response Type',
         required=True

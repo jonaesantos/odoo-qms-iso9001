@@ -10,7 +10,7 @@
                type="xml">
             <tree>
                 <field name="name" />
-                <field name="type_action" />
+                <field name="response_type" />
                 <field name="complexity" />
                 <field name="date_deadline" />
                 <field name="stage_id" />
@@ -31,7 +31,7 @@
                 <field name="create_date" />
                 <newline/>
                 <filter string="Type"
-                        context="{'group_by':'type_action'}" />
+                        context="{'group_by':'response_type'}" />
             </search>
         </field>
     </record>
@@ -54,7 +54,7 @@
                         <group>
                             <field name="name" />
                             <field name="reference" />
-                            <field name="type_action" />
+                            <field name="response_type" />
                             <field name="responsible_id" />
                             <field name="complexity" />
                         </group>
@@ -88,7 +88,7 @@
             <kanban default_group_by="stage_id"
                     class="o_kanban_small_column">
                 <field name="name" />
-                <field name="type_action" />
+                <field name="response_type" />
                 <field name="create_date" />
                 <field name="date_deadline" />
                 <templates>
@@ -116,7 +116,7 @@
                                     <strong><field name="name"/></strong>
                                 </div>
                                 <div>
-                                    <field name="type_action" />
+                                    <field name="response_type" />
                                 </div>
                                 <div class="text-muted">
                                     <t t-if="record.date_deadline.raw_value and record.date_deadline.raw_value lt (new Date())"
