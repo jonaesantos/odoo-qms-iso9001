@@ -1,0 +1,86 @@
+<odoo>
+
+    <!-- TREE VIEW -->
+    <record model="ir.ui.view"
+            id="view_interested_party_organization_tree">
+        <field name="name">qms.interested_party.organization.tree</field>
+        <field name="model">qms.interested_party</field>
+        <field name="arch"
+               type="xml">
+            <tree>
+                <field name="name" />
+                <field name="interested_party_type" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- TREE VIEW -->
+    <record model="ir.ui.view"
+            id="view_interested_party_individual_tree">
+        <field name="name">qms.interested_party.individual.tree</field>
+        <field name="model">qms.interested_party</field>
+        <field name="arch"
+               type="xml">
+            <tree>
+                <field name="name" />
+                <field name="interested_party_type" />
+                <field name="organization_id" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- FORM VIEW -->
+    <record id="view_interested_party_form"
+            model="ir.ui.view">
+        <field name="name">qms.interested_party.form</field>
+        <field name="model">qms.interested_party</field>
+        <field name="arch"
+               type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name"/>
+                            <field name="is_organization" invisible="True"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="interested_party_type" />
+                        </group>
+                        <group attrs="{'invisible':[('is_organization', '=', True)]}">
+                            <field name="organization_id" />
+                            <field name="area" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- WINDOW ACTION -->
+    <record model="ir.actions.act_window"
+            id="action_interested_party_organization_tree">
+        <field name="name">Organizations</field>
+        <field name="res_model">qms.interested_party</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id"
+               ref="view_interested_party_organization_tree" />
+        <field name="domain">[('is_organization', '=', True)]</field>
+        <field name="context">{'default_is_organization': True}</field>
+    </record>
+
+    <!-- WINDOW ACTION -->
+    <record model="ir.actions.act_window"
+            id="action_interested_party_individual_tree">
+        <field name="name">Individuals</field>
+        <field name="res_model">qms.interested_party</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id"
+               ref="view_interested_party_individual_tree" />
+        <field name="domain">[('is_organization', '=', False)]</field>
+    </record>
+
+</odoo>

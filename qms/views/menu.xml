@@ -51,4 +51,21 @@
               action="qms_action_stage_action"
               sequence="5" />
 
+    <menuitem id="menu_config_interested_party"
+              name="Interested Parties"
+              parent="qms.menu_qms_configuration"
+              sequence="10" />
+
+    <menuitem id="menu_qms_interested_party_organizations"
+              name="Organizations"
+              parent="menu_config_interested_party"
+              action="action_interested_party_organization_tree"
+              sequence="5" />
+
+    <menuitem id="menu_qms_interested_party_individuals"
+              name="Individuals"
+              parent="menu_config_interested_party"
+              action="action_interested_party_individual_tree"
+              sequence="10" />
+
 </odoo>

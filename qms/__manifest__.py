@@ -20,6 +20,7 @@
         'data/action_sequence.xml',
         'data/action_stage.xml',
         'views/policy.xml',
+        'views/interested_party.xml',
         'views/resource.xml',
         'views/goal.xml',
         'views/hazard.xml',
