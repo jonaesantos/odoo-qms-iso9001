@@ -126,6 +126,11 @@ class Action(models.Model):
         required=True
     )
 
+    responsible_id = fields.Many2one(
+        comodel_name='qms.interested_party',
+        required=True
+    )
+
     @api.model
     def create(self, vals):
         seq = self.env['ir.sequence']

@@ -55,6 +55,7 @@
                             <field name="name" />
                             <field name="reference" />
                             <field name="type_action" />
+                            <field name="responsible_id" />
                             <field name="complexity" />
                         </group>
                         <group>
