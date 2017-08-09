@@ -20,6 +20,7 @@
         'data/action_sequence.xml',
         'data/audit_sequence.xml',
         'data/action_stage.xml',
+        'data/finding_severity.xml',
         'views/policy.xml',
         'views/interested_party.xml',
         'views/resource.xml',
@@ -29,6 +30,7 @@
         'views/action_stage.xml',
         'views/audit.xml',
         'views/audit_verification_line.xml',
+        'views/finding_severity.xml',
         'views/menu.xml'
     ],
     'demo': [],

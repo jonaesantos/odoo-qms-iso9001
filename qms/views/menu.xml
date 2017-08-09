@@ -61,6 +61,11 @@
               parent="qms.menu_qms_configuration"
               sequence="10" />
 
+    <menuitem id="menu_config_finding"
+              name="Findings"
+              parent="qms.menu_qms_configuration"
+              sequence="15" />
+
     <menuitem id="menu_qms_interested_party_organizations"
               name="Organizations"
               parent="menu_config_interested_party"
@@ -72,5 +77,9 @@
               parent="menu_config_interested_party"
               action="action_interested_party_individual_tree"
               sequence="10" />
+
+    <menuitem id="menu_open_finding_severity"
+              action="open_qms_finding_severity_list"
+              parent="menu_config_finding" />
 
 </odoo>
