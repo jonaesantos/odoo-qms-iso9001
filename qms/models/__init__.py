@@ -2,6 +2,7 @@
 
 import resource
 
+import stage
 import action
 import action_stage
 import audit
