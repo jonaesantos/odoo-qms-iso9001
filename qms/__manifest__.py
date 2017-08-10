@@ -29,6 +29,7 @@
         'views/resource.xml',
         'views/goal.xml',
         'views/hazard.xml',
+        'views/effectiveness_check.xml',
         'views/action.xml',
         'views/action_stage.xml',
         'views/audit.xml',

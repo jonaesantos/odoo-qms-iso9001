@@ -68,7 +68,11 @@
                     <notebook>
                         <page string="Description">
                             <field name="description"
-                                   nolabel="1" />
+                                   nolabel="True" />
+                        </page>
+                        <page string="Effectiveness Checks">
+                            <field name="effectiveness_check_ids"
+                                   nolabel="True" />
                         </page>
                     </notebook>
                 </sheet>

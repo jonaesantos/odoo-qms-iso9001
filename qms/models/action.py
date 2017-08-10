@@ -91,6 +91,12 @@ class Action(models.Model):
         required=True
     )
 
+    effectiveness_check_ids = fields.One2many(
+        comodel_name='qms.effectiveness_check',
+        inverse_name='action_id',
+        required=True
+    )
+
     @api.model
     def create(self, vals):
         seq = self.env['ir.sequence']

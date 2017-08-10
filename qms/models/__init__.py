@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import stage
+import effectiveness_check
 import action
 import action_stage
 import audit

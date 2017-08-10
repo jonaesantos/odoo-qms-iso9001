@@ -1,0 +1,54 @@
+<odoo>
+
+    <!-- TREE VIEW -->
+    <record id="view_qms_effectiveness_check_tree"
+            model="ir.ui.view">
+        <field name="name">qms.effectiveness_check.tree</field>
+        <field name="model">qms.effectiveness_check</field>
+        <field name="type">tree</field>
+        <field name="arch"
+               type="xml">
+            <tree>
+                <field name="expected_date" />
+                <field name="verification_date" />
+                <field name="was_effective" />
+                <field name="state" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- FORM VIEW -->
+    <record id="view_qms_effectiveness_check_form"
+            model="ir.ui.view">
+        <field name="name">qms.effectiveness_check.form</field>
+        <field name="model">qms.effectiveness_check</field>
+        <field name="arch"
+               type="xml">
+            <form>
+                <header>
+                    <field name="state"
+                           widget="statusbar"
+                           clickable="True" />
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="expected_date" />
+                            <field name="verification_date" />
+                        </group>
+                        <group>
+                            <field name="was_effective" />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Observations">
+                            <field name="observations"
+                                   nolabel="True" />
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>
