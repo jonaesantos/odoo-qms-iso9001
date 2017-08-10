@@ -8,6 +8,7 @@ import audit
 import audit_verification_line
 import finding_milestone
 import finding_cause
+import finding_origin
 import finding_severity
 import goal
 import hazard

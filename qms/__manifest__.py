@@ -21,6 +21,7 @@
         'data/audit_sequence.xml',
         'data/action_stage.xml',
         'data/finding_cause.xml',
+        'data/finding_origin.xml',
         'data/finding_severity.xml',
         'views/policy.xml',
         'views/interested_party.xml',
@@ -33,6 +34,8 @@
         'views/audit_verification_line.xml',
         'views/finding_severity.xml',
         'views/finding_milestone.xml',
+        'views/finding_cause.xml',
+        'views/finding_origin.xml',
         'views/menu.xml'
     ],
     'demo': [],

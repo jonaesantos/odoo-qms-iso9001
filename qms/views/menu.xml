@@ -90,4 +90,10 @@
               action="open_qms_finding_cause_list"
               sequence="10" />
 
+  <menuitem id="menu_open_finding_origin"
+            name="Origins"
+            parent="menu_config_finding"
+            action="open_qms_finding_origin_list"
+            sequence="15" />
+            
 </odoo>
