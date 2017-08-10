@@ -23,6 +23,7 @@
         'data/finding_cause.xml',
         'data/finding_origin.xml',
         'data/finding_severity.xml',
+        'data/finding_stage.xml',
         'views/policy.xml',
         'views/interested_party.xml',
         'views/resource.xml',
@@ -36,6 +37,7 @@
         'views/finding_milestone.xml',
         'views/finding_cause.xml',
         'views/finding_origin.xml',
+        'views/finding_stage.xml',
         'views/menu.xml'
     ],
     'demo': [],

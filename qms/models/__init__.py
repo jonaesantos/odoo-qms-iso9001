@@ -11,6 +11,7 @@ import finding_milestone
 import finding_cause
 import finding_origin
 import finding_severity
+import finding_stage
 import goal
 import hazard
 import interested_party
