@@ -79,7 +79,15 @@
               sequence="10" />
 
     <menuitem id="menu_open_finding_severity"
+              name="Severity Levels"
+              parent="menu_config_finding"
               action="open_qms_finding_severity_list"
-              parent="menu_config_finding" />
+              sequence="5" />
+
+    <menuitem id="menu_open_finding_cause"
+              name="Causes"
+              parent="menu_config_finding"
+              action="open_qms_finding_cause_list"
+              sequence="10" />
 
 </odoo>

@@ -20,6 +20,7 @@
         'data/action_sequence.xml',
         'data/audit_sequence.xml',
         'data/action_stage.xml',
+        'data/finding_cause.xml',
         'data/finding_severity.xml',
         'views/policy.xml',
         'views/interested_party.xml',

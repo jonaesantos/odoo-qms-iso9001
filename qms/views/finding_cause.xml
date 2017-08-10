@@ -1,0 +1,66 @@
+<odoo>
+
+    <!-- FORM VIEW -->
+    <record id="view_qms_finding_cause_form"
+            model="ir.ui.view">
+        <field name="name">qms.finding.cause.form</field>
+        <field name="type">form</field>
+        <field name="model">qms.finding.cause</field>
+        <field name="inherit_id"
+               ref="qms.view_qms_finding_milestone_form" />
+        <field name="arch"
+               type="xml">
+            <field name="name"
+                   position="after">
+                <field name="parent_id" />
+            </field>
+        </field>
+    </record>
+
+    <!-- TREE VIEW -->
+    <record id="view_qms_finding_cause_tree"
+            model="ir.ui.view">
+        <field name="name">qms.finding.cause.tree</field>
+        <field name="model">qms.finding.cause</field>
+        <field name="inherit_id"
+               ref="qms.view_qms_finding_milestone_tree" />
+        <field name="arch"
+               type="xml">
+            <field name="name"
+                   position="before">
+                <field name="parent_id" />
+            </field>
+        </field>
+    </record>
+
+    <!-- SEARCH VIEW -->
+    <record id="view_qms_finding_cause_filter"
+            model="ir.ui.view">
+        <field name="name">qms.finding.cause.search</field>
+        <field name="model">qms.finding.cause</field>
+        <field name="type">search</field>
+        <field name="inherit_id"
+               ref="qms.view_qms_finding_milestone_filter" />
+        <field name="arch"
+               type="xml">
+            <field name="name"
+                   position="before">
+                <field name="parent_id" />
+            </field>
+        </field>
+    </record>
+
+    <!-- WINDOW ACTION -->
+    <record id="open_qms_finding_cause_list"
+            model="ir.actions.act_window">
+        <field name="name">Causes</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">qms.finding.cause</field>
+        <field name="view_type">form</field>
+        <field name="view_id"
+               eval="view_qms_finding_cause_tree" />
+        <field name="search_view_id"
+               ref="view_qms_finding_cause_filter" />
+    </record>
+
+</odoo>
