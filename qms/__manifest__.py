@@ -31,6 +31,7 @@
         'views/audit.xml',
         'views/audit_verification_line.xml',
         'views/finding_severity.xml',
+        'views/finding_milestone.xml',
         'views/menu.xml'
     ],
     'demo': [],
