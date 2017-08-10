@@ -5,7 +5,6 @@ from odoo.exceptions import ValidationError
 
 
 class Action(models.Model):
-    """Model class that manage action."""
 
     _name = "qms.action"
     _description = "Action"
@@ -31,35 +30,6 @@ class Action(models.Model):
             [('is_starting', '=', True)],
             limit=1
         )
-
-    @api.model
-    def _elapsed_days(self, dt1_text, dt2_text):
-        res = 0
-        if dt1_text and dt2_text:
-            dt1 = fields.Datetime.from_string(dt1_text)
-            dt2 = fields.Datetime.from_string(dt2_text)
-            res = (dt2 - dt1).days
-        return res
-
-    @api.depends('opening_date',
-                 'create_date')
-    @api.one
-    def _compute_days_to_open(self):
-        for action in self:
-            action.days_to_open = action._elapsed_days(
-                action.create_date,
-                action.opening_date
-            )
-
-    @api.depends('date_closed',
-                 'create_date')
-    @api.one
-    def _compute_days_to_close(self):
-        for action in self:
-            action.days_to_close = action._elapsed_days(
-                action.create_date,
-                action.date_closed
-            )
 
     name = fields.Char(
         string='Subject',
@@ -87,16 +57,6 @@ class Action(models.Model):
 
     date_closed = fields.Datetime(
         readonly=True
-    )
-
-    days_to_open = fields.Integer(
-        compute=_compute_days_to_open,
-        store=True
-    )
-
-    days_to_close = fields.Integer(
-        compute=_compute_days_to_close,
-        store=True
     )
 
     description = fields.Html()
