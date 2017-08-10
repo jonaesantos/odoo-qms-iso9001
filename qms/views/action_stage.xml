@@ -3,7 +3,7 @@
     <!-- TREE VIEW -->
     <record model="ir.ui.view"
             id="qms_action_stage_tree_view">
-        <field name="name">Management System action Stage Tree</field>
+        <field name="name">qms.action.stage.tree</field>
         <field name="model">qms.action.stage</field>
         <field name="arch"
                type="xml">
@@ -19,7 +19,7 @@
 
     <!-- WINDOW ACTION -->
     <record model="ir.actions.act_window"
-            id="qms_action_stage_action">
+            id="open_qms_action_stage_list">
         <field name="name">Stages</field>
         <field name="res_model">qms.action.stage</field>
         <field name="view_type">form</field>

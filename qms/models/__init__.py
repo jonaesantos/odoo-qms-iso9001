@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 
-import resource
-
 import stage
 import action
 import action_stage
@@ -18,3 +16,4 @@ import interested_party
 import policy
 import policy_component
 import process
+import resource

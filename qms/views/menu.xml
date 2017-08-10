@@ -53,7 +53,7 @@
     <menuitem id="menu_qms_action_stages"
               name="Stages"
               parent="menu_config_action"
-              action="qms_action_stage_action"
+              action="open_qms_action_stage_list"
               sequence="5" />
 
     <menuitem id="menu_config_interested_party"
