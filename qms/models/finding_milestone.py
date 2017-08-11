@@ -11,7 +11,8 @@ class Finding_Milestone(models.Model):
     _order = 'sequence'
 
     name = fields.Char(
-        required=True
+        required=True,
+        translate=True
     )
 
     description = fields.Text()

@@ -10,7 +10,8 @@ class Finding_Severity(models.Model):
     _name = "qms.finding.severity"
 
     name = fields.Char(
-        required=True
+        required=True,
+        translate=True
     )
 
     sequence = fields.Integer()

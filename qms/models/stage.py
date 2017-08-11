@@ -9,7 +9,8 @@ class Stage(models.Model):
     _order = 'sequence'
 
     name = fields.Char(
-        required=True
+        required=True,
+        translate=True
     )
 
     sequence = fields.Integer(
