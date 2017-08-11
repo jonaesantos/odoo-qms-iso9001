@@ -39,6 +39,7 @@
         'views/finding_cause.xml',
         'views/finding_origin.xml',
         'views/finding_stage.xml',
+        'views/finding.xml',
         'views/menu.xml'
     ],
     'demo': [],

@@ -7,6 +7,7 @@ import action_stage
 import audit
 import audit_verification_line
 import finding_milestone
+import finding
 import finding_cause
 import finding_origin
 import finding_severity
