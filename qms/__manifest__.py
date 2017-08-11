@@ -19,6 +19,7 @@
         # 'security/ir.model.access.csv',
         'data/action_sequence.xml',
         'data/audit_sequence.xml',
+        'data/non_conformity_sequence.xml',
         'data/action_stage.xml',
         'data/finding_cause.xml',
         'data/finding_origin.xml',
@@ -40,6 +41,7 @@
         'views/finding_origin.xml',
         'views/finding_stage.xml',
         'views/finding.xml',
+        'views/non_conformity.xml',
         'views/menu.xml'
     ],
     'demo': [],
