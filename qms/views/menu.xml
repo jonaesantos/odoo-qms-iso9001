@@ -15,6 +15,11 @@
               parent="menu_qms_root"
               sequence="5" />
 
+    <menuitem id="menu_qms_context"
+              name="Context"
+              parent="qms.menu_qms_root"
+              sequence="10" />
+
     <menuitem id="menu_qms_configuration"
               name="Configuration"
               parent="qms.menu_qms_root"
@@ -45,10 +50,10 @@
               parent="qms.menu_qms_main"
               sequence="25" />
 
-      <menuitem id="menu_open_finding"
-                name="Findings"
-                parent="qms.menu_qms_main"
-                sequence="30" />
+    <menuitem id="menu_open_finding"
+              name="Findings"
+              parent="qms.menu_qms_main"
+              sequence="30" />
 
     <menuitem id="menu_open_non_conformity"
               name="Non Conformities"
@@ -69,7 +74,7 @@
 
     <menuitem id="menu_config_interested_party"
               name="Interested Parties"
-              parent="qms.menu_qms_configuration"
+              parent="qms.menu_qms_context"
               sequence="10" />
 
     <menuitem id="menu_config_finding"
@@ -101,11 +106,11 @@
               action="open_qms_finding_cause_list"
               sequence="10" />
 
-  <menuitem id="menu_open_finding_origin"
-            name="Origins"
-            parent="menu_config_finding"
-            action="open_qms_finding_origin_list"
-            sequence="15" />
+    <menuitem id="menu_open_finding_origin"
+              name="Origins"
+              parent="menu_config_finding"
+              action="open_qms_finding_origin_list"
+              sequence="15" />
 
     <menuitem id="menu_open_finding_stage"
               name="Stages"
