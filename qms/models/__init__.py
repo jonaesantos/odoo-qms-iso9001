@@ -11,7 +11,6 @@ import finding
 import finding_cause
 import non_conformity
 import finding_origin
-import finding_severity
 import finding_stage
 import goal
 import hazard

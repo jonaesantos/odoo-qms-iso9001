@@ -94,28 +94,22 @@
               action="action_interested_party_individual_tree"
               sequence="10" />
 
-    <menuitem id="menu_open_finding_severity"
-              name="Severity Levels"
-              parent="menu_config_finding"
-              action="open_qms_finding_severity_list"
-              sequence="5" />
-
     <menuitem id="menu_open_finding_cause"
               name="Causes"
               parent="menu_config_finding"
               action="open_qms_finding_cause_list"
-              sequence="10" />
+              sequence="5" />
 
     <menuitem id="menu_open_finding_origin"
               name="Origins"
               parent="menu_config_finding"
               action="open_qms_finding_origin_list"
-              sequence="15" />
+              sequence="10" />
 
     <menuitem id="menu_open_finding_stage"
               name="Stages"
               parent="menu_config_finding"
               action="open_qms_finding_stage_list"
-              sequence="20" />
+              sequence="15" />
 
 </odoo>
