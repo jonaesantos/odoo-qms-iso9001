@@ -89,10 +89,6 @@
                                 <div>
                                     <br/>
                                 </div>
-                                <div class="oe_kanban_bottom_left">
-                                    <span class='oe_kanban_mail_new'
-                                          title='Unread Messages'><i class='fa fa-comments'/><t t-raw="record.message_needaction_counter.raw_value"/></span>
-                                </div>
                                 <div class="oe_kanban_bottom_right">
                                     <field name="kanban_state"
                                            widget="kanban_state_selection" />
@@ -175,10 +171,7 @@
                             <group>
                                 <group>
                                     <field name="severity_id"
-                                           attrs="{'readonly':[('state','not in',['analysis'])]}" />
-                                    <!-- <field name="immediate_action_id"
-                                           domain="[('type_action','=','immediate')]"
-                                           attrs="{'readonly':[('state','not in',['analysis'])]}" /> -->
+                                           attrs="{'readonly':[('state', 'not in', ['analysis'])]}" />
                                 </group>
                             </group>
                         </page>

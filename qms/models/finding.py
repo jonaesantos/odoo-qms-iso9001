@@ -83,11 +83,6 @@ class Finding(models.Model):
 
     analysis = fields.Text()
 
-    # immediate_action_id = fields.Many2one(
-    #     'qms.action',
-    #     domain="[('non_conformity_ids', '=', id)]",
-    # )
-
     action_ids = fields.Many2many(
         comodel_name='qms.action'
     )
