@@ -11,9 +11,7 @@ class Action(models.Model):
 
     _response_types_ = [
         ('immediate', 'Immediate Action'),
-        ('correction', 'Corrective Action'),
-        ('prevention', 'Preventive Action'),
-        ('improvement', 'Improvement Opportunity')
+        ('correction', 'Corrective Action')
     ]
 
     _complexity_levels_ = [
