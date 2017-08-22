@@ -11,7 +11,7 @@ class Policy(models.Model):
         required=True
     )
 
-    revision = fields.Integer()
+    version = fields.Integer()
 
     date = fields.Date()
 
