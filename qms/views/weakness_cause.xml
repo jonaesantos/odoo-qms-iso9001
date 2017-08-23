@@ -1,11 +1,11 @@
 <odoo>
 
     <!-- FORM VIEW -->
-    <record id="view_qms_finding_cause_form"
+    <record id="view_qms_weakness_cause_form"
             model="ir.ui.view">
-        <field name="name">qms.finding.cause.form</field>
+        <field name="name">qms.weakness.cause.form</field>
         <field name="type">form</field>
-        <field name="model">qms.finding.cause</field>
+        <field name="model">qms.weakness.cause</field>
         <field name="inherit_id"
                ref="qms.view_qms_finding_milestone_form" />
         <field name="arch"
@@ -18,10 +18,10 @@
     </record>
 
     <!-- TREE VIEW -->
-    <record id="view_qms_finding_cause_tree"
+    <record id="view_qms_weakness_cause_tree"
             model="ir.ui.view">
-        <field name="name">qms.finding.cause.tree</field>
-        <field name="model">qms.finding.cause</field>
+        <field name="name">qms.weakness.cause.tree</field>
+        <field name="model">qms.weakness.cause</field>
         <field name="inherit_id"
                ref="qms.view_qms_finding_milestone_tree" />
         <field name="arch"
@@ -34,10 +34,10 @@
     </record>
 
     <!-- SEARCH VIEW -->
-    <record id="view_qms_finding_cause_filter"
+    <record id="view_qms_weakness_cause_filter"
             model="ir.ui.view">
-        <field name="name">qms.finding.cause.search</field>
-        <field name="model">qms.finding.cause</field>
+        <field name="name">qms.weakness.cause.search</field>
+        <field name="model">qms.weakness.cause</field>
         <field name="type">search</field>
         <field name="inherit_id"
                ref="qms.view_qms_finding_milestone_filter" />
@@ -51,16 +51,16 @@
     </record>
 
     <!-- WINDOW ACTION -->
-    <record id="open_qms_finding_cause_list"
+    <record id="open_qms_weakness_cause_list"
             model="ir.actions.act_window">
         <field name="name">Causes</field>
         <field name="type">ir.actions.act_window</field>
-        <field name="res_model">qms.finding.cause</field>
+        <field name="res_model">qms.weakness.cause</field>
         <field name="view_type">form</field>
         <field name="view_id"
-               eval="view_qms_finding_cause_tree" />
+               eval="view_qms_weakness_cause_tree" />
         <field name="search_view_id"
-               ref="view_qms_finding_cause_filter" />
+               ref="view_qms_weakness_cause_filter" />
     </record>
 
 </odoo>

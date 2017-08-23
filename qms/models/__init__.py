@@ -8,7 +8,7 @@ import audit
 import audit_verification_line
 import finding_milestone
 import finding
-import finding_cause
+import weakness_cause
 import non_conformity
 import finding_origin
 import finding_stage

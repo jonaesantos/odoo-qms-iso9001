@@ -94,10 +94,10 @@
               action="action_interested_party_individual_tree"
               sequence="10" />
 
-    <menuitem id="menu_open_finding_cause"
+    <menuitem id="menu_open_weakness_cause"
               name="Causes"
               parent="menu_config_finding"
-              action="open_qms_finding_cause_list"
+              action="open_qms_weakness_cause_list"
               sequence="5" />
 
     <menuitem id="menu_open_finding_origin"
