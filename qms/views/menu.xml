@@ -61,6 +61,12 @@
               action="open_qms_non_conformity_list"
               sequence="5" />
 
+    <menuitem id="menu_open_improvement"
+              name="Improvement"
+              parent="qms.menu_open_finding"
+              action="open_qms_improvement_list"
+              sequence="10" />
+
     <menuitem id="menu_config_action"
               name="Actions"
               parent="qms.menu_qms_configuration"
