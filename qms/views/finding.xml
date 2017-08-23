@@ -157,26 +157,8 @@
                                    nolabel="1" />
                         </page>
 
-                        <page string="Causes and Analysis"
-                              attrs="{'invisible':[('state','in',['draft','cancel'])]}">
-                            <separator string="Analysis" />
-                            <field name="analysis"
-                                   attrs="{'readonly':[('state','not in',['analysis'])]}" />
-
-                            <separator string="Causes" />
-                            <field name="cause_ids"
-                                   attrs="{'readonly':[('state','not in',['analysis'])]}" />
-
-                            <separator string="Analysis Confirmation" />
-                            <group>
-                                <group>
-                                    <field name="severity_id"
-                                           attrs="{'readonly':[('state', 'not in', ['analysis'])]}" />
-                                </group>
-                            </group>
-                        </page>
-
-                        <page string="Actions"
+                        <page name="actions"
+                              string="Actions"
                               attrs="{'invisible':[('state','in',['draft','analysis','cancel'])]}">
                             <separator string="Action Plan" />
                             <field name="action_ids"

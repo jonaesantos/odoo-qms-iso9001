@@ -9,7 +9,7 @@ from odoo import api, models
 class Non_Conformity(models.Model):
 
     _name = "qms.non_conformity"
-    _inherit = ['qms.finding']
+    _inherit = ['qms.finding', 'qms.weakness']
 
     @api.model
     def create(self, vals):

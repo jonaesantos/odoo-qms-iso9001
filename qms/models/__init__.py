@@ -9,6 +9,7 @@ import audit_verification_line
 import finding_milestone
 import finding
 import weakness_cause
+import weakness
 import non_conformity
 import finding_origin
 import finding_stage

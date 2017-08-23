@@ -73,16 +73,6 @@ class Finding(models.Model):
         copy=False
     )
 
-    cause_ids = fields.Many2many(
-        comodel_name='qms.finding.cause'
-    )
-
-    severity_id = fields.Many2one(
-        comodel_name='qms.finding.severity'
-    )
-
-    analysis = fields.Text()
-
     action_ids = fields.Many2many(
         comodel_name='qms.action'
     )
