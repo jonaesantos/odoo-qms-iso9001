@@ -1,0 +1,1291 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * qms
+# 
+# Translators:
+# Lisandro <lisandrogallo@tmcrosario.gov.ar>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-08-25 15:30+0000\n"
+"PO-Revision-Date: 2017-08-25 15:30+0000\n"
+"Last-Translator: Lisandro <lisandrogallo@tmcrosario.gov.ar>, 2017\n"
+"Language-Team: Spanish (Argentina) (https://www.transifex.com/tmcrosario/teams/73663/es_AR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: es_AR\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: qms
+#: selection:qms.hazard,strategy:0
+msgid "Accept"
+msgstr "Aceptar"
+
+#. module: qms
+#: model:ir.model,name:qms.model_qms_action
+msgid "Action"
+msgstr "Acción"
+
+#. module: qms
+#: code:addons/qms/models/finding_stage.py:14
+#: model:ir.ui.view,arch_db:qms.view_qms_finding_form
+#: model:qms.finding.stage,name:qms.finding_stage_pending
+#: selection:qms.finding.stage,state:0
+#, python-format
+msgid "Action Plan"
+msgstr "Plan de Acción"
+
+#. module: qms
+#: model:ir.ui.view,arch_db:qms.view_qms_finding_form
+msgid "Action Plan Comments"
+msgstr "Comentarios del Plan de Acción"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_effectiveness_check_action_id
+msgid "Action id"
+msgstr "Acción"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_finding_action_ids
+#: model:ir.model.fields,field_description:qms.field_qms_hazard_action_ids
+#: model:ir.model.fields,field_description:qms.field_qms_non_conformity_action_ids
+#: model:ir.model.fields,field_description:qms.field_qms_opportunity_action_ids
+msgid "Action ids"
+msgstr "Acciones"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_finding_action_plan_comments
+#: model:ir.model.fields,field_description:qms.field_qms_non_conformity_action_plan_comments
+#: model:ir.model.fields,field_description:qms.field_qms_opportunity_action_plan_comments
+msgid "Action plan comments"
+msgstr "Comentarios del Plan de Acción"
+
+#. module: qms
+#: code:addons/qms/models/finding.py:103
+#, python-format
+msgid ""
+"Action plan comments are required                       in order to put a "
+"finding 'In Progress'."
+msgstr ""
+"Los comentarios del Plan de Acción son requeridos para un hallazgo en "
+"progreso."
+
+#. module: qms
+#: model:ir.actions.act_window,name:qms.open_qms_action_list
+#: model:ir.ui.menu,name:qms.menu_config_action
+#: model:ir.ui.menu,name:qms.menu_open_action
+#: model:ir.ui.view,arch_db:qms.view_qms_finding_form
+#: model:ir.ui.view,arch_db:qms.view_qms_hazard_form
+msgid "Actions"
+msgstr "Acciones"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_action_active
+msgid "Active"
+msgstr "Activo"
+
+#. module: qms
+#: code:addons/qms/models/finding.py:121
+#, python-format
+msgid ""
+"All actions must be done                           before closing a finding."
+msgstr "Deben completarse todas las acciones antes de cerrar un hallazgo."
+
+#. module: qms
+#: selection:qms.hazard,probability:0
+msgid "Almost Sure"
+msgstr "Casi Seguro"
+
+#. module: qms
+#: code:addons/qms/models/finding_stage.py:13
+#: model:ir.model.fields,field_description:qms.field_qms_non_conformity_analysis
+#: model:ir.model.fields,field_description:qms.field_qms_weakness_analysis
+#: model:ir.ui.view,arch_db:qms.view_qms_finding_filter
+#: model:ir.ui.view,arch_db:qms.view_qms_non_conformity_form
+#: model:qms.finding.stage,name:qms.finding_stage_analysis
+#: selection:qms.finding.stage,state:0
+#, python-format
+msgid "Analysis"
+msgstr "Análisis"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_goal_approved
+#: model:ir.model.fields,field_description:qms.field_qms_policy_approved
+msgid "Approved"
+msgstr "Aprobado"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_interested_party_area
+msgid "Area"
+msgstr "Área"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_audit_verification_line_audit_id
+msgid "Audit id"
+msgstr "Auditoría"
+
+#. module: qms
+#: model:ir.actions.act_window,name:qms.open_qms_audit_list
+#: model:ir.ui.menu,name:qms.menu_open_audit
+#: model:ir.ui.view,arch_db:qms.view_qms_audit_calendar
+msgid "Audits"
+msgstr "Auditorías"
+
+#. module: qms
+#: selection:qms.resource,state:0
+msgid "Available"
+msgstr "Disponible"
+
+#. module: qms
+#: selection:qms.hazard,strategy:0
+msgid "Avoid"
+msgstr "Evitar"
+
+#. module: qms
+#: model:qms.weakness.cause,name:qms.weakness_cause_bad_communication
+msgid "Bad communication"
+msgstr "Mala comunicación"
+
+#. module: qms
+#: model:qms.weakness.cause,name:qms.weakness_cause_bad_partner_relation
+msgid "Bad customer/supplier relation"
+msgstr "Mala relación cliente/proveedor"
+
+#. module: qms
+#: model:qms.weakness.cause,name:qms.weakness_cause_badly_defined_need
+msgid "Badly defined need"
+msgstr "Necesidad mal definida"
+
+#. module: qms
+#: selection:qms.finding,kanban_state:0
+#: selection:qms.non_conformity,kanban_state:0
+#: selection:qms.opportunity,kanban_state:0
+msgid "Blocked"
+msgstr "Bloqueado"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_action_cancel_date
+msgid "Cancel date"
+msgstr "Fecha de Cancelación"
+
+#. module: qms
+#: code:addons/qms/models/finding_stage.py:17
+#: model:qms.action.stage,name:qms.action_stage_cancel
+#: model:qms.finding.stage,name:qms.finding_stage_cancel
+#: selection:qms.finding.stage,state:0 selection:qms.hazard,state:0
+#, python-format
+msgid "Cancelled"
+msgstr "Cancelado"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_non_conformity_cause_ids
+#: model:ir.model.fields,field_description:qms.field_qms_weakness_cause_ids
+msgid "Cause ids"
+msgstr "Causas"
+
+#. module: qms
+#: model:ir.actions.act_window,name:qms.open_qms_weakness_cause_list
+#: model:ir.ui.menu,name:qms.menu_open_weakness_cause
+#: model:ir.ui.view,arch_db:qms.view_qms_non_conformity_form
+msgid "Causes"
+msgstr "Causas"
+
+#. module: qms
+#: model:ir.ui.view,arch_db:qms.view_qms_non_conformity_form
+msgid "Causes and Analysis"
+msgstr "Causas y Análisis"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_weakness_cause_child_ids
+msgid "Child causes"
+msgstr "Causas Derivadas"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_finding_origin_child_ids
+msgid "Child origins"
+msgstr "Orígenes Derivados"
+
+#. module: qms
+#: model:ir.ui.view,arch_db:qms.view_qms_audit_form
+msgid "Close"
+msgstr "Cerrar"
+
+#. module: qms
+#: code:addons/qms/models/finding_stage.py:16
+#: model:ir.ui.view,arch_db:qms.view_qms_audit_filter
+#: model:ir.ui.view,arch_db:qms.view_qms_finding_filter
+#: model:qms.action.stage,name:qms.action_stage_close
+#: selection:qms.audit,state:0 selection:qms.effectiveness_check,state:0
+#: model:qms.finding.stage,name:qms.finding_stage_done
+#: selection:qms.finding.stage,state:0 selection:qms.hazard,state:0
+#, python-format
+msgid "Closed"
+msgstr "Cerrado"
+
+#. module: qms
+#: model:ir.ui.view,arch_db:qms.view_qms_finding_filter
+msgid "Closed Findings"
+msgstr "Hallazgos Cerrados"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_audit_closing_date
+#: model:ir.model.fields,field_description:qms.field_qms_finding_closing_date
+#: model:ir.model.fields,field_description:qms.field_qms_non_conformity_closing_date
+#: model:ir.model.fields,field_description:qms.field_qms_opportunity_closing_date
+msgid "Closing date"
+msgstr "Fecha de Cierre"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_audit_verification_line_comments
+msgid "Comments"
+msgstr "Comentarios"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_action_complexity
+msgid "Complexity"
+msgstr "Complejidad"
+
+#. module: qms
+#: model:ir.ui.view,arch_db:qms.view_qms_goal_form
+#: model:ir.ui.view,arch_db:qms.view_qms_policy_form
+msgid "Components"
+msgstr "Componentes"
+
+#. module: qms
+#: model:ir.ui.menu,name:qms.menu_qms_configuration
+msgid "Configuration"
+msgstr "Configuración"
+
+#. module: qms
+#: model:ir.ui.menu,name:qms.menu_qms_context
+msgid "Context"
+msgstr "Contexto"
+
+#. module: qms
+#: selection:qms.action,response_type:0
+msgid "Corrective Action"
+msgstr "Acción Correctiva"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_action_create_date
+msgid "Create date"
+msgstr "Fecha de Creación"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_action_create_uid
+#: model:ir.model.fields,field_description:qms.field_qms_action_stage_create_uid
+#: model:ir.model.fields,field_description:qms.field_qms_audit_create_uid
+#: model:ir.model.fields,field_description:qms.field_qms_audit_verification_line_create_uid
+#: model:ir.model.fields,field_description:qms.field_qms_effectiveness_check_create_uid
+#: model:ir.model.fields,field_description:qms.field_qms_finding_create_uid
+#: model:ir.model.fields,field_description:qms.field_qms_finding_milestone_create_uid
+#: model:ir.model.fields,field_description:qms.field_qms_finding_origin_create_uid
+#: model:ir.model.fields,field_description:qms.field_qms_finding_stage_create_uid
+#: model:ir.model.fields,field_description:qms.field_qms_goal_create_uid
+#: model:ir.model.fields,field_description:qms.field_qms_hazard_create_uid
+#: model:ir.model.fields,field_description:qms.field_qms_interested_party_create_uid
+#: model:ir.model.fields,field_description:qms.field_qms_non_conformity_create_uid
+#: model:ir.model.fields,field_description:qms.field_qms_opportunity_create_uid
+#: model:ir.model.fields,field_description:qms.field_qms_policy_component_create_uid
+#: model:ir.model.fields,field_description:qms.field_qms_policy_create_uid
+#: model:ir.model.fields,field_description:qms.field_qms_process_create_uid
+#: model:ir.model.fields,field_description:qms.field_qms_resource_create_uid
+#: model:ir.model.fields,field_description:qms.field_qms_stage_create_uid
+#: model:ir.model.fields,field_description:qms.field_qms_weakness_cause_create_uid
+#: model:ir.model.fields,field_description:qms.field_qms_weakness_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_action_stage_create_date
+#: model:ir.model.fields,field_description:qms.field_qms_audit_create_date
+#: model:ir.model.fields,field_description:qms.field_qms_audit_verification_line_create_date
+#: model:ir.model.fields,field_description:qms.field_qms_effectiveness_check_create_date
+#: model:ir.model.fields,field_description:qms.field_qms_finding_create_date
+#: model:ir.model.fields,field_description:qms.field_qms_finding_milestone_create_date
+#: model:ir.model.fields,field_description:qms.field_qms_finding_origin_create_date
+#: model:ir.model.fields,field_description:qms.field_qms_finding_stage_create_date
+#: model:ir.model.fields,field_description:qms.field_qms_goal_create_date
+#: model:ir.model.fields,field_description:qms.field_qms_hazard_create_date
+#: model:ir.model.fields,field_description:qms.field_qms_interested_party_create_date
+#: model:ir.model.fields,field_description:qms.field_qms_non_conformity_create_date
+#: model:ir.model.fields,field_description:qms.field_qms_opportunity_create_date
+#: model:ir.model.fields,field_description:qms.field_qms_policy_component_create_date
+#: model:ir.model.fields,field_description:qms.field_qms_policy_create_date
+#: model:ir.model.fields,field_description:qms.field_qms_process_create_date
+#: model:ir.model.fields,field_description:qms.field_qms_resource_create_date
+#: model:ir.model.fields,field_description:qms.field_qms_stage_create_date
+#: model:ir.model.fields,field_description:qms.field_qms_weakness_cause_create_date
+#: model:ir.model.fields,field_description:qms.field_qms_weakness_create_date
+msgid "Created on"
+msgstr "Fecha de Creación"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_audit_date
+#: model:ir.model.fields,field_description:qms.field_qms_goal_date
+#: model:ir.model.fields,field_description:qms.field_qms_hazard_date
+#: model:ir.model.fields,field_description:qms.field_qms_policy_date
+msgid "Date"
+msgstr "Fecha"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_action_date_closed
+msgid "Date closed"
+msgstr "Fecha de Cerrado"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_action_date_deadline
+msgid "Date deadline"
+msgstr "Fecha Límite"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_action_description
+#: model:ir.model.fields,field_description:qms.field_qms_finding_description
+#: model:ir.model.fields,field_description:qms.field_qms_finding_milestone_description
+#: model:ir.model.fields,field_description:qms.field_qms_finding_origin_description
+#: model:ir.model.fields,field_description:qms.field_qms_non_conformity_description
+#: model:ir.model.fields,field_description:qms.field_qms_opportunity_description
+#: model:ir.model.fields,field_description:qms.field_qms_policy_description
+#: model:ir.model.fields,field_description:qms.field_qms_weakness_cause_description
+#: model:ir.ui.view,arch_db:qms.view_qms_action_form
+#: model:ir.ui.view,arch_db:qms.view_qms_finding_form
+#: model:ir.ui.view,arch_db:qms.view_qms_policy_form
+msgid "Description"
+msgstr "Descripción"
+
+#. module: qms
+#: model:qms.finding.origin,name:qms.finding_origin_dr
+msgid "Direction Review"
+msgstr "Revisión de la Administración"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_action_display_name
+#: model:ir.model.fields,field_description:qms.field_qms_action_stage_display_name
+#: model:ir.model.fields,field_description:qms.field_qms_audit_display_name
+#: model:ir.model.fields,field_description:qms.field_qms_audit_verification_line_display_name
+#: model:ir.model.fields,field_description:qms.field_qms_effectiveness_check_display_name
+#: model:ir.model.fields,field_description:qms.field_qms_finding_display_name
+#: model:ir.model.fields,field_description:qms.field_qms_finding_milestone_display_name
+#: model:ir.model.fields,field_description:qms.field_qms_finding_origin_display_name
+#: model:ir.model.fields,field_description:qms.field_qms_finding_stage_display_name
+#: model:ir.model.fields,field_description:qms.field_qms_goal_display_name
+#: model:ir.model.fields,field_description:qms.field_qms_hazard_display_name
+#: model:ir.model.fields,field_description:qms.field_qms_interested_party_display_name
+#: model:ir.model.fields,field_description:qms.field_qms_non_conformity_display_name
+#: model:ir.model.fields,field_description:qms.field_qms_opportunity_display_name
+#: model:ir.model.fields,field_description:qms.field_qms_policy_component_display_name
+#: model:ir.model.fields,field_description:qms.field_qms_policy_display_name
+#: model:ir.model.fields,field_description:qms.field_qms_process_display_name
+#: model:ir.model.fields,field_description:qms.field_qms_resource_display_name
+#: model:ir.model.fields,field_description:qms.field_qms_stage_display_name
+#: model:ir.model.fields,field_description:qms.field_qms_weakness_cause_display_name
+#: model:ir.model.fields,field_description:qms.field_qms_weakness_display_name
+msgid "Display Name"
+msgstr "Nombre"
+
+#. module: qms
+#: model:ir.ui.menu,name:qms.menu_qms_documents
+msgid "Documents"
+msgstr "Documentos"
+
+#. module: qms
+#: code:addons/qms/models/finding_stage.py:12
+#: model:ir.ui.view,arch_db:qms.view_qms_finding_filter
+#: model:qms.action.stage,name:qms.action_stage_draft
+#: model:qms.finding.stage,name:qms.finding_stage_draft
+#: selection:qms.finding.stage,state:0 selection:qms.hazard,state:0
+#, python-format
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: qms
+#: model:ir.ui.view,arch_db:qms.view_qms_finding_filter
+msgid "Draft/New findings"
+msgstr "Hallazgos Nuevos o En Borrador"
+
+#. module: qms
+#: model:ir.ui.view,arch_db:qms.view_qms_action_kanban
+#: model:ir.ui.view,arch_db:qms.view_qms_finding_kanban
+#: model:ir.ui.view,arch_db:qms.view_qms_hazard_kanban
+msgid "Edit"
+msgstr "Editar"
+
+#. module: qms
+#: model:ir.ui.view,arch_db:qms.view_qms_action_form
+msgid "Effectiveness Checks"
+msgstr "Verificaciones de Eficacia"
+
+#. module: qms
+#: model:ir.ui.view,arch_db:qms.view_qms_finding_form
+msgid "Effectiveness Review"
+msgstr "Verificación de Eficacia"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_action_effectiveness_check_ids
+msgid "Effectiveness check ids"
+msgstr "Verificaciones de Eficacia"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_action_stage_is_ending
+msgid "Ending stage"
+msgstr "Etapa Final"
+
+#. module: qms
+#: code:addons/qms/models/finding_origin.py:29
+#: code:addons/qms/models/weakness_cause.py:29
+#, python-format
+msgid "Error! Cannot create recursive cycle."
+msgstr "ERROR: No pueden crearse ciclos recursivos."
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_hazard_evaluation
+msgid "Evaluation"
+msgstr "Evaluación"
+
+#. module: qms
+#: model:ir.ui.view,arch_db:qms.view_qms_finding_form
+msgid "Evaluation Comments"
+msgstr "Comentarios de la Evaluación"
+
+#. module: qms
+#: code:addons/qms/models/finding.py:113
+#, python-format
+msgid ""
+"Evaluation Comments are required                           in order to close"
+" a finding."
+msgstr ""
+"Los comentarios de la Evaluación son requeridos para cerrar un hallazgo."
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_finding_evaluation_comments
+#: model:ir.model.fields,field_description:qms.field_qms_non_conformity_evaluation_comments
+#: model:ir.model.fields,field_description:qms.field_qms_opportunity_evaluation_comments
+msgid "Evaluation comments"
+msgstr "Comentarios de Evaluación"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_effectiveness_check_expected_date
+msgid "Expected date"
+msgstr "Fecha Prevista"
+
+#. module: qms
+#: selection:qms.interested_party,interested_party_type:0
+#: selection:qms.resource,resource_type:0
+msgid "External"
+msgstr "Externo"
+
+#. module: qms
+#: model:qms.finding.origin,name:qms.finding_origin_extenal_audit
+msgid "External Audit"
+msgstr "Auditoría Externa"
+
+#. module: qms
+#: model:qms.finding.origin,name:qms.finding_origin_external_client
+msgid "External client complaint"
+msgstr "Reclamo Externo del Cliente"
+
+#. module: qms
+#: model:ir.ui.view,arch_db:qms.view_qms_finding_form
+msgid "Finding"
+msgstr "Hallazgo"
+
+#. module: qms
+#: model:ir.ui.menu,name:qms.menu_config_finding
+#: model:ir.ui.menu,name:qms.menu_open_finding
+msgid "Findings"
+msgstr "Hallazgos"
+
+#. module: qms
+#: model:ir.ui.view,arch_db:qms.view_qms_finding_filter
+msgid "Findings pending review"
+msgstr "Hallazgos Pendientes de Revisión"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_finding_stage_fold
+msgid "Fold"
+msgstr "Plegar"
+
+#. module: qms
+#: model:ir.actions.act_window,name:qms.open_qms_goal_list
+#: model:ir.ui.menu,name:qms.menu_open_goal
+msgid "Goals"
+msgstr "Objetivos"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_finding_origin_parent_id
+#: model:ir.model.fields,field_description:qms.field_qms_weakness_cause_parent_id
+msgid "Group"
+msgstr "Grupo"
+
+#. module: qms
+#: model:ir.actions.act_window,name:qms.open_qms_hazard_list
+#: model:ir.ui.menu,name:qms.menu_open_hazard
+msgid "Hazards"
+msgstr "Riesgos"
+
+#. module: qms
+#: selection:qms.action,complexity:0 selection:qms.hazard,evaluation:0
+#: selection:qms.hazard,impact:0
+msgid "High"
+msgstr "Alto"
+
+#. module: qms
+#: selection:qms.hazard,strategy:0
+msgid "Hold"
+msgstr "Retener"
+
+#. module: qms
+#: model:qms.weakness.cause,name:qms.weakness_cause_hr_unavailable_inadequate
+msgid "Human resource not available or inadequate"
+msgstr "Recurso humano no disponible o inadecuado"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_action_id
+#: model:ir.model.fields,field_description:qms.field_qms_action_stage_id_1469
+#: model:ir.model.fields,field_description:qms.field_qms_audit_id
+#: model:ir.model.fields,field_description:qms.field_qms_audit_verification_line_id
+#: model:ir.model.fields,field_description:qms.field_qms_effectiveness_check_id
+#: model:ir.model.fields,field_description:qms.field_qms_finding_id
+#: model:ir.model.fields,field_description:qms.field_qms_finding_milestone_id
+#: model:ir.model.fields,field_description:qms.field_qms_finding_origin_id
+#: model:ir.model.fields,field_description:qms.field_qms_finding_stage_id_1603
+#: model:ir.model.fields,field_description:qms.field_qms_goal_id
+#: model:ir.model.fields,field_description:qms.field_qms_hazard_id
+#: model:ir.model.fields,field_description:qms.field_qms_interested_party_id
+#: model:ir.model.fields,field_description:qms.field_qms_non_conformity_id
+#: model:ir.model.fields,field_description:qms.field_qms_opportunity_id
+#: model:ir.model.fields,field_description:qms.field_qms_policy_component_id
+#: model:ir.model.fields,field_description:qms.field_qms_policy_id
+#: model:ir.model.fields,field_description:qms.field_qms_process_id
+#: model:ir.model.fields,field_description:qms.field_qms_resource_id
+#: model:ir.model.fields,field_description:qms.field_qms_stage_id
+#: model:ir.model.fields,field_description:qms.field_qms_weakness_cause_id
+#: model:ir.model.fields,field_description:qms.field_qms_weakness_id
+msgid "ID"
+msgstr ""
+
+#. module: qms
+#: selection:qms.action,response_type:0
+msgid "Immediate Action"
+msgstr "Acción Inmediata"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_hazard_impact
+msgid "Impact"
+msgstr "Impacto"
+
+#. module: qms
+#: selection:qms.hazard,probability:0
+msgid "Improbable"
+msgstr "Improbable"
+
+#. module: qms
+#: selection:qms.resource,state:0
+msgid "In Process"
+msgstr "En Proceso"
+
+#. module: qms
+#: code:addons/qms/models/finding_stage.py:15
+#: model:ir.ui.view,arch_db:qms.view_qms_finding_filter
+#: model:qms.action.stage,name:qms.action_stage_open
+#: selection:qms.finding,kanban_state:0
+#: model:qms.finding.stage,name:qms.finding_stage_open
+#: selection:qms.finding.stage,state:0
+#: selection:qms.non_conformity,kanban_state:0
+#: selection:qms.opportunity,kanban_state:0
+#, python-format
+msgid "In Progress"
+msgstr "En Progreso"
+
+#. module: qms
+#: model:ir.actions.act_window,name:qms.action_interested_party_individual_tree
+#: model:ir.ui.menu,name:qms.menu_qms_interested_party_individuals
+msgid "Individuals"
+msgstr "Personas"
+
+#. module: qms
+#: model:qms.weakness.cause,name:qms.weakness_cause_information_not_available
+msgid "Information not available"
+msgstr "Información no disponible"
+
+#. module: qms
+#: model:qms.weakness.cause,name:qms.weakness_cause_instruction_not_respected
+msgid "Instruction not respected"
+msgstr "Instrucción no respetada"
+
+#. module: qms
+#: model:ir.ui.menu,name:qms.menu_config_interested_party
+msgid "Interested Parties"
+msgstr "Partes Interesadas"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_finding_interested_party_id
+#: model:ir.model.fields,field_description:qms.field_qms_non_conformity_interested_party_id
+#: model:ir.model.fields,field_description:qms.field_qms_opportunity_interested_party_id
+msgid "Interested party id"
+msgstr "Parte Interesada"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_interested_party_interested_party_type
+msgid "Interested party type"
+msgstr "Tipo"
+
+#. module: qms
+#: selection:qms.interested_party,interested_party_type:0
+#: selection:qms.resource,resource_type:0
+msgid "Internal"
+msgstr "Interno"
+
+#. module: qms
+#: model:qms.finding.origin,name:qms.finding_origin_internal_audit
+msgid "Internal Audit"
+msgstr "Auditoría Interna"
+
+#. module: qms
+#: model:qms.finding.origin,name:qms.finding_origin_internal_client
+msgid "Internal client complaint"
+msgstr "Reclamo Interno del Cliente"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_audit_verification_line_is_conformed
+msgid "Is conformed"
+msgstr "Conforme"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_interested_party_is_organization
+msgid "Is organization"
+msgstr "Organización"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_finding_kanban_state
+#: model:ir.model.fields,field_description:qms.field_qms_non_conformity_kanban_state
+#: model:ir.model.fields,field_description:qms.field_qms_opportunity_kanban_state
+msgid "Kanban state"
+msgstr "Estado de Kanban"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_action___last_update
+#: model:ir.model.fields,field_description:qms.field_qms_action_stage___last_update
+#: model:ir.model.fields,field_description:qms.field_qms_audit___last_update
+#: model:ir.model.fields,field_description:qms.field_qms_audit_verification_line___last_update
+#: model:ir.model.fields,field_description:qms.field_qms_effectiveness_check___last_update
+#: model:ir.model.fields,field_description:qms.field_qms_finding___last_update
+#: model:ir.model.fields,field_description:qms.field_qms_finding_milestone___last_update
+#: model:ir.model.fields,field_description:qms.field_qms_finding_origin___last_update
+#: model:ir.model.fields,field_description:qms.field_qms_finding_stage___last_update
+#: model:ir.model.fields,field_description:qms.field_qms_goal___last_update
+#: model:ir.model.fields,field_description:qms.field_qms_hazard___last_update
+#: model:ir.model.fields,field_description:qms.field_qms_interested_party___last_update
+#: model:ir.model.fields,field_description:qms.field_qms_non_conformity___last_update
+#: model:ir.model.fields,field_description:qms.field_qms_opportunity___last_update
+#: model:ir.model.fields,field_description:qms.field_qms_policy___last_update
+#: model:ir.model.fields,field_description:qms.field_qms_policy_component___last_update
+#: model:ir.model.fields,field_description:qms.field_qms_process___last_update
+#: model:ir.model.fields,field_description:qms.field_qms_resource___last_update
+#: model:ir.model.fields,field_description:qms.field_qms_stage___last_update
+#: model:ir.model.fields,field_description:qms.field_qms_weakness___last_update
+#: model:ir.model.fields,field_description:qms.field_qms_weakness_cause___last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_action_stage_write_uid
+#: model:ir.model.fields,field_description:qms.field_qms_action_write_uid
+#: model:ir.model.fields,field_description:qms.field_qms_audit_verification_line_write_uid
+#: model:ir.model.fields,field_description:qms.field_qms_audit_write_uid
+#: model:ir.model.fields,field_description:qms.field_qms_effectiveness_check_write_uid
+#: model:ir.model.fields,field_description:qms.field_qms_finding_milestone_write_uid
+#: model:ir.model.fields,field_description:qms.field_qms_finding_origin_write_uid
+#: model:ir.model.fields,field_description:qms.field_qms_finding_stage_write_uid
+#: model:ir.model.fields,field_description:qms.field_qms_finding_write_uid
+#: model:ir.model.fields,field_description:qms.field_qms_goal_write_uid
+#: model:ir.model.fields,field_description:qms.field_qms_hazard_write_uid
+#: model:ir.model.fields,field_description:qms.field_qms_interested_party_write_uid
+#: model:ir.model.fields,field_description:qms.field_qms_non_conformity_write_uid
+#: model:ir.model.fields,field_description:qms.field_qms_opportunity_write_uid
+#: model:ir.model.fields,field_description:qms.field_qms_policy_component_write_uid
+#: model:ir.model.fields,field_description:qms.field_qms_policy_write_uid
+#: model:ir.model.fields,field_description:qms.field_qms_process_write_uid
+#: model:ir.model.fields,field_description:qms.field_qms_resource_write_uid
+#: model:ir.model.fields,field_description:qms.field_qms_stage_write_uid
+#: model:ir.model.fields,field_description:qms.field_qms_weakness_cause_write_uid
+#: model:ir.model.fields,field_description:qms.field_qms_weakness_write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_action_stage_write_date
+#: model:ir.model.fields,field_description:qms.field_qms_action_write_date
+#: model:ir.model.fields,field_description:qms.field_qms_audit_verification_line_write_date
+#: model:ir.model.fields,field_description:qms.field_qms_audit_write_date
+#: model:ir.model.fields,field_description:qms.field_qms_effectiveness_check_write_date
+#: model:ir.model.fields,field_description:qms.field_qms_finding_milestone_write_date
+#: model:ir.model.fields,field_description:qms.field_qms_finding_origin_write_date
+#: model:ir.model.fields,field_description:qms.field_qms_finding_stage_write_date
+#: model:ir.model.fields,field_description:qms.field_qms_finding_write_date
+#: model:ir.model.fields,field_description:qms.field_qms_goal_write_date
+#: model:ir.model.fields,field_description:qms.field_qms_hazard_write_date
+#: model:ir.model.fields,field_description:qms.field_qms_interested_party_write_date
+#: model:ir.model.fields,field_description:qms.field_qms_non_conformity_write_date
+#: model:ir.model.fields,field_description:qms.field_qms_opportunity_write_date
+#: model:ir.model.fields,field_description:qms.field_qms_policy_component_write_date
+#: model:ir.model.fields,field_description:qms.field_qms_policy_write_date
+#: model:ir.model.fields,field_description:qms.field_qms_process_write_date
+#: model:ir.model.fields,field_description:qms.field_qms_resource_write_date
+#: model:ir.model.fields,field_description:qms.field_qms_stage_write_date
+#: model:ir.model.fields,field_description:qms.field_qms_weakness_cause_write_date
+#: model:ir.model.fields,field_description:qms.field_qms_weakness_write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: qms
+#: selection:qms.action,complexity:0 selection:qms.hazard,evaluation:0
+#: selection:qms.hazard,impact:0
+msgid "Low"
+msgstr "Bajo"
+
+#. module: qms
+#: selection:qms.action,complexity:0 selection:qms.hazard,evaluation:0
+#: selection:qms.hazard,impact:0
+msgid "Medium"
+msgstr "Medio"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_action_stage_name
+#: model:ir.model.fields,field_description:qms.field_qms_finding_milestone_name
+#: model:ir.model.fields,field_description:qms.field_qms_finding_name
+#: model:ir.model.fields,field_description:qms.field_qms_finding_origin_name
+#: model:ir.model.fields,field_description:qms.field_qms_finding_stage_name
+#: model:ir.model.fields,field_description:qms.field_qms_goal_name
+#: model:ir.model.fields,field_description:qms.field_qms_hazard_name
+#: model:ir.model.fields,field_description:qms.field_qms_interested_party_name
+#: model:ir.model.fields,field_description:qms.field_qms_non_conformity_name
+#: model:ir.model.fields,field_description:qms.field_qms_opportunity_name
+#: model:ir.model.fields,field_description:qms.field_qms_policy_component_name
+#: model:ir.model.fields,field_description:qms.field_qms_policy_name
+#: model:ir.model.fields,field_description:qms.field_qms_process_name
+#: model:ir.model.fields,field_description:qms.field_qms_resource_name
+#: model:ir.model.fields,field_description:qms.field_qms_stage_name
+#: model:ir.model.fields,field_description:qms.field_qms_weakness_cause_name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: qms
+#: model:ir.actions.act_window,name:qms.open_qms_non_conformity_list
+#: model:ir.ui.menu,name:qms.menu_open_non_conformity
+msgid "Non Conformities"
+msgstr "No Conformidades"
+
+#. module: qms
+#: model:ir.ui.view,arch_db:qms.view_qms_non_conformity_kanban
+#: model:ir.ui.view,arch_db:qms.view_qms_non_conformity_tree
+msgid "Non Conformity"
+msgstr "No Conformidad"
+
+#. module: qms
+#: selection:qms.resource,state:0
+msgid "Not Available"
+msgstr "No Disponible"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_effectiveness_check_observations
+#: model:ir.ui.view,arch_db:qms.view_qms_effectiveness_check_form
+msgid "Observations"
+msgstr "Observaciones"
+
+#. module: qms
+#: model:ir.ui.view,arch_db:qms.view_qms_audit_filter
+#: selection:qms.audit,state:0 selection:qms.hazard,state:0
+msgid "Open"
+msgstr "Abierta"
+
+#. module: qms
+#: model:ir.ui.view,arch_db:qms.view_qms_finding_filter
+msgid "Open Findings"
+msgstr "Hallazgos Abiertos"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_action_opening_date
+msgid "Opening date"
+msgstr "Fecha de Inicio"
+
+#. module: qms
+#: model:ir.actions.act_window,name:qms.open_qms_opportunity_list
+#: model:ir.ui.menu,name:qms.menu_open_opportunity
+msgid "Opportunities"
+msgstr "Oportunidades"
+
+#. module: qms
+#: model:ir.ui.view,arch_db:qms.view_qms_opportunity_form
+#: model:ir.ui.view,arch_db:qms.view_qms_opportunity_tree
+msgid "Opportunity"
+msgstr "Oportunidad"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_interested_party_organization_id
+msgid "Organization id"
+msgstr "Organización"
+
+#. module: qms
+#: model:ir.actions.act_window,name:qms.action_interested_party_organization_tree
+#: model:ir.ui.menu,name:qms.menu_qms_interested_party_organizations
+msgid "Organizations"
+msgstr "Organizaciones"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_finding_origin_ids
+#: model:ir.model.fields,field_description:qms.field_qms_non_conformity_origin_ids
+#: model:ir.model.fields,field_description:qms.field_qms_opportunity_origin_ids
+msgid "Origin ids"
+msgstr "Orígenes"
+
+#. module: qms
+#: model:ir.actions.act_window,name:qms.open_qms_finding_origin_list
+#: model:ir.ui.menu,name:qms.menu_open_finding_origin
+msgid "Origins"
+msgstr "Orígenes"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_finding_milestone_parent_left
+#: model:ir.model.fields,field_description:qms.field_qms_finding_origin_parent_left
+#: model:ir.model.fields,field_description:qms.field_qms_weakness_cause_parent_left
+msgid "Parent left"
+msgstr ""
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_finding_milestone_parent_right
+#: model:ir.model.fields,field_description:qms.field_qms_finding_origin_parent_right
+#: model:ir.model.fields,field_description:qms.field_qms_weakness_cause_parent_right
+msgid "Parent right"
+msgstr ""
+
+#. module: qms
+#: selection:qms.effectiveness_check,state:0
+msgid "Pending"
+msgstr "Pendiente"
+
+#. module: qms
+#: model:ir.ui.view,arch_db:qms.view_qms_finding_form
+msgid "Plan Review"
+msgstr "Revisión de Plan"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_audit_to_improve_points
+msgid "Points To Improve"
+msgstr "Punto a Mejorar"
+
+#. module: qms
+#: model:ir.actions.act_window,name:qms.open_qms_policy_list
+#: model:ir.ui.menu,name:qms.menu_open_policy
+msgid "Policies"
+msgstr "Políticas"
+
+#. module: qms
+#: model:ir.ui.view,arch_db:qms.view_qms_hazard_form
+msgid "Policies Components"
+msgstr "Componentes de la Política"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_goal_policy_component_ids
+#: model:ir.model.fields,field_description:qms.field_qms_hazard_policy_component_ids
+#: model:ir.model.fields,field_description:qms.field_qms_policy_policy_component_ids
+msgid "Policy component ids"
+msgstr "Componentes de la Política"
+
+#. module: qms
+#: selection:qms.hazard,probability:0
+msgid "Possible"
+msgstr "Posible"
+
+#. module: qms
+#: selection:qms.hazard,strategy:0
+msgid "Prevent"
+msgstr "Prevenir"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_hazard_probability
+msgid "Probability"
+msgstr "Probabilidad"
+
+#. module: qms
+#: selection:qms.hazard,probability:0
+msgid "Probable"
+msgstr "Probable"
+
+#. module: qms
+#: model:qms.weakness.cause,name:qms.weakness_cause_procedure_not_defined
+msgid "Procedure not defined"
+msgstr "Procedimiento no definido"
+
+#. module: qms
+#: model:qms.weakness.cause,name:qms.weakness_cause_procedure_not_respected
+msgid "Procedure not respected"
+msgstr "Procedimiento no respetado"
+
+#. module: qms
+#: model:qms.finding.origin,name:qms.finding_origin_process
+msgid "Process Execution"
+msgstr "Ejecución de Proceso"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_finding_process_ids
+#: model:ir.model.fields,field_description:qms.field_qms_goal_process_ids
+#: model:ir.model.fields,field_description:qms.field_qms_hazard_process_ids
+#: model:ir.model.fields,field_description:qms.field_qms_non_conformity_process_ids
+#: model:ir.model.fields,field_description:qms.field_qms_opportunity_process_ids
+msgid "Process ids"
+msgstr "Procesos"
+
+#. module: qms
+#: model:ir.ui.view,arch_db:qms.view_qms_goal_form
+#: model:ir.ui.view,arch_db:qms.view_qms_hazard_form
+msgid "Processes"
+msgstr "Procesos"
+
+#. module: qms
+#: selection:qms.hazard,strategy:0
+msgid "Protect"
+msgstr "Proteger"
+
+#. module: qms
+#: model:qms.finding.origin,name:qms.finding_origin_qc
+msgid "Quality Committee"
+msgstr "Comité de Calidad"
+
+#. module: qms
+#: model:ir.ui.menu,name:qms.menu_qms_main
+#: model:ir.ui.menu,name:qms.menu_qms_root
+msgid "Quality Management System"
+msgstr "Sistema de Gestión de Calidad"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_audit_verification_line_name
+msgid "Question"
+msgstr "Pregunta"
+
+#. module: qms
+#: selection:qms.hazard,probability:0
+msgid "Rare"
+msgstr "Raro"
+
+#. module: qms
+#: selection:qms.finding,kanban_state:0
+#: selection:qms.non_conformity,kanban_state:0
+#: selection:qms.opportunity,kanban_state:0
+msgid "Ready For Next Stage"
+msgstr "Listo para Etapa Siguiente"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_action_reference
+#: model:ir.model.fields,field_description:qms.field_qms_audit_reference
+#: model:ir.model.fields,field_description:qms.field_qms_finding_reference
+#: model:ir.model.fields,field_description:qms.field_qms_non_conformity_reference
+#: model:ir.model.fields,field_description:qms.field_qms_opportunity_reference
+msgid "Reference"
+msgstr "Referencia"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_finding_milestone_reference_code
+#: model:ir.model.fields,field_description:qms.field_qms_finding_origin_reference_code
+#: model:ir.model.fields,field_description:qms.field_qms_weakness_cause_reference_code
+msgid "Reference code"
+msgstr "Código de Referencia"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_finding_audit_ids
+#: model:ir.model.fields,field_description:qms.field_qms_non_conformity_audit_ids
+#: model:ir.model.fields,field_description:qms.field_qms_opportunity_audit_ids
+#: model:ir.ui.view,arch_db:qms.view_qms_finding_form
+msgid "Related Audits"
+msgstr "Auditorías Relacionadas"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_goal_resource_ids
+msgid "Resource ids"
+msgstr "Recursos"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_resource_resource_type
+msgid "Resource type"
+msgstr "Tipo de Recurso"
+
+#. module: qms
+#: model:ir.ui.view,arch_db:qms.view_qms_goal_form
+msgid "Resources"
+msgstr "Recursos"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_action_response_type
+msgid "Response Type"
+msgstr "Tipo de Respuesta"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_action_responsible_id
+msgid "Responsible id"
+msgstr "Responsable"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_hazard_result
+msgid "Result"
+msgstr "Resultado"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_action_stage_sequence
+#: model:ir.model.fields,field_description:qms.field_qms_audit_verification_line_seq
+#: model:ir.model.fields,field_description:qms.field_qms_finding_milestone_sequence
+#: model:ir.model.fields,field_description:qms.field_qms_finding_origin_sequence
+#: model:ir.model.fields,field_description:qms.field_qms_finding_stage_sequence
+#: model:ir.model.fields,field_description:qms.field_qms_stage_sequence
+#: model:ir.model.fields,field_description:qms.field_qms_weakness_cause_sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_action_stage_id
+#: model:ir.model.fields,field_description:qms.field_qms_finding_stage_id
+#: model:ir.model.fields,field_description:qms.field_qms_non_conformity_stage_id
+#: model:ir.model.fields,field_description:qms.field_qms_opportunity_stage_id
+msgid "Stage id"
+msgstr "Etapa"
+
+#. module: qms
+#: model:ir.actions.act_window,name:qms.open_qms_action_stage_list
+#: model:ir.actions.act_window,name:qms.open_qms_finding_stage_list
+#: model:ir.ui.menu,name:qms.menu_open_finding_stage
+#: model:ir.ui.menu,name:qms.menu_qms_action_stages
+#: model:ir.ui.view,arch_db:qms.qms_action_stage_tree_view
+msgid "Stages"
+msgstr "Etapas"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_action_stage_is_starting
+#: model:ir.model.fields,field_description:qms.field_qms_finding_stage_is_starting
+#: model:ir.model.fields,field_description:qms.field_qms_stage_is_starting
+msgid "Starting stage"
+msgstr "Etapa Inicial"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_audit_state
+#: model:ir.model.fields,field_description:qms.field_qms_effectiveness_check_state
+#: model:ir.model.fields,field_description:qms.field_qms_finding_stage_state
+#: model:ir.model.fields,field_description:qms.field_qms_finding_state
+#: model:ir.model.fields,field_description:qms.field_qms_hazard_state
+#: model:ir.model.fields,field_description:qms.field_qms_non_conformity_state
+#: model:ir.model.fields,field_description:qms.field_qms_opportunity_state
+#: model:ir.model.fields,field_description:qms.field_qms_resource_state
+msgid "State"
+msgstr "Estado"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_hazard_strategy
+msgid "Strategy"
+msgstr "Estrategia"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_audit_strong_points
+#: model:ir.ui.view,arch_db:qms.view_qms_audit_form
+msgid "Strong Points"
+msgstr "Fortalezas"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_action_name
+msgid "Subject"
+msgstr "Asunto"
+
+#. module: qms
+#: model:qms.weakness.cause,name:qms.weakness_cause_technical_failure
+msgid "Technical failure"
+msgstr "Falla técnica"
+
+#. module: qms
+#: model:ir.ui.view,arch_db:qms.view_qms_audit_form
+msgid "To Improve Points"
+msgstr "Puntos a Mejorar"
+
+#. module: qms
+#: selection:qms.hazard,strategy:0
+msgid "Transfer"
+msgstr "Transferir"
+
+#. module: qms
+#: model:ir.ui.view,arch_db:qms.view_qms_action_filter
+msgid "Type"
+msgstr "Tipo"
+
+#. module: qms
+#: model:ir.model.fields,help:qms.field_qms_action_stage_sequence
+#: model:ir.model.fields,help:qms.field_qms_finding_stage_sequence
+#: model:ir.model.fields,help:qms.field_qms_stage_sequence
+msgid "Used to order stages. Lower is better."
+msgstr "Utilizado para ordenar etapas. Menor es mejor."
+
+#. module: qms
+#: model:ir.actions.act_window,name:qms.open_qms_audit_verification_line_list
+msgid "Verification Lines"
+msgstr "Líneas de Verificación"
+
+#. module: qms
+#: model:ir.ui.view,arch_db:qms.view_qms_audit_form
+msgid "Verification List"
+msgstr "Lista de Verificación"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_effectiveness_check_verification_date
+msgid "Verification date"
+msgstr "Fecha de Verificación"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_audit_verification_line_ids
+msgid "Verification line ids"
+msgstr "Líneas de Verificación"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_policy_version
+msgid "Version"
+msgstr "Versión"
+
+#. module: qms
+#: selection:qms.action,complexity:0 selection:qms.hazard,evaluation:0
+#: selection:qms.hazard,impact:0
+msgid "Very High"
+msgstr "Muy Alto"
+
+#. module: qms
+#: selection:qms.action,complexity:0 selection:qms.hazard,impact:0
+msgid "Very Low"
+msgstr "Muy Bajo"
+
+#. module: qms
+#: model:ir.model.fields,field_description:qms.field_qms_effectiveness_check_was_effective
+msgid "Was effective"
+msgstr "¿Fue efectivo?"
+
+#. module: qms
+#: code:addons/qms/models/action.py:112
+#, python-format
+msgid "We cannot bring back the action to draft stage"
+msgstr "Una acción no puede retroceder a borrador"
+
+#. module: qms
+#: model:qms.weakness.cause,name:qms.weakness_cause_work_conditions
+msgid "Work conditions"
+msgstr "Condiciones de trabajo"
+
+#. module: qms
+#: code:addons/qms/models/action.py:122
+#, python-format
+msgid "You should first open the action"
+msgstr "Primero debe abrirse la acción"
+
+#. module: qms
+#: model:ir.ui.view,arch_db:qms.view_qms_action_kanban
+#: model:ir.ui.view,arch_db:qms.view_qms_hazard_kanban
+msgid "oe_kanban_text_red"
+msgstr ""
+
+#. module: qms
+#: model:ir.model,name:qms.model_qms_action_stage
+msgid "qms.action.stage"
+msgstr ""
+
+#. module: qms
+#: model:ir.model,name:qms.model_qms_audit
+msgid "qms.audit"
+msgstr ""
+
+#. module: qms
+#: model:ir.model,name:qms.model_qms_audit_verification_line
+msgid "qms.audit.verification.line"
+msgstr ""
+
+#. module: qms
+#: model:ir.model,name:qms.model_qms_effectiveness_check
+msgid "qms.effectiveness_check"
+msgstr ""
+
+#. module: qms
+#: model:ir.model,name:qms.model_qms_finding
+msgid "qms.finding"
+msgstr ""
+
+#. module: qms
+#: model:ir.model,name:qms.model_qms_finding_milestone
+msgid "qms.finding.milestone"
+msgstr ""
+
+#. module: qms
+#: model:ir.model,name:qms.model_qms_finding_origin
+msgid "qms.finding.origin"
+msgstr ""
+
+#. module: qms
+#: model:ir.model,name:qms.model_qms_finding_stage
+msgid "qms.finding.stage"
+msgstr ""
+
+#. module: qms
+#: model:ir.model,name:qms.model_qms_goal
+msgid "qms.goal"
+msgstr ""
+
+#. module: qms
+#: model:ir.model,name:qms.model_qms_hazard
+msgid "qms.hazard"
+msgstr ""
+
+#. module: qms
+#: model:ir.model,name:qms.model_qms_improvement
+msgid "qms.improvement"
+msgstr ""
+
+#. module: qms
+#: model:ir.model,name:qms.model_qms_interested_party
+msgid "qms.interested_party"
+msgstr ""
+
+#. module: qms
+#: model:ir.model,name:qms.model_qms_non_conformity
+msgid "qms.non_conformity"
+msgstr ""
+
+#. module: qms
+#: model:ir.model,name:qms.model_qms_opportunity
+msgid "qms.opportunity"
+msgstr ""
+
+#. module: qms
+#: model:ir.model,name:qms.model_qms_policy
+msgid "qms.policy"
+msgstr ""
+
+#. module: qms
+#: model:ir.model,name:qms.model_qms_policy_component
+msgid "qms.policy_component"
+msgstr ""
+
+#. module: qms
+#: model:ir.model,name:qms.model_qms_process
+msgid "qms.process"
+msgstr ""
+
+#. module: qms
+#: model:ir.model,name:qms.model_qms_resource
+msgid "qms.resource"
+msgstr ""
+
+#. module: qms
+#: model:ir.model,name:qms.model_qms_stage
+msgid "qms.stage"
+msgstr ""
+
+#. module: qms
+#: model:ir.model,name:qms.model_qms_weakness
+msgid "qms.weakness"
+msgstr ""
+
+#. module: qms
+#: model:ir.model,name:qms.model_qms_weakness_cause
+msgid "qms.weakness.cause"
+msgstr ""
