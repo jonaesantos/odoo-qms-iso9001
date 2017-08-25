@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+# This model is based in some code used in OCA Management System Addons Project
+# Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo import api, fields, models
 
@@ -15,7 +18,6 @@ class Audit(models.Model):
 
     reference = fields.Char(
         readonly=True,
-        default='NEW',
         required=True
     )
 
@@ -29,41 +31,9 @@ class Audit(models.Model):
     closing_date = fields.Datetime(
         readonly=True
     )
-
-    # user_id = fields.Many2one('res.users', 'Audit Manager')
-
-    # auditor_user_ids = fields.Many2many(
-    #     'res.users',
-    #     'qms_auditor_user_rel',
-    #     'user_id',
-    #     'qms_audit_id',
-    #     'Auditors',
-    # )
-    #
-    # auditee_user_ids = fields.Many2many(
-    #     'res.users',
-    #     'qms_auditee_user_rel',
-    #     'user_id',
-    #     'qms_audit_id',
-    #     'Auditees',
-    # )
-
     strong_points = fields.Html('Strong Points')
 
     to_improve_points = fields.Html('Points To Improve')
-
-    # imp_opp_ids = fields.Many2many(
-    #     'qms.action',
-    #     'qms_audit_imp_opp_rel',
-    #     'qms_action_id',
-    #     'qms_audit_id',
-    #     'Improvement Opportunities',
-    # )
-
-    # nonconformity_ids = fields.Many2many(
-    #     'qms.nonconformity',
-    #     string='Nonconformities',
-    # )
 
     state = fields.Selection(
         selection=_states_,

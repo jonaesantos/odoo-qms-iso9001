@@ -65,22 +65,8 @@
                         <field name="reference" />
                         <field name="date"
                                attrs="{'readonly':[('state','=','done')]}" />
-                        <!-- <field name="user_id"
-                               string="Audit Manager"
-                               required="1"
-                               attrs="{'readonly':[('state','=','done')]}" /> -->
                     </group>
                     <notebook>
-                        <page string="Auditors">
-                            <!-- <field name="auditor_user_ids"
-                                   nolabel="True"
-                                   attrs="{'readonly':[('state','=','done')]}" /> -->
-                        </page>
-                        <page string="Auditees">
-                            <!-- <field name="auditee_user_ids"
-                                   nolabel="True"
-                                   attrs="{'readonly':[('state','=','done')]}" /> -->
-                        </page>
                         <page string="Verification List">
                             <field name="verification_line_ids"
                                    nolabel="True"
@@ -95,17 +81,6 @@
                             <field name="to_improve_points"
                                    nolabel="True"
                                    attrs="{'readonly':[('state','=','done')]}" />
-                        </page>
-                        <page string="Improvement Opportunities">
-                            <!-- <field name="imp_opp_ids"
-                                   domain="[('type_action','=','improvement')]"
-                                   nolabel="True"
-                                   attrs="{'readonly':[('state','=','done')]}" /> -->
-                        </page>
-                        <page string="Nonconformities">
-                            <!-- <field name="nonconformity_ids"
-                                   nolabel="True"
-                                   attrs="{'readonly':[('state','=','done')]}" /> -->
                         </page>
                     </notebook>
                 </sheet>
@@ -127,11 +102,11 @@
                       date_start="date"
                       string="Audits">
                 <field name="reference" />
-                <!-- <field name="auditor_user_ids" /> -->
             </calendar>
         </field>
     </record>
 
+    <!-- WINDOW ACTION -->
     <record id="open_qms_audit_list"
             model="ir.actions.act_window">
         <field name="name">Audits</field>

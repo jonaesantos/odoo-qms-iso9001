@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+# This model is based in some code used in OCA Management System Addons Project
+# Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo import fields, models
 
@@ -18,13 +21,6 @@ class Audit_Verification_Line(models.Model):
         ondelete='cascade',
         index=True
     )
-
-    # procedure_id = fields.Many2one(
-    #     'document.page',
-    #     'Procedure',
-    #     ondelete='restrict',
-    #     index=True,
-    # )
 
     is_conformed = fields.Boolean()
 

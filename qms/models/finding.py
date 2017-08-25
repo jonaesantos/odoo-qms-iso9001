@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+# This model is based in some code used in OCA Management System Addons Project
+# Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo import _, api, fields, models
 
@@ -46,14 +49,6 @@ class Finding(models.Model):
         required=True
     )
 
-    # procedure_ids = fields.Many2many(
-    #     'document.page',
-    #     'qms_non_conformity_procedure_rel',
-    #     'non_conformity_id',
-    #     'procedure_id',
-    #     'Procedure',
-    # )
-
     stage_id = fields.Many2one(
         comodel_name='qms.finding.stage',
         copy=False,
@@ -84,8 +79,6 @@ class Finding(models.Model):
     description = fields.Text(
         required=True
     )
-
-    attachment = fields.Binary()
 
     interested_party_id = fields.Many2one(
         comodel_name='qms.interested_party',

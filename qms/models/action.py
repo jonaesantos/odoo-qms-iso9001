@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+# This model is based in some code used in OCA Management System Addons Project
+# Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
@@ -23,7 +26,6 @@ class Action(models.Model):
     ]
 
     def _default_stage(self):
-        """Return the default stage."""
         return self.env['qms.action.stage'].search(
             [('is_starting', '=', True)],
             limit=1
@@ -75,8 +77,7 @@ class Action(models.Model):
 
     reference = fields.Char(
         required=True,
-        readonly=True,
-        default='NEW'
+        readonly=True
     )
 
     complexity = fields.Selection(

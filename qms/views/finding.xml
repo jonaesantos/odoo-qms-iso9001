@@ -29,7 +29,7 @@
                             string="Draft"
                             help="Draft/New findings" />
                     <filter name="pending"
-                            domain="[('state', 'in', ['analysis','pending'])]"
+                            domain="[('state', 'in', ['analysis', 'pending'])]"
                             string="Analysis"
                             help="Findings pending review" />
                     <filter name="current"
@@ -48,14 +48,15 @@
         </field>
     </record>
 
-    <!-- Kanban view -->
+    <!-- KANBAN VIEW -->
     <record id="view_qms_finding_kanban"
             model="ir.ui.view">
         <field name="name">qms.finding.kanban</field>
         <field name="model">qms.finding</field>
         <field name="arch"
                type="xml">
-            <kanban quick_create="false"
+            <kanban name="finding"
+                    quick_create="false"
                     default_group_by="stage_id"
                     class="o_kanban_small_column">
                 <field name="stage_id" />
@@ -63,7 +64,6 @@
                 <field name="name" />
                 <templates>
                     <t t-name="kanban-box">
-
                         <div t-attf-class="#{kanban_color(red)} oe_kanban_global_click">
                             <div class="o_dropdown_kanban dropdown">
 
@@ -84,19 +84,11 @@
                             </div>
                             <div class="oe_kanban_content">
                                 <div>
-                                    <strong><field name="reference"/> - <field name="name"/></strong>
+                                    <strong><field name="reference"/></strong>
                                 </div>
                                 <div>
+                                    <field name="name" />
                                     <br/>
-                                </div>
-                                <div class="oe_kanban_bottom_right">
-                                    <field name="kanban_state"
-                                           widget="kanban_state_selection" />
-                                    <img t-att-src="kanban_image('res.users', 'image_small', record.responsible_user_id.raw_value)"
-                                         t-att-title="record.responsible_user_id.value"
-                                         width="24"
-                                         height="24"
-                                         class="oe_kanban_avatar" />
                                 </div>
                             </div>
                         </div>
@@ -136,34 +128,23 @@
                         <field name="interested_party_id"
                                attrs="{'readonly':[('state','not in',['draft','analysis'])]}" />
                     </group>
-
                     <notebook>
-
                         <page string="Description">
                             <field name="description"
                                    attrs="{'readonly':[('state','not in',['draft','analysis'])]}" />
                         </page>
-
-                        <!-- <page string="Procedures">
-                            <field name="procedure_ids"
-                                   attrs="{'readonly':[('state','not in',['draft','analysis'])]}"
-                                   domain="[('parent_id','in',('Procedure','Environmental Aspect','Manuals'))]" />
-                        </page> -->
-
                         <page string="Related Audits"
                               groups="base.group_extended,qms.group_qms_auditor">
                             <field name="audit_ids"
                                    colspan="4"
                                    nolabel="1" />
                         </page>
-
                         <page name="actions"
                               string="Actions"
                               attrs="{'invisible':[('state','in',['draft','analysis','cancel'])]}">
                             <separator string="Action Plan" />
                             <field name="action_ids"
                                    attrs="{'readonly':[('state','not in',['pending'])]}" />
-
                             <group string="Plan Review">
                                 <group>
                                     <field name="action_plan_comments"
@@ -172,7 +153,6 @@
                                            placeholder="Action Plan Comments" />
                                 </group>
                             </group>
-
                             <group attrs="{'invisible':[('state','not in',['open','done'])]}"
                                    string="Effectiveness Review">
                                 <group>
@@ -183,10 +163,8 @@
                                 </group>
                             </group>
                         </page>
-
                     </notebook>
                 </sheet>
-
             </form>
         </field>
     </record>
