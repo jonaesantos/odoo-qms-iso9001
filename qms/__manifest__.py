@@ -20,7 +20,7 @@
         'data/action_sequence.xml',
         'data/audit_sequence.xml',
         'data/non_conformity_sequence.xml',
-        'data/improvement_sequence.xml',
+        'data/opportunity_sequence.xml',
         'data/action_stage.xml',
         'data/weakness_cause.xml',
         'data/finding_origin.xml',
@@ -41,7 +41,7 @@
         'views/finding_stage.xml',
         'views/finding.xml',
         'views/non_conformity.xml',
-        'views/improvement.xml',
+        'views/opportunity.xml',
         'views/menu.xml'
     ],
     'demo': [],

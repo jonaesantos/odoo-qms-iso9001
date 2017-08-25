@@ -3,15 +3,15 @@
 from odoo import api, models
 
 
-class Improvement(models.Model):
+class Opportunity(models.Model):
 
-    _name = "qms.improvement"
+    _name = "qms.opportunity"
     _inherit = ['qms.finding']
 
     @api.model
     def create(self, vals):
         vals.update({
             'reference': self.env['ir.sequence'].next_by_code(
-                'qms.improvement')
+                'qms.opportunity')
         })
-        return super(Improvement, self).create(vals)
+        return super(Opportunity, self).create(vals)

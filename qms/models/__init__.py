@@ -20,4 +20,4 @@ import policy
 import policy_component
 import process
 import resource
-import improvement
+import opportunity

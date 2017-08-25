@@ -61,10 +61,10 @@
               action="open_qms_non_conformity_list"
               sequence="5" />
 
-    <menuitem id="menu_open_improvement"
-              name="Improvements"
+    <menuitem id="menu_open_opportunity"
+              name="Opportunities"
               parent="qms.menu_open_finding"
-              action="open_qms_improvement_list"
+              action="open_qms_opportunity_list"
               sequence="10" />
 
     <menuitem id="menu_config_action"
