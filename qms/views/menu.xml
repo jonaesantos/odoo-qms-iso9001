@@ -62,7 +62,7 @@
               sequence="5" />
 
     <menuitem id="menu_open_improvement"
-              name="Improvement"
+              name="Improvements"
               parent="qms.menu_open_finding"
               action="open_qms_improvement_list"
               sequence="10" />

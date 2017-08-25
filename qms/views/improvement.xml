@@ -3,7 +3,7 @@
     <!-- WINDOW ACTION -->
     <record model="ir.actions.act_window"
             id="open_qms_improvement_list">
-        <field name="name">Improvement</field>
+        <field name="name">Improvements</field>
         <field name="res_model">qms.improvement</field>
         <field name="view_type">form</field>
         <field name="view_mode">kanban,tree,form</field>
