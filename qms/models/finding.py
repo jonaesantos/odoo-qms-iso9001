@@ -95,11 +95,6 @@ class Finding(models.Model):
         string='Related Audits'
     )
 
-    @api.multi
-    def _get_all_actions(self):
-        self.ensure_one()
-        return (self.action_ids + self.immediate_action_id)
-
     @api.constrains('stage_id')
     def _check_open_with_action_comments(self):
         for finding in self:
@@ -120,7 +115,7 @@ class Finding(models.Model):
                     )
                 actions_are_closed = (
                     action.stage_id.is_ending
-                    for action in finding._get_all_actions())
+                    for action in finding.action_ids)
                 if not all(actions_are_closed):
                     raise models.ValidationError(
                         _("All actions must be done \
@@ -154,7 +149,7 @@ class Finding(models.Model):
                     finding.closing_date = None
                 # On action plan approval open the actions
                 if finding.state == 'open' and was_not_open[finding.id]:
-                    for action in finding._get_all_actions():
+                    for action in finding.action_ids:
                         if action.stage_id.is_starting:
                             action.case_open()
         return result
