@@ -1,43 +1,41 @@
 <odoo>
 
     <!-- TREE VIEW -->
-    <record id="view_qms_resource_tree"
+    <record id="view_qms_review_tree"
             model="ir.ui.view">
-        <field name="name">qms.resource.tree</field>
-        <field name="model">qms.resource</field>
+        <field name="name">qms.review.tree</field>
+        <field name="model">qms.review</field>
         <field name="type">tree</field>
         <field name="arch"
                type="xml">
             <tree>
                 <field name="name" />
-                <field name="resource_type" />
+                <field name="date" />
                 <field name="responsible_id" />
-                <field name="state" />
+                <field name="conclusion" />
             </tree>
         </field>
     </record>
 
     <!-- FORM VIEW -->
-    <record id="view_qms_resource_form"
+    <record id="view_qms_review_form"
             model="ir.ui.view">
-        <field name="name">qms.resource.form</field>
-        <field name="model">qms.resource</field>
+        <field name="name">qms.review.form</field>
+        <field name="model">qms.review</field>
         <field name="arch"
                type="xml">
             <form>
-                <header>
-                    <field name="state"
-                           widget="statusbar"
-                           clickable="True" />
-                </header>
                 <sheet>
                     <group>
                         <group>
                             <field name="name" />
                         </group>
                         <group>
-                            <field name="resource_type" />
-                            <field name="responsible_id" />
+                            <field name="date" />
+                            <field name="responsible_id" />                            
+                        </group>
+                        <group>
+                            <field name="conclusion" />
                         </group>
                     </group>
                 </sheet>

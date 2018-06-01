@@ -135,7 +135,7 @@
         <field name="name">Hazards</field>
         <field name="res_model">qms.hazard</field>
         <field name="view_type">form</field>
-        <field name="view_mode">kanban,tree,form</field>
+        <field name="view_mode">tree,form,kanban</field>
     </record>
 
 </odoo>

@@ -18,6 +18,11 @@ class Resource(models.Model):
         ('not_available', 'Not Available')
     ]
 
+    responsible_id = fields.Many2one(
+        comodel_name='qms.interested_party',
+        required=True
+    )    
+
     name = fields.Char(
         required=True
     )

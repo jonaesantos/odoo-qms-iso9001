@@ -8,28 +8,29 @@ class Hazard(models.Model):
     _name = "qms.hazard"
 
     _probabilities_ = [
-        (1, 'Rare'),
-        (2, 'Improbable'),
-        (3, 'Possible'),
-        (4, 'Probable'),
-        (5, 'Almost Sure')
+        (1, 'Very Low (Rare)'),
+        (2, 'Low (Improbable)'),
+        (3, 'Medium (Possible)'),
+        (4, 'High Medium (Probable)'),
+        (5, 'Very High (Almost Sure)')
     ]
 
     _impacts_ = [
-        (1, 'Very Low'),
-        (2, 'Low'),
-        (3, 'Medium'),
-        (4, 'High'),
-        (5, 'Very High')
+        (1, 'Very Low (Rare)'),
+        (2, 'Low (Improbable)'),
+        (3, 'Medium (Possible)'),
+        (4, 'High Medium (Probable)'),
+        (5, 'Very High (Almost Sure)')
     ]
 
     _strategies_ = [
-        ('avoid', 'Avoid'),
-        ('prevent', 'Prevent'),
-        ('protect', 'Protect'),
         ('accept', 'Accept'),
-        ('hold', 'Hold'),
-        ('transfer', 'Transfer')
+        ('watch', 'Watch'),
+        ('evitar', 'Avoid'),
+        ('transfer', 'Transfer'),
+        ('reduce', 'Reduce'),
+        ('share', 'Share'),
+        ('palliate', 'Palliate')
     ]
 
     _states_ = [

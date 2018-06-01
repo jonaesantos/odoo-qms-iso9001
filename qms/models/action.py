@@ -14,7 +14,8 @@ class Action(models.Model):
 
     _response_types_ = [
         ('immediate', 'Immediate Action'),
-        ('correction', 'Corrective Action')
+        ('correction', 'Corrective Action'),
+        ('goal', 'Goal')
     ]
 
     _complexity_levels_ = [
@@ -52,11 +53,11 @@ class Action(models.Model):
     )
 
     opening_date = fields.Datetime(
-        readonly=True
+        readonly=False
     )
 
     date_closed = fields.Datetime(
-        readonly=True
+        readonly=False
     )
 
     description = fields.Html()
@@ -76,7 +77,7 @@ class Action(models.Model):
     )
 
     reference = fields.Char(
-        required=True,
+        required=False,
         readonly=True
     )
 
@@ -93,11 +94,19 @@ class Action(models.Model):
     effectiveness_check_ids = fields.One2many(
         comodel_name='qms.effectiveness_check',
         inverse_name='action_id',
-        required=True
+        required=False
     )
 
     @api.model
     def create(self, vals):
+        print
+        print
+        print "dentro de ............."
+        print
+        print
+        print
+        print
+        print
         seq = self.env['ir.sequence']
         vals['reference'] = seq.next_by_code('qms.action')
         action = super(Action, self).create(vals)
@@ -105,37 +114,82 @@ class Action(models.Model):
 
     @api.multi
     def write(self, vals):
-        if vals.get('stage_id'):
-            if vals['stage_id'] == self._get_stage_new().id:
-                if self.opening_date:
-                    raise ValidationError(
-                        _('We cannot bring back the action to draft stage')
-                    )
-                vals['cancel_date'] = None
-            if vals['stage_id'] == self.env.ref('qms.stage_open').id:
-                vals['opening_date'] = fields.Datetime.now()
-                vals['date_closed'] = None
-                vals['cancel_date'] = None
-            if vals['stage_id'] == self.env.ref('qms.stage_close').id:
-                if not self.opening_date or self.cancel_date:
-                    raise ValidationError(
-                        _('You should first open the action')
-                    )
-                vals['date_closed'] = fields.Datetime.now()
-            if vals['stage_id'] == self.env.ref('qms.stage_cancel').id:
-                vals['date_closed'] = None
-                vals['opening_date'] = None
-                vals['cancel_date'] = fields.Datetime.now()
+        print
+        print
+        print "dentro de <<<"
+        print vals.get('stage_id')
+        print
+        print
+        print
+        print
+        print
+        # if vals.get('stage_id'):
+        #     if vals['stage_id'] == self._get_stage_new().id:
+        #         print
+        #         print
+        #         print "dentro de _get_stage_new()"
+        #         print
+        #         print
+        #         print
+        #         print
+        #         print
+            #     if self.opening_date:
+            #         raise ValidationError(
+            #             _('We cannot bring back the action to draft stage')
+            #         )
+            #     vals['cancel_date'] = None
+            # if vals['stage_id'] == self.env.ref('qms.stage_open').id:
+            #     print
+            #     print
+            #     print "dentro de open"
+            #     print
+            #     print
+            #     print
+            #     print
+            #     print
+            #     vals['opening_date'] = fields.Datetime.now()
+            #     vals['date_closed'] = None
+            #     vals['cancel_date'] = None
+            # if vals['stage_id'] == self.env.ref('qms.stage_close').id:
+            #     print
+            #     print
+            #     print "dentro de close"
+            #     print
+            #     print
+            #     print
+            #     print
+            #     print
+            #     if not self.opening_date or self.cancel_date:
+            #         raise ValidationError(
+            #             _('You should first open the action')
+            #         )
+            #     vals['date_closed'] = fields.Datetime.now()
+            # if vals['stage_id'] == self.env.ref('qms.stage_cancel').id:
+            #     vals['date_closed'] = None
+            #     vals['opening_date'] = None
+            #     vals['cancel_date'] = fields.Datetime.now()
         return super(Action, self).write(vals)
 
     @api.model
     def _stage_groups(self, stages, domain, order):
+        print
+        print
+        print "dentro de _stage_groups"
+        print
+        print
+        print
+        print
+        print
         stage_ids = self.env['qms.action.stage'].search([])
         return stage_ids
 
     @api.model
     def _get_stage_new(self):
-        return self.env['qms.action.stage'].search(
-            [('is_starting', '=', True)],
-            limit=1
-        )
+        print
+        print
+        print "dentro de _get_stage_new 2"
+        print
+        #return self.env['qms.action.stage'].search(
+        #    [('is_starting', '=', True)],
+        #    limit=1
+        return self.env['qms.action.stage'].search([])

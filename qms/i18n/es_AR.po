@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * qms
-# 
+#
 # Translators:
 # Lisandro <lisandrogallo@tmcrosario.gov.ar>, 2017
 msgid ""

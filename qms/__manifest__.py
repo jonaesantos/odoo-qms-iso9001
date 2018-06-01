@@ -26,6 +26,7 @@
         'data/finding_origin.xml',
         'data/finding_stage.xml',
         'views/policy.xml',
+        'views/review.xml',
         'views/interested_party.xml',
         'views/resource.xml',
         'views/goal.xml',

@@ -11,9 +11,23 @@ class Goal(models.Model):
         required=True
     )
 
-    date = fields.Date()
+    date_open = fields.Date()
+
+    date_close = fields.Date()
 
     approved = fields.Boolean()
+
+    _state_ = [
+        ('draft', 'Draft'),
+        ('open', 'Open'),
+        ('closed', 'Closed'),
+        ('cancelled', 'Cancelled')
+    ]
+
+    responsible_id = fields.Many2one(
+        comodel_name='qms.interested_party',
+        required=True
+    )
 
     policy_component_ids = fields.Many2many(
         comodel_name='qms.policy_component',
@@ -28,6 +42,37 @@ class Goal(models.Model):
     resource_ids = fields.Many2many(
         comodel_name='qms.resource'
     )
+
+    action_ids = fields.Many2many(
+        comodel_name='qms.action'
+    )
+
+    state = fields.Selection(
+        selection=_state_,
+        default='draft',
+        required=True
+    )
+
+    review_ids = fields.One2many(
+        comodel_name='qms.review',
+        inverse_name='goal_id'
+    )
+
+    last_review_date = fields.Date(compute='_compute_last_review_date')
+
+    @api.multi
+    @api.depends('review_ids')
+    def _compute_last_review_date(self):
+        for goal in self:
+            domain = [
+                ('goal_id', '=', goal.id),
+                #('modify_concession', '=', True)
+            ]
+            related_reviews = goal.env['qms.review'].search(domain)
+            last_review = related_reviews.sorted(
+                key=lambda r: r.date,
+                reverse=True)
+            goal.last_review_date = last_review[0].date
 
     @api.one
     def toggle_approved(self):

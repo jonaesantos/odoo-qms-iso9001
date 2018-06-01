@@ -10,7 +10,11 @@
                type="xml">
             <tree>
                 <field name="name" />
-                <field name="date" />
+                <field name="date_open" />
+                <field name="date_close" />
+                <field name="responsible_id" />
+                <field name="state" />
+                <field name="last_review_date" />                
                 <field name="approved" />
             </tree>
         </field>
@@ -46,7 +50,16 @@
                     </div>
                     <group>
                         <group>
-                            <field name="date" />
+                            <field name="date_open" />
+                            <field name="responsible_id" />
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="state" />
+                        </group>
+                        <group>
+                            <field name="date_close" />
                         </group>
                     </group>
                     <notebook>
@@ -58,6 +71,14 @@
                         </page>
                         <page string="Components">
                             <field name="policy_component_ids" />
+                        </page>
+                        <page string="Actions"
+                              name="actions">
+                            <field name="action_ids"
+                                   nolabel="1" />
+                        </page>
+                        <page string="Reviews">
+                            <field name="review_ids" />
                         </page>
                     </notebook>
                 </sheet>
