@@ -46,7 +46,7 @@
                type="xml">
             <tree name="finding"
                   position="attributes">
-                <attribute name="string">Non Conformity</attribute>
+               <attribute name="string">Non Conformity</attribute>
             </tree>
         </field>
     </record>

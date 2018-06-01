@@ -7,6 +7,7 @@
         <field name="arch"
                type="xml">
             <tree name="finding">
+                <field name="id" />
                 <field name="reference" />
                 <field name="create_date" />
                 <field name="description" />
