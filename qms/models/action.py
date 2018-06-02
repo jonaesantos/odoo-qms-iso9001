@@ -116,7 +116,7 @@ class Action(models.Model):
     def write(self, vals):
         print
         print
-        print "dentro de <<<"
+        print "dentro de <<<<"
         print vals.get('stage_id')
         print
         print
