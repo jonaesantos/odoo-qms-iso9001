@@ -28,12 +28,17 @@
     <menuitem id="menu_open_policy"
               action="open_qms_policy_list"
               parent="qms.menu_qms_main"
-              sequence="5" />
+              sequence="5" />             
 
     <menuitem id="menu_open_goal"
               action="open_qms_goal_list"
               parent="qms.menu_qms_main"
               sequence="10" />
+
+    <menuitem id="menu_open_process"
+              action="open_qms_process_list"
+              parent="qms.menu_qms_main"
+              sequence="13" />
 
     <menuitem id="menu_open_hazard"
               action="open_qms_hazard_list"

@@ -1,0 +1,45 @@
+<odoo>
+
+    <!-- TREE VIEW -->
+    <record id="view_qms_process_tree"
+            model="ir.ui.view">
+        <field name="name">qms.process.tree</field>
+        <field name="model">qms.process</field>
+        <field name="type">tree</field>
+        <field name="arch"
+               type="xml">
+            <tree>
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- FORM VIEW -->
+    <record id="view_qms_process_form"
+            model="ir.ui.view">
+        <field name="name">qms.process.form</field>
+        <field name="model">qms.process</field>
+        <field name="arch"
+               type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- WINDOW ACTION -->
+    <record id="open_qms_process_list"
+            model="ir.actions.act_window">
+        <field name="name">Process</field>
+        <field name="res_model">qms.process</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>
