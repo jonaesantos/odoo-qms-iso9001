@@ -17,8 +17,8 @@ class Audit(models.Model):
     ]
 
     reference = fields.Char(
-        readonly=True,
-        required=True
+        readonly=False,
+        required=False
     )
 
     date = fields.Datetime()
