@@ -19,6 +19,8 @@ class Review(models.Model):
 
     goal_id = fields.Many2one(comodel_name='qms.goal')
 
+    process_id = fields.Many2one(comodel_name='qms.process')
+
     responsible_id = fields.Many2one(
         comodel_name='qms.interested_party',
         required=False

@@ -21,7 +21,7 @@ class Resource(models.Model):
     responsible_id = fields.Many2one(
         comodel_name='qms.interested_party',
         required=True
-    )    
+    )
 
     name = fields.Char(
         required=True
