@@ -135,7 +135,7 @@ class Finding(models.Model):
 
         print
         print
-        print "dentro de write"
+        print "dentro de write ..."
         print
         print
         print
@@ -153,7 +153,7 @@ class Finding(models.Model):
             for finding in self:
                 if finding.kanban_state != 'normal':
                     vals['kanban_state'] = 'normal'
-
+                    print "dentro de write pp 1..."
         result = super(Finding, self).write(vals)
 
         # Set/reset the closing date
@@ -166,8 +166,9 @@ class Finding(models.Model):
                 if finding.state != 'done' and finding.closing_date:
                     finding.closing_date = None
                 # On action plan approval open the actions
-                if finding.state == 'open' and was_not_open[finding.id]:
-                    for action in finding.action_ids:
-                        if action.stage_id.is_starting:
-                            action.case_open()
+
+                # if finding.state == 'open' and was_not_open[finding.id]:
+                #     for action in finding.action_ids:
+                #         if action.stage_id.is_starting:
+                #             action.case_open()
         return result

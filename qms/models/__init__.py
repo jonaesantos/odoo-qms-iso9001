@@ -11,6 +11,7 @@ import finding
 import weakness_cause
 import weakness
 import non_conformity
+import observation
 import finding_origin
 import finding_stage
 import goal

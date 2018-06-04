@@ -23,7 +23,7 @@ class Action(models.Model):
         ('medium', 'Medium'),
         ('high', 'High'),
         ('very_high', 'Very High')
-]    
+    ]    
 
     def _default_stage(self):
         return self.env['qms.action.stage'].search(

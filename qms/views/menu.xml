@@ -28,7 +28,7 @@
     <menuitem id="menu_open_policy"
               action="open_qms_policy_list"
               parent="qms.menu_qms_main"
-              sequence="5" />             
+              sequence="5" />
 
     <menuitem id="menu_open_goal"
               action="open_qms_goal_list"
@@ -65,6 +65,12 @@
               parent="qms.menu_open_finding"
               action="open_qms_non_conformity_list"
               sequence="5" />
+
+    <menuitem id="menu_open_observation"
+              name="Observations"
+              parent="qms.menu_open_finding"
+              action="open_qms_observation_list"
+              sequence="7" />
 
     <menuitem id="menu_open_opportunity"
               name="Opportunities"

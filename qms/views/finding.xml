@@ -12,6 +12,7 @@
                 <field name="create_date" />
                 <field name="description" />
                 <field name="stage_id" />
+                <field name="closing_date" />
             </tree>
         </field>
     </record>
