@@ -44,6 +44,12 @@ class Process(models.Model):
         default='enabled'
     )
 
+    description = fields.Html()
+
+    inputs = fields.Html()
+
+    outputs = fields.Html()
+
     last_review_date = fields.Date(compute='_compute_last_review_date')
 
     @api.multi
