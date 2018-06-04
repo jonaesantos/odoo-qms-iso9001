@@ -9,12 +9,12 @@
         <field name="arch"
                type="xml">
             <tree>
-                <field name="id" />
                 <field name="name" />
                 <field name="probability" />
                 <field name="impact" />
                 <field name="strategy" />
                 <field name="state" />
+                <field name="last_review_date" />                
             </tree>
         </field>
     </record>
@@ -40,7 +40,12 @@
                     </div>
                     <group>
                         <group>
+                            <field name="number"/>
                             <field name="date" />
+                        </group>
+                        <group>
+                            <field name="type_risk" />
+                            <field name="factor" />
                         </group>
                         <group>
                             <field name="probability" />
@@ -55,10 +60,20 @@
                         </group>
                     </group>
                     <notebook>
+                        <page string="Description">
+                            <field name="description"
+                                   nolabel="True" />
+                        </page>
                         <page string="Processes"
                               name="processes">
                             <field name="process_ids"
                                    nolabel="1" />
+                        </page>
+                        <page string="Causes/Consequences">
+                            <separator string="Causes" />
+                            <field name="causes" />
+                            <separator string="Consequences" />
+                            <field name="consequences" />
                         </page>
                         <page string="Policies Components"
                               name="policy_components">
@@ -69,6 +84,9 @@
                               name="actions">
                             <field name="action_ids"
                                    nolabel="1" />
+                        </page>
+                        <page string="Reviews">
+                            <field name="review_ids" />
                         </page>
                     </notebook>
                 </sheet>

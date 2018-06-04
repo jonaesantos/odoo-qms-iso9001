@@ -14,8 +14,7 @@ class Action(models.Model):
 
     _response_types_ = [
         ('immediate', 'Immediate Action'),
-        ('correction', 'Corrective Action'),
-        ('goal', 'Goal')
+        ('correction', 'Corrective Action')
     ]
 
     _complexity_levels_ = [
@@ -24,7 +23,7 @@ class Action(models.Model):
         ('medium', 'Medium'),
         ('high', 'High'),
         ('very_high', 'Very High')
-    ]
+]    
 
     def _default_stage(self):
         return self.env['qms.action.stage'].search(

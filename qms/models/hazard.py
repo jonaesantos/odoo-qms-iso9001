@@ -1,11 +1,15 @@
 # -*- coding: utf-8 -*-
 
-from odoo import api, fields, models
+from odoo import api, fields, models, _
 
 
 class Hazard(models.Model):
 
     _name = "qms.hazard"
+
+    _description = "Action"
+
+    number = fields.Integer()
 
     _probabilities_ = [
         (1, 'Very Low (Rare)'),
@@ -33,6 +37,16 @@ class Hazard(models.Model):
         ('palliate', 'Palliate')
     ]
 
+    _strategies_ = [
+        ('accept', 'Accept'),
+        ('watch', 'Watch'),
+        ('evitar', 'Avoid'),
+        ('transfer', 'Transfer'),
+        ('reduce', 'Reduce'),
+        ('share', 'Share'),
+        ('palliate', 'Palliate')
+    ]
+
     _states_ = [
         ('draft', 'Draft'),
         ('open', 'Open'),
@@ -46,6 +60,56 @@ class Hazard(models.Model):
         ('high', 'High'),
         ('very_high', 'Very High')
     ]
+
+    _complexity_levels_ = [
+        ('very_low', 'Very Low'),
+        ('low', 'Low'),
+        ('medium', 'Medium'),
+        ('high', 'High'),
+        ('very_high', 'Very High')
+    ]
+
+    _types_risks_ = [
+        ('strategic', 'Estratégico'),
+        ('image', 'Imagen'),
+        ('operative', 'Operativo'),
+        ('financial', 'Financiero'),
+        ('compliance', 'Cumplimiento'),
+        ('technological', 'Tecnológico'),
+        ('corruption', 'Corrupción'),
+        ('information', 'Información')
+    ]
+
+    _factors_ = [
+        ('e_economic', 'Económicos (e)'),
+        ('e_politicians', 'Políticos (e)'),
+        ('e_social', 'Sociales (e)'),
+        ('e_technological', 'Tecnológicos (e)'),
+        ('e_enviroment', 'Ambientales (e)'),
+        ('e_communication', 'Comunicación (e)'),
+        ('i_financial', 'Financiero (i)'),
+        ('i_personal', 'Personal (i)'),
+        ('i_technological', 'Procesos (i)'),
+        ('i_strategic', 'Tecnológicos (i)'),
+        ('i_communication', 'Estratégicos (i)'),
+        ('i_factors', 'Comunicación (i)')
+    ]
+
+    description = fields.Html()
+
+    causes = fields.Html()
+
+    consequences = fields.Html()
+
+    type_risk = fields.Selection(
+        selection=_types_risks_,
+        required=False
+    )
+
+    factor = fields.Selection(
+        selection=_factors_,
+        required=False
+    )
 
     @api.one
     @api.depends('probability',
@@ -74,23 +138,23 @@ class Hazard(models.Model):
 
     probability = fields.Selection(
         selection=_probabilities_,
-        required=True
+        required=False
     )
 
     impact = fields.Selection(
         selection=_impacts_,
-        required=True
+        required=False
     )
 
     strategy = fields.Selection(
         selection=_strategies_,
-        required=True
+        required=False
     )
 
     state = fields.Selection(
         selection=_states_,
         default='draft',
-        required=True
+        required=False
     )
 
     evaluation = fields.Selection(
@@ -106,14 +170,40 @@ class Hazard(models.Model):
 
     process_ids = fields.Many2many(
         comodel_name='qms.process',
-        required=True
+        required=False
     )
 
     policy_component_ids = fields.Many2many(
         comodel_name='qms.policy_component',
-        required=True
+        required=False
     )
 
     action_ids = fields.Many2many(
         comodel_name='qms.action'
     )
+
+    review_ids = fields.One2many(
+        comodel_name='qms.review',
+        inverse_name='hazard_id'
+    )
+
+    last_review_date = fields.Date(compute='_compute_last_review_date')
+
+    @api.multi
+    @api.depends('review_ids')
+    def _compute_last_review_date(self):
+        for hazard in self:
+            domain = [
+                ('hazard_id', '=', hazard.id),
+                #('modify_concession', '=', True)
+            ]
+            related_reviews = hazard.env['qms.review'].search(domain)
+            last_review = related_reviews.sorted(
+                key=lambda r: r.date,
+                reverse=True)
+            hazard.last_review_date = last_review[0].date
+
+
+    _sql_constraints = [
+        ('number_uniq', 'unique(number)', 'Number must be unique'),
+    ]
