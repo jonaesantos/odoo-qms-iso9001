@@ -43,6 +43,34 @@
         </field>
     </record>
 
+    <!-- KANBAN VIEW -->
+    <record id="view_qms_opportunity_kanban"
+            model="ir.ui.view">
+        <field name="name">qms.opportunity.kanban</field>
+        <field name="type">kanban</field>
+        <field name="model">qms.opportunity</field>
+        <field name="inherit_id"
+               ref="qms.view_qms_finding_kanban" />
+        <field name="arch"
+               type="xml">
+            <kanban name="finding"
+                    position="attributes">
+                <attribute name="string">Opportunity</attribute>
+            </kanban>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window.view"
+            id="action_qms_opportunity_kanban">
+        <field name="sequence"
+               eval="1" />
+        <field name="view_mode">kanban</field>
+        <field name="view_id"
+               ref="view_qms_opportunity_kanban" />
+        <field name="act_window_id"
+               ref="open_qms_opportunity_list" />
+    </record>
+
     <record model="ir.actions.act_window.view"
             id="action_qms_opportunity_tree">
         <field name="sequence"

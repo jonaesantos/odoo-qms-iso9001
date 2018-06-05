@@ -10,6 +10,7 @@
                type="xml">
             <tree>
                 <field name="id" />
+                <field name="reference" />
                 <field name="name" />
                 <field name="response_type" />
                 <field name="complexity" />

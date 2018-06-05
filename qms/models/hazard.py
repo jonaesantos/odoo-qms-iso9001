@@ -44,7 +44,6 @@ class Hazard(models.Model):
         ('transfer', 'Transfer'),
         ('reduce', 'Reduce'),
         ('share', 'Share'),
-        ('palliate', 'Palliate')
     ]
 
     _states_ = [

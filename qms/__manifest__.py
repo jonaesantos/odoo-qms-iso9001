@@ -21,6 +21,7 @@
         'data/audit_sequence.xml',
         'data/non_conformity_sequence.xml',
         'data/opportunity_sequence.xml',
+        'data/complaint_sequence.xml',
         'data/observation_sequence.xml',
         'data/action_stage.xml',
         'data/weakness_cause.xml',
@@ -45,6 +46,7 @@
         'views/finding.xml',
         'views/non_conformity.xml',
         'views/observation.xml',
+        'views/complaint.xml',
         'views/opportunity.xml',
         'views/menu.xml'
     ],

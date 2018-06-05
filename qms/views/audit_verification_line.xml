@@ -11,6 +11,7 @@
             <tree>
                 <field name="seq" />
                 <field name="name" />
+                <field name="point_norm" />
                 <field name="is_conformed" />
                 <field name="comments" />
             </tree>
@@ -29,6 +30,7 @@
                 <group>
                     <field name="seq" />
                     <field name="name" />
+                    <field name="point_norm" />
                     <field name="is_conformed" />
                     <field name="comments" />
                 </group>
@@ -48,6 +50,8 @@
                 <group colspan="4"
                        col="4">
                     <field name="name" />
+                    <newline/>
+                    <field name="point_norm" />
                     <field name="is_conformed" />
                     <newline/>
                     <field name="seq" />

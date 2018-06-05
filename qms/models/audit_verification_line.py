@@ -16,6 +16,11 @@ class Audit_Verification_Line(models.Model):
         required=True
     )
 
+    point_norm = fields.Char(
+        string='Point of the norm',
+        required=True
+    )
+
     audit_id = fields.Many2one(
         comodel_name='qms.audit',
         ondelete='cascade',

@@ -2,12 +2,16 @@
 <odoo>
     <data noupdate="1">
 
+        <record id="finding_origin_objetives" model="qms.finding.origin">
+            <field name="name">Objetives</field>
+        </record>
+
         <record id="finding_origin_qc" model="qms.finding.origin">
             <field name="name">Quality Committee</field>
         </record>
 
         <record id="finding_origin_dr" model="qms.finding.origin">
-            <field name="name">Direction Review</field>
+            <field name="name">Revisión por la Dirección</field>
         </record>
 
         <record id="finding_origin_internal_client" model="qms.finding.origin">
@@ -18,8 +22,16 @@
             <field name="name">External client complaint</field>
         </record>
 
+        <record id="finding_origin_provider_complaint" model="qms.finding.origin">
+            <field name="name">Provider complaint</field>
+        </record>
+
         <record id="finding_origin_process" model="qms.finding.origin">
             <field name="name">Process Execution</field>
+        </record>
+
+        <record id="finding_origin_deadline" model="qms.finding.origin">
+            <field name="name">Deadline</field>
         </record>
 
         <record id="finding_origin_internal_audit" model="qms.finding.origin">
@@ -28,6 +40,14 @@
 
         <record id="finding_origin_extenal_audit" model="qms.finding.origin">
             <field name="name">External Audit</field>
+        </record>
+
+        <record id="finding_origin_command_board" model="qms.finding.origin">
+            <field name="name">Command Board</field>
+        </record>
+
+        <record id="finding_origin_training" model="qms.finding.origin">
+            <field name="name">Training</field>
         </record>
 
     </data>

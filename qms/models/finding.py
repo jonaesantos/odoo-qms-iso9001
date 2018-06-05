@@ -42,6 +42,11 @@ class Finding(models.Model):
 
     name = fields.Char()
 
+    claimant_id = fields.Many2one(
+        comodel_name='qms.interested_party',
+        required=True
+    )
+
     reference = fields.Char(
         required=True,
         readonly=True,

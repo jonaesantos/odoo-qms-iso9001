@@ -127,6 +127,8 @@
                         <field name="origin_ids"
                                widget="many2many_tags"
                                attrs="{'readonly':[('state','not in',['draft','analysis'])]}" />
+                        <field name="claimant_id"
+                               attrs="{'readonly':[('state','not in',['draft','analysis'])]}" />
                         <field name="interested_party_id"
                                attrs="{'readonly':[('state','not in',['draft','analysis'])]}" />
                     </group>
