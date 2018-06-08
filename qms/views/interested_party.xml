@@ -10,6 +10,10 @@
             <tree>
                 <field name="name" />
                 <field name="interested_party_type" />
+                <field name="power" />
+                <field name="interest" />
+                <field name="cooperation" />
+                <field name="impact" />                
             </tree>
         </field>
     </record>
@@ -52,7 +56,21 @@
                             <field name="organization_id" />
                             <field name="area" />
                         </group>
+                        <group attrs="{'invisible':[('is_organization', '=', False)]}">
+                            <field name="power" />
+                            <field name="interest" />
+                            <field name="cooperation" />
+                            <field name="impact" />
+                        </group>
                     </group>
+                    <notebook position="inside">
+                        <page name="requeriments" string="Requeriments Interested Party" attrs="{'invisible': [('is_organization', '=', False)]}">
+                            <field name="requeriments_interested_party" />
+                        </page>
+                        <page name="interest_tmc" string="Interest TMC" attrs="{'invisible': [('is_organization', '=', False)]}">
+                            <field name="interest_tmc" />
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>

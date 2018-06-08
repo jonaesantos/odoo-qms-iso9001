@@ -57,7 +57,7 @@
                             type="object" />
                     <field name="state"
                            widget="statusbar"
-                           readonly="True" />
+                           clickable="True" />
                 </header>
                 <sheet>
                     <group col="4"
@@ -65,22 +65,42 @@
                         <field name="reference" />
                         <field name="date"
                                attrs="{'readonly':[('state','=','done')]}" />
+                        <field name="system" />
+                    </group>
+                    <group>
+
                     </group>
                     <notebook>
+                        <page string="Auditors">
+                            <field name="auditors_ids" />
+                        </page>
                         <page string="Verification List">
                             <field name="verification_line_ids"
                                    nolabel="True"
                                    attrs="{'readonly':[('state','=','done')]}" />
+                        </page>
+                        <page string="Audited">
+                            <field name="audited_ids" />
                         </page>
                         <page string="Strong Points">
                             <field name="strong_points"
                                    nolabel="True"
                                    attrs="{'readonly':[('state','=','done')]}" />
                         </page>
-                        <page string="To Improve Points">
-                            <field name="to_improve_points"
-                                   nolabel="True"
-                                   attrs="{'readonly':[('state','=','done')]}" />
+                        <page string="NC"
+                              name="non_conformitys">
+                            <field name="non_conformity_ids"
+                                   nolabel="1" />
+                        </page>
+                        <page string="OBS"
+                              name="observations">
+                            <field name="observation_ids"
+                                   nolabel="1" />
+                        </page>
+                        <page string="OM"
+                              name="opportunitys">
+                            <field name="opportunity_ids"
+                                   nolabel="1" />
                         </page>
                     </notebook>
                 </sheet>

@@ -51,4 +51,31 @@
         </field>
     </record>
 
+    <!--CALENDAR VIEW -->
+    <record id="view_qms_effectiveness_check_calendar"
+            model="ir.ui.view">
+        <field name="name">qms.effectiveness_check.calendar</field>
+        <field name="model">qms.effectiveness_check</field>
+        <field name="type">calendar</field>
+        <field eval="2"
+               name="priority" />
+        <field name="arch"
+               type="xml">
+            <calendar color="id"
+                      date_start="expected_date"
+                      string="Effectiveness_Check">
+                <field name="state" />
+            </calendar>
+        </field>
+    </record>
+
+    <!-- WINDOW ACTION -->
+    <record id="open_qms_effectiveness_check_list"
+            model="ir.actions.act_window">
+        <field name="name">Effectiveness Check</field>
+        <field name="res_model">qms.effectiveness_check</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,calendar,form</field>
+    </record>
+
 </odoo>

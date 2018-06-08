@@ -137,8 +137,12 @@
                             <field name="description"
                                    attrs="{'readonly':[('state','not in',['draft','analysis'])]}" />
                         </page>
+                        <page string="Process">
+                            <field name="process_ids"
+                                   attrs="{'readonly':[('state','not in',['draft','analysis'])]}" />
+                        </page>
                         <page string="Related Audits"
-                              groups="base.group_extended,qms.group_qms_auditor">
+                              groups="base.group_extended,qms.group_qms_audit">
                             <field name="audit_ids"
                                    colspan="4"
                                    nolabel="1" />

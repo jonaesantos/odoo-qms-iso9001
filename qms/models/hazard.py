@@ -34,16 +34,6 @@ class Hazard(models.Model):
         ('transfer', 'Transfer'),
         ('reduce', 'Reduce'),
         ('share', 'Share'),
-        ('palliate', 'Palliate')
-    ]
-
-    _strategies_ = [
-        ('accept', 'Accept'),
-        ('watch', 'Watch'),
-        ('evitar', 'Avoid'),
-        ('transfer', 'Transfer'),
-        ('reduce', 'Reduce'),
-        ('share', 'Share'),
     ]
 
     _states_ = [

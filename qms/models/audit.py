@@ -3,13 +3,23 @@
 # Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import api, fields, models
-
+from odoo import api, fields, models, _
 
 class Audit(models.Model):
 
     _name = 'qms.audit'
     _rec_name = 'reference'
+
+    _system_ = [
+        ('iso9001_2015', 'ISO 9001:2015'),
+        ('iso9001_2008', 'ISO 9001:2008')
+    ]
+
+    system = fields.Selection(
+        selection=_system_,
+        string='System',
+        required=True
+    )
 
     _states_ = [
         ('open', 'Open'),
@@ -31,24 +41,47 @@ class Audit(models.Model):
     closing_date = fields.Datetime(
         readonly=True
     )
-    strong_points = fields.Html('Strong Points')
 
-    to_improve_points = fields.Html('Points To Improve')
+    strong_points = fields.Html('Strong Points')
 
     state = fields.Selection(
         selection=_states_,
         default='open'
     )
 
-    @api.model
-    def create(self, vals):
-        vals.update({
-            'reference': self.env['ir.sequence'].next_by_code(
-                'qms.audit'
-            ),
-        })
-        audit_id = super(Audit, self).create(vals)
-        return audit_id
+    audited_ids = fields.Many2many(
+        comodel_name='qms.interested_party',
+        relation='audit_audited_rel'
+        #domain="[('auditor', '=', False)]"
+    )
+
+    auditors_ids = fields.Many2many(
+        comodel_name='qms.interested_party',
+        relation='audit_auditor_rel'
+        #domain="[('auditor', '=', True)]"
+    )
+
+    non_conformity_ids = fields.Many2many(
+        comodel_name='qms.non_conformity'
+    )
+
+    observation_ids = fields.Many2many(
+        comodel_name='qms.observation'
+    )
+
+    opportunity_ids = fields.Many2many(
+        comodel_name='qms.opportunity'
+    )
+
+    # @api.model
+    # def create(self, vals):
+    #     vals.update({
+    #         'reference': self.env['ir.sequence'].next_by_code(
+    #             'qms.audit'
+    #         ),
+    #     })
+    #     audit_id = super(Audit, self).create(vals)
+    #     return audit_id
 
     @api.multi
     def button_close(self):
