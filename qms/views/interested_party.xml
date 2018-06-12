@@ -13,7 +13,8 @@
                 <field name="power" />
                 <field name="interest" />
                 <field name="cooperation" />
-                <field name="impact" />                
+                <field name="impact" />
+                <field name="last_review_date" />                 
             </tree>
         </field>
     </record>
@@ -69,6 +70,9 @@
                         </page>
                         <page name="interest_tmc" string="Interest TMC" attrs="{'invisible': [('is_organization', '=', False)]}">
                             <field name="interest_tmc" />
+                        </page>
+                        <page string="Reviews" attrs="{'invisible': [('is_organization', '=', False)]}">
+                            <field name="review_ids" />
                         </page>
                     </notebook>
                 </sheet>

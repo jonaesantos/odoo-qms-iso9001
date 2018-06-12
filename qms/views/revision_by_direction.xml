@@ -1,0 +1,76 @@
+<odoo>
+
+    <!-- TREE VIEW -->
+    <record id="view_qms_revision_by_direction_tree"
+            model="ir.ui.view">
+        <field name="name">qms.revision_by_direction.tree</field>
+        <field name="model">qms.revision_by_direction</field>
+        <field name="type">tree</field>
+        <field name="arch"
+               type="xml">
+            <tree>
+                <field name="name" />
+                <field name="date_open" />
+                <field name="date_close" />
+                <field name="state" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- FORM VIEW -->
+    <record id="view_qms_revision_by_direction_form"
+            model="ir.ui.view">
+        <field name="name">qms.revision_by_direction.form</field>
+        <field name="model">qms.revision_by_direction</field>
+        <field name="arch"
+               type="xml">
+            <form>
+                <header>
+                    <field name="state"
+                           widget="statusbar"
+                           clickable="True" />
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="date_open" />
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="state" />
+                        </group>
+                        <group>
+                            <field name="date_close" />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Resources">
+                            <field name="resource_ids" />
+                        </page>
+                        <page string="OM"
+                              name="opportunitys">
+                            <field name="opportunity_ids"
+                                   nolabel="1" />
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- WINDOW ACTION -->
+    <record id="open_qms_revision_by_direction_list"
+            model="ir.actions.act_window">
+        <field name="name">Revision</field>
+        <field name="res_model">qms.revision_by_direction</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

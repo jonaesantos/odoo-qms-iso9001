@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import fields, models
+from odoo import api, fields, models
 
 
 class Interested_Party(models.Model):
@@ -80,3 +80,23 @@ class Interested_Party(models.Model):
     interest_tmc = fields.Html()
 
     area = fields.Char()
+
+    review_ids = fields.One2many(
+        comodel_name='qms.review',
+        inverse_name='interested_party_id'
+    )
+
+    last_review_date = fields.Date(compute='_compute_last_review_date')
+
+    @api.multi
+    @api.depends('review_ids')
+    def _compute_last_review_date(self):
+        for interested_party in self:
+            domain = [
+                ('interested_party_id', '=', interested_party.id),
+            ]
+            related_reviews = interested_party.env['qms.review'].search(domain)
+            last_review = related_reviews.sorted(
+                key=lambda r: r.date,
+                reverse=True)
+            interested_party.last_review_date = last_review[0].date

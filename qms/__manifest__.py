@@ -47,6 +47,7 @@
         'views/non_conformity.xml',
         'views/observation.xml',
         'views/complaint.xml',
+        'views/revision_by_direction.xml',
         'views/opportunity.xml',
         'views/menu.xml'
     ],

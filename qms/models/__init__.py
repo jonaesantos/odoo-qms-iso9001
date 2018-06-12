@@ -16,6 +16,7 @@ import complaint
 import finding_origin
 import finding_stage
 import goal
+import revision_by_direction
 import hazard
 import interested_party
 import policy

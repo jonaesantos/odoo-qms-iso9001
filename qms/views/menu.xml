@@ -60,6 +60,11 @@
               parent="qms.menu_qms_main"
               sequence="27" />
 
+    <menuitem id="menu_open_revision_by_direction"
+              action="open_qms_revision_by_direction_list"
+              parent="qms.menu_qms_main"
+              sequence="28" />
+
     <menuitem id="menu_open_finding"
               name="Findings"
               parent="qms.menu_qms_main"
