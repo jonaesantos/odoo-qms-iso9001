@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import api, fields, models
+from odoo import api, fields, models, _
 
 
 class Revision_by_direction(models.Model):
@@ -15,11 +15,9 @@ class Revision_by_direction(models.Model):
 
     date_close = fields.Date()
 
-    _state_ = [
-        ('draft', 'Draft'),
+    _states_ = [
         ('open', 'Open'),
-        ('closed', 'Closed'),
-        ('cancelled', 'Cancelled')
+        ('done', 'Closed')
     ]
 
     resource_ids = fields.Many2many(
@@ -28,12 +26,6 @@ class Revision_by_direction(models.Model):
 
     action_ids = fields.Many2many(
         comodel_name='qms.action'
-    )
-
-    state = fields.Selection(
-        selection=_state_,
-        default='draft',
-        required=True
     )
 
     responsibles_ids = fields.Many2many(
@@ -46,6 +38,16 @@ class Revision_by_direction(models.Model):
         comodel_name='qms.opportunity'
     )
 
-    @api.one
-    def toggle_approved(self):
-        self.approved = not self.approved
+    state = fields.Selection(
+        selection=_states_,
+        default='open'
+    )
+
+    @api.multi
+    def button_close(self):
+        return self.write(
+            {
+                'state': 'done',
+                'closing_date': fields.Datetime.now()
+            }
+        )

@@ -45,4 +45,13 @@
         </field>
     </record>
 
+    <!-- WINDOW ACTION -->
+    <record id="open_qms_resource_list"
+            model="ir.actions.act_window">
+        <field name="name">Resources</field>
+        <field name="res_model">qms.resource</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
 </odoo>

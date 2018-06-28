@@ -12,7 +12,8 @@
                 <field name="name" />
                 <field name="date_open" />
                 <field name="date_close" />
-                <field name="state" />
+                <field name="state"
+                       invisible="False" />
             </tree>
         </field>
     </record>
@@ -26,6 +27,10 @@
                type="xml">
             <form>
                 <header>
+                    <button name="button_close"
+                            string="Close"
+                            states="open"
+                            type="object" />
                     <field name="state"
                            widget="statusbar"
                            clickable="True" />
@@ -39,24 +44,18 @@
                     <group>
                         <group>
                             <field name="date_open" />
-                        </group>
-                    </group>
-                    <group>
-                        <group>
-                            <field name="state" />
-                        </group>
-                        <group>
                             <field name="date_close" />
                         </group>
                     </group>
                     <notebook>
-                        <page string="Resources">
+                        <page string="New Resources">
                             <field name="resource_ids" />
                         </page>
-                        <page string="OM"
-                              name="opportunitys">
-                            <field name="opportunity_ids"
-                                   nolabel="1" />
+                        <page string="OM">
+                            <field name="opportunity_ids" />
+                        </page>
+                        <page string="Actions">
+                            <field name="action_ids" />
                         </page>
                     </notebook>
                 </sheet>
@@ -67,7 +66,7 @@
     <!-- WINDOW ACTION -->
     <record id="open_qms_revision_by_direction_list"
             model="ir.actions.act_window">
-        <field name="name">Revision</field>
+        <field name="name">Revisions</field>
         <field name="res_model">qms.revision_by_direction</field>
         <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>

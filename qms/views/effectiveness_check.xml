@@ -13,6 +13,7 @@
                 <field name="verification_date" />
                 <field name="was_effective" />
                 <field name="state" />
+                <field name="action_id" />
             </tree>
         </field>
     </record>
@@ -33,6 +34,7 @@
                 <sheet>
                     <group>
                         <group>
+                            <field name="action_id" />
                             <field name="expected_date" />
                             <field name="verification_date" />
                         </group>
