@@ -23,6 +23,8 @@ class Review(models.Model):
 
     hazard_id = fields.Many2one(comodel_name='qms.hazard')
 
+    indicator_id = fields.Many2one(comodel_name='qms.indicator')    
+
     interested_party_id = fields.Many2one(comodel_name='qms.interested_party')
 
     responsible_id = fields.Many2one(

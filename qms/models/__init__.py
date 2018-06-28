@@ -20,6 +20,7 @@ import revision_by_direction
 import hazard
 import interested_party
 import policy
+import indicator
 import policy_component
 import review
 import process

@@ -40,6 +40,11 @@
               parent="qms.menu_qms_main"
               sequence="13" />
 
+    <menuitem id="menu_open_indicator"
+              action="open_qms_indicator_list"
+              parent="qms.menu_qms_main"
+              sequence="14" />
+
     <menuitem id="menu_open_hazard"
               action="open_qms_hazard_list"
               parent="qms.menu_qms_main"

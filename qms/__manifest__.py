@@ -49,6 +49,7 @@
         'views/complaint.xml',
         'views/revision_by_direction.xml',
         'views/opportunity.xml',
+        'views/indicator.xml',
         'views/menu.xml'
     ],
     'demo': [],
