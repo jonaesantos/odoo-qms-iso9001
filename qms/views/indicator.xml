@@ -14,6 +14,7 @@
                 <field name="process_id" />
                 <field name="state" />
                 <field name="last_measurement_date" />
+                <field name="last_measurement_result" />
             </tree>
         </field>
     </record>

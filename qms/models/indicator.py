@@ -50,6 +50,8 @@ class Indicator(models.Model):
 
     last_measurement_date = fields.Date(compute='_compute_last_measurement_date')
 
+    last_measurement_result = fields.Char(compute='_compute_last_measurement_result')
+
     last_review_date = fields.Date(compute='_compute_last_review_date')
 
     @api.multi
@@ -65,6 +67,20 @@ class Indicator(models.Model):
                 key=lambda r: r.measurement_date,
                 reverse=True)
             indicator.last_measurement_date = last_measurement[0].measurement_date
+
+    @api.multi
+    @api.depends('measurement_ids')
+    def _compute_last_measurement_result(self):
+        for indicator in self:
+            domain = [
+                ('indicator_id', '=', indicator.id),
+                #('modify_concession', '=', True)
+            ]
+            related_measurement = indicator.env['qms.indicator.measurement'].search(domain)
+            last_measurement = related_measurement.sorted(
+                key=lambda r: r.result,
+                reverse=True)
+            indicator.last_measurement_result = last_measurement[0].result
 
     @api.multi
     @api.depends('review_ids')

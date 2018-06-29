@@ -29,9 +29,9 @@ class Indicator_Measurement(models.Model):
     comments = fields.Text()
 
     _result_ = [
-        (1, 'Meta alcanzada'),
-        (2, 'Meta alcanzada con observaciones'),
-        (3, 'Meta no alzanzada')
+        ('goal_ok', 'Meta alcanzada'),
+        ('goal_with_obs', 'Meta alcanzada con observaciones'),
+        ('goal_no_ok', 'Meta no alzanzada')
     ]
 
     result = fields.Selection(
