@@ -44,6 +44,12 @@ class Process(models.Model):
         default='enabled'
     )
 
+    indicator_ids = fields.One2many(
+        comodel_name='qms.indicator',
+        inverse_name='process_id',
+        required=False
+    )
+
     description = fields.Html()
 
     inputs = fields.Html()

@@ -13,6 +13,7 @@
                 <field name="responsible_id" />
                 <field name="resource_type" />
                 <field name="state" />
+                <field name="indicator_ids" />
                 <field name="last_review_date" />
             </tree>
         </field>

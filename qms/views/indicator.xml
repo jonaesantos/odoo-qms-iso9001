@@ -11,9 +11,9 @@
             <tree>
                 <field name="name" />
                 <field name="responsible_id" />
-                <field name="process_ids" />
+                <field name="process_id" />
                 <field name="state" />
-                <field name="last_review_date" />
+                <field name="last_measurement_date" />
             </tree>
         </field>
     </record>
@@ -40,22 +40,23 @@
                     <group>
                         <group>
                             <field name="responsible_id" />
+                            <field name="process_id" />
                         </group>
                     </group>
                     <group>
-                        <group>
-                            <field name="description" />
-                        </group>
+                        <field name="description" />
                     </group>
                     <notebook>
-                        <page string="Processes">
-                            <field name="process_ids" />
-                        </page>
                         <page string="Components">
                             <field name="policy_component_ids" />
                         </page>
                         <page string="Reviews">
                             <field name="review_ids" />
+                        </page>
+                        <page string="Measurements">
+                            <field name="measurement_ids"
+                                   nolabel="True"
+                                   attrs="{'readonly':[('state','=','done')]}" />
                         </page>
                     </notebook>
                 </sheet>

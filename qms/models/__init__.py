@@ -22,6 +22,7 @@ import interested_party
 import policy
 import indicator
 import policy_component
+import indicator_measurement
 import review
 import process
 import resource

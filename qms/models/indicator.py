@@ -36,14 +36,35 @@ class Indicator(models.Model):
         required=True
     )
 
-    process_ids = fields.Many2many(
+    process_id = fields.Many2one(
         comodel_name='qms.process',
         required=True
     )
 
+    measurement_ids = fields.One2many(
+        comodel_name='qms.indicator.measurement',
+        inverse_name='indicator_id',
+    )
+
     description = fields.Html()
 
+    last_measurement_date = fields.Date(compute='_compute_last_measurement_date')
+
     last_review_date = fields.Date(compute='_compute_last_review_date')
+
+    @api.multi
+    @api.depends('measurement_ids')
+    def _compute_last_measurement_date(self):
+        for indicator in self:
+            domain = [
+                ('indicator_id', '=', indicator.id),
+                #('modify_concession', '=', True)
+            ]
+            related_measurement = indicator.env['qms.indicator.measurement'].search(domain)
+            last_measurement = related_measurement.sorted(
+                key=lambda r: r.measurement_date,
+                reverse=True)
+            indicator.last_measurement_date = last_measurement[0].measurement_date
 
     @api.multi
     @api.depends('review_ids')
