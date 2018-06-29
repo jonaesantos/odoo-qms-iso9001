@@ -51,14 +51,14 @@
                         <page string="Components">
                             <field name="policy_component_ids" />
                         </page>
-                        <page string="Reviews">
-                            <field name="review_ids" />
-                        </page>
                         <page string="Measurements">
                             <field name="measurement_ids"
                                    nolabel="True"
                                    attrs="{'readonly':[('state','=','done')]}" />
                         </page>
+                        <page string="Reviews">
+                            <field name="review_ids" />
+                        </page>                        
                     </notebook>
                 </sheet>
             </form>
