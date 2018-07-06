@@ -20,14 +20,6 @@ class Finding(models.Model):
 
     @api.model
     def _default_stage(self):
-        print
-        print
-        print "dentro de _default_stage"
-        print
-        print
-        print
-        print
-        print
         return (
             self.env.ref('qms.finding_stage_draft', False) or
             self.env['qms.finding.stage'].search(
@@ -137,16 +129,6 @@ class Finding(models.Model):
 
     @api.multi
     def write(self, vals):
-
-        print
-        print
-        print "dentro de write ..."
-        print
-        print
-        print
-        print
-        print
-
         is_writing = 'is_writing' in self.env.context
         is_state_change = 'stage_id' in vals or 'state' in vals
 

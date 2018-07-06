@@ -43,8 +43,9 @@ class Goal(models.Model):
         comodel_name='qms.resource'
     )
 
-    action_ids = fields.Many2many(
-        comodel_name='qms.action'
+    action_ids = fields.One2many(
+        comodel_name='qms.action',
+        inverse_name='goal_id'
     )
 
     state = fields.Selection(

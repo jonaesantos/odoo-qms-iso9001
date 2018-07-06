@@ -23,7 +23,7 @@ class Action(models.Model):
         ('medium', 'Medium'),
         ('high', 'High'),
         ('very_high', 'Very High')
-    ]    
+    ]
 
     def _default_stage(self):
         return self.env['qms.action.stage'].search(
@@ -96,16 +96,32 @@ class Action(models.Model):
         required=False
     )
 
+    observation_id = fields.Many2one(
+        comodel_name='finding'
+    )
+
+    non_conformity_id = fields.Many2one(
+        comodel_name='finding'
+    )
+
+    complaint_id = fields.Many2one(
+        comodel_name='finding'
+    )
+
+    opportunity_id = fields.Many2one(
+        comodel_name='finding'
+    )
+
+    hazard_id = fields.Many2one(
+        comodel_name='hazard'
+    )
+
+    goal_id = fields.Many2one(
+        comodel_name='goal'
+    )
+
     @api.model
     def create(self, vals):
-        print
-        print
-        print "dentro de ............."
-        print
-        print
-        print
-        print
-        print
         seq = self.env['ir.sequence']
         vals['reference'] = seq.next_by_code('qms.action')
         action = super(Action, self).create(vals)
@@ -113,15 +129,6 @@ class Action(models.Model):
 
     @api.multi
     def write(self, vals):
-        print
-        print
-        print "dentro de <<<"
-        print vals.get('stage_id')
-        print
-        print
-        print
-        print
-        print
         # if vals.get('stage_id'):
         #     if vals['stage_id'] == self._get_stage_new().id:
         #         print
@@ -171,23 +178,11 @@ class Action(models.Model):
 
     @api.model
     def _stage_groups(self, stages, domain, order):
-        print
-        print
-        print "dentro de _stage_groups"
-        print
-        print
-        print
-        print
-        print
         stage_ids = self.env['qms.action.stage'].search([])
         return stage_ids
 
     @api.model
     def _get_stage_new(self):
-        print
-        print
-        print "dentro de _get_stage_new 2"
-        print
         #return self.env['qms.action.stage'].search(
         #    [('is_starting', '=', True)],
         #    limit=1

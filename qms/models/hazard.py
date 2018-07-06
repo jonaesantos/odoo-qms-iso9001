@@ -167,8 +167,9 @@ class Hazard(models.Model):
         required=False
     )
 
-    action_ids = fields.Many2many(
-        comodel_name='qms.action'
+    action_ids = fields.One2many(
+        comodel_name='qms.action',
+        inverse_name='hazard_id'
     )
 
     review_ids = fields.One2many(

@@ -78,7 +78,7 @@ class Indicator(models.Model):
             ]
             related_measurement = indicator.env['qms.indicator.measurement'].search(domain)
             last_measurement = related_measurement.sorted(
-                key=lambda r: r.result,
+                key=lambda r: r.measurement_date,
                 reverse=True)
             indicator.last_measurement_result = last_measurement[0].result
 
