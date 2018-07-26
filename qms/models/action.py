@@ -13,6 +13,7 @@ class Action(models.Model):
     _description = "Action"
 
     _response_types_ = [
+        ('improvement', 'Improvement Action'),
         ('immediate', 'Immediate Action'),
         ('correction', 'Corrective Action')
     ]

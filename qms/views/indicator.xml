@@ -15,6 +15,7 @@
                 <field name="state" />
                 <field name="last_measurement_date" />
                 <field name="last_measurement_result" />
+                <!-- <field name="last_review_date" /> -->
             </tree>
         </field>
     </record>
@@ -48,9 +49,6 @@
                         <field name="description" />
                     </group>
                     <notebook>
-                        <page string="Components">
-                            <field name="policy_component_ids" />
-                        </page>
                         <page string="Measurements">
                             <field name="measurement_ids"
                                    nolabel="True"
@@ -58,7 +56,7 @@
                         </page>
                         <page string="Reviews">
                             <field name="review_ids" />
-                        </page>                        
+                        </page>
                     </notebook>
                 </sheet>
             </form>

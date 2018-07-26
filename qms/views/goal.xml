@@ -14,8 +14,10 @@
                 <field name="date_close" />
                 <field name="responsible_id" />
                 <field name="state" />
-                <field name="last_review_date" />                
                 <field name="approved" />
+                <!--<field name="last_measurement_date" />
+                <field name="last_measurement_result" />
+                <field name="last_review_date" />-->
             </tree>
         </field>
     </record>
@@ -63,19 +65,24 @@
                         </group>
                     </group>
                     <notebook>
+                        <page string="Description">
+                            <field name="description" />
+                        </page>
                         <page string="Processes">
                             <field name="process_ids" />
                         </page>
                         <page string="Resources">
                             <field name="resource_ids" />
                         </page>
-                        <page string="Components">
-                            <field name="policy_component_ids" />
-                        </page>
                         <page string="Actions"
                               name="actions">
                             <field name="action_ids"
                                    nolabel="1" />
+                        </page>
+                        <page string="Measurements">
+                            <field name="measurement_ids"
+                                   nolabel="True"
+                                   attrs="{'readonly':[('state','=','done')]}" />
                         </page>
                         <page string="Reviews">
                             <field name="review_ids" />

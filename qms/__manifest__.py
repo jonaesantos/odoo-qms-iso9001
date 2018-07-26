@@ -32,6 +32,7 @@
         'views/interested_party.xml',
         'views/resource.xml',
         'views/goal.xml',
+        'views/goal_measurement.xml',
         'views/process.xml',
         'views/hazard.xml',
         'views/effectiveness_check.xml',

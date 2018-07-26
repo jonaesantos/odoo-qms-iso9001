@@ -12,6 +12,7 @@ class Process(models.Model):
     )
 
     _resource_types_ = [
+        ('strategic', 'Strategic'),
         ('central', 'Central'),
         ('support', 'Support')
     ]
@@ -48,6 +49,11 @@ class Process(models.Model):
         comodel_name='qms.indicator',
         inverse_name='process_id',
         required=False
+    )
+
+    policy_component_ids = fields.Many2many(
+        comodel_name='qms.policy_component',
+        required=True
     )
 
     description = fields.Html()

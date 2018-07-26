@@ -31,11 +31,6 @@ class Indicator(models.Model):
         default='enabled'
     )
 
-    policy_component_ids = fields.Many2many(
-        comodel_name='qms.policy_component',
-        required=True
-    )
-
     process_id = fields.Many2one(
         comodel_name='qms.process',
         required=True

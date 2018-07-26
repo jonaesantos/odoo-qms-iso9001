@@ -1,0 +1,78 @@
+<odoo>
+
+    <!-- TREE VIEW -->
+    <record id="view_qms_goal_measurement_tree"
+            model="ir.ui.view">
+        <field name="name">qms.goal.measurement.tree</field>
+        <field name="model">qms.goal.measurement</field>
+        <field name="type">tree</field>
+        <field name="arch"
+               type="xml">
+            <tree>
+              <field name="name" />
+              <field name="goal" />
+              <field name="expected_date" />
+              <field name="measurement_date" />
+              <field name="result" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- SEARCH VIEW -->
+    <record id="view_qms_goal_measurement_filter"
+            model="ir.ui.view">
+        <field name="name">qms.goal.measurement.filter</field>
+        <field name="model">qms.goal.measurement</field>
+        <field name="type">search</field>
+        <field name="arch"
+               type="xml">
+            <search>
+                <group>
+                    <field name="name" />
+                    <field name="goal" />
+                    <field name="expected_date" />
+                    <field name="measurement_date" />
+                    <field name="result" />
+                    <field name="comments" />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- FORM VIEW -->
+    <record id="view_qms_goal_measurement_form"
+            model="ir.ui.view">
+        <field name="name">qms.goal.measurement.form</field>
+        <field name="model">qms.goal.measurement</field>
+        <field name="type">form</field>
+        <field name="arch"
+               type="xml">
+            <form>
+                <group>
+                  <group>
+                      <field name="name" />
+                      <field name="goal" />
+                      <field name="expected_date" />
+                      <field name="measurement_date" />
+                  </group>
+                  <group>
+                      <field name="result" />
+                  </group>
+                  <group>
+                      <field name="comments" />
+                  </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- WINDOW ACTION -->
+    <record id="open_qms_goal_measurement_list"
+            model="ir.actions.act_window">
+        <field name="name">Goal Measurements</field>
+        <field name="res_model">qms.goal.measurement</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

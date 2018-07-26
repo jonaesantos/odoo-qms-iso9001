@@ -34,7 +34,6 @@
                 <sheet>
                     <group>
                         <group>
-                            <field name="action_id" />
                             <field name="expected_date" />
                             <field name="verification_date" />
                         </group>

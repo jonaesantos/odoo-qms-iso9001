@@ -46,6 +46,9 @@
                         <page string="Description">
                             <field name="description" />
                         </page>
+                        <page string="Components">
+                            <field name="policy_component_ids" />
+                        </page>                        
                         <page string="Inputs/Outputs">
                             <separator string="Inputs" />
                             <field name="inputs" />
