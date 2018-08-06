@@ -19,7 +19,7 @@ class Goal_Measurement(models.Model):
 
     goal_id = fields.Many2one(
         comodel_name='qms.goal',
-        ondelete='cascade',
+        ondelete='cascade'
     )
 
     expected_date = fields.Date()

@@ -11,7 +11,7 @@ class Goal(models.Model):
         required=True
     )
 
-    description = fields.Html()    
+    description = fields.Html()
 
     date_open = fields.Date()
 
@@ -47,7 +47,8 @@ class Goal(models.Model):
 
     action_ids = fields.One2many(
         comodel_name='qms.action',
-        inverse_name='goal_id'
+        inverse_name='goal_id',
+        ondelete='cascade'
     )
 
     state = fields.Selection(

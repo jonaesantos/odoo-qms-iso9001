@@ -16,8 +16,8 @@
                 <field name="state" />
                 <field name="approved" />
                 <!--<field name="last_measurement_date" />
-                <field name="last_measurement_result" />
-                <field name="last_review_date" />-->
+                <field name="last_measurement_result" />-->
+                <field name="last_review_date" />
             </tree>
         </field>
     </record>

@@ -9,12 +9,15 @@
         <field name="arch"
                type="xml">
             <tree>
+                <field name="number" />
                 <field name="name" />
                 <field name="probability" />
                 <field name="impact" />
+                <field name="result" />
                 <field name="strategy" />
                 <field name="state" />
-                <field name="last_review_date" />                
+                <field name="last_review_date" />
+                <field name="date_open" />
             </tree>
         </field>
     </record>
@@ -74,11 +77,6 @@
                             <field name="causes" />
                             <separator string="Consequences" />
                             <field name="consequences" />
-                        </page>
-                        <page string="Policies Components"
-                              name="policy_components">
-                            <field name="policy_component_ids"
-                                   nolabel="1" />
                         </page>
                         <page string="Actions"
                               name="actions">

@@ -12,7 +12,6 @@
                 <field name="name" />
                 <field name="version" />
                 <field name="date" />
-                <!--<field name="review_ids" /> -->
                 <field name="last_review_date" />
                 <field name="approved" />
             </tree>
