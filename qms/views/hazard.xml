@@ -17,7 +17,6 @@
                 <field name="strategy" />
                 <field name="state" />
                 <field name="last_review_date" />
-                <field name="date_open" />
             </tree>
         </field>
     </record>

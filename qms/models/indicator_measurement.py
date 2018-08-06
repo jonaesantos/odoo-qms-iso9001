@@ -37,5 +37,8 @@ class Indicator_Measurement(models.Model):
     result = fields.Selection(
         selection=_result_,
         string='Result',
-        required=False
+        required=False,
+        store=True
     )
+
+    result_detail = fields.Char()

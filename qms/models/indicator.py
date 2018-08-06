@@ -11,9 +11,18 @@ class Indicator(models.Model):
         required=True
     )
 
+    number = fields.Integer()
+
     _resource_states_ = [
         ('enabled', 'Enabled'),
         ('disabled', 'Disabled')
+    ]
+
+    _frequencys_ = [
+        ('annual', 'Annual'),
+        ('biannual', 'Biannual'),
+        ('quarterly', 'Quarterly'),
+        ('monthly', 'Monthly')
     ]
 
     responsible_id = fields.Many2one(
@@ -31,6 +40,11 @@ class Indicator(models.Model):
         default='enabled'
     )
 
+    frequency = fields.Selection(
+        selection=_frequencys_,
+        default='annual'
+    )
+
     process_id = fields.Many2one(
         comodel_name='qms.process',
         required=True
@@ -45,7 +59,12 @@ class Indicator(models.Model):
 
     last_measurement_date = fields.Date(compute='_compute_last_measurement_date')
 
-    last_measurement_result = fields.Char(compute='_compute_last_measurement_result')
+    last_measurement_result = fields.Char(
+        compute='_compute_last_measurement_result',
+        store=True
+    )
+
+    last_measurement_result_detail = fields.Char(compute='_compute_last_measurement_result_detail')
 
     last_review_date = fields.Date(compute='_compute_last_review_date')
 
@@ -76,6 +95,20 @@ class Indicator(models.Model):
                 key=lambda r: r.measurement_date,
                 reverse=True)
             indicator.last_measurement_result = last_measurement[0].result
+
+    @api.multi
+    @api.depends('measurement_ids')
+    def _compute_last_measurement_result_detail(self):
+        for indicator in self:
+            domain = [
+                ('indicator_id', '=', indicator.id),
+                #('modify_concession', '=', True)
+            ]
+            related_measurement = indicator.env['qms.indicator.measurement'].search(domain)
+            last_measurement = related_measurement.sorted(
+                key=lambda r: r.measurement_date,
+                reverse=True)
+            indicator.last_measurement_result_detail = last_measurement[0].result_detail
 
     @api.multi
     @api.depends('review_ids')

@@ -9,13 +9,14 @@
         <field name="arch"
                type="xml">
             <tree>
+                <field name="number" />
                 <field name="name" />
                 <field name="responsible_id" />
                 <field name="process_id" />
                 <field name="state" />
                 <field name="last_measurement_date" />
                 <field name="last_measurement_result" />
-                <!-- <field name="last_review_date" /> -->
+                <field name="last_measurement_result_detail" />
             </tree>
         </field>
     </record>
@@ -41,8 +42,10 @@
                     </div>
                     <group>
                         <group>
+                            <field name="number" />
                             <field name="responsible_id" />
                             <field name="process_id" />
+                            <field name="frequency" />
                         </group>
                     </group>
                     <group>

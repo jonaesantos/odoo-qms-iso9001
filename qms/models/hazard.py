@@ -154,7 +154,8 @@ class Hazard(models.Model):
 
     result = fields.Integer(
         compute=_compute_result_and_evaluation,
-        readonly=True
+        readonly=True,
+        store=True
     )
 
     process_ids = fields.Many2many(
