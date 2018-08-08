@@ -43,20 +43,20 @@ class Action(models.Model):
 
     date_deadline = fields.Date()
 
-    create_date = fields.Datetime(
+    create_date = fields.Date(
         readonly=True,
         default=fields.datetime.now()
     )
 
-    cancel_date = fields.Datetime(
+    cancel_date = fields.Date(
         readonly=True
     )
 
-    opening_date = fields.Datetime(
+    opening_date = fields.Date(
         readonly=False
     )
 
-    date_closed = fields.Datetime(
+    date_closed = fields.Date(
         readonly=False
     )
 
@@ -119,6 +119,10 @@ class Action(models.Model):
 
     goal_id = fields.Many2one(
         comodel_name='goal'
+    )
+
+    revision_by_direction_id = fields.Many2one(
+        comodel_name='revision_by_direction'
     )
 
     @api.model

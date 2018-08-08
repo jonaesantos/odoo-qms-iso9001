@@ -13,6 +13,14 @@ class Non_Conformity(models.Model):
         inverse_name='non_conformity_id'
     )
 
+    audit_id = fields.Many2one(
+        comodel_name='audit'
+    )
+
+    revision_by_direction_id = fields.Many2one(
+        comodel_name='revision_by_direction'
+    )            
+
     @api.model
     def create(self, vals):
         vals.update({

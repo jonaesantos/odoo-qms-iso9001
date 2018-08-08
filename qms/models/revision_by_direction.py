@@ -11,6 +11,8 @@ class Revision_by_direction(models.Model):
         required=True
     )
 
+    description = fields.Html()
+
     date_open = fields.Date()
 
     date_close = fields.Date()
@@ -24,18 +26,31 @@ class Revision_by_direction(models.Model):
         comodel_name='qms.resource'
     )
 
-    action_ids = fields.Many2many(
-        comodel_name='qms.action'
+    non_conformity_ids = fields.One2many(
+        comodel_name='qms.non_conformity',
+        inverse_name='revision_by_direction_id'
+    )
+
+    observation_ids = fields.One2many(
+        comodel_name='qms.observation',
+        inverse_name='revision_by_direction_id'
+    )
+
+    opportunity_ids = fields.One2many(
+        comodel_name='qms.opportunity',
+        inverse_name='revision_by_direction_id'
+    )
+
+    action_ids = fields.One2many(
+        comodel_name='qms.action',
+        inverse_name='revision_by_direction_id',
+        ondelete='cascade'
     )
 
     responsibles_ids = fields.Many2many(
         comodel_name='qms.interested_party',
         relation='audit_auditor_rel'
         #domain="[('auditor', '=', True)]"
-    )
-
-    opportunity_ids = fields.Many2many(
-        comodel_name='qms.opportunity'
     )
 
     state = fields.Selection(

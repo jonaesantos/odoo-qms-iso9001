@@ -39,3 +39,5 @@ class Goal_Measurement(models.Model):
         string='Result',
         required=False
     )
+
+    result_detail = fields.Char()

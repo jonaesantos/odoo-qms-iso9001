@@ -8,6 +8,7 @@
                type="xml">
             <tree name="finding">
                 <field name="id" />
+                <field name="name" />
                 <field name="reference" />
                 <field name="create_date" />
                 <field name="description" />
@@ -42,6 +43,7 @@
                             string="Closed"
                             help="Closed Findings" />
                     <separator orientation="vertical" />
+                    <field name="name" />
                     <field name="reference" />
                     <field name="create_date" />
                 </group>
@@ -119,8 +121,7 @@
                     <field name="kanban_state"
                            widget="kanban_state_selection" />
                     <group>
-                        <field name="name"
-                               attrs="{'readonly':[('state','not in',['draft'])]}" />
+                        <field name="name" />
                         <field name="create_date"
                                attrs="{'readonly':[('state','not in',['draft'])]}" />
                         <field name="reference" />
@@ -151,8 +152,7 @@
                               string="Actions"
                               attrs="{'invisible':[('state','in',['draft','analysis','cancel'])]}">
                             <separator string="Action Plan" />
-                            <field name="action_ids"
-                                   attrs="{'readonly':[('state','not in',['pending'])]}" />
+                            <field name="action_ids" />
                             <group string="Plan Review">
                                 <group>
                                     <field name="action_plan_comments"

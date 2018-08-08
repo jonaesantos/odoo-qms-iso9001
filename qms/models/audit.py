@@ -61,16 +61,24 @@ class Audit(models.Model):
         #domain="[('auditor', '=', True)]"
     )
 
-    non_conformity_ids = fields.Many2many(
-        comodel_name='qms.non_conformity'
+    non_conformity_ids = fields.One2many(
+        comodel_name='qms.non_conformity',
+        inverse_name='audit_id'
     )
 
-    observation_ids = fields.Many2many(
-        comodel_name='qms.observation'
+    observation_ids = fields.One2many(
+        comodel_name='qms.observation',
+        inverse_name='audit_id'
     )
 
-    opportunity_ids = fields.Many2many(
-        comodel_name='qms.opportunity'
+    opportunity_ids = fields.One2many(
+        comodel_name='qms.opportunity',
+        inverse_name='audit_id'
+    )
+
+    process_ids = fields.Many2many(
+        comodel_name='qms.process',
+        required=True
     )
 
     # @api.model

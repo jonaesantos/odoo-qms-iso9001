@@ -12,6 +12,7 @@
                 <field name="id" />
                 <field name="reference" />
                 <field name="name" />
+                <field name="responsible_id" />
                 <field name="response_type" />
                 <field name="complexity" />
                 <field name="date_deadline" />

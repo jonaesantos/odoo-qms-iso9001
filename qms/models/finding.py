@@ -10,7 +10,7 @@ class Finding(models.Model):
 
     _name = 'qms.finding'
     _order = 'create_date desc'
-    _rec_name = 'description'
+    #_rec_name = 'description'
 
     _kanban_states_ = [
         ('normal', 'In Progress'),

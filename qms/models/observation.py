@@ -13,6 +13,14 @@ class Observation(models.Model):
         inverse_name='observation_id'
     )
 
+    audit_id = fields.Many2one(
+        comodel_name='audit'
+    )
+
+    revision_by_direction_id = fields.Many2one(
+        comodel_name='revision_by_direction'
+    )
+
     @api.model
     def create(self, vals):
         vals.update({
