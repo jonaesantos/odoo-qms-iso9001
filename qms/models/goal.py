@@ -13,6 +13,10 @@ class Goal(models.Model):
 
     description = fields.Html()
 
+    cancel_date = fields.Date(
+        readonly=True
+    )
+
     date_open = fields.Date()
 
     date_close = fields.Date()

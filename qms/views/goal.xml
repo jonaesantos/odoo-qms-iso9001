@@ -11,6 +11,7 @@
             <tree>
                 <field name="name" />
                 <field name="date_open" />
+                <field name="cancel_date" />
                 <field name="date_close" />
                 <field name="responsible_id" />
                 <field name="state" />
@@ -55,13 +56,14 @@
                             <field name="date_open" />
                             <field name="responsible_id" />
                         </group>
+                        <group>
+                            <field name="cancel_date" />
+                            <field name="date_close" />
+                        </group>                        
                     </group>
                     <group>
                         <group>
                             <field name="state" />
-                        </group>
-                        <group>
-                            <field name="date_close" />
                         </group>
                     </group>
                     <notebook>

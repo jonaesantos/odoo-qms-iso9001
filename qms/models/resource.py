@@ -27,6 +27,8 @@ class Resource(models.Model):
         required=True
     )
 
+    description = fields.Html()
+
     resource_type = fields.Selection(
         selection=_resource_types_
     )

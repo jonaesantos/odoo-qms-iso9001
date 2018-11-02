@@ -81,7 +81,7 @@ class Finding(models.Model):
 
     evaluation_comments = fields.Text()
 
-    description = fields.Text(
+    description = fields.Html(
         required=True
     )
 
