@@ -13,6 +13,7 @@
                 <field name="create_date" />
                 <field name="description" />
                 <field name="stage_id" />
+                <field name="origin_ids" />
                 <field name="closing_date" />
             </tree>
         </field>
@@ -121,17 +122,21 @@
                     <field name="kanban_state"
                            widget="kanban_state_selection" />
                     <group>
-                        <field name="name" />
-                        <field name="create_date"
-                               attrs="{'readonly':[('state','not in',['draft'])]}" />
-                        <field name="reference" />
-                        <field name="origin_ids"
-                               widget="many2many_tags"
-                               attrs="{'readonly':[('state','not in',['draft','analysis'])]}" />
-                        <field name="claimant_id"
-                               attrs="{'readonly':[('state','not in',['draft','analysis'])]}" />
-                        <field name="interested_party_id"
-                               attrs="{'readonly':[('state','not in',['draft','analysis'])]}" />
+                        <group>
+                            <field name="name" />
+                            <field name="create_date"
+                                attrs="{'readonly':[('state','not in',['draft'])]}" />
+                            <field name="reference" />
+                        </group>       
+                        <group>
+                            <field name="origin_ids"
+                                widget="many2many_tags"
+                                attrs="{'readonly':[('state','not in',['draft','analysis'])]}" />
+                            <field name="claimant_id"
+                                attrs="{'readonly':[('state','not in',['draft','analysis'])]}" />
+                            <field name="interested_party_id"
+                                attrs="{'readonly':[('state','not in',['draft','analysis'])]}" />
+                        </group>
                     </group>
                     <notebook>
                         <page string="Description">

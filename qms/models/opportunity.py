@@ -19,7 +19,11 @@ class Opportunity(models.Model):
 
     revision_by_direction_id = fields.Many2one(
         comodel_name='revision_by_direction'
-    )            
+    )
+
+    indicator_id = fields.Many2one(
+        comodel_name='indicator'
+    )                 
 
     @api.model
     def create(self, vals):

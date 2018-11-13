@@ -20,7 +20,7 @@
         <field name="arch"
                type="xml">
             <page name="actions"
-                  position="after">
+                  position="before">
                 <page string="Causes and Analysis"
                       attrs="{'invisible':[('state','in',['draft','cancel'])]}">
                     <separator string="Analysis" />

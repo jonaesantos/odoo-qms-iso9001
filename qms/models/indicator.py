@@ -55,6 +55,21 @@ class Indicator(models.Model):
         inverse_name='indicator_id',
     )
 
+    non_conformity_ids = fields.One2many(
+        comodel_name='qms.non_conformity',
+        inverse_name='indicator_id'
+    )
+
+    observation_ids = fields.One2many(
+        comodel_name='qms.observation',
+        inverse_name='indicator_id'
+    )
+
+    opportunity_ids = fields.One2many(
+        comodel_name='qms.opportunity',
+        inverse_name='indicator_id'
+    )
+
     description = fields.Html()
 
     last_measurement_date = fields.Date(compute='_compute_last_measurement_date')

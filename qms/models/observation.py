@@ -21,6 +21,10 @@ class Observation(models.Model):
         comodel_name='revision_by_direction'
     )
 
+    indicator_id = fields.Many2one(
+        comodel_name='indicator'
+    )     
+
     @api.model
     def create(self, vals):
         vals.update({
