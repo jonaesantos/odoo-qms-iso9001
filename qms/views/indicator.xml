@@ -66,7 +66,6 @@
                                         <field name="description"/>
                                         <field name="reference" />
                                         <field name="create_date" />
-                                        <field name="description" />
                                         <field name="stage_id" />
                                         <field name="origin_ids" />
                                         <field name="closing_date" />                                        
