@@ -70,8 +70,10 @@ class Indicator(models.Model):
         inverse_name='indicator_id'
     )
 
-    description = fields.Html()
-
+    description = fields.Html(
+        string='Objetivo'
+    )
+    
     last_measurement_date = fields.Date(compute='_compute_last_measurement_date')
 
     last_measurement_result = fields.Char(

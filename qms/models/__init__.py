@@ -27,4 +27,6 @@ import indicator_measurement
 import review
 import process
 import resource
+import procedure
+import document
 import opportunity

@@ -15,6 +15,7 @@
                 <field name="stage_id" />
                 <field name="origin_ids" />
                 <field name="closing_date" />
+                <field name="process_ids" />
             </tree>
         </field>
     </record>

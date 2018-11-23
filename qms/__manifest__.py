@@ -52,6 +52,8 @@
         'views/opportunity.xml',
         'views/indicator.xml',
         'views/indicator_measurement.xml',
+        'views/procedure.xml',
+        'views/document.xml',
         'views/menu.xml'
     ],
     'demo': [],

@@ -99,6 +99,17 @@
               action="open_qms_opportunity_list"
               sequence="30" />
 
+    <menuitem id="menu_open_document"
+              name="Documents"
+              parent="qms.menu_qms_main"
+              sequence="32" /> 
+
+     <menuitem id="menu_open_procedure"
+              name="Procedures"
+              parent="qms.menu_open_document"
+              action="open_qms_document_procedure_list"
+              sequence="5" />                          
+
     <menuitem id="menu_config_action"
               name="Actions"
               parent="qms.menu_qms_configuration"

@@ -1,0 +1,26 @@
+<odoo>
+
+    <!-- TREE VIEW -->
+    <record id="view_qms_document_procedure_tree"
+            model="ir.ui.view">
+        <field name="name">qms.document_procedure.tree</field>
+        <field name="model">qms.document.procedure</field>
+        <field name="type">tree</field>
+        <field name="arch"
+               type="xml">
+            <tree>
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- WINDOW ACTION -->
+    <record id="open_qms_document_procedure_list"
+            model="ir.actions.act_window">
+        <field name="name">document_procedures</field>
+        <field name="res_model">qms.document.procedure</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>
