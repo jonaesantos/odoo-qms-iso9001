@@ -7,28 +7,31 @@ class Document(models.Model):
 
     _name = "qms.document"
 
+    identification = fields.Char(
+        required=True
+    )
+
     name = fields.Char(
         required=True
     )
 
-    description = fields.Html()
+    _format_ = [
+        ('paper', 'Paper'),
+        ('electronic', 'Electronic')
+    ]
 
-    cancel_date = fields.Date(
-        readonly=True
+    format = fields.Selection(
+        selection=_format_,
+        default='electronic',
+        required=True
     )
 
-    date_open = fields.Date()
+    revision_ids = fields.One2many(
+        comodel_name='qms.document.revision',
+        inverse_name='document_id',
+    )       
 
-    date_close = fields.Date()
-
-    approved = fields.Boolean()
-
-    _state_ = [
-        ('draft', 'Draft'),
-        ('open', 'Open'),
-        ('closed', 'Closed'),
-        ('cancelled', 'Cancelled')
-    ]
+    description = fields.Html()
 
     responsible_id = fields.Many2one(
         comodel_name='qms.interested_party',
@@ -40,16 +43,12 @@ class Document(models.Model):
         required=True
     )
 
-    state = fields.Selection(
-        selection=_state_,
-        default='draft',
-        required=True
-    )
-
     review_ids = fields.One2many(
         comodel_name='qms.review',
         inverse_name='document_id'
     )
+    
+    approved = fields.Boolean()
 
     last_review_date = fields.Date(compute='_compute_last_review_date')
 

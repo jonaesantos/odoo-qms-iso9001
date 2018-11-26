@@ -1,26 +1,67 @@
 <odoo>
 
+    <!-- WINDOW ACTION -->
+    <record id="open_qms_procedure_list"
+            model="ir.actions.act_window">
+        <field name="name">Procedure</field>
+        <field name="res_model">qms.procedure</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
     <!-- TREE VIEW -->
-    <record id="view_qms_document_procedure_tree"
+    <record id="view_qms_procedure_tree"
             model="ir.ui.view">
-        <field name="name">qms.document_procedure.tree</field>
-        <field name="model">qms.document.procedure</field>
+        <field name="name">qms.procedure.tree</field>
+        <field name="model">qms.procedure</field>
         <field name="type">tree</field>
+        <field name="inherit_id"
+               ref="qms.view_qms_document_tree" />        
         <field name="arch"
                type="xml">
-            <tree>
-                <field name="name" />
+            <tree name="document"
+                  position="attributes">
+               <attribute name="string">Procedure</attribute>
             </tree>
         </field>
     </record>
 
-    <!-- WINDOW ACTION -->
-    <record id="open_qms_document_procedure_list"
-            model="ir.actions.act_window">
-        <field name="name">document_procedures</field>
-        <field name="res_model">qms.document.procedure</field>
-        <field name="view_type">form</field>
-        <field name="view_mode">tree,form</field>
+    <!-- FORM VIEW -->
+    <record id="view_qms_procedure_form"
+            model="ir.ui.view">
+        <field name="name">qms.procedure.form</field>
+        <field name="type">form</field>
+        <field name="model">qms.procedure</field>
+        <field name="inherit_id"
+               ref="qms.view_qms_document_form" />
+        <field name="arch"
+               type="xml">
+            <form>
+
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window.view"
+            id="action_qms_procedure_tree">
+        <field name="sequence"
+               eval="2" />
+        <field name="view_mode">tree</field>
+        <field name="view_id"
+               ref="view_qms_procedure_tree" />
+        <field name="act_window_id"
+               ref="open_qms_procedure_list" />
+    </record>
+
+    <record model="ir.actions.act_window.view"
+            id="action_qms_procedure_form">
+        <field name="sequence"
+               eval="3" />
+        <field name="view_mode">form</field>
+        <field name="view_id"
+               ref="view_qms_procedure_form" />
+        <field name="act_window_id"
+               ref="open_qms_procedure_list" />
     </record>
 
 </odoo>

@@ -5,16 +5,14 @@
             model="ir.ui.view">
         <field name="name">qms.document.tree</field>
         <field name="model">qms.document</field>
-        <field name="type">tree</field>
         <field name="arch"
                type="xml">
-            <tree>
+            <tree name="document">
+                <field name="identification" />
                 <field name="name" />
-                <field name="date_open" />
-                <field name="cancel_date" />
-                <field name="date_close" />
-                <field name="responsible_id" />
-                <field name="state" />
+                <field name="format" />
+                <field name="description" />
+                <field name="process_ids" />
                 <field name="approved" />
                 <!--<field name="last_review_date" />-->
             </tree>
@@ -44,25 +42,15 @@
                                    }}'/>
                         </button>
                     </div>
-                    <div class="oe_title">
-                        <h1>
+                    <group>
+                        <group>
                             <field name="name"/>
-                        </h1>
-                    </div>
-                    <group>
-                        <group>
-                            <field name="date_open" />
-                            <field name="responsible_id" />
+                            <field name="identification" />
                         </group>
                         <group>
-                            <field name="cancel_date" />
-                            <field name="date_close" />
+                            <field name="responsible_id" />                        
+                            <field name="format" />
                         </group>                        
-                    </group>
-                    <group>
-                        <group>
-                            <field name="state" />
-                        </group>
                     </group>
                     <notebook>
                         <page string="Description">
@@ -71,6 +59,9 @@
                         <page string="Processes">
                             <field name="process_ids" />
                         </page>
+                        <page string="Revisions">
+                            <field name="revision_ids" />
+                        </page>                        
                         <page string="Reviews">
                             <field name="review_ids" />
                         </page>
