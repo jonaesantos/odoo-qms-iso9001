@@ -10,10 +10,14 @@
             <tree name="document">
                 <field name="identification" />
                 <field name="name" />
-                <field name="format" />
-                <field name="description" />
                 <field name="process_ids" />
                 <field name="approved" />
+                <field name="storage" />
+                <field name="type" />
+                <field name="format" />  
+                <field name="holding_time" />  
+                <field name="disposition" />                
+                <field name="link" widget="html"/>              
                 <!--<field name="last_review_date" />-->
             </tree>
         </field>
@@ -46,12 +50,19 @@
                         <group>
                             <field name="name"/>
                             <field name="identification" />
+                            <field name="responsible_id" />   
+                            <field name="type" />                                                       
                         </group>
                         <group>
-                            <field name="responsible_id" />                        
+                            <field name="storage" />                      
                             <field name="format" />
-                        </group>                        
+                            <field name="disposition" />
+                            <field name="holding_time" />                            
+                        </group>
                     </group>
+                    <group>
+                        <field name="link" widget="html"/>
+                    </group>                    
                     <notebook>
                         <page string="Description">
                             <field name="description" />

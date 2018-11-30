@@ -31,6 +31,25 @@ class Document(models.Model):
         inverse_name='document_id',
     )       
 
+    holding_time = fields.Char()
+
+    storage = fields.Char()
+    
+    link = fields.Char()
+
+    disposition = fields.Char()
+
+    _type_ = [
+        ('internal', 'Internal'),
+        ('external', 'External')
+    ]
+
+    type = fields.Selection(
+        selection=_type_,
+        default='internal',
+        required=True
+    )
+
     description = fields.Html()
 
     responsible_id = fields.Many2one(

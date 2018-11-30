@@ -29,6 +29,7 @@
                     <field name="revision" />
                     <field name="date_open" />
                     <field name="comments" />
+                    <field name="state" />
                 </group>
             </search>
         </field>
@@ -51,9 +52,9 @@
                       <field name="date_open" />
                       <field name="state" />
                   </group>
-                  <group>
-                      <field name="comments" />
-                  </group>
+                </group>
+                <group>
+                    <field name="comments" />
                 </group>
             </form>
         </field>

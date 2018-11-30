@@ -14,7 +14,8 @@ class Document_Revision(models.Model):
     date_open = fields.Date()
 
     _state_ = [
-        ('valid', 'Draft'),
+        ('draft', 'Draft'),        
+        ('valid', 'Valid'),
         ('obsolete', 'Obsolete')
     ]
 
