@@ -30,4 +30,4 @@ import resource
 import document
 import procedure
 import opportunity
-import document_revision
+import version

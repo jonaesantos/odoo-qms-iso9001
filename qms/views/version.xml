@@ -1,0 +1,73 @@
+<odoo>
+
+    <!-- TREE VIEW -->
+    <record id="view_qms_version_tree"
+            model="ir.ui.view">
+        <field name="name">qms.version.tree</field>
+        <field name="model">qms.version</field>
+        <field name="type">tree</field>
+        <field name="arch"
+               type="xml">
+            <tree>
+                <field name="version" />
+                <field name="date_open" />
+                <field name="responsible_id" />              
+                <field name="change_history" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- SEARCH VIEW -->
+    <record id="view_qms_version_filter"
+            model="ir.ui.view">
+        <field name="name">qms.version.filter</field>
+        <field name="model">qms.version</field>
+        <field name="type">search</field>
+        <field name="arch"
+               type="xml">
+            <search>
+                <group>
+                    <field name="version" />
+                    <field name="date_open" />
+                    <field name="responsible_id" />
+                    <field name="change_history" />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- FORM VIEW -->
+    <record id="view_qms_version_form"
+            model="ir.ui.view">
+        <field name="name">qms.version.form</field>
+        <field name="model">qms.version</field>
+        <field name="type">form</field>
+        <field name="arch"
+               type="xml">
+            <form>
+                <group>
+                  <group>
+                        <field name="version" />
+                        <field name="responsible_id" />
+                  </group>
+                  <group>
+                        <field name="date_open" />
+                  </group>
+                </group>
+                <group>
+                    <field name="change_history" />
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- WINDOW ACTION -->
+    <record id="open_qms_version_list"
+            model="ir.actions.act_window">
+        <field name="name">Document versions</field>
+        <field name="res_model">qms.version</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

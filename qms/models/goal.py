@@ -46,7 +46,7 @@ class Goal(models.Model):
 
     measurement_ids = fields.One2many(
         comodel_name='qms.goal.measurement',
-        inverse_name='goal_id',
+        inverse_name='goal_id'
     )
 
     action_ids = fields.One2many(

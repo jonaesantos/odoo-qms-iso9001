@@ -70,9 +70,10 @@
                         <page string="Processes">
                             <field name="process_ids" />
                         </page>
-                        <page string="Revisions">
-                            <field name="revision_ids" />
-                        </page>                        
+                        <page string="Versions">
+                            <field name="version_ids"
+                                   nolabel="True" />
+                        </page>                                                
                         <page string="Reviews">
                             <field name="review_ids" />
                         </page>

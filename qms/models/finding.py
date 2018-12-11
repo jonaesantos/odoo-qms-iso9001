@@ -77,9 +77,9 @@ class Finding(models.Model):
         comodel_name='qms.action'
     )
 
-    action_plan_comments = fields.Text()
+    #action_plan_comments = fields.Text()
 
-    evaluation_comments = fields.Text()
+    #evaluation_comments = fields.Text()
 
     description = fields.Html(
         required=True
@@ -100,32 +100,32 @@ class Finding(models.Model):
         string='Related Audits'
     )
 
-    @api.constrains('stage_id')
-    def _check_open_with_action_comments(self):
-        for finding in self:
-            if finding.state == 'open' and not finding.action_plan_comments:
-                raise models.ValidationError(
-                    _("Action plan comments are required \
-                      in order to put a finding 'In Progress'.")
-                )
+    # @api.constrains('stage_id')
+    # def _check_open_with_action_comments(self):
+    #     for finding in self:
+    #         if finding.state == 'open' and not finding.action_plan_comments:
+    #             raise models.ValidationError(
+    #                 _("Action plan comments are required \
+    #                   in order to put a finding 'In Progress'.")
+    #             )
 
-    @api.constrains('stage_id')
-    def _check_close_with_evaluation(self):
-        for finding in self:
-            if finding.state == 'done':
-                if not finding.evaluation_comments:
-                    raise models.ValidationError(
-                        _("Evaluation Comments are required \
-                          in order to close a finding.")
-                    )
-                actions_are_closed = (
-                    action.stage_id.is_ending
-                    for action in finding.action_ids)
-                if not all(actions_are_closed):
-                    raise models.ValidationError(
-                        _("All actions must be done \
-                          before closing a finding.")
-                    )
+    # @api.constrains('stage_id')
+    # def _check_close_with_evaluation(self):
+    #     for finding in self:
+    #         if finding.state == 'done':
+    #             if not finding.evaluation_comments:
+    #                 raise models.ValidationError(
+    #                     _("Evaluation Comments are required \
+    #                       in order to close a finding.")
+    #                 )
+    #             actions_are_closed = (
+    #                 action.stage_id.is_ending
+    #                 for action in finding.action_ids)
+    #             if not all(actions_are_closed):
+    #                 raise models.ValidationError(
+    #                     _("All actions must be done \
+    #                       before closing a finding.")
+    #                 )
 
     @api.multi
     def write(self, vals):

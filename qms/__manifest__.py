@@ -54,7 +54,7 @@
         'views/indicator_measurement.xml',
         'views/document.xml',
         'views/procedure.xml',
-        'views/document_revision.xml',
+        'views/version.xml',
         'views/menu.xml'
     ],
     'demo': [],

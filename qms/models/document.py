@@ -11,9 +11,7 @@ class Document(models.Model):
         required=True
     )
 
-    name = fields.Char(
-        required=True
-    )
+    name = fields.Char()
 
     _format_ = [
         ('paper', 'Paper'),
@@ -26,9 +24,9 @@ class Document(models.Model):
         required=True
     )
 
-    revision_ids = fields.One2many(
-        comodel_name='qms.document.revision',
-        inverse_name='document_id',
+    version_ids = fields.One2many(
+        comodel_name='qms.version',
+        inverse_name='document_id'
     )       
 
     holding_time = fields.Char()

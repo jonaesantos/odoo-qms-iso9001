@@ -159,7 +159,7 @@
                               attrs="{'invisible':[('state','in',['draft','analysis','cancel'])]}">
                             <separator string="Action Plan" />
                             <field name="action_ids" />
-                            <group string="Plan Review">
+                            <!--<group string="Plan Review">
                                 <group>
                                     <field name="action_plan_comments"
                                            attrs="{'readonly':[('state','not in',['pending'])]}"
@@ -175,7 +175,7 @@
                                            nolabel="1"
                                            placeholder="Evaluation Comments" />
                                 </group>
-                            </group>
+                            </group>-->
                         </page>
                     </notebook>
                 </sheet>
