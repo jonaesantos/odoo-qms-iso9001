@@ -23,6 +23,16 @@ class Version(models.Model):
         ondelete='cascade'
     )
 
+    instructive_id = fields.Many2one(
+        comodel_name='qms.instructivee',
+        ondelete='cascade'
+    )
+
+    registry_id = fields.Many2one(
+        comodel_name='qms.registry',
+        ondelete='cascade'
+    )        
+
     responsible_id = fields.Many2one(
         comodel_name='qms.interested_party',
         required=True

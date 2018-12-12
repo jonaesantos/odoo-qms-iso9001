@@ -57,7 +57,8 @@
                             <field name="storage" />                      
                             <field name="format" />
                             <field name="disposition" />
-                            <field name="holding_time" />                            
+                            <field name="holding_time" />
+                            <field name="relation" />                                                        
                         </group>
                     </group>
                     <group>

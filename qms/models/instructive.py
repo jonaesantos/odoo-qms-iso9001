@@ -3,9 +3,9 @@
 from odoo import api, fields, models, _
 
 
-class Procedure(models.Model):
+class Instructive(models.Model):
 
-    _name = "qms.procedure"
+    _name = "qms.instructive"
     _inherit = 'qms.document'
 
     name = fields.Char(
@@ -14,6 +14,7 @@ class Procedure(models.Model):
 
     version_ids = fields.One2many(
         comodel_name='qms.version',
-        inverse_name='procedure_id'
-    )   
+        inverse_name='instructive_id'
+    )     
+    
      

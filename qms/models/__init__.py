@@ -31,3 +31,5 @@ import document
 import procedure
 import opportunity
 import version
+import instructive
+import registry

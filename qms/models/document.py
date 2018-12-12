@@ -27,7 +27,20 @@ class Document(models.Model):
     version_ids = fields.One2many(
         comodel_name='qms.version',
         inverse_name='document_id'
-    )       
+    )
+
+
+    _relation_ = [
+        ('sgc&tmc', 'SGC / TMC'),
+        ('sgc', 'SGC'),
+        ('tmc', 'TMC')        
+    ]
+
+    relation = fields.Selection(
+        selection=_relation_,
+        default='sgc&tmc',
+        required=True
+    )           
 
     holding_time = fields.Char()
 

@@ -68,7 +68,7 @@
                         <field name="system" />
                     </group>
                     <group>
-
+                        <!-- -->
                     </group>
                     <notebook>
                         <page string="Auditors">

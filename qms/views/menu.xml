@@ -108,7 +108,19 @@
               name="Procedures"
               parent="qms.menu_open_document"
               action="open_qms_procedure_list"
-              sequence="5" />                          
+              sequence="5" /> 
+
+     <menuitem id="menu_open_instructive"
+              name="Instructives"
+              parent="qms.menu_open_document"
+              action="open_qms_instructive_list"
+              sequence="10" /> 
+
+     <menuitem id="menu_open_registry"
+              name="Registries"
+              parent="qms.menu_open_document"
+              action="open_qms_registry_list"
+              sequence="15" />                                                      
 
     <menuitem id="menu_config_action"
               name="Actions"
