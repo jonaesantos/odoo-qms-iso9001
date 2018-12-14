@@ -24,7 +24,7 @@ class Version(models.Model):
     )
 
     instructive_id = fields.Many2one(
-        comodel_name='qms.instructivee',
+        comodel_name='qms.instructive',
         ondelete='cascade'
     )
 

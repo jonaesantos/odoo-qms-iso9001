@@ -135,6 +135,9 @@
                                    </tree>
                             </field>
                         </page>
+                        <page string="Audit Evaluations">
+                            <field name="audit_evaluation_ids" />
+                        </page>                        
                     </notebook>
                 </sheet>
             </form>

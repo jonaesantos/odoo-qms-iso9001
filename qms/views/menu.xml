@@ -99,10 +99,15 @@
               action="open_qms_opportunity_list"
               sequence="30" />
 
+     <menuitem id="menu_open_audit_evaluation"
+              action="open_qms_audit_evaluation_list"
+              parent="qms.menu_qms_main"
+              sequence="32" />             
+
     <menuitem id="menu_open_document"
               name="Documents"
               parent="qms.menu_qms_main"
-              sequence="32" /> 
+              sequence="34" /> 
 
      <menuitem id="menu_open_procedure"
               name="Procedures"

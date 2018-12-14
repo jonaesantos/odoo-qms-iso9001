@@ -31,7 +31,7 @@ class Audit(models.Model):
         required=False
     )
 
-    date = fields.Datetime()
+    date = fields.Date()
 
     verification_line_ids = fields.One2many(
         comodel_name='qms.audit.verification.line',
@@ -59,6 +59,11 @@ class Audit(models.Model):
         comodel_name='qms.interested_party',
         relation='audit_auditor_rel'
         #domain="[('auditor', '=', True)]"
+    )
+
+    audit_evaluation_ids = fields.One2many(
+        comodel_name='qms.audit.evaluation',
+        inverse_name='audit_id'
     )
 
     non_conformity_ids = fields.One2many(

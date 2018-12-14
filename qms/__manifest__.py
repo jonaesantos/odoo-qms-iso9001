@@ -57,6 +57,7 @@
         'views/version.xml',
         'views/instructive.xml',
         'views/registry.xml',
+        'views/audit_evaluation.xml',   
         'views/menu.xml'
     ],
     'demo': [],
