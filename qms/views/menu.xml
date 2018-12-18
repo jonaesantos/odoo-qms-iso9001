@@ -60,6 +60,11 @@
               parent="qms.menu_qms_main"
               sequence="25" />
 
+     <menuitem id="menu_open_audit_evaluation"
+              action="open_qms_audit_evaluation_list"
+              parent="qms.menu_qms_main"
+              sequence="26" />
+
     <menuitem id="menu_open_effectiveness_check"
               action="open_qms_effectiveness_check_list"
               parent="qms.menu_qms_main"
@@ -98,11 +103,6 @@
               parent="qms.menu_open_finding"
               action="open_qms_opportunity_list"
               sequence="30" />
-
-     <menuitem id="menu_open_audit_evaluation"
-              action="open_qms_audit_evaluation_list"
-              parent="qms.menu_qms_main"
-              sequence="32" />             
 
     <menuitem id="menu_open_document"
               name="Documents"
