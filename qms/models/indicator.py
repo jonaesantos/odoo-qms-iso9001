@@ -55,6 +55,11 @@ class Indicator(models.Model):
         inverse_name='indicator_id',
     )
 
+    version_ids = fields.One2many(
+        comodel_name='qms.version',
+        inverse_name='indicator_id'
+    )    
+
     non_conformity_ids = fields.One2many(
         comodel_name='qms.non_conformity',
         inverse_name='indicator_id'

@@ -18,6 +18,16 @@ class Version(models.Model):
         ondelete='cascade'        
     )
 
+    policy_id = fields.Many2one(
+        comodel_name='qms.policy',
+        ondelete='cascade'        
+    )
+
+    indicator_id = fields.Many2one(
+        comodel_name='qms.indicator',
+        ondelete='cascade'        
+    )        
+
     procedure_id = fields.Many2one(
         comodel_name='qms.procedure',
         ondelete='cascade'

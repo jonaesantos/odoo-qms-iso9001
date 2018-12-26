@@ -31,6 +31,11 @@ class Policy(models.Model):
         inverse_name='policy_id'
     )
 
+    version_ids = fields.One2many(
+        comodel_name='qms.version',
+        inverse_name='policy_id'
+    )    
+
     @api.multi
     @api.depends('review_ids')
     def _compute_last_review_date(self):
