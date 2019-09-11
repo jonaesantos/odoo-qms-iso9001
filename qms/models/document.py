@@ -82,6 +82,8 @@ class Document(models.Model):
 
     last_review_date = fields.Date(compute='_compute_last_review_date')
 
+    last_version = fields.Char(compute='_compute_last_version')
+
     @api.multi
     @api.depends('review_ids')
     def _compute_last_review_date(self):
@@ -95,6 +97,22 @@ class Document(models.Model):
                 key=lambda r: r.date,
                 reverse=True)
             document.last_review_date = last_review[0].date
+
+    @api.multi
+    @api.depends('version_ids')
+    def _compute_last_version(self):
+        for document in self:
+            domain = [
+                ('document_id', '=', document.id),
+                #('modify_concession', '=', True)
+            ]
+            related_versions = document.env['qms.version'].search(domain)
+            last_version = related_versions.sorted(
+                key=lambda r: r.date_open,
+                reverse=True)
+            print last_version
+            print related_versions
+            document.last_version = last_version[0].version
 
     @api.one
     def toggle_approved(self):

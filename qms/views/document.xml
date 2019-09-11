@@ -18,7 +18,7 @@
                 <field name="holding_time" />  
                 <field name="disposition" />                
                 <field name="link" widget="html"/>              
-                <!--<field name="last_review_date" />-->
+
             </tree>
         </field>
     </record>

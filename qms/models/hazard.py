@@ -175,7 +175,7 @@ class Hazard(models.Model):
 
     review_ids = fields.One2many(
         comodel_name='qms.review',
-        inverse_name='hazard_id'
+        inverse_name='hazard_id',
     )
 
     last_review_date = fields.Date(compute='_compute_last_review_date')
