@@ -1,9 +1,6 @@
 # Odoo Quality Management System
 Odoo addon for ISO 9001 Quality Management System. This is a simplified and customized version based on some models used in the management system modules by Odoo Community Association available at https://github.com/OCA/management-system/.
 
-## Translation Status
-[![Transifex Status](https://www.transifex.com/tmcrosario/odoo-qms-iso9001-10/)](https://www.transifex.com/tmcrosario/odoo-qms-iso9001-10/)
-
 ## License
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
@@ -14,4 +11,4 @@ You should have received a copy of the GNU Affero General Public License along w
 
 ----
 
-<img alt="TMC Rosario" src="http://www.tmcrosario.gov.ar/images/tmc_nuevo.png"/>
+<img align="left" src="https://iili.io/2ARo1R.png"/>
