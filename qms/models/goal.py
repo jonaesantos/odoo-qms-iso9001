@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 from odoo import api, fields, models, _
 
@@ -72,7 +71,7 @@ class Goal(models.Model):
 
     last_review_date = fields.Date(compute='_compute_last_review_date')
 
-    @api.multi
+    
     @api.depends('measurement_ids')
     def _compute_last_measurement_date(self):
         for goal in self:
@@ -86,7 +85,7 @@ class Goal(models.Model):
                 reverse=True)
             goal.last_measurement_date = last_measurement[0].measurement_date
 
-    @api.multi
+    
     @api.depends('measurement_ids')
     def _compute_last_measurement_result(self):
         for goal in self:
@@ -100,7 +99,7 @@ class Goal(models.Model):
                 reverse=True)
             goal.last_measurement_result = last_measurement[0].result
 
-    @api.multi
+    
     @api.depends('review_ids')
     def _compute_last_review_date(self):
         for goal in self:
@@ -114,6 +113,6 @@ class Goal(models.Model):
                 reverse=True)
             goal.last_review_date = last_review[0].date
 
-    @api.one
+    
     def toggle_approved(self):
         self.approved = not self.approved

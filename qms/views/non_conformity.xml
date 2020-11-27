@@ -5,7 +5,7 @@
             id="open_qms_non_conformity_list">
         <field name="name">Non Conformities</field>
         <field name="res_model">qms.non_conformity</field>
-        <field name="view_type">form</field>
+        
         <field name="view_mode">kanban,tree,form</field>
     </record>
 

@@ -74,7 +74,7 @@
             model="ir.actions.act_window">
         <field name="name">Indicator Measurements</field>
         <field name="res_model">qms.indicator.measurement</field>
-        <field name="view_type">form</field>
+        
         <field name="view_mode">tree,form</field>
     </record>
 

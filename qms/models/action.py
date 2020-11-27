@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # This model is based in some code used in OCA Management System Addons Project
 # Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
@@ -133,7 +132,7 @@ class Action(models.Model):
         action = super(Action, self).create(vals)
         return action
 
-    @api.multi
+    
     def write(self, vals):
         # if vals.get('stage_id'):
         #     if vals['stage_id'] == self._get_stage_new().id:

@@ -72,7 +72,7 @@
             model="ir.actions.act_window">
         <field name="name">Process</field>
         <field name="res_model">qms.process</field>
-        <field name="view_type">form</field>
+        
         <field name="view_mode">tree,form</field>
     </record>
 

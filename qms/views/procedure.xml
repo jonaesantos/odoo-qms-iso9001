@@ -5,7 +5,7 @@
             model="ir.actions.act_window">
         <field name="name">Procedure</field>
         <field name="res_model">qms.procedure</field>
-        <field name="view_type">form</field>
+        
         <field name="view_mode">tree,form</field>
     </record>
 

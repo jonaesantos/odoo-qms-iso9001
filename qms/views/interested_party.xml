@@ -85,7 +85,7 @@
             id="action_interested_party_organization_tree">
         <field name="name">Organizations</field>
         <field name="res_model">qms.interested_party</field>
-        <field name="view_type">form</field>
+        
         <field name="view_mode">tree,form</field>
         <field name="view_id"
                ref="view_interested_party_organization_tree" />
@@ -98,7 +98,7 @@
             id="action_interested_party_individual_tree">
         <field name="name">Individuals</field>
         <field name="res_model">qms.interested_party</field>
-        <field name="view_type">form</field>
+        
         <field name="view_mode">tree,form</field>
         <field name="view_id"
                ref="view_interested_party_individual_tree" />

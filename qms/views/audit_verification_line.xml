@@ -67,7 +67,7 @@
             model="ir.actions.act_window">
         <field name="name">Verification Lines</field>
         <field name="res_model">qms.audit.verification.line</field>
-        <field name="view_type">form</field>
+        
         <field name="view_mode">tree,form</field>
     </record>
 

@@ -120,7 +120,7 @@
             model="ir.actions.act_window">
         <field name="name">Indicators</field>
         <field name="res_model">qms.indicator</field>
-        <field name="view_type">form</field>
+        
         <field name="view_mode">tree,form</field>
     </record>
 

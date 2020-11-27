@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # This model is based in some code used in OCA Management System Addons Project
 # Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
@@ -96,7 +95,7 @@ class Audit(models.Model):
     #     audit_id = super(Audit, self).create(vals)
     #     return audit_id
 
-    @api.multi
+    
     def button_close(self):
         return self.write(
             {

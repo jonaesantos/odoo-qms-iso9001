@@ -5,7 +5,7 @@
             id="open_qms_observation_list">
         <field name="name">Observations</field>
         <field name="res_model">qms.observation</field>
-        <field name="view_type">form</field>
+        
         <field name="view_mode">tree,kanban,form</field>
     </record>
 

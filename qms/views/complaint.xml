@@ -5,7 +5,7 @@
             id="open_qms_complaint_list">
         <field name="name">Complaints</field>
         <field name="res_model">qms.complaint</field>
-        <field name="view_type">form</field>
+        
         <field name="view_mode">tree,kanban,form</field>
     </record>
 

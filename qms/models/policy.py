@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 from odoo import api, fields, models
 
@@ -36,7 +35,7 @@ class Policy(models.Model):
         inverse_name='policy_id'
     )    
 
-    @api.multi
+    
     @api.depends('review_ids')
     def _compute_last_review_date(self):
         for policy in self:
@@ -51,6 +50,6 @@ class Policy(models.Model):
             policy.last_review_date = last_review[0].date
 
 
-    @api.one
+    
     def toggle_approved(self):
         self.approved = not self.approved

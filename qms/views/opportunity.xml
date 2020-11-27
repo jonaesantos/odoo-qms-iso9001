@@ -5,7 +5,7 @@
             id="open_qms_opportunity_list">
         <field name="name">Opportunities</field>
         <field name="res_model">qms.opportunity</field>
-        <field name="view_type">form</field>
+        
         <field name="view_mode">kanban,tree,form</field>
     </record>
 

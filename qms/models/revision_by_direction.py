@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 from odoo import api, fields, models, _
 
@@ -58,7 +57,7 @@ class Revision_by_direction(models.Model):
         default='open'
     )
 
-    @api.multi
+    
     def button_close(self):
         return self.write(
             {

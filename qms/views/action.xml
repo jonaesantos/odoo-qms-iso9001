@@ -143,7 +143,7 @@
             model="ir.actions.act_window">
         <field name="name">Actions</field>
         <field name="res_model">qms.action</field>
-        <field name="view_type">form</field>
+        
         <field name="view_mode">kanban,tree,form</field>
     </record>
 

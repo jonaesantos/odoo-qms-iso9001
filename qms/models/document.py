@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
@@ -84,7 +83,7 @@ class Document(models.Model):
 
     last_version = fields.Char(compute='_compute_last_version')
 
-    @api.multi
+    
     @api.depends('review_ids')
     def _compute_last_review_date(self):
         for document in self:
@@ -98,7 +97,7 @@ class Document(models.Model):
                 reverse=True)
             document.last_review_date = last_review[0].date
 
-    @api.multi
+    
     @api.depends('version_ids')
     def _compute_last_version(self):
         for document in self:
@@ -114,6 +113,6 @@ class Document(models.Model):
             print related_versions
             document.last_version = last_version[0].version
 
-    @api.one
+    
     def toggle_approved(self):
         self.approved = not self.approved

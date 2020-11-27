@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 from odoo import api, fields, models
 
@@ -64,7 +63,7 @@ class Process(models.Model):
 
     last_review_date = fields.Date(compute='_compute_last_review_date')
 
-    @api.multi
+    
     @api.depends('review_ids')
     def _compute_last_review_date(self):
         for process in self:

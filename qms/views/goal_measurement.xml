@@ -73,7 +73,7 @@
             model="ir.actions.act_window">
         <field name="name">Goal Measurements</field>
         <field name="res_model">qms.goal.measurement</field>
-        <field name="view_type">form</field>
+        
         <field name="view_mode">tree,form</field>
     </record>
 

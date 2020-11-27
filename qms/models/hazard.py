@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 from odoo import api, fields, models, _
 
@@ -100,7 +99,7 @@ class Hazard(models.Model):
         required=False
     )
 
-    @api.one
+    
     @api.depends('probability',
                  'impact')
     def _compute_result_and_evaluation(self):
@@ -180,7 +179,7 @@ class Hazard(models.Model):
 
     last_review_date = fields.Date(compute='_compute_last_review_date')
 
-    @api.multi
+    
     @api.depends('review_ids')
     def _compute_last_review_date(self):
         for hazard in self:

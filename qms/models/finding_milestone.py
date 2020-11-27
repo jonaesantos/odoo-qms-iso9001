@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 from odoo import api, fields, models
 
@@ -27,7 +26,7 @@ class Finding_Milestone(models.Model):
 
     reference_code = fields.Char()
 
-    @api.multi
+    
     def name_get(self):
         res = []
         for obj in self:

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # This model is based in some code used in OCA Management System Addons Project
 # Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
@@ -127,7 +126,7 @@ class Finding(models.Model):
     #                       before closing a finding.")
     #                 )
 
-    @api.multi
+    
     def write(self, vals):
         is_writing = 'is_writing' in self.env.context
         is_state_change = 'stage_id' in vals or 'state' in vals
