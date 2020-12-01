@@ -7,7 +7,7 @@
     #    available at https://github.com/OCA/management-system/
     #    ''',
     'website': 'https://www.tmcrosario.gob.ar',
-    'version': '12.0.1.0.0',
+    'version': '13.0.1.0.0',
     'author': 'TMC Rosario, Odoo Community Association',
     'license': 'AGPL-3',
     #'sequence': 150,
