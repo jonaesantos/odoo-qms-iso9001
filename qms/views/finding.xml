@@ -121,7 +121,7 @@
                 </header>
                 <sheet>
                     <field name="kanban_state"
-                           widget="kanban_state_selection" />
+                           widget="state_selection" />
                     <group>
                         <group>
                             <field name="name" />

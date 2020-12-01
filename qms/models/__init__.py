@@ -1,35 +1,35 @@
 
-import stage
-import effectiveness_check
-import action
-import action_stage
-import audit
-import audit_verification_line
-import audit_evaluation
-import finding_milestone
-import finding
-import weakness_cause
-import weakness
-import non_conformity
-import observation
-import complaint
-import finding_origin
-import finding_stage
-import goal
-import goal_measurement
-import revision_by_direction
-import hazard
-import interested_party
-import policy
-import indicator
-import policy_component
-import indicator_measurement
-import review
-import process
-import resource
-import document
-import procedure
-import opportunity
-import version
-import instructive
-import registry
+from . import stage
+from . import effectiveness_check
+from . import action
+from . import action_stage
+from . import audit
+from . import audit_verification_line
+from . import audit_evaluation
+from . import finding_milestone
+from . import finding
+from . import weakness_cause
+from . import weakness
+from . import non_conformity
+from . import observation
+from . import complaint
+from . import finding_origin
+from . import finding_stage
+from . import goal
+from . import goal_measurement
+from . import revision_by_direction
+from . import hazard
+from . import interested_party
+from . import policy
+from . import indicator
+from . import policy_component
+from . import indicator_measurement
+from . import review
+from . import process
+from . import resource
+from . import document
+from . import procedure
+from . import opportunity
+from . import version
+from . import instructive
+from . import registry

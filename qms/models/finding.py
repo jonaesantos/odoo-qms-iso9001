@@ -139,7 +139,7 @@ class Finding(models.Model):
             for finding in self:
                 if finding.kanban_state != 'normal':
                     vals['kanban_state'] = 'normal'
-                    print "dentro de write pp 1..."
+                    print("dentro de write pp 1...")
         result = super(Finding, self).write(vals)
 
         # Set/reset the closing date

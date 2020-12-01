@@ -109,8 +109,8 @@ class Document(models.Model):
             last_version = related_versions.sorted(
                 key=lambda r: r.date_open,
                 reverse=True)
-            print last_version
-            print related_versions
+            print(last_version)
+            print(related_versions)
             document.last_version = last_version[0].version
 
     
