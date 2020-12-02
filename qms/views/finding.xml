@@ -20,7 +20,7 @@
         </field>
     </record>
 
-    <record id="view_qms_finding_filter"
+    <!-- <record id="view_qms_finding_filter"
             model="ir.ui.view">
         <field name="name">qms.finding.filter</field>
         <field name="model">qms.finding</field>
@@ -52,7 +52,7 @@
                 <newline />
             </search>
         </field>
-    </record>
+    </record> -->
 
     <!-- KANBAN VIEW -->
     <record id="view_qms_finding_kanban"

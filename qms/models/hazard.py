@@ -11,19 +11,19 @@ class Hazard(models.Model):
     number = fields.Integer()
 
     _probabilities_ = [
-        (1, 'Very Low (Rare)'),
-        (2, 'Low (Improbable)'),
-        (3, 'Medium (Possible)'),
-        (4, 'High Medium (Probable)'),
-        (5, 'Very High (Almost Sure)')
+        ('1', 'Very Low (Rare)'),
+        ('2', 'Low (Improbable)'),
+        ('3', 'Medium (Possible)'),
+        ('4', 'High Medium (Probable)'),
+        ('5', 'Very High (Almost Sure)')
     ]
 
     _impacts_ = [
-        (1, 'Very Low (Insignificant)'),
-        (2, 'Low (Less)'),
-        (3, 'Medium (Moderate)'),
-        (4, 'High Medium (Higher)'),
-        (5, 'Very High (Catastrophic)')
+        ('1', 'Very Low (Insignificant)'),
+        ('2', 'Low (Less)'),
+        ('3', 'Medium (Moderate)'),
+        ('4', 'High Medium (Higher)'),
+        ('5', 'Very High (Catastrophic)')
     ]
 
     _strategies_ = [

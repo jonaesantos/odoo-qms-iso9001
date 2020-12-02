@@ -92,7 +92,7 @@
     </record>
 
     <!-- KANBAN VIEW -->
-    <record id="view_qms_hazard_kanban"
+    <!-- <record id="view_qms_hazard_kanban"
             model="ir.ui.view">
         <field name="name">qms.hazard.kanban</field>
         <field name="model">qms.hazard</field>
@@ -143,7 +143,7 @@
                 </templates>
             </kanban>
         </field>
-    </record>
+    </record> -->
 
     <!-- WINDOW ACTION -->
     <record id="open_qms_hazard_list"

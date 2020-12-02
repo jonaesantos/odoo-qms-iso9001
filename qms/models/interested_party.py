@@ -12,31 +12,31 @@ class Interested_Party(models.Model):
     ]
 
     _power_ = [
-        (1, 'Low'),
-        (2, 'Medium'),
-        (3, 'High'),
-        (4, 'Very High')
+        ('1', 'Low'),
+        ('2', 'Medium'),
+        ('3', 'High'),
+        ('4', 'Very High')
     ]
 
     _interest_ = [
-        (1, 'Low'),
-        (2, 'Medium'),
-        (3, 'High'),
-        (4, 'Very High')
+        ('1', 'Low'),
+        ('2', 'Medium'),
+        ('3', 'High'),
+        ('4', 'Very High')
     ]
 
     _cooperation_ = [
-        (1, 'Low'),
-        (2, 'Medium'),
-        (3, 'High'),
-        (4, 'Very High')
+        ('1', 'Low'),
+        ('2', 'Medium'),
+        ('3', 'High'),
+        ('4', 'Very High')
     ]
 
     _impact_ = [
-        (1, 'Low'),
-        (2, 'Medium'),
-        (3, 'High'),
-        (4, 'Very High')
+        ('1', 'Low'),
+        ('2', 'Medium'),
+        ('3', 'High'),
+        ('4', 'Very High')
     ]
 
     power = fields.Selection(

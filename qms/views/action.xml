@@ -33,7 +33,7 @@
                 <field name="name" />
                 <field name="create_date" />
                 <newline/>
-                <filter string="Type"
+                <filter name="type" string="Type"
                         context="{'group_by':'response_type'}" />
             </search>
         </field>
@@ -84,7 +84,7 @@
     </record>
 
     <!-- KANBAN VIEW -->
-    <record id="view_qms_action_kanban"
+    <!-- <record id="view_qms_action_kanban"
             model="ir.ui.view">
         <field name="name">qms.action.kanban</field>
         <field name="model">qms.action</field>
@@ -136,7 +136,7 @@
                 </templates>
             </kanban>
         </field>
-    </record>
+    </record> -->
 
     <!-- WINDOW ACTION -->
     <record id="open_qms_action_list"
