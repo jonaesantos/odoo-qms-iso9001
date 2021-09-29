@@ -1,13 +1,11 @@
 <odoo>
 
     <!-- TREE VIEW -->
-    <record id="view_qms_action_tree"
-            model="ir.ui.view">
+    <record id="view_qms_action_tree" model="ir.ui.view">
         <field name="name">qms.action.tree</field>
         <field name="model">qms.action</field>
         <field name="type">tree</field>
-        <field name="arch"
-               type="xml">
+        <field name="arch" type="xml">
             <tree>
                 <field name="id" />
                 <field name="reference" />
@@ -22,35 +20,28 @@
     </record>
 
     <!-- SEARCH VIEW -->
-    <record id="view_qms_action_filter"
-            model="ir.ui.view">
+    <record id="view_qms_action_filter" model="ir.ui.view">
         <field name="name">qms.action.filter</field>
         <field name="model">qms.action</field>
         <field name="type">search</field>
-        <field name="arch"
-               type="xml">
+        <field name="arch" type="xml">
             <search>
                 <field name="name" />
                 <field name="create_date" />
-                <newline/>
-                <filter name="type" string="Type"
-                        context="{'group_by':'response_type'}" />
+                <newline />
+                <filter name="type" string="Type" context="{'group_by':'response_type'}" />
             </search>
         </field>
     </record>
 
     <!-- FORM VIEW -->
-    <record id="view_qms_action_form"
-            model="ir.ui.view">
+    <record id="view_qms_action_form" model="ir.ui.view">
         <field name="name">qms.action.form</field>
         <field name="model">qms.action</field>
-        <field name="arch"
-               type="xml">
+        <field name="arch" type="xml">
             <form>
                 <header>
-                    <field name="stage_id"
-                           widget="statusbar"
-                           clickable="True" />
+                    <field name="stage_id" widget="statusbar" clickable="True" />
                 </header>
                 <sheet>
                     <group>
@@ -70,12 +61,10 @@
                     </group>
                     <notebook>
                         <page string="Description">
-                            <field name="description"
-                                   nolabel="True" />
+                            <field name="description" nolabel="True" />
                         </page>
                         <page string="Effectiveness Checks">
-                            <field name="effectiveness_check_ids"
-                                   nolabel="True" />
+                            <field name="effectiveness_check_ids" nolabel="True" />
                         </page>
                     </notebook>
                 </sheet>
@@ -139,11 +128,9 @@
     </record> -->
 
     <!-- WINDOW ACTION -->
-    <record id="open_qms_action_list"
-            model="ir.actions.act_window">
+    <record id="open_qms_action_list" model="ir.actions.act_window">
         <field name="name">Actions</field>
         <field name="res_model">qms.action</field>
-        
         <field name="view_mode">kanban,tree,form</field>
     </record>
 

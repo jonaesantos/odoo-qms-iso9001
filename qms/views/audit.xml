@@ -1,40 +1,30 @@
 <odoo>
 
     <!-- TREE VIEW -->
-    <record id="view_qms_audit_tree"
-            model="ir.ui.view">
+    <record id="view_qms_audit_tree" model="ir.ui.view">
         <field name="name">qms.audit.tree</field>
         <field name="model">qms.audit</field>
         <field name="type">tree</field>
-        <field name="arch"
-               type="xml">
+        <field name="arch" type="xml">
             <tree>
                 <field name="reference" />
-                <field name="date"
-                       attrs="{'readonly':[('state','=','done')]}" />
+                <field name="date" attrs="{'readonly':[('state','=','done')]}" />
                 <field name="create_date" />
-                <field name="state"
-                       invisible="True" />
+                <field name="state" invisible="True" />
             </tree>
         </field>
     </record>
 
     <!-- SEARCH VIEW -->
-    <record id="view_qms_audit_filter"
-            model="ir.ui.view">
+    <record id="view_qms_audit_filter" model="ir.ui.view">
         <field name="name">qms.audit.filter</field>
         <field name="model">qms.audit</field>
         <field name="type">search</field>
-        <field name="arch"
-               type="xml">
+        <field name="arch" type="xml">
             <search>
                 <group>
-                    <filter name="open"
-                            domain="[('state','=','open')]"
-                            string="Open" />
-                    <filter name="closed"
-                            domain="[('state','=','done')]"
-                            string="Closed" />
+                    <filter name="open" domain="[('state','=','open')]" string="Open" />
+                    <filter name="closed" domain="[('state','=','done')]" string="Closed" />
                     <field name="date" />
                     <field name="reference" />
                 </group>
@@ -43,41 +33,28 @@
     </record>
 
     <!-- FORM VIEW -->
-    <record id="view_qms_audit_form"
-            model="ir.ui.view">
+    <record id="view_qms_audit_form" model="ir.ui.view">
         <field name="name">qms.audit.form</field>
         <field name="model">qms.audit</field>
-        <field name="arch"
-               type="xml">
+        <field name="arch" type="xml">
             <form>
                 <header>
-                    <button name="button_close"
-                            string="Close"
-                            states="open"
-                            type="object" />
-                    <field name="state"
-                           widget="statusbar"
-                           clickable="True" />
+                    <button name="button_close" string="Close" states="open" type="object" />
+                    <field name="state" widget="statusbar" clickable="True" />
                 </header>
                 <sheet>
-                    <group col="4"
-                           colspan="2">
+                    <group col="4" colspan="2">
                         <field name="reference" />
-                        <field name="date"
-                               attrs="{'readonly':[('state','=','done')]}" />
+                        <field name="date" attrs="{'readonly':[('state','=','done')]}" />
                         <field name="system" />
-                    </group>
-                    <group>
-                        <!-- -->
                     </group>
                     <notebook>
                         <page string="Auditors">
                             <field name="auditors_ids" />
                         </page>
                         <page string="Verification List">
-                            <field name="verification_line_ids"
-                                   nolabel="True"
-                                   attrs="{'readonly':[('state','=','done')]}" />
+                            <field name="verification_line_ids" nolabel="True"
+                                attrs="{'readonly':[('state','=','done')]}" />
                         </page>
                         <page string="Audited">
                             <field name="audited_ids" />
@@ -86,58 +63,53 @@
                             <field name="process_ids" />
                         </page>
                         <page string="Strong Points">
-                            <field name="strong_points"
-                                   nolabel="True"
-                                   attrs="{'readonly':[('state','=','done')]}" />
+                            <field name="strong_points" nolabel="True" attrs="{'readonly':[('state','=','done')]}" />
                         </page>
-                        <page string="NC"
-                              name="non_conformitys">
-                            <field name="non_conformity_ids"
-                                   nolabel="1" context="{'form_view_ref': 'qms.view_qms_non_conformity_form'}">
-                                    <tree>
-                                        <field name="name"/>
-                                        <field name="description"/>
-                                        <field name="reference" />
-                                        <field name="create_date" />
-                                        <field name="stage_id" />
-                                        <field name="origin_ids" />
-                                        <field name="closing_date" />                                        
-                                   </tree>
+                        <page string="NC" name="non_conformitys">
+                            <field name="non_conformity_ids" nolabel="1"
+                                context="{'form_view_ref': 'qms.view_qms_non_conformity_form'}">
+                                <tree>
+                                    <field name="name" />
+                                    <field name="description" />
+                                    <field name="reference" />
+                                    <field name="create_date" />
+                                    <field name="stage_id" />
+                                    <field name="origin_ids" />
+                                    <field name="closing_date" />
+                                </tree>
                             </field>
                         </page>
-                        <page string="OBS"
-                              name="observations">
-                            <field name="observation_ids"
-                                   nolabel="1" context="{'form_view_ref': 'qms.view_qms_observation_form'}">
-                                    <tree>
-                                        <field name="name"/>
-                                        <field name="description"/>
-                                        <field name="reference" />
-                                        <field name="create_date" />
-                                        <field name="stage_id" />
-                                        <field name="origin_ids" />
-                                        <field name="closing_date" />                                        
-                                   </tree>
+                        <page string="OBS" name="observations">
+                            <field name="observation_ids" nolabel="1"
+                                context="{'form_view_ref': 'qms.view_qms_observation_form'}">
+                                <tree>
+                                    <field name="name" />
+                                    <field name="description" />
+                                    <field name="reference" />
+                                    <field name="create_date" />
+                                    <field name="stage_id" />
+                                    <field name="origin_ids" />
+                                    <field name="closing_date" />
+                                </tree>
                             </field>
                         </page>
-                        <page string="OM"
-                              name="opportunitys">
-                            <field name="opportunity_ids"
-                                   nolabel="1" context="{'form_view_ref': 'qms.view_qms_opportunity_form'}">
-                                    <tree>
-                                        <field name="name"/>
-                                        <field name="description"/>
-                                        <field name="reference" />
-                                        <field name="create_date" />
-                                        <field name="stage_id" />
-                                        <field name="origin_ids" />
-                                        <field name="closing_date" />                                        
-                                   </tree>
+                        <page string="OM" name="opportunitys">
+                            <field name="opportunity_ids" nolabel="1"
+                                context="{'form_view_ref': 'qms.view_qms_opportunity_form'}">
+                                <tree>
+                                    <field name="name" />
+                                    <field name="description" />
+                                    <field name="reference" />
+                                    <field name="create_date" />
+                                    <field name="stage_id" />
+                                    <field name="origin_ids" />
+                                    <field name="closing_date" />
+                                </tree>
                             </field>
                         </page>
                         <page string="Audit Evaluations">
                             <field name="audit_evaluation_ids" />
-                        </page>                        
+                        </page>
                     </notebook>
                 </sheet>
             </form>
@@ -145,34 +117,25 @@
     </record>
 
     <!--CALENDAR VIEW -->
-    <record id="view_qms_audit_calendar"
-            model="ir.ui.view">
+    <record id="view_qms_audit_calendar" model="ir.ui.view">
         <field name="name">qms.audit.calendar</field>
         <field name="model">qms.audit</field>
         <field name="type">calendar</field>
-        <field eval="2"
-               name="priority" />
-        <field name="arch"
-               type="xml">
-            <calendar color="reference"
-                      date_start="date"
-                      string="Audits">
+        <field eval="2" name="priority" />
+        <field name="arch" type="xml">
+            <calendar color="reference" date_start="date" string="Audits">
                 <field name="reference" />
             </calendar>
         </field>
     </record>
 
     <!-- WINDOW ACTION -->
-    <record id="open_qms_audit_list"
-            model="ir.actions.act_window">
+    <record id="open_qms_audit_list" model="ir.actions.act_window">
         <field name="name">Audits</field>
         <field name="res_model">qms.audit</field>
-        
         <field name="view_mode">tree,form,calendar</field>
-        <field name="view_id"
-               ref="view_qms_audit_tree" />
-        <field name="search_view_id"
-               ref="view_qms_audit_filter" />
+        <field name="view_id" ref="view_qms_audit_tree" />
+        <field name="search_view_id" ref="view_qms_audit_filter" />
         <field name="context">{"search_default_open": True}</field>
     </record>
 

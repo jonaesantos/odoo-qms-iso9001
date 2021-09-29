@@ -1,21 +1,18 @@
 <odoo>
 
     <!-- FORM VIEW -->
-    <record id="view_qms_finding_milestone_form"
-            model="ir.ui.view">
+    <record id="view_qms_finding_milestone_form" model="ir.ui.view">
         <field name="name">qms.finding.milestone.form</field>
         <field name="type">form</field>
         <field name="model">qms.finding.milestone</field>
-        <field name="arch"
-               type="xml">
+        <field name="arch" type="xml">
             <form>
                 <sheet>
                     <group>
                         <field name="name" />
                         <field name="sequence" />
                         <field name="reference_code" />
-                        <field name="description"
-                               colspan="4" />
+                        <field name="description" colspan="4" />
                     </group>
                 </sheet>
             </form>
@@ -23,13 +20,11 @@
     </record>
 
     <!-- TREE VIEW -->
-    <record id="view_qms_finding_milestone_tree"
-            model="ir.ui.view">
+    <record id="view_qms_finding_milestone_tree" model="ir.ui.view">
         <field name="name">qms.finding.milestone.tree</field>
         <field name="model">qms.finding.milestone</field>
         <field name="type">tree</field>
-        <field name="arch"
-               type="xml">
+        <field name="arch" type="xml">
             <tree>
                 <field name="name" />
                 <field name="description" />
@@ -39,13 +34,11 @@
     </record>
 
     <!-- SEARCH VIEW -->
-    <record id="view_qms_finding_milestone_filter"
-            model="ir.ui.view">
+    <record id="view_qms_finding_milestone_filter" model="ir.ui.view">
         <field name="name">qms.finding.milestone.search</field>
         <field name="model">qms.finding.milestone</field>
         <field name="type">search</field>
-        <field name="arch"
-               type="xml">
+        <field name="arch" type="xml">
             <search>
                 <field name="name" />
             </search>

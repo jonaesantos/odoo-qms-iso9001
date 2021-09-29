@@ -1,13 +1,11 @@
 <odoo>
 
     <!-- TREE VIEW -->
-    <record id="view_qms_policy_tree"
-            model="ir.ui.view">
+    <record id="view_qms_policy_tree" model="ir.ui.view">
         <field name="name">qms.policy.tree</field>
         <field name="model">qms.policy</field>
         <field name="type">tree</field>
-        <field name="arch"
-               type="xml">
+        <field name="arch" type="xml">
             <tree>
                 <field name="name" />
                 <field name="version" />
@@ -19,32 +17,22 @@
     </record>
 
     <!-- FORM VIEW -->
-    <record id="view_qms_policy_form"
-            model="ir.ui.view">
+    <record id="view_qms_policy_form" model="ir.ui.view">
         <field name="name">qms.policy.form</field>
         <field name="model">qms.policy</field>
-        <field name="arch"
-               type="xml">
+        <field name="arch" type="xml">
             <form>
                 <sheet>
-                    <div class="oe_button_box"
-                         name="button_box">
-                        <button name="toggle_approved"
-                                string="Approved"
-                                type="object"
-                                class="oe_stat_button"
-                                icon="fa-check-square-o">
-                            <field name="approved"
-                                   widget="boolean_button"
-                                   options='{"terminology": {
-                                    "string_true": "Approved",
-                                    "string_false": "Not Approved",
-                                   }}'/>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="toggle_approved" string="Approved" type="object" class="oe_stat_button"
+                            icon="fa-check-square-o">
+                            <field name="approved" widget="boolean_button" options="{'terminology': {'string_true': 'Approved',
+                                    'string_false': 'Not Approved'}}" />
                         </button>
                     </div>
                     <div class="oe_title">
                         <h1>
-                            <field name="name"/>
+                            <field name="name" />
                         </h1>
                     </div>
                     <group>
@@ -61,9 +49,8 @@
                             <field name="policy_component_ids" />
                         </page>
                         <page string="Versions">
-                            <field name="version_ids"
-                                   nolabel="True" />
-                        </page>                        
+                            <field name="version_ids" nolabel="True" />
+                        </page>
                         <page string="Reviews">
                             <field name="review_ids" />
                         </page>
@@ -74,11 +61,9 @@
     </record>
 
     <!-- WINDOW ACTION -->
-    <record id="open_qms_policy_list"
-            model="ir.actions.act_window">
+    <record id="open_qms_policy_list" model="ir.actions.act_window">
         <field name="name">Policies</field>
         <field name="res_model">qms.policy</field>
-        
         <field name="view_mode">tree,form</field>
     </record>
 

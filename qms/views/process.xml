@@ -1,13 +1,11 @@
 <odoo>
 
     <!-- TREE VIEW -->
-    <record id="view_qms_process_tree"
-            model="ir.ui.view">
+    <record id="view_qms_process_tree" model="ir.ui.view">
         <field name="name">qms.process.tree</field>
         <field name="model">qms.process</field>
         <field name="type">tree</field>
-        <field name="arch"
-               type="xml">
+        <field name="arch" type="xml">
             <tree>
                 <field name="name" />
                 <field name="responsible_id" />
@@ -20,17 +18,13 @@
     </record>
 
     <!-- FORM VIEW -->
-    <record id="view_qms_process_form"
-            model="ir.ui.view">
+    <record id="view_qms_process_form" model="ir.ui.view">
         <field name="name">qms.process.form</field>
         <field name="model">qms.process</field>
-        <field name="arch"
-               type="xml">
+        <field name="arch" type="xml">
             <form>
                 <header>
-                    <field name="state"
-                           widget="statusbar"
-                           clickable="True" />
+                    <field name="state" widget="statusbar" clickable="True" />
                 </header>
                 <sheet>
                     <group>
@@ -48,7 +42,7 @@
                         </page>
                         <page string="Components">
                             <field name="policy_component_ids" />
-                        </page>                        
+                        </page>
                         <page string="Inputs/Outputs">
                             <separator string="Inputs" />
                             <field name="inputs" />
@@ -68,11 +62,9 @@
     </record>
 
     <!-- WINDOW ACTION -->
-    <record id="open_qms_process_list"
-            model="ir.actions.act_window">
+    <record id="open_qms_process_list" model="ir.actions.act_window">
         <field name="name">Process</field>
         <field name="res_model">qms.process</field>
-        
         <field name="view_mode">tree,form</field>
     </record>
 

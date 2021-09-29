@@ -1,13 +1,11 @@
 <odoo>
 
     <!-- TREE VIEW -->
-    <record id="view_qms_hazard_tree"
-            model="ir.ui.view">
+    <record id="view_qms_hazard_tree" model="ir.ui.view">
         <field name="name">qms.hazard.tree</field>
         <field name="model">qms.hazard</field>
         <field name="type">tree</field>
-        <field name="arch"
-               type="xml">
+        <field name="arch" type="xml">
             <tree>
                 <field name="number" />
                 <field name="name" />
@@ -22,27 +20,23 @@
     </record>
 
     <!-- FORM VIEW -->
-    <record id="view_qms_hazard_form"
-            model="ir.ui.view">
+    <record id="view_qms_hazard_form" model="ir.ui.view">
         <field name="name">qms.hazard.form</field>
         <field name="model">qms.hazard</field>
-        <field name="arch"
-               type="xml">
+        <field name="arch" type="xml">
             <form>
                 <header>
-                    <field name="state"
-                           widget="statusbar"
-                           clickable="True" />
+                    <field name="state" widget="statusbar" clickable="True" />
                 </header>
                 <sheet>
                     <div class="oe_title">
                         <h1>
-                            <field name="name"/>
+                            <field name="name" />
                         </h1>
                     </div>
                     <group>
                         <group>
-                            <field name="number"/>
+                            <field name="number" />
                             <field name="date" />
                         </group>
                         <group>
@@ -63,13 +57,10 @@
                     </group>
                     <notebook>
                         <page string="Description">
-                            <field name="description"
-                                   nolabel="True" />
+                            <field name="description" nolabel="True" />
                         </page>
-                        <page string="Processes"
-                              name="processes">
-                            <field name="process_ids"
-                                   nolabel="1" />
+                        <page string="Processes" name="processes">
+                            <field name="process_ids" nolabel="1" />
                         </page>
                         <page string="Causes/Consequences">
                             <separator string="Causes" />
@@ -77,10 +68,8 @@
                             <separator string="Consequences" />
                             <field name="consequences" />
                         </page>
-                        <page string="Actions"
-                              name="actions">
-                            <field name="action_ids"
-                                   nolabel="1" />
+                        <page string="Actions" name="actions">
+                            <field name="action_ids" nolabel="1" />
                         </page>
                         <page string="Reviews">
                             <field name="review_ids" />
@@ -146,11 +135,9 @@
     </record> -->
 
     <!-- WINDOW ACTION -->
-    <record id="open_qms_hazard_list"
-            model="ir.actions.act_window">
+    <record id="open_qms_hazard_list" model="ir.actions.act_window">
         <field name="name">Hazards</field>
         <field name="res_model">qms.hazard</field>
-        
         <field name="view_mode">tree,form,kanban</field>
     </record>
 

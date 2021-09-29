@@ -1,104 +1,75 @@
 <odoo>
 
     <!-- WINDOWS ACTION -->
-    <record model="ir.actions.act_window"
-            id="open_qms_complaint_list">
+    <record model="ir.actions.act_window" id="open_qms_complaint_list">
         <field name="name">Complaints</field>
         <field name="res_model">qms.complaint</field>
-        
         <field name="view_mode">tree,kanban,form</field>
     </record>
 
     <!-- FORM VIEW -->
-    <record id="view_qms_complaint_form"
-            model="ir.ui.view">
+    <record id="view_qms_complaint_form" model="ir.ui.view">
         <field name="name">qms.complaint.form</field>
         <field name="type">form</field>
         <field name="model">qms.complaint</field>
-        <field name="inherit_id"
-               ref="qms.view_qms_finding_form" />
-        <field name="arch"
-               type="xml">
-            <page name="actions"
-                  position="before">
-                <page string="Causes and Analysis"
-                      attrs="{'invisible':[('state','in',['draft','cancel'])]}">
+        <field name="inherit_id" ref="qms.view_qms_finding_form" />
+        <field name="arch" type="xml">
+            <page name="actions" position="before">
+                <page string="Causes and Analysis" attrs="{'invisible':[('state','in',['draft','cancel'])]}">
                     <separator string="Analysis" />
-                    <field name="analysis"
-                           attrs="{'readonly':[('state','not in', ['analysis'])]}" />
+                    <field name="analysis" attrs="{'readonly':[('state','not in', ['analysis'])]}" />
                     <separator string="Causes" />
-                    <field name="cause_ids"
-                           attrs="{'readonly':[('state','not in', ['analysis'])]}" />
+                    <field name="cause_ids" attrs="{'readonly':[('state','not in', ['analysis'])]}" />
                 </page>
             </page>
         </field>
     </record>
 
     <!-- TREE VIEW -->
-    <record id="view_qms_complaint_tree"
-            model="ir.ui.view">
+    <record id="view_qms_complaint_tree" model="ir.ui.view">
         <field name="name">qms.complaint.tree</field>
         <field name="type">tree</field>
         <field name="model">qms.complaint</field>
-        <field name="inherit_id"
-               ref="qms.view_qms_finding_tree" />
-        <field name="arch"
-               type="xml">
-            <tree name="finding"
-                  position="attributes">
-               <attribute name="string">Complaint</attribute>
+        <field name="inherit_id" ref="qms.view_qms_finding_tree" />
+        <field name="arch" type="xml">
+            <tree name="finding" position="attributes">
+                <attribute name="string">Complaint</attribute>
             </tree>
         </field>
     </record>
 
     <!-- KANBAN VIEW -->
-    <record id="view_qms_complaint_kanban"
-            model="ir.ui.view">
+    <record id="view_qms_complaint_kanban" model="ir.ui.view">
         <field name="name">qms.complaint.kanban</field>
         <field name="type">kanban</field>
         <field name="model">qms.complaint</field>
-        <field name="inherit_id"
-               ref="qms.view_qms_finding_kanban" />
-        <field name="arch"
-               type="xml">
-            <kanban name="finding"
-                    position="attributes">
+        <field name="inherit_id" ref="qms.view_qms_finding_kanban" />
+        <field name="arch" type="xml">
+            <kanban name="finding" position="attributes">
                 <attribute name="string">Complaint</attribute>
             </kanban>
         </field>
     </record>
 
-    <record model="ir.actions.act_window.view"
-            id="action_qms_complaint_kanban">
-        <field name="sequence"
-               eval="1" />
+    <record model="ir.actions.act_window.view" id="action_qms_complaint_kanban">
+        <field name="sequence" eval="1" />
         <field name="view_mode">kanban</field>
-        <field name="view_id"
-               ref="view_qms_complaint_kanban" />
-        <field name="act_window_id"
-               ref="open_qms_complaint_list" />
+        <field name="view_id" ref="view_qms_complaint_kanban" />
+        <field name="act_window_id" ref="open_qms_complaint_list" />
     </record>
 
-    <record model="ir.actions.act_window.view"
-            id="action_qms_complaint_tree">
-        <field name="sequence"
-               eval="2" />
+    <record model="ir.actions.act_window.view" id="action_qms_complaint_tree">
+        <field name="sequence" eval="2" />
         <field name="view_mode">tree</field>
-        <field name="view_id"
-               ref="view_qms_complaint_tree" />
-        <field name="act_window_id"
-               ref="open_qms_complaint_list" />
+        <field name="view_id" ref="view_qms_complaint_tree" />
+        <field name="act_window_id" ref="open_qms_complaint_list" />
     </record>
 
-    <record model="ir.actions.act_window.view"
-            id="action_qms_complaint_form">
-        <field name="sequence"
-               eval="3" />
+    <record model="ir.actions.act_window.view" id="action_qms_complaint_form">
+        <field name="sequence" eval="3" />
         <field name="view_mode">form</field>
-        <field name="view_id"
-               ref="view_qms_complaint_form" />
-        <field name="act_window_id"
-               ref="open_qms_complaint_list" />
+        <field name="view_id" ref="view_qms_complaint_form" />
+        <field name="act_window_id" ref="open_qms_complaint_list" />
     </record>
 
 </odoo>

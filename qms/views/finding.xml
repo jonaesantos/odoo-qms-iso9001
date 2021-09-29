@@ -1,11 +1,9 @@
 <odoo>
 
-    <record id="view_qms_finding_tree"
-            model="ir.ui.view">
+    <record id="view_qms_finding_tree" model="ir.ui.view">
         <field name="name">qms.finding.tree</field>
         <field name="model">qms.finding</field>
-        <field name="arch"
-               type="xml">
+        <field name="arch" type="xml">
             <tree name="finding">
                 <field name="id" />
                 <field name="name" />
@@ -55,16 +53,11 @@
     </record> -->
 
     <!-- KANBAN VIEW -->
-    <record id="view_qms_finding_kanban"
-            model="ir.ui.view">
+    <record id="view_qms_finding_kanban" model="ir.ui.view">
         <field name="name">qms.finding.kanban</field>
         <field name="model">qms.finding</field>
-        <field name="arch"
-               type="xml">
-            <kanban name="finding"
-                    quick_create="false"
-                    default_group_by="stage_id"
-                    class="o_kanban_small_column">
+        <field name="arch" type="xml">
+            <kanban name="finding" quick_create="false" default_group_by="stage_id" class="o_kanban_small_column">
                 <field name="stage_id" />
                 <field name="reference" />
                 <field name="name" />
@@ -72,15 +65,10 @@
                     <t t-name="kanban-box">
                         <div t-attf-class="#{kanban_color(red)} oe_kanban_global_click">
                             <div class="o_dropdown_kanban dropdown">
-
-                                <a class="dropdown-toggle btn"
-                                   data-toggle="dropdown"
-                                   href="#">
-                                    <span class="fa fa-bars fa-lg"/>
+                                <a class="dropdown-toggle btn" data-toggle="dropdown" href="#">
+                                    <span class="fa fa-bars fa-lg" />
                                 </a>
-                                <ul class="dropdown-menu"
-                                    role="menu"
-                                    aria-labelledby="dLabel">
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
                                     <t t-if="widget.editable">
                                         <li>
                                             <a type="edit">Edit</a>
@@ -90,11 +78,13 @@
                             </div>
                             <div class="oe_kanban_content">
                                 <div>
-                                    <strong><field name="reference"/></strong>
+                                    <strong>
+                                        <field name="reference" />
+                                    </strong>
                                 </div>
                                 <div>
                                     <field name="name" />
-                                    <br/>
+                                    <br />
                                 </div>
                             </div>
                         </div>
@@ -104,62 +94,47 @@
         </field>
     </record>
 
-    <record id="view_qms_finding_form"
-            model="ir.ui.view">
+    <record id="view_qms_finding_form" model="ir.ui.view">
         <field name="name">qms.finding.form</field>
         <field name="model">qms.finding</field>
-        <field name="arch"
-               type="xml">
-            <form name="finding"
-                  string="Finding">
+        <field name="arch" type="xml">
+            <form name="finding" string="Finding">
                 <header>
-                    <field name="stage_id"
-                           widget="statusbar"
-                           clickable="True" />
-                    <field name="state"
-                           invisible="True" />
+                    <field name="stage_id" widget="statusbar" clickable="True" />
+                    <field name="state" invisible="True" />
                 </header>
                 <sheet>
-                    <field name="kanban_state"
-                           widget="state_selection" />
+                    <field name="kanban_state" widget="state_selection" />
                     <group>
                         <group>
                             <field name="name" />
-                            <field name="create_date"
-                                attrs="{'readonly':[('state','not in',['draft'])]}" />
+                            <field name="create_date" attrs="{'readonly':[('state','not in',['draft'])]}" />
                             <field name="reference" />
-                        </group>       
+                        </group>
                         <group>
-                            <field name="origin_ids"
-                                widget="many2many_tags"
+                            <field name="origin_ids" widget="many2many_tags"
                                 attrs="{'readonly':[('state','not in',['draft','analysis'])]}" />
-                            <field name="claimant_id"
-                                attrs="{'readonly':[('state','not in',['draft','analysis'])]}" />
+                            <field name="claimant_id" attrs="{'readonly':[('state','not in',['draft','analysis'])]}" />
                             <field name="interested_party_id"
                                 attrs="{'readonly':[('state','not in',['draft','analysis'])]}" />
                         </group>
                     </group>
                     <notebook>
                         <page string="Description">
-                            <field name="description"
-                                   attrs="{'readonly':[('state','not in',['draft','analysis'])]}" />
+                            <field name="description" attrs="{'readonly':[('state','not in',['draft','analysis'])]}" />
                         </page>
                         <page string="Process">
-                            <field name="process_ids"
-                                   attrs="{'readonly':[('state','not in',['draft','analysis'])]}" />
+                            <field name="process_ids" attrs="{'readonly':[('state','not in',['draft','analysis'])]}" />
                         </page>
-                        <page string="Related Audits"
-                              groups="base.group_extended,qms.group_qms_audit">
-                            <field name="audit_ids"
-                                   colspan="4"
-                                   nolabel="1" />
+                        <page string="Related Audits" groups="base.group_extended,qms.group_qms_audit">
+                            <field name="audit_ids" colspan="4" nolabel="1" />
                         </page>
-                        <page name="actions"
-                              string="Actions"
-                              attrs="{'invisible':[('state','in',['draft','analysis','cancel'])]}">
+                        <page name="actions" string="Actions"
+                            attrs="{'invisible':[('state','in',['draft','analysis','cancel'])]}">
                             <separator string="Action Plan" />
                             <field name="action_ids" />
-                            <!--<group string="Plan Review">
+                            <!--
+                                <group string="Plan Review">
                                 <group>
                                     <field name="action_plan_comments"
                                            attrs="{'readonly':[('state','not in',['pending'])]}"
@@ -175,7 +150,8 @@
                                            nolabel="1"
                                            placeholder="Evaluation Comments" />
                                 </group>
-                            </group>-->
+                            </group>
+                            -->
                         </page>
                     </notebook>
                 </sheet>

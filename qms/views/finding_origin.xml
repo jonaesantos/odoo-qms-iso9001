@@ -1,66 +1,50 @@
 <odoo>
 
     <!-- FORM VIEW -->
-    <record id="view_qms_finding_origin_form"
-            model="ir.ui.view">
+    <record id="view_qms_finding_origin_form" model="ir.ui.view">
         <field name="name">qms.finding.origin.form</field>
         <field name="type">form</field>
         <field name="model">qms.finding.origin</field>
-        <field name="inherit_id"
-               ref="qms.view_qms_finding_milestone_form" />
-        <field name="arch"
-               type="xml">
-            <field name="name"
-                   position="after">
+        <field name="inherit_id" ref="qms.view_qms_finding_milestone_form" />
+        <field name="arch" type="xml">
+            <field name="name" position="after">
                 <field name="parent_id" />
             </field>
         </field>
     </record>
 
     <!-- TREE VIEW -->
-    <record id="view_qms_finding_origin_tree"
-            model="ir.ui.view">
+    <record id="view_qms_finding_origin_tree" model="ir.ui.view">
         <field name="name">qms.finding.origin.tree</field>
         <field name="model">qms.finding.origin</field>
-        <field name="inherit_id"
-               ref="qms.view_qms_finding_milestone_tree" />
-        <field name="arch"
-               type="xml">
-            <field name="name"
-                   position="before">
+        <field name="inherit_id" ref="qms.view_qms_finding_milestone_tree" />
+        <field name="arch" type="xml">
+            <field name="name" position="before">
                 <field name="parent_id" />
             </field>
         </field>
     </record>
 
     <!-- SEARCH VIEW -->
-    <record id="view_qms_finding_origin_filter"
-            model="ir.ui.view">
+    <record id="view_qms_finding_origin_filter" model="ir.ui.view">
         <field name="name">qms.finding.origin.search</field>
         <field name="model">qms.finding.origin</field>
         <field name="type">search</field>
-        <field name="inherit_id"
-               ref="qms.view_qms_finding_milestone_filter" />
-        <field name="arch"
-               type="xml">
-            <field name="name"
-                   position="before">
+        <field name="inherit_id" ref="qms.view_qms_finding_milestone_filter" />
+        <field name="arch" type="xml">
+            <field name="name" position="before">
                 <field name="parent_id" />
             </field>
         </field>
     </record>
 
     <!-- WINDOW ACTION -->
-    <record id="open_qms_finding_origin_list"
-            model="ir.actions.act_window">
+    <record id="open_qms_finding_origin_list" model="ir.actions.act_window">
         <field name="name">Origins</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">qms.finding.origin</field>
-        
-        <field name="view_id"
-               eval="view_qms_finding_origin_tree" />
-        <field name="search_view_id"
-               ref="view_qms_finding_origin_filter" />
+        <field name="view_id" eval="view_qms_finding_origin_tree" />
+        <field name="search_view_id" ref="view_qms_finding_origin_filter" />
     </record>
 
 </odoo>

@@ -1,13 +1,11 @@
 <odoo>
 
     <!-- TREE VIEW -->
-    <record id="view_qms_effectiveness_check_tree"
-            model="ir.ui.view">
+    <record id="view_qms_effectiveness_check_tree" model="ir.ui.view">
         <field name="name">qms.effectiveness_check.tree</field>
         <field name="model">qms.effectiveness_check</field>
         <field name="type">tree</field>
-        <field name="arch"
-               type="xml">
+        <field name="arch" type="xml">
             <tree>
                 <field name="expected_date" />
                 <field name="verification_date" />
@@ -19,17 +17,13 @@
     </record>
 
     <!-- FORM VIEW -->
-    <record id="view_qms_effectiveness_check_form"
-            model="ir.ui.view">
+    <record id="view_qms_effectiveness_check_form" model="ir.ui.view">
         <field name="name">qms.effectiveness_check.form</field>
         <field name="model">qms.effectiveness_check</field>
-        <field name="arch"
-               type="xml">
+        <field name="arch" type="xml">
             <form>
                 <header>
-                    <field name="state"
-                           widget="statusbar"
-                           clickable="True" />
+                    <field name="state" widget="statusbar" clickable="True" />
                 </header>
                 <sheet>
                     <group>
@@ -43,8 +37,7 @@
                     </group>
                     <notebook>
                         <page string="Observations">
-                            <field name="observations"
-                                   nolabel="True" />
+                            <field name="observations" nolabel="True" />
                         </page>
                     </notebook>
                 </sheet>
@@ -53,29 +46,22 @@
     </record>
 
     <!--CALENDAR VIEW -->
-    <record id="view_qms_effectiveness_check_calendar"
-            model="ir.ui.view">
+    <record id="view_qms_effectiveness_check_calendar" model="ir.ui.view">
         <field name="name">qms.effectiveness_check.calendar</field>
         <field name="model">qms.effectiveness_check</field>
         <field name="type">calendar</field>
-        <field eval="2"
-               name="priority" />
-        <field name="arch"
-               type="xml">
-            <calendar color="id"
-                      date_start="expected_date"
-                      string="Effectiveness_Check">
+        <field eval="2" name="priority" />
+        <field name="arch" type="xml">
+            <calendar color="id" date_start="expected_date" string="Effectiveness_Check">
                 <field name="state" />
             </calendar>
         </field>
     </record>
 
     <!-- WINDOW ACTION -->
-    <record id="open_qms_effectiveness_check_list"
-            model="ir.actions.act_window">
+    <record id="open_qms_effectiveness_check_list" model="ir.actions.act_window">
         <field name="name">Effectiveness Check</field>
         <field name="res_model">qms.effectiveness_check</field>
-        
         <field name="view_mode">tree,calendar,form</field>
     </record>
 

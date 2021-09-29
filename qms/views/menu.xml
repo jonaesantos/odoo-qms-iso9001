@@ -2,186 +2,186 @@
 <odoo>
 
     <menuitem id="menu_qms_root"
-              name="Quality Management System"
-              sequence="0" />
+        name="Quality Management System"
+        sequence="0" />
 
     <menuitem id="menu_qms_main"
-              name="Quality Management System"
-              parent="menu_qms_root"
-              sequence="0" />
+        name="Quality Management System"
+        parent="menu_qms_root"
+        sequence="0" />
 
     <menuitem id="menu_qms_documents"
-              name="Documents"
-              parent="menu_qms_root"
-              sequence="5" />
+        name="Documents"
+        parent="menu_qms_root"
+        sequence="5" />
 
     <menuitem id="menu_qms_context"
-              name="Context"
-              parent="qms.menu_qms_root"
-              sequence="10" />
+        name="Context"
+        parent="qms.menu_qms_root"
+        sequence="10" />
 
     <menuitem id="menu_qms_configuration"
-              name="Configuration"
-              parent="qms.menu_qms_root"
-              sequence="15" />
+        name="Configuration"
+        parent="qms.menu_qms_root"
+        sequence="15" />
 
     <menuitem id="menu_open_policy"
-              action="open_qms_policy_list"
-              parent="qms.menu_qms_main"
-              sequence="5" />
+        action="open_qms_policy_list"
+        parent="qms.menu_qms_main"
+        sequence="5" />
 
     <menuitem id="menu_open_goal"
-              action="open_qms_goal_list"
-              parent="qms.menu_qms_main"
-              sequence="10" />
+        action="open_qms_goal_list"
+        parent="qms.menu_qms_main"
+        sequence="10" />
 
     <menuitem id="menu_open_process"
-              action="open_qms_process_list"
-              parent="qms.menu_qms_main"
-              sequence="13" />
+        action="open_qms_process_list"
+        parent="qms.menu_qms_main"
+        sequence="13" />
 
     <menuitem id="menu_open_indicator"
-              action="open_qms_indicator_list"
-              parent="qms.menu_qms_main"
-              sequence="14" />
+        action="open_qms_indicator_list"
+        parent="qms.menu_qms_main"
+        sequence="14" />
 
     <menuitem id="menu_open_hazard"
-              action="open_qms_hazard_list"
-              parent="qms.menu_qms_main"
-              sequence="15" />
+        action="open_qms_hazard_list"
+        parent="qms.menu_qms_main"
+        sequence="15" />
 
     <menuitem id="menu_open_action"
-              action="open_qms_action_list"
-              parent="qms.menu_qms_main"
-              sequence="20" />
+        action="open_qms_action_list"
+        parent="qms.menu_qms_main"
+        sequence="20" />
 
     <menuitem id="menu_open_audit"
-              action="open_qms_audit_list"
-              parent="qms.menu_qms_main"
-              sequence="25" />
+        action="open_qms_audit_list"
+        parent="qms.menu_qms_main"
+        sequence="25" />
 
-     <menuitem id="menu_open_audit_evaluation"
-              action="open_qms_audit_evaluation_list"
-              parent="qms.menu_qms_main"
-              sequence="26" />
+    <menuitem id="menu_open_audit_evaluation"
+        action="open_qms_audit_evaluation_list"
+        parent="qms.menu_qms_main"
+        sequence="26" />
 
     <menuitem id="menu_open_effectiveness_check"
-              action="open_qms_effectiveness_check_list"
-              parent="qms.menu_qms_main"
-              sequence="27" />
+        action="open_qms_effectiveness_check_list"
+        parent="qms.menu_qms_main"
+        sequence="27" />
 
     <menuitem id="menu_open_revision_by_direction"
-              action="open_qms_revision_by_direction_list"
-              parent="qms.menu_qms_main"
-              sequence="28" />
+        action="open_qms_revision_by_direction_list"
+        parent="qms.menu_qms_main"
+        sequence="28" />
 
     <menuitem id="menu_open_finding"
-              name="Findings"
-              parent="qms.menu_qms_main"
-              sequence="30" />
+        name="Findings"
+        parent="qms.menu_qms_main"
+        sequence="30" />
 
     <menuitem id="menu_open_non_conformity"
-              name="Non Conformities"
-              parent="qms.menu_open_finding"
-              action="open_qms_non_conformity_list"
-              sequence="5" />
+        name="Non Conformities"
+        parent="qms.menu_open_finding"
+        action="open_qms_non_conformity_list"
+        sequence="5" />
 
     <menuitem id="menu_open_observation"
-              name="Observations"
-              parent="qms.menu_open_finding"
-              action="open_qms_observation_list"
-              sequence="10" />
+        name="Observations"
+        parent="qms.menu_open_finding"
+        action="open_qms_observation_list"
+        sequence="10" />
 
     <menuitem id="menu_open_complaint"
-              name="Complaints"
-              parent="qms.menu_open_finding"
-              action="open_qms_complaint_list"
-              sequence="20" />
+        name="Complaints"
+        parent="qms.menu_open_finding"
+        action="open_qms_complaint_list"
+        sequence="20" />
 
     <menuitem id="menu_open_opportunity"
-              name="Opportunities"
-              parent="qms.menu_open_finding"
-              action="open_qms_opportunity_list"
-              sequence="30" />
+        name="Opportunities"
+        parent="qms.menu_open_finding"
+        action="open_qms_opportunity_list"
+        sequence="30" />
 
     <menuitem id="menu_open_document"
-              name="Documents"
-              parent="qms.menu_qms_main"
-              sequence="34" /> 
+        name="Documents"
+        parent="qms.menu_qms_main"
+        sequence="34" />
 
-     <menuitem id="menu_open_procedure"
-              name="Procedures"
-              parent="qms.menu_open_document"
-              action="open_qms_procedure_list"
-              sequence="5" /> 
+    <menuitem id="menu_open_procedure"
+        name="Procedures"
+        parent="qms.menu_open_document"
+        action="open_qms_procedure_list"
+        sequence="5" />
 
-     <menuitem id="menu_open_instructive"
-              name="Instructives"
-              parent="qms.menu_open_document"
-              action="open_qms_instructive_list"
-              sequence="10" /> 
+    <menuitem id="menu_open_instructive"
+        name="Instructives"
+        parent="qms.menu_open_document"
+        action="open_qms_instructive_list"
+        sequence="10" />
 
-     <menuitem id="menu_open_registry"
-              name="Registries"
-              parent="qms.menu_open_document"
-              action="open_qms_registry_list"
-              sequence="15" />                                                      
+    <menuitem id="menu_open_registry"
+        name="Registries"
+        parent="qms.menu_open_document"
+        action="open_qms_registry_list"
+        sequence="15" />
 
     <menuitem id="menu_config_action"
-              name="Actions"
-              parent="qms.menu_qms_configuration"
-              sequence="5" />
+        name="Actions"
+        parent="qms.menu_qms_configuration"
+        sequence="5" />
 
     <menuitem id="menu_qms_action_stages"
-              name="Stages"
-              parent="menu_config_action"
-              action="open_qms_action_stage_list"
-              sequence="5" />
+        name="Stages"
+        parent="menu_config_action"
+        action="open_qms_action_stage_list"
+        sequence="5" />
 
     <menuitem id="menu_config_interested_party"
-              name="Interested Parties"
-              parent="qms.menu_qms_context"
-              sequence="10" />
+        name="Interested Parties"
+        parent="qms.menu_qms_context"
+        sequence="10" />
 
     <menuitem id="menu_config_resource"
-              name="Resources"
-              parent="qms.menu_qms_context"
-              action="open_qms_resource_list"
-              sequence="10" />
+        name="Resources"
+        parent="qms.menu_qms_context"
+        action="open_qms_resource_list"
+        sequence="10" />
 
     <menuitem id="menu_config_finding"
-              name="Findings"
-              parent="qms.menu_qms_configuration"
-              sequence="15" />
+        name="Findings"
+        parent="qms.menu_qms_configuration"
+        sequence="15" />
 
     <menuitem id="menu_qms_interested_party_organizations"
-              name="Organizations"
-              parent="menu_config_interested_party"
-              action="action_interested_party_organization_tree"
-              sequence="5" />
+        name="Organizations"
+        parent="menu_config_interested_party"
+        action="action_interested_party_organization_tree"
+        sequence="5" />
 
     <menuitem id="menu_qms_interested_party_individuals"
-              name="Individuals"
-              parent="menu_config_interested_party"
-              action="action_interested_party_individual_tree"
-              sequence="10" />
+        name="Individuals"
+        parent="menu_config_interested_party"
+        action="action_interested_party_individual_tree"
+        sequence="10" />
 
     <menuitem id="menu_open_weakness_cause"
-              name="Causes"
-              parent="menu_config_finding"
-              action="open_qms_weakness_cause_list"
-              sequence="5" />
+        name="Causes"
+        parent="menu_config_finding"
+        action="open_qms_weakness_cause_list"
+        sequence="5" />
 
     <menuitem id="menu_open_finding_origin"
-              name="Origins"
-              parent="menu_config_finding"
-              action="open_qms_finding_origin_list"
-              sequence="10" />
+        name="Origins"
+        parent="menu_config_finding"
+        action="open_qms_finding_origin_list"
+        sequence="10" />
 
     <menuitem id="menu_open_finding_stage"
-              name="Stages"
-              parent="menu_config_finding"
-              action="open_qms_finding_stage_list"
-              sequence="15" />
+        name="Stages"
+        parent="menu_config_finding"
+        action="open_qms_finding_stage_list"
+        sequence="15" />
 
 </odoo>

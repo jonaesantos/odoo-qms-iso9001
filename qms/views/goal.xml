@@ -1,13 +1,11 @@
 <odoo>
 
     <!-- TREE VIEW -->
-    <record id="view_qms_goal_tree"
-            model="ir.ui.view">
+    <record id="view_qms_goal_tree" model="ir.ui.view">
         <field name="name">qms.goal.tree</field>
         <field name="model">qms.goal</field>
         <field name="type">tree</field>
-        <field name="arch"
-               type="xml">
+        <field name="arch" type="xml">
             <tree>
                 <field name="name" />
                 <field name="date_open" />
@@ -24,32 +22,22 @@
     </record>
 
     <!-- FORM VIEW -->
-    <record id="view_qms_goal_form"
-            model="ir.ui.view">
+    <record id="view_qms_goal_form" model="ir.ui.view">
         <field name="name">qms.goal.form</field>
         <field name="model">qms.goal</field>
-        <field name="arch"
-               type="xml">
+        <field name="arch" type="xml">
             <form>
                 <sheet>
-                    <div class="oe_button_box"
-                         name="button_box">
-                        <button name="toggle_approved"
-                                string="Approved"
-                                type="object"
-                                class="oe_stat_button"
-                                icon="fa-check-square-o">
-                            <field name="approved"
-                                   widget="boolean_button"
-                                   options='{"terminology": {
-                                    "string_true": "Approved",
-                                    "string_false": "Not Approved",
-                                   }}'/>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="toggle_approved" string="Approved" type="object" class="oe_stat_button"
+                            icon="fa-check-square-o">
+                            <field name="approved" widget="boolean_button" options="{'terminology': {'string_true': 'Approved',
+                                    'string_false': 'Not Approved'}}" />
                         </button>
                     </div>
                     <div class="oe_title">
                         <h1>
-                            <field name="name"/>
+                            <field name="name" />
                         </h1>
                     </div>
                     <group>
@@ -60,7 +48,7 @@
                         <group>
                             <field name="cancel_date" />
                             <field name="date_close" />
-                        </group>                        
+                        </group>
                     </group>
                     <group>
                         <group>
@@ -77,15 +65,11 @@
                         <page string="Resources">
                             <field name="resource_ids" />
                         </page>
-                        <page string="Actions"
-                              name="actions">
-                            <field name="action_ids"
-                                   nolabel="1" />
+                        <page string="Actions" name="actions">
+                            <field name="action_ids" nolabel="1" />
                         </page>
                         <page string="Measurements">
-                            <field name="measurement_ids"
-                                   nolabel="True"
-                                   attrs="{'readonly':[('state','=','done')]}" />
+                            <field name="measurement_ids" nolabel="True" attrs="{'readonly':[('state','=','done')]}" />
                         </page>
                         <page string="Reviews">
                             <field name="review_ids" />
@@ -97,11 +81,9 @@
     </record>
 
     <!-- WINDOW ACTION -->
-    <record id="open_qms_goal_list"
-            model="ir.actions.act_window">
+    <record id="open_qms_goal_list" model="ir.actions.act_window">
         <field name="name">Goals</field>
         <field name="res_model">qms.goal</field>
-        
         <field name="view_mode">tree,form</field>
     </record>
 

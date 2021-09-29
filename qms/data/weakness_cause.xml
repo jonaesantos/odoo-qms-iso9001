@@ -3,53 +3,43 @@
 
     <data noupdate="1">
 
-        <record id="weakness_cause_badly_defined_need"
-                model="qms.weakness.cause">
+        <record id="weakness_cause_badly_defined_need" model="qms.weakness.cause">
             <field name="name">Badly defined need</field>
         </record>
 
-        <record id="weakness_cause_work_conditions"
-                model="qms.weakness.cause">
+        <record id="weakness_cause_work_conditions" model="qms.weakness.cause">
             <field name="name">Work conditions</field>
         </record>
 
-        <record id="weakness_cause_information_not_available"
-                model="qms.weakness.cause">
+        <record id="weakness_cause_information_not_available" model="qms.weakness.cause">
             <field name="name">Information not available</field>
         </record>
 
-        <record id="weakness_cause_bad_communication"
-                model="qms.weakness.cause">
+        <record id="weakness_cause_bad_communication" model="qms.weakness.cause">
             <field name="name">Bad communication</field>
         </record>
 
-        <record id="weakness_cause_bad_partner_relation"
-                model="qms.weakness.cause">
+        <record id="weakness_cause_bad_partner_relation" model="qms.weakness.cause">
             <field name="name">Bad customer/supplier relation</field>
         </record>
 
-        <record id="weakness_cause_hr_unavailable_inadequate"
-                model="qms.weakness.cause">
+        <record id="weakness_cause_hr_unavailable_inadequate" model="qms.weakness.cause">
             <field name="name">Human resource not available or inadequate</field>
         </record>
 
-        <record id="weakness_cause_instruction_not_respected"
-                model="qms.weakness.cause">
+        <record id="weakness_cause_instruction_not_respected" model="qms.weakness.cause">
             <field name="name">Instruction not respected</field>
         </record>
 
-        <record id="weakness_cause_procedure_not_respected"
-                model="qms.weakness.cause">
+        <record id="weakness_cause_procedure_not_respected" model="qms.weakness.cause">
             <field name="name">Procedure not respected</field>
         </record>
 
-        <record id="weakness_cause_technical_failure"
-                model="qms.weakness.cause">
+        <record id="weakness_cause_technical_failure" model="qms.weakness.cause">
             <field name="name">Technical failure</field>
         </record>
 
-        <record id="weakness_cause_procedure_not_defined"
-                model="qms.weakness.cause">
+        <record id="weakness_cause_procedure_not_defined" model="qms.weakness.cause">
             <field name="name">Procedure not defined</field>
         </record>
 

@@ -2,13 +2,12 @@
 <odoo>
     <data noupdate="1">
 
-        <record id="seq_qms_opportunity"
-                model="ir.sequence">
+        <record id="seq_qms_opportunity" model="ir.sequence">
             <field name="name">QMS opportunity</field>
             <field name="code">qms.opportunity</field>
             <field name="padding">3</field>
             <field name="prefix">OM_%(range_year)s_</field>
-            <field eval="True" name="use_date_range"/>
+            <field eval="True" name="use_date_range" />
         </record>
 
     </data>

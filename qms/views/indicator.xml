@@ -1,13 +1,11 @@
 <odoo>
 
     <!-- TREE VIEW -->
-    <record id="view_qms_indicator_tree"
-            model="ir.ui.view">
+    <record id="view_qms_indicator_tree" model="ir.ui.view">
         <field name="name">qms.indicator.tree</field>
         <field name="model">qms.indicator</field>
         <field name="type">tree</field>
-        <field name="arch"
-               type="xml">
+        <field name="arch" type="xml">
             <tree>
                 <field name="number" />
                 <field name="name" />
@@ -22,22 +20,18 @@
     </record>
 
     <!-- FORM VIEW -->
-    <record id="view_qms_indicator_form"
-            model="ir.ui.view">
+    <record id="view_qms_indicator_form" model="ir.ui.view">
         <field name="name">qms.indicator.form</field>
         <field name="model">qms.indicator</field>
-        <field name="arch"
-               type="xml">
+        <field name="arch" type="xml">
             <form>
                 <header>
-                    <field name="state"
-                           widget="statusbar"
-                           clickable="True" />
+                    <field name="state" widget="statusbar" clickable="True" />
                 </header>
                 <sheet>
                     <div class="oe_title">
                         <h1>
-                            <field name="name"/>
+                            <field name="name" />
                         </h1>
                     </div>
                     <group>
@@ -53,59 +47,53 @@
                     </group>
                     <notebook>
                         <page string="Measurements">
-                            <field name="measurement_ids"
-                                   nolabel="True"
-                                   attrs="{'readonly':[('state','=','done')]}" />
+                            <field name="measurement_ids" nolabel="True" attrs="{'readonly':[('state','=','done')]}" />
                         </page>
-                        <page string="NC"
-                              name="non_conformitys">
-                            <field name="non_conformity_ids"
-                                   nolabel="1" context="{'form_view_ref': 'qms.view_qms_non_conformity_form'}">
-                                    <tree>
-                                        <field name="name"/>
-                                        <field name="description"/>
-                                        <field name="reference" />
-                                        <field name="create_date" />
-                                        <field name="stage_id" />
-                                        <field name="origin_ids" />
-                                        <field name="closing_date" />                                        
-                                   </tree>
+                        <page string="NC" name="non_conformitys">
+                            <field name="non_conformity_ids" nolabel="1"
+                                context="{'form_view_ref': 'qms.view_qms_non_conformity_form'}">
+                                <tree>
+                                    <field name="name" />
+                                    <field name="description" />
+                                    <field name="reference" />
+                                    <field name="create_date" />
+                                    <field name="stage_id" />
+                                    <field name="origin_ids" />
+                                    <field name="closing_date" />
+                                </tree>
                             </field>
                         </page>
-                        <page string="OBS"
-                              name="observations">
-                            <field name="observation_ids"
-                                   nolabel="1" context="{'form_view_ref': 'qms.view_qms_observation_form'}">
-                                    <tree>
-                                        <field name="name"/>
-                                        <field name="description"/>
-                                        <field name="reference" />
-                                        <field name="create_date" />
-                                        <field name="stage_id" />
-                                        <field name="origin_ids" />
-                                        <field name="closing_date" />                                        
-                                   </tree>
+                        <page string="OBS" name="observations">
+                            <field name="observation_ids" nolabel="1"
+                                context="{'form_view_ref': 'qms.view_qms_observation_form'}">
+                                <tree>
+                                    <field name="name" />
+                                    <field name="description" />
+                                    <field name="reference" />
+                                    <field name="create_date" />
+                                    <field name="stage_id" />
+                                    <field name="origin_ids" />
+                                    <field name="closing_date" />
+                                </tree>
                             </field>
                         </page>
-                        <page string="OM"
-                              name="opportunitys">
-                            <field name="opportunity_ids"
-                                   nolabel="1" context="{'form_view_ref': 'qms.view_qms_opportunity_form'}">
-                                    <tree>
-                                        <field name="name"/>
-                                        <field name="description"/>
-                                        <field name="reference" />
-                                        <field name="create_date" />
-                                        <field name="stage_id" />
-                                        <field name="origin_ids" />
-                                        <field name="closing_date" />                                        
-                                   </tree>
+                        <page string="OM" name="opportunitys">
+                            <field name="opportunity_ids" nolabel="1"
+                                context="{'form_view_ref': 'qms.view_qms_opportunity_form'}">
+                                <tree>
+                                    <field name="name" />
+                                    <field name="description" />
+                                    <field name="reference" />
+                                    <field name="create_date" />
+                                    <field name="stage_id" />
+                                    <field name="origin_ids" />
+                                    <field name="closing_date" />
+                                </tree>
                             </field>
                         </page>
                         <page string="Versions">
-                            <field name="version_ids"
-                                   nolabel="True" />
-                        </page>                                                
+                            <field name="version_ids" nolabel="True" />
+                        </page>
                         <page string="Reviews">
                             <field name="review_ids" />
                         </page>
@@ -116,11 +104,9 @@
     </record>
 
     <!-- WINDOW ACTION -->
-    <record id="open_qms_indicator_list"
-            model="ir.actions.act_window">
+    <record id="open_qms_indicator_list" model="ir.actions.act_window">
         <field name="name">Indicators</field>
         <field name="res_model">qms.indicator</field>
-        
         <field name="view_mode">tree,form</field>
     </record>
 
