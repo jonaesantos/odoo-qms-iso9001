@@ -1,33 +1,30 @@
-
-from odoo import api, fields, models, _
+from odoo import api, fields, models
 
 
 class Opportunity(models.Model):
 
     _name = "qms.opportunity"
-    _inherit = ['qms.finding']
+    _inherit = ["qms.finding"]
 
     action_ids = fields.One2many(
-        comodel_name='qms.action',
-        inverse_name='opportunity_id'
+        comodel_name="qms.action", inverse_name="opportunity_id"
     )
 
-    audit_id = fields.Many2one(
-        comodel_name='audit'
-    )
+    audit_id = fields.Many2one(comodel_name="qms.audit")
 
     revision_by_direction_id = fields.Many2one(
-        comodel_name='revision_by_direction'
+        comodel_name="qms.revision_by_direction"
     )
 
-    indicator_id = fields.Many2one(
-        comodel_name='indicator'
-    )                 
+    indicator_id = fields.Many2one(comodel_name="qms.indicator")
 
     @api.model
     def create(self, vals):
-        vals.update({
-            'reference': self.env['ir.sequence'].next_by_code(
-                'qms.opportunity')
-        })
+        vals.update(
+            {
+                "reference": self.env["ir.sequence"].next_by_code(
+                    "qms.opportunity"
+                )
+            }
+        )
         return super(Opportunity, self).create(vals)

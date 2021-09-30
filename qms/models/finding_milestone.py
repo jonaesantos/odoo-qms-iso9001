@@ -1,16 +1,12 @@
+from odoo import fields, models
 
-from odoo import api, fields, models
 
+class FindingMilestone(models.Model):
 
-class Finding_Milestone(models.Model):
+    _name = "qms.finding.milestone"
+    _order = "sequence"
 
-    _name = 'qms.finding.milestone'
-    _order = 'sequence'
-
-    name = fields.Char(
-        required=True,
-        translate=True
-    )
+    name = fields.Char(required=True, translate=True)
 
     description = fields.Text()
 
@@ -28,12 +24,11 @@ class Finding_Milestone(models.Model):
 
     reference_code = fields.Char()
 
-    
     def name_get(self):
         res = []
         for obj in self:
             name = obj.name
             if obj.parent_id:
-                name = obj.parent_id.name_get()[0][1] + ' / ' + name
+                name = obj.parent_id.name_get()[0][1] + " / " + name
             res.append((obj.id, name))
         return res

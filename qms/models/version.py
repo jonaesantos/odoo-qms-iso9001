@@ -1,6 +1,5 @@
+from odoo import fields, models
 
-from odoo import api, fields, models, _
-from odoo.exceptions import ValidationError
 
 class Version(models.Model):
 
@@ -13,36 +12,27 @@ class Version(models.Model):
     date_open = fields.Date()
 
     document_id = fields.Many2one(
-        comodel_name='qms.document',
-        ondelete='cascade'        
+        comodel_name="qms.document", ondelete="cascade"
     )
 
-    policy_id = fields.Many2one(
-        comodel_name='qms.policy',
-        ondelete='cascade'        
-    )
+    policy_id = fields.Many2one(comodel_name="qms.policy", ondelete="cascade")
 
     indicator_id = fields.Many2one(
-        comodel_name='qms.indicator',
-        ondelete='cascade'        
-    )        
+        comodel_name="qms.indicator", ondelete="cascade"
+    )
 
     procedure_id = fields.Many2one(
-        comodel_name='qms.procedure',
-        ondelete='cascade'
+        comodel_name="qms.procedure", ondelete="cascade"
     )
 
     instructive_id = fields.Many2one(
-        comodel_name='qms.instructive',
-        ondelete='cascade'
+        comodel_name="qms.instructive", ondelete="cascade"
     )
 
     registry_id = fields.Many2one(
-        comodel_name='qms.registry',
-        ondelete='cascade'
-    )        
+        comodel_name="qms.registry", ondelete="cascade"
+    )
 
     responsible_id = fields.Many2one(
-        comodel_name='qms.interested_party',
-        required=True
-    )        
+        comodel_name="qms.interested_party", required=True
+    )

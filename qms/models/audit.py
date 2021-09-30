@@ -2,88 +2,66 @@
 # Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import api, fields, models, _
+from odoo import fields, models
+
 
 class Audit(models.Model):
 
-    _name = 'qms.audit'
-    _rec_name = 'reference'
+    _name = "qms.audit"
+    _rec_name = "reference"
 
     _system_ = [
-        ('iso9001_2015', 'ISO 9001:2015'),
-        ('iso9001_2008', 'ISO 9001:2008')
+        ("iso9001_2015", "ISO 9001:2015"),
+        ("iso9001_2008", "ISO 9001:2008"),
     ]
 
-    system = fields.Selection(
-        selection=_system_,
-        string='System',
-        required=True
-    )
+    system = fields.Selection(selection=_system_, required=True)
 
-    _states_ = [
-        ('open', 'Open'),
-        ('done', 'Closed')
-    ]
+    _states_ = [("open", "Open"), ("done", "Closed")]
 
-    reference = fields.Char(
-        readonly=False,
-        required=False
-    )
+    reference = fields.Char(readonly=False, required=False)
 
     date = fields.Date()
 
     verification_line_ids = fields.One2many(
-        comodel_name='qms.audit.verification.line',
-        inverse_name='audit_id',
+        comodel_name="qms.audit.verification.line", inverse_name="audit_id"
     )
 
-    closing_date = fields.Datetime(
-        readonly=True
-    )
+    closing_date = fields.Datetime(readonly=True)
 
-    strong_points = fields.Html('Strong Points')
+    strong_points = fields.Html()
 
-    state = fields.Selection(
-        selection=_states_,
-        default='open'
-    )
+    state = fields.Selection(selection=_states_, default="open")
 
     audited_ids = fields.Many2many(
-        comodel_name='qms.interested_party',
-        relation='audit_audited_rel'
-        #domain="[('auditor', '=', False)]"
+        comodel_name="qms.interested_party",
+        relation="audit_audited_rel"
+        # domain="[('auditor', '=', False)]"
     )
 
     auditors_ids = fields.Many2many(
-        comodel_name='qms.interested_party',
-        relation='audit_auditor_rel'
-        #domain="[('auditor', '=', True)]"
+        comodel_name="qms.interested_party",
+        relation="audit_auditor_rel"
+        # domain="[('auditor', '=', True)]"
     )
 
     audit_evaluation_ids = fields.One2many(
-        comodel_name='qms.audit.evaluation',
-        inverse_name='audit_id'
+        comodel_name="qms.audit.evaluation", inverse_name="audit_id"
     )
 
     non_conformity_ids = fields.One2many(
-        comodel_name='qms.non_conformity',
-        inverse_name='audit_id'
+        comodel_name="qms.non_conformity", inverse_name="audit_id"
     )
 
     observation_ids = fields.One2many(
-        comodel_name='qms.observation',
-        inverse_name='audit_id'
+        comodel_name="qms.observation", inverse_name="audit_id"
     )
 
     opportunity_ids = fields.One2many(
-        comodel_name='qms.opportunity',
-        inverse_name='audit_id'
+        comodel_name="qms.opportunity", inverse_name="audit_id"
     )
 
-    process_ids = fields.Many2many(
-        comodel_name='qms.process',
-        required=True
-    )
+    process_ids = fields.Many2many(comodel_name="qms.process", required=True)
 
     # @api.model
     # def create(self, vals):
@@ -95,11 +73,7 @@ class Audit(models.Model):
     #     audit_id = super(Audit, self).create(vals)
     #     return audit_id
 
-    
     def button_close(self):
         return self.write(
-            {
-                'state': 'done',
-                'closing_date': fields.Datetime.now()
-            }
+            {"state": "done", "closing_date": fields.Datetime.now()}
         )

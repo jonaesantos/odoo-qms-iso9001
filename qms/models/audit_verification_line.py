@@ -5,31 +5,21 @@
 from odoo import fields, models
 
 
-class Audit_Verification_Line(models.Model):
+class AuditVerificationLine(models.Model):
 
     _name = "qms.audit.verification.line"
     _order = "seq"
 
-    name = fields.Char(
-        string='Question',
-        required=True
-    )
+    name = fields.Char(string="Question", required=True)
 
-    point_norm = fields.Char(
-        string='Point of the norm',
-        required=True
-    )
+    point_norm = fields.Char(string="Point of the norm", required=True)
 
     audit_id = fields.Many2one(
-        comodel_name='qms.audit',
-        ondelete='cascade',
-        index=True
+        comodel_name="qms.audit", ondelete="cascade", index=True
     )
 
     is_conformed = fields.Boolean()
 
     comments = fields.Text()
 
-    seq = fields.Integer(
-        string='Sequence'
-    )
+    seq = fields.Integer(string="Sequence")

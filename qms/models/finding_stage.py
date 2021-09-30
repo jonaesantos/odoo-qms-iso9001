@@ -1,25 +1,22 @@
+from odoo import _, fields, models
 
-from odoo import models, fields, _
 
+class FindingStage(models.Model):
 
-class Finding_Stage(models.Model):
-
-    _name = 'qms.finding.stage'
-    _inherit = ['qms.stage']
+    _name = "qms.finding.stage"
+    _inherit = ["qms.stage"]
 
     _states_ = [
-        ('draft', _('Draft')),
-        ('analysis', _('Analysis')),
-        ('pending', _('Action Plan')),
-        ('open', _('In Progress')),
-        ('done', _('Closed')),
-        ('cancel', _('Cancelled'))
+        ("draft", _("Draft")),
+        ("analysis", _("Analysis")),
+        ("pending", _("Action Plan")),
+        ("open", _("In Progress")),
+        ("done", _("Closed")),
+        ("cancel", _("Cancelled")),
     ]
 
     state = fields.Selection(
-        selection=_states_,
-        readonly=True,
-        default='draft'
+        selection=_states_, readonly=True, default="draft"
     )
 
     fold = fields.Boolean()
