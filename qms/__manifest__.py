@@ -7,8 +7,8 @@
     "license": "AGPL-3",
     "depends": [],
     "data": [
-        # 'security/groups.xml',
-        # 'security/ir.model.access.csv',
+        "security/qms_groups.xml",
+        "security/ir.model.access.csv",
         "data/action_sequence.xml",
         "data/audit_sequence.xml",
         "data/non_conformity_sequence.xml",
