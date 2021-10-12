@@ -11,19 +11,19 @@
         </record>
 
         <record id="finding_origin_dr" model="qms.finding.origin">
-            <field name="name">Revisión por la Dirección</field>
+            <field name="name">Revision by Direction</field>
         </record>
 
         <record id="finding_origin_internal_client" model="qms.finding.origin">
-            <field name="name">Internal client complaint</field>
+            <field name="name">Internal Client Complaint</field>
         </record>
 
         <record id="finding_origin_external_client" model="qms.finding.origin">
-            <field name="name">External client complaint</field>
+            <field name="name">External Client Complaint</field>
         </record>
 
         <record id="finding_origin_provider_complaint" model="qms.finding.origin">
-            <field name="name">Provider complaint</field>
+            <field name="name">Provider Complaint</field>
         </record>
 
         <record id="finding_origin_process" model="qms.finding.origin">
