@@ -139,4 +139,7 @@
         <field name="context">{"search_default_open": True}</field>
     </record>
 
+    <!-- MENU -->
+    <menuitem id="menu_open_audit" action="open_qms_audit_list" parent="qms.menu_qms_main" sequence="35" />
+
 </odoo>

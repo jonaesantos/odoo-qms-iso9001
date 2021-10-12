@@ -65,4 +65,8 @@
         <field name="view_mode">tree,calendar,form</field>
     </record>
 
+    <!-- MENU -->
+    <menuitem id="menu_open_effectiveness_check" action="open_qms_effectiveness_check_list" parent="qms.menu_qms_main"
+        sequence="45" />
+
 </odoo>

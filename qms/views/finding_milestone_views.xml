@@ -1,24 +1,5 @@
 <odoo>
 
-    <!-- FORM VIEW -->
-    <record id="view_qms_finding_milestone_form" model="ir.ui.view">
-        <field name="name">qms.finding.milestone.form</field>
-        <field name="type">form</field>
-        <field name="model">qms.finding.milestone</field>
-        <field name="arch" type="xml">
-            <form>
-                <sheet>
-                    <group>
-                        <field name="name" />
-                        <field name="sequence" />
-                        <field name="reference_code" />
-                        <field name="description" colspan="4" />
-                    </group>
-                </sheet>
-            </form>
-        </field>
-    </record>
-
     <!-- TREE VIEW -->
     <record id="view_qms_finding_milestone_tree" model="ir.ui.view">
         <field name="name">qms.finding.milestone.tree</field>
@@ -42,6 +23,25 @@
             <search>
                 <field name="name" />
             </search>
+        </field>
+    </record>
+
+    <!-- FORM VIEW -->
+    <record id="view_qms_finding_milestone_form" model="ir.ui.view">
+        <field name="name">qms.finding.milestone.form</field>
+        <field name="type">form</field>
+        <field name="model">qms.finding.milestone</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="sequence" />
+                        <field name="reference_code" />
+                        <field name="description" colspan="4" />
+                    </group>
+                </sheet>
+            </form>
         </field>
     </record>
 

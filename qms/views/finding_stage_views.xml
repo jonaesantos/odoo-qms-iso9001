@@ -23,4 +23,8 @@
         <field name="context">{}</field>
     </record>
 
+    <!-- MENU -->
+    <menuitem id="menu_open_finding_stage" name="Stages" parent="menu_config_finding"
+        action="open_qms_finding_stage_list" sequence="15" />
+
 </odoo>

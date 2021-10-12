@@ -1,12 +1,5 @@
 <odoo>
 
-    <!-- WINDOW ACTION -->
-    <record id="open_qms_registry_list" model="ir.actions.act_window">
-        <field name="name">Registries</field>
-        <field name="res_model">qms.registry</field>
-        <field name="view_mode">tree,form</field>
-    </record>
-
     <!-- TREE VIEW -->
     <record id="view_qms_registry_tree" model="ir.ui.view">
         <field name="name">qms.registry.tree</field>
@@ -33,6 +26,13 @@
         </field>
     </record>
 
+    <!-- WINDOW ACTION -->
+    <record id="open_qms_registry_list" model="ir.actions.act_window">
+        <field name="name">Registries</field>
+        <field name="res_model">qms.registry</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
     <record model="ir.actions.act_window.view" id="action_qms_registry_tree">
         <field name="sequence" eval="2" />
         <field name="view_mode">tree</field>
@@ -46,5 +46,9 @@
         <field name="view_id" ref="view_qms_registry_form" />
         <field name="act_window_id" ref="open_qms_registry_list" />
     </record>
+
+    <!-- MENU -->
+    <menuitem id="menu_open_registry" name="Registries" parent="qms.menu_open_document" action="open_qms_registry_list"
+        sequence="15" />
 
 </odoo>

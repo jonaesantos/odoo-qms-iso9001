@@ -1,30 +1,25 @@
 <odoo>
 
     <!-- TREE VIEW -->
-    <record id="view_qms_document_tree" model="ir.ui.view">
-        <field name="name">qms.document.tree</field>
-        <field name="model">qms.document</field>
+    <record id="view_qms_policy_tree" model="ir.ui.view">
+        <field name="name">qms.policy.tree</field>
+        <field name="model">qms.policy</field>
+        <field name="type">tree</field>
         <field name="arch" type="xml">
-            <tree name="document">
-                <field name="identification" />
+            <tree>
                 <field name="name" />
-                <field name="process_ids" />
+                <field name="version" />
+                <field name="date" />
+                <field name="last_review_date" />
                 <field name="approved" />
-                <field name="storage" />
-                <field name="type" />
-                <field name="format" />
-                <field name="holding_time" />
-                <field name="disposition" />
-                <field name="link" widget="html" />
-
             </tree>
         </field>
     </record>
 
     <!-- FORM VIEW -->
-    <record id="view_qms_document_form" model="ir.ui.view">
-        <field name="name">qms.document.form</field>
-        <field name="model">qms.document</field>
+    <record id="view_qms_policy_form" model="ir.ui.view">
+        <field name="name">qms.policy.form</field>
+        <field name="model">qms.policy</field>
         <field name="arch" type="xml">
             <form>
                 <sheet>
@@ -35,30 +30,23 @@
                                     'string_false': 'Not Approved'}}" />
                         </button>
                     </div>
-                    <group>
-                        <group>
+                    <div class="oe_title">
+                        <h1>
                             <field name="name" />
-                            <field name="identification" />
-                            <field name="responsible_id" />
-                            <field name="type" />
-                        </group>
-                        <group>
-                            <field name="storage" />
-                            <field name="format" />
-                            <field name="disposition" />
-                            <field name="holding_time" />
-                            <field name="relation" />
-                        </group>
-                    </group>
+                        </h1>
+                    </div>
                     <group>
-                        <field name="link" widget="html" />
+                        <group>
+                            <field name="version" />
+                            <field name="date" />
+                        </group>
                     </group>
                     <notebook>
                         <page string="Description">
                             <field name="description" />
                         </page>
-                        <page string="Processes">
-                            <field name="process_ids" />
+                        <page string="Components">
+                            <field name="policy_component_ids" />
                         </page>
                         <page string="Versions">
                             <field name="version_ids" nolabel="True" />
@@ -73,10 +61,13 @@
     </record>
 
     <!-- WINDOW ACTION -->
-    <record id="open_qms_document_list" model="ir.actions.act_window">
-        <field name="name">Documents</field>
-        <field name="res_model">qms.document</field>
+    <record id="open_qms_policy_list" model="ir.actions.act_window">
+        <field name="name">Policies</field>
+        <field name="res_model">qms.policy</field>
         <field name="view_mode">tree,form</field>
     </record>
+
+    <!-- MENU -->
+    <menuitem id="menu_open_policy" action="open_qms_policy_list" parent="qms.menu_qms_main" sequence="5" />
 
 </odoo>

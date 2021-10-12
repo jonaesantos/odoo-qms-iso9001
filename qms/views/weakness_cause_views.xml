@@ -1,5 +1,17 @@
 <odoo>
 
+    <!-- TREE VIEW -->
+    <record id="view_qms_weakness_cause_tree" model="ir.ui.view">
+        <field name="name">qms.weakness.cause.tree</field>
+        <field name="model">qms.weakness.cause</field>
+        <field name="inherit_id" ref="qms.view_qms_finding_milestone_tree" />
+        <field name="arch" type="xml">
+            <field name="name" position="before">
+                <field name="parent_id" />
+            </field>
+        </field>
+    </record>
+
     <!-- FORM VIEW -->
     <record id="view_qms_weakness_cause_form" model="ir.ui.view">
         <field name="name">qms.weakness.cause.form</field>
@@ -8,18 +20,6 @@
         <field name="inherit_id" ref="qms.view_qms_finding_milestone_form" />
         <field name="arch" type="xml">
             <field name="name" position="after">
-                <field name="parent_id" />
-            </field>
-        </field>
-    </record>
-
-    <!-- TREE VIEW -->
-    <record id="view_qms_weakness_cause_tree" model="ir.ui.view">
-        <field name="name">qms.weakness.cause.tree</field>
-        <field name="model">qms.weakness.cause</field>
-        <field name="inherit_id" ref="qms.view_qms_finding_milestone_tree" />
-        <field name="arch" type="xml">
-            <field name="name" position="before">
                 <field name="parent_id" />
             </field>
         </field>
@@ -43,9 +43,12 @@
         <field name="name">Causes</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">qms.weakness.cause</field>
-
         <field name="view_id" eval="view_qms_weakness_cause_tree" />
         <field name="search_view_id" ref="view_qms_weakness_cause_filter" />
     </record>
+
+    <!-- MENU -->
+    <menuitem id="menu_open_weakness_cause" name="Causes" parent="menu_config_finding"
+        action="open_qms_weakness_cause_list" sequence="5" />
 
 </odoo>

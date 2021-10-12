@@ -1,10 +1,16 @@
 <odoo>
 
-    <!-- WINDOWS ACTION -->
-    <record model="ir.actions.act_window" id="open_qms_complaint_list">
-        <field name="name">Complaints</field>
-        <field name="res_model">qms.complaint</field>
-        <field name="view_mode">tree,kanban,form</field>
+    <!-- TREE VIEW -->
+    <record id="view_qms_complaint_tree" model="ir.ui.view">
+        <field name="name">qms.complaint.tree</field>
+        <field name="type">tree</field>
+        <field name="model">qms.complaint</field>
+        <field name="inherit_id" ref="qms.view_qms_finding_tree" />
+        <field name="arch" type="xml">
+            <tree name="finding" position="attributes">
+                <attribute name="string">Complaint</attribute>
+            </tree>
+        </field>
     </record>
 
     <!-- FORM VIEW -->
@@ -25,19 +31,6 @@
         </field>
     </record>
 
-    <!-- TREE VIEW -->
-    <record id="view_qms_complaint_tree" model="ir.ui.view">
-        <field name="name">qms.complaint.tree</field>
-        <field name="type">tree</field>
-        <field name="model">qms.complaint</field>
-        <field name="inherit_id" ref="qms.view_qms_finding_tree" />
-        <field name="arch" type="xml">
-            <tree name="finding" position="attributes">
-                <attribute name="string">Complaint</attribute>
-            </tree>
-        </field>
-    </record>
-
     <!-- KANBAN VIEW -->
     <record id="view_qms_complaint_kanban" model="ir.ui.view">
         <field name="name">qms.complaint.kanban</field>
@@ -49,6 +42,13 @@
                 <attribute name="string">Complaint</attribute>
             </kanban>
         </field>
+    </record>
+
+    <!-- WINDOW ACTION -->
+    <record model="ir.actions.act_window" id="open_qms_complaint_list">
+        <field name="name">Complaints</field>
+        <field name="res_model">qms.complaint</field>
+        <field name="view_mode">kanban,tree,form</field>
     </record>
 
     <record model="ir.actions.act_window.view" id="action_qms_complaint_kanban">
@@ -71,5 +71,9 @@
         <field name="view_id" ref="view_qms_complaint_form" />
         <field name="act_window_id" ref="open_qms_complaint_list" />
     </record>
+
+    <!-- MENU -->
+    <menuitem id="menu_open_complaint" name="Complaints" parent="qms.menu_open_finding" action="open_qms_complaint_list"
+        sequence="15" />
 
 </odoo>

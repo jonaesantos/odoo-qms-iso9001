@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="menu_qms_root" name="Quality Management System" sequence="0" />
+
+    <menuitem id="menu_qms_main" name="Quality Management System" parent="menu_qms_root" sequence="0" />
+
+    <menuitem id="menu_qms_context" name="Context" parent="qms.menu_qms_root" sequence="10" />
+
+    <menuitem id="menu_qms_configuration" name="Configuration" parent="qms.menu_qms_root" sequence="15" />
+
+</odoo>

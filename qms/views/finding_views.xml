@@ -1,5 +1,6 @@
 <odoo>
 
+    <!-- TREE VIEW -->
     <record id="view_qms_finding_tree" model="ir.ui.view">
         <field name="name">qms.finding.tree</field>
         <field name="model">qms.finding</field>
@@ -94,6 +95,7 @@
         </field>
     </record>
 
+    <!-- FORM VIEW -->
     <record id="view_qms_finding_form" model="ir.ui.view">
         <field name="name">qms.finding.form</field>
         <field name="model">qms.finding</field>
@@ -158,5 +160,9 @@
             </form>
         </field>
     </record>
+
+    <!-- MENU -->
+    <menuitem id="menu_open_finding" name="Findings" parent="qms.menu_qms_main" sequence="55" />
+    <menuitem id="menu_config_finding" name="Findings" parent="qms.menu_qms_configuration" sequence="10" />
 
 </odoo>

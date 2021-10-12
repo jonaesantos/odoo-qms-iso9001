@@ -77,4 +77,8 @@
         <field name="view_mode">tree,form</field>
     </record>
 
+    <!-- MENU -->
+    <menuitem id="menu_open_audit_evaluation" action="open_qms_audit_evaluation_list" parent="qms.menu_qms_main"
+        sequence="40" />
+
 </odoo>

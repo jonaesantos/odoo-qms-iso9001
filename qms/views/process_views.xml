@@ -68,4 +68,7 @@
         <field name="view_mode">tree,form</field>
     </record>
 
+    <!-- MENU -->
+    <menuitem id="menu_open_process" action="open_qms_process_list" parent="qms.menu_qms_main" sequence="15" />
+
 </odoo>

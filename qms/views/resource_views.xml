@@ -51,4 +51,8 @@
         <field name="view_mode">tree,form</field>
     </record>
 
+    <!-- MENU -->
+    <menuitem id="menu_config_resource" name="Resources" parent="qms.menu_qms_context" action="open_qms_resource_list"
+        sequence="10" />
+
 </odoo>

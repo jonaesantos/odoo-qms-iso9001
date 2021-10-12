@@ -141,4 +141,7 @@
         <field name="view_mode">tree,form,kanban</field>
     </record>
 
+    <!-- MENU -->
+    <menuitem id="menu_open_hazard" action="open_qms_hazard_list" parent="qms.menu_qms_main" sequence="25" />
+
 </odoo>

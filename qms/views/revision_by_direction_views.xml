@@ -1,31 +1,28 @@
 <odoo>
 
     <!-- TREE VIEW -->
-    <record id="view_qms_indicator_tree" model="ir.ui.view">
-        <field name="name">qms.indicator.tree</field>
-        <field name="model">qms.indicator</field>
+    <record id="view_qms_revision_by_direction_tree" model="ir.ui.view">
+        <field name="name">qms.revision_by_direction.tree</field>
+        <field name="model">qms.revision_by_direction</field>
         <field name="type">tree</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="number" />
                 <field name="name" />
-                <field name="responsible_id" />
-                <field name="process_id" />
-                <field name="state" />
-                <field name="last_measurement_date" />
-                <field name="last_measurement_result" />
-                <field name="last_measurement_result_detail" />
+                <field name="date_open" />
+                <field name="date_close" />
+                <field name="state" invisible="False" />
             </tree>
         </field>
     </record>
 
     <!-- FORM VIEW -->
-    <record id="view_qms_indicator_form" model="ir.ui.view">
-        <field name="name">qms.indicator.form</field>
-        <field name="model">qms.indicator</field>
+    <record id="view_qms_revision_by_direction_form" model="ir.ui.view">
+        <field name="name">qms.revision_by_direction.form</field>
+        <field name="model">qms.revision_by_direction</field>
         <field name="arch" type="xml">
             <form>
                 <header>
+                    <button name="button_close" string="Close" states="open" type="object" />
                     <field name="state" widget="statusbar" clickable="True" />
                 </header>
                 <sheet>
@@ -36,18 +33,16 @@
                     </div>
                     <group>
                         <group>
-                            <field name="number" />
-                            <field name="responsible_id" />
-                            <field name="process_id" />
-                            <field name="frequency" />
+                            <field name="date_open" />
+                            <field name="date_close" />
                         </group>
                     </group>
-                    <group>
-                        <field name="description" />
-                    </group>
                     <notebook>
-                        <page string="Measurements">
-                            <field name="measurement_ids" nolabel="True" attrs="{'readonly':[('state','=','done')]}" />
+                        <page string="Description">
+                            <field name="description" />
+                        </page>
+                        <page string="New Resources">
+                            <field name="resource_ids" />
                         </page>
                         <page string="NC" name="non_conformitys">
                             <field name="non_conformity_ids" nolabel="1"
@@ -91,11 +86,8 @@
                                 </tree>
                             </field>
                         </page>
-                        <page string="Versions">
-                            <field name="version_ids" nolabel="True" />
-                        </page>
-                        <page string="Reviews">
-                            <field name="review_ids" />
+                        <page string="Actions">
+                            <field name="action_ids" />
                         </page>
                     </notebook>
                 </sheet>
@@ -104,10 +96,14 @@
     </record>
 
     <!-- WINDOW ACTION -->
-    <record id="open_qms_indicator_list" model="ir.actions.act_window">
-        <field name="name">Indicators</field>
-        <field name="res_model">qms.indicator</field>
+    <record id="open_qms_revision_by_direction_list" model="ir.actions.act_window">
+        <field name="name">Revisions Direction</field>
+        <field name="res_model">qms.revision_by_direction</field>
         <field name="view_mode">tree,form</field>
     </record>
+
+    <!-- MENU -->
+    <menuitem id="menu_open_revision_by_direction" action="open_qms_revision_by_direction_list"
+        parent="qms.menu_qms_main" sequence="50" />
 
 </odoo>

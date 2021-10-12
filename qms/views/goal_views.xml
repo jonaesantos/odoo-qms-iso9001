@@ -87,4 +87,7 @@
         <field name="view_mode">tree,form</field>
     </record>
 
+    <!-- MENU -->
+    <menuitem id="menu_open_goal" action="open_qms_goal_list" parent="qms.menu_qms_main" sequence="10" />
+
 </odoo>
