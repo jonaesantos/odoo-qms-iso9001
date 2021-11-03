@@ -1,8 +1,8 @@
 <odoo>
 
     <!-- TREE VIEW -->
-    <record id="view_qms_goal_tree" model="ir.ui.view">
-        <field name="name">qms.goal.tree</field>
+    <record id="goal_view_tree" model="ir.ui.view">
+        <field name="name">qms.goal.view_tree</field>
         <field name="model">qms.goal</field>
         <field name="type">tree</field>
         <field name="arch" type="xml">
@@ -22,8 +22,8 @@
     </record>
 
     <!-- FORM VIEW -->
-    <record id="view_qms_goal_form" model="ir.ui.view">
-        <field name="name">qms.goal.form</field>
+    <record id="goal_view_form" model="ir.ui.view">
+        <field name="name">qms.goal.view.form</field>
         <field name="model">qms.goal</field>
         <field name="arch" type="xml">
             <form>
@@ -81,13 +81,13 @@
     </record>
 
     <!-- WINDOW ACTION -->
-    <record id="open_qms_goal_list" model="ir.actions.act_window">
+    <record id="goal_action_view_tree" model="ir.actions.act_window">
         <field name="name">Goals</field>
         <field name="res_model">qms.goal</field>
         <field name="view_mode">tree,form</field>
     </record>
 
     <!-- MENU -->
-    <menuitem id="menu_open_goal" action="open_qms_goal_list" parent="qms.menu_qms_main" sequence="10" />
+    <menuitem id="menu_open_goal" parent="qms.menu_qms_main" sequence="10" action="goal_action_view_tree"/>
 
 </odoo>

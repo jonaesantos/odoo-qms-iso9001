@@ -1,8 +1,8 @@
 <odoo>
 
     <!-- TREE VIEW -->
-    <record id="view_qms_resource_tree" model="ir.ui.view">
-        <field name="name">qms.resource.tree</field>
+    <record id="resource_view_tree" model="ir.ui.view">
+        <field name="name">qms.resource.view.tree</field>
         <field name="model">qms.resource</field>
         <field name="type">tree</field>
         <field name="arch" type="xml">
@@ -16,8 +16,8 @@
     </record>
 
     <!-- FORM VIEW -->
-    <record id="view_qms_resource_form" model="ir.ui.view">
-        <field name="name">qms.resource.form</field>
+    <record id="resource_view_form" model="ir.ui.view">
+        <field name="name">qms.resource.view.form</field>
         <field name="model">qms.resource</field>
         <field name="arch" type="xml">
             <form>
@@ -45,14 +45,14 @@
     </record>
 
     <!-- WINDOW ACTION -->
-    <record id="open_qms_resource_list" model="ir.actions.act_window">
+    <record id="resource_action_view_tree" model="ir.actions.act_window">
         <field name="name">Resources</field>
         <field name="res_model">qms.resource</field>
         <field name="view_mode">tree,form</field>
     </record>
 
     <!-- MENU -->
-    <menuitem id="menu_config_resource" name="Resources" parent="qms.menu_qms_context" action="open_qms_resource_list"
+    <menuitem id="resource_menu_config" name="Resources" parent="qms.menu_qms_context" action="resource_action_view_tree"
         sequence="10" />
 
 </odoo>

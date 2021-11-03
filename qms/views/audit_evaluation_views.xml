@@ -1,8 +1,8 @@
 <odoo>
 
     <!-- TREE VIEW -->
-    <record id="view_qms_audit_evaluation_tree" model="ir.ui.view">
-        <field name="name">qms.audit.evaluation.tree</field>
+    <record id="audit_evaluation_view_tree" model="ir.ui.view">
+        <field name="name">qms.audit.evaluation.view.tree</field>
         <field name="model">qms.audit.evaluation</field>
         <field name="type">tree</field>
         <field name="arch" type="xml">
@@ -19,8 +19,8 @@
     </record>
 
     <!-- SEARCH VIEW -->
-    <record id="view_qms_audit_evaluation_filter" model="ir.ui.view">
-        <field name="name">qms.audit.evaluation.filter</field>
+    <record id="audit_evaluation_view_filter" model="ir.ui.view">
+        <field name="name">qms.audit.evaluation.view.filter</field>
         <field name="model">qms.audit.evaluation</field>
         <field name="type">search</field>
         <field name="arch" type="xml">
@@ -36,8 +36,8 @@
     </record>
 
     <!-- FORM VIEW -->
-    <record id="view_qms_audit_evaluation_form" model="ir.ui.view">
-        <field name="name">qms.audit.evaluation.form</field>
+    <record id="audit_evaluation_view_form" model="ir.ui.view">
+        <field name="name">qms.audit.evaluation.view.form</field>
         <field name="model">qms.audit.evaluation</field>
         <field name="type">form</field>
         <field name="arch" type="xml">
@@ -71,14 +71,14 @@
     </record>
 
     <!-- WINDOW ACTION -->
-    <record id="open_qms_audit_evaluation_list" model="ir.actions.act_window">
+    <record id="audit_evaluation_action_view_tree" model="ir.actions.act_window">
         <field name="name">Audit Evaluations</field>
         <field name="res_model">qms.audit.evaluation</field>
         <field name="view_mode">tree,form</field>
     </record>
 
     <!-- MENU -->
-    <menuitem id="menu_open_audit_evaluation" action="open_qms_audit_evaluation_list" parent="qms.menu_qms_main"
+    <menuitem id="audit_evaluation_menu" parent="qms.menu_qms_main" action="audit_evaluation_action_view_tree"
         sequence="40" />
 
 </odoo>

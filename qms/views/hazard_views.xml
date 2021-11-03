@@ -1,8 +1,8 @@
 <odoo>
 
     <!-- TREE VIEW -->
-    <record id="view_qms_hazard_tree" model="ir.ui.view">
-        <field name="name">qms.hazard.tree</field>
+    <record id="hazard_view_tree" model="ir.ui.view">
+        <field name="name">qms.hazard.tree.view</field>
         <field name="model">qms.hazard</field>
         <field name="type">tree</field>
         <field name="arch" type="xml">
@@ -20,8 +20,8 @@
     </record>
 
     <!-- FORM VIEW -->
-    <record id="view_qms_hazard_form" model="ir.ui.view">
-        <field name="name">qms.hazard.form</field>
+    <record id="hazard_view_form" model="ir.ui.view">
+        <field name="name">qms.hazard.view.form</field>
         <field name="model">qms.hazard</field>
         <field name="arch" type="xml">
             <form>
@@ -135,13 +135,13 @@
     </record> -->
 
     <!-- WINDOW ACTION -->
-    <record id="open_qms_hazard_list" model="ir.actions.act_window">
+    <record id="hazard_action_view_tree" model="ir.actions.act_window">
         <field name="name">Hazards</field>
         <field name="res_model">qms.hazard</field>
         <field name="view_mode">tree,form,kanban</field>
     </record>
 
     <!-- MENU -->
-    <menuitem id="menu_open_hazard" action="open_qms_hazard_list" parent="qms.menu_qms_main" sequence="25" />
+    <menuitem id="menu_open_hazard" parent="qms.menu_qms_main" sequence="25" action="hazard_action_view_tree" />
 
 </odoo>

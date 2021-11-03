@@ -1,7 +1,7 @@
 <odoo>
 
     <!-- TREE VIEW -->
-    <record id="view_qms_action_tree" model="ir.ui.view">
+    <record id="action_view_tree" model="ir.ui.view">
         <field name="name">qms.action.tree</field>
         <field name="model">qms.action</field>
         <field name="type">tree</field>
@@ -20,7 +20,7 @@
     </record>
 
     <!-- SEARCH VIEW -->
-    <record id="view_qms_action_filter" model="ir.ui.view">
+    <record id="action_view_filter" model="ir.ui.view">
         <field name="name">qms.action.filter</field>
         <field name="model">qms.action</field>
         <field name="type">search</field>
@@ -35,7 +35,7 @@
     </record>
 
     <!-- FORM VIEW -->
-    <record id="view_qms_action_form" model="ir.ui.view">
+    <record id="action_view_form" model="ir.ui.view">
         <field name="name">qms.action.form</field>
         <field name="model">qms.action</field>
         <field name="arch" type="xml">
@@ -128,14 +128,14 @@
     </record> -->
 
     <!-- WINDOW ACTION -->
-    <record id="open_qms_action_list" model="ir.actions.act_window">
+    <record id="action_action_view_tree" model="ir.actions.act_window">
         <field name="name">Actions</field>
         <field name="res_model">qms.action</field>
         <field name="view_mode">kanban,tree,form</field>
     </record>
 
     <!-- MENU -->
-    <menuitem id="menu_open_action" action="open_qms_action_list" parent="qms.menu_qms_main" sequence="30" />
+    <menuitem id="action_menu" parent="qms.menu_qms_main" action="action_action_view_tree" sequence="30" />
     <menuitem id="menu_config_action" name="Actions" parent="qms.menu_qms_configuration" sequence="5" />
 
 </odoo>

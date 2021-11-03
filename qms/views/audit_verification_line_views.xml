@@ -1,8 +1,8 @@
 <odoo>
 
     <!-- TREE VIEW -->
-    <record id="view_qms_audit_verification_line_tree" model="ir.ui.view">
-        <field name="name">qms.audit.verification.line.tree</field>
+    <record id="audit_verification_line_view_tree" model="ir.ui.view">
+        <field name="name">qms.audit.verification.line.view.tree</field>
         <field name="model">qms.audit.verification.line</field>
         <field name="type">tree</field>
         <field name="arch" type="xml">
@@ -17,8 +17,8 @@
     </record>
 
     <!-- SEARCH VIEW -->
-    <record id="view_qms_audit_verification_line_filter" model="ir.ui.view">
-        <field name="name">qms.audit.verification.line.filter</field>
+    <record id="audit_verification_line_view_filter" model="ir.ui.view">
+        <field name="name">qms.audit.verification.line.view_filter</field>
         <field name="model">qms.audit.verification.line</field>
         <field name="type">search</field>
         <field name="arch" type="xml">
@@ -35,8 +35,8 @@
     </record>
 
     <!-- FORM VIEW -->
-    <record id="view_qms_audit_verification_line_form" model="ir.ui.view">
-        <field name="name">qms.audit.verification.line.form</field>
+    <record id="audit_verification_line_view_form" model="ir.ui.view">
+        <field name="name">qms.audit.verification.line.view.form</field>
         <field name="model">qms.audit.verification.line</field>
         <field name="type">form</field>
         <field name="arch" type="xml">
@@ -56,7 +56,7 @@
     </record>
 
     <!-- WINDOW ACTION -->
-    <record id="open_qms_audit_verification_line_list" model="ir.actions.act_window">
+    <record id="audit_verification_action_view_tree" model="ir.actions.act_window">
         <field name="name">Verification Lines</field>
         <field name="res_model">qms.audit.verification.line</field>
         <field name="view_mode">tree,form</field>

@@ -1,8 +1,8 @@
 <odoo>
 
     <!-- TREE VIEW -->
-    <record id="view_qms_effectiveness_check_tree" model="ir.ui.view">
-        <field name="name">qms.effectiveness_check.tree</field>
+    <record id="effectiveness_check_view_tree" model="ir.ui.view">
+        <field name="name">qms.effectiveness.check.view.tree</field>
         <field name="model">qms.effectiveness_check</field>
         <field name="type">tree</field>
         <field name="arch" type="xml">
@@ -17,8 +17,8 @@
     </record>
 
     <!-- FORM VIEW -->
-    <record id="view_qms_effectiveness_check_form" model="ir.ui.view">
-        <field name="name">qms.effectiveness_check.form</field>
+    <record id="effectiveness_check_view_form" model="ir.ui.view">
+        <field name="name">qms.effectiveness.check.form</field>
         <field name="model">qms.effectiveness_check</field>
         <field name="arch" type="xml">
             <form>
@@ -46,8 +46,8 @@
     </record>
 
     <!--CALENDAR VIEW -->
-    <record id="view_qms_effectiveness_check_calendar" model="ir.ui.view">
-        <field name="name">qms.effectiveness_check.calendar</field>
+    <record id="effectiveness_check_view_calendar" model="ir.ui.view">
+        <field name="name">qms.effectiveness.check.view.calendar</field>
         <field name="model">qms.effectiveness_check</field>
         <field name="type">calendar</field>
         <field eval="2" name="priority" />
@@ -59,14 +59,14 @@
     </record>
 
     <!-- WINDOW ACTION -->
-    <record id="open_qms_effectiveness_check_list" model="ir.actions.act_window">
+    <record id="effectiveness_check_action_view_tree" model="ir.actions.act_window">
         <field name="name">Effectiveness Check</field>
         <field name="res_model">qms.effectiveness_check</field>
         <field name="view_mode">tree,calendar,form</field>
     </record>
 
     <!-- MENU -->
-    <menuitem id="menu_open_effectiveness_check" action="open_qms_effectiveness_check_list" parent="qms.menu_qms_main"
+    <menuitem id="effectiveness_check_menu" parent="qms.menu_qms_main" action="effectiveness_check_action_view_tree" 
         sequence="45" />
 
 </odoo>

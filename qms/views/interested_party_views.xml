@@ -1,8 +1,8 @@
 <odoo>
 
     <!-- TREE VIEW -->
-    <record model="ir.ui.view" id="view_interested_party_organization_tree">
-        <field name="name">qms.interested_party.organization.tree</field>
+    <record id="interested_party_organization_view_tree" model="ir.ui.view" >
+        <field name="name">qms.interested.party.organization.view.tree</field>
         <field name="model">qms.interested_party</field>
         <field name="arch" type="xml">
             <tree>
@@ -18,8 +18,8 @@
     </record>
 
     <!-- TREE VIEW -->
-    <record model="ir.ui.view" id="view_interested_party_individual_tree">
-        <field name="name">qms.interested_party.individual.tree</field>
+    <record id="interested_party_individual_view_tree" model="ir.ui.view" >
+        <field name="name">qms.interested.party.individual.view.tree</field>
         <field name="model">qms.interested_party</field>
         <field name="arch" type="xml">
             <tree>
@@ -31,8 +31,8 @@
     </record>
 
     <!-- FORM VIEW -->
-    <record id="view_interested_party_form" model="ir.ui.view">
-        <field name="name">qms.interested_party.form</field>
+    <record id="interested_party_view_form" model="ir.ui.view">
+        <field name="name">qms.interested.party.view.form</field>
         <field name="model">qms.interested_party</field>
         <field name="arch" type="xml">
             <form>
@@ -77,29 +77,29 @@
     </record>
 
     <!-- WINDOW ACTION -->
-    <record model="ir.actions.act_window" id="action_interested_party_organization_tree">
+    <record id="interested_party_organization_action_view_tree" model="ir.actions.act_window" >
         <field name="name">Organizations</field>
         <field name="res_model">qms.interested_party</field>
         <field name="view_mode">tree,form</field>
-        <field name="view_id" ref="view_interested_party_organization_tree" />
+        <field name="view_id" ref="interested_party_organization_view_tree" />
         <field name="domain">[('is_organization', '=', True)]</field>
         <field name="context">{'default_is_organization': True}</field>
     </record>
 
     <!-- WINDOW ACTION -->
-    <record model="ir.actions.act_window" id="action_interested_party_individual_tree">
+    <record id="interested_party_individual_action_view_tree" model="ir.actions.act_window">
         <field name="name">Individuals</field>
         <field name="res_model">qms.interested_party</field>
         <field name="view_mode">tree,form</field>
-        <field name="view_id" ref="view_interested_party_individual_tree" />
+        <field name="view_id" ref="interested_party_individual_view_tree" />
         <field name="domain">[('is_organization', '=', False)]</field>
     </record>
 
     <!-- MENU -->
-    <menuitem id="menu_config_interested_party" name="Interested Parties" parent="qms.menu_qms_context" sequence="5" />
-    <menuitem id="menu_qms_interested_party_organizations" name="Organizations" parent="menu_config_interested_party"
-        action="action_interested_party_organization_tree" sequence="5" />
-    <menuitem id="menu_qms_interested_party_individuals" name="Individuals" parent="menu_config_interested_party"
-        action="action_interested_party_individual_tree" sequence="10" />
+    <menuitem id="interested_party_menu" name="Interested Parties" parent="qms.menu_qms_context" sequence="5" />
+    <menuitem id="interested_party_organizations_menu" name="Organizations" parent="interested_party_menu"
+        action="interested_party_organization_action_view_tree" sequence="5" />
+    <menuitem id="interested_party_individuals_menu" name="Individuals" parent="interested_party_menu"
+        action="interested_party_individual_action_view_tree" sequence="10" />
 
 </odoo>

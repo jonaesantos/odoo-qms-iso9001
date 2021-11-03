@@ -1,8 +1,8 @@
 <odoo>
 
     <!-- TREE VIEW -->
-    <record id="view_qms_indicator_tree" model="ir.ui.view">
-        <field name="name">qms.indicator.tree</field>
+    <record id="indicator_view_tree" model="ir.ui.view">
+        <field name="name">qms.indicator.view.tree</field>
         <field name="model">qms.indicator</field>
         <field name="type">tree</field>
         <field name="arch" type="xml">
@@ -20,8 +20,8 @@
     </record>
 
     <!-- FORM VIEW -->
-    <record id="view_qms_indicator_form" model="ir.ui.view">
-        <field name="name">qms.indicator.form</field>
+    <record id="indicator_view_form" model="ir.ui.view">
+        <field name="name">qms.indicator.view.form</field>
         <field name="model">qms.indicator</field>
         <field name="arch" type="xml">
             <form>
@@ -51,7 +51,7 @@
                         </page>
                         <page string="NC" name="non_conformitys">
                             <field name="non_conformity_ids" nolabel="1"
-                                context="{'form_view_ref': 'qms.view_qms_non_conformity_form'}">
+                                context="{'form_view_ref': 'qms.non_conformity_view_form'}">
                                 <tree>
                                     <field name="name" />
                                     <field name="description" />
@@ -65,7 +65,7 @@
                         </page>
                         <page string="OBS" name="observations">
                             <field name="observation_ids" nolabel="1"
-                                context="{'form_view_ref': 'qms.view_qms_observation_form'}">
+                                context="{'form_view_ref': 'qms.observation_view_form'}">
                                 <tree>
                                     <field name="name" />
                                     <field name="description" />
@@ -79,7 +79,7 @@
                         </page>
                         <page string="OM" name="opportunitys">
                             <field name="opportunity_ids" nolabel="1"
-                                context="{'form_view_ref': 'qms.view_qms_opportunity_form'}">
+                                context="{'form_view_ref': 'qms.opportunity_view_form'}">
                                 <tree>
                                     <field name="name" />
                                     <field name="description" />
@@ -104,13 +104,13 @@
     </record>
 
     <!-- WINDOW ACTION -->
-    <record id="open_qms_indicator_list" model="ir.actions.act_window">
+    <record id="indicator_action_view_tree" model="ir.actions.act_window">
         <field name="name">Indicators</field>
         <field name="res_model">qms.indicator</field>
         <field name="view_mode">tree,form</field>
     </record>
 
     <!-- MENU -->
-    <menuitem id="menu_open_indicator" action="open_qms_indicator_list" parent="qms.menu_qms_main" sequence="20" />
+    <menuitem id="indicator_menu" parent="qms.menu_qms_main" action="indicator_action_view_tree" sequence="20" />
 
 </odoo>

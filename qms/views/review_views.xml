@@ -1,8 +1,8 @@
 <odoo>
 
     <!-- TREE VIEW -->
-    <record id="view_qms_review_tree" model="ir.ui.view">
-        <field name="name">qms.review.tree</field>
+    <record id="review_view_tree" model="ir.ui.view">
+        <field name="name">qms.review.view_tree</field>
         <field name="model">qms.review</field>
         <field name="type">tree</field>
         <field name="arch" type="xml">
@@ -16,8 +16,8 @@
     </record>
 
     <!-- FORM VIEW -->
-    <record id="view_qms_review_form" model="ir.ui.view">
-        <field name="name">qms.review.form</field>
+    <record id="review_view_form" model="ir.ui.view">
+        <field name="name">qms.review.view.form</field>
         <field name="model">qms.review</field>
         <field name="arch" type="xml">
             <form>

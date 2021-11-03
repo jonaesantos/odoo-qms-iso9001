@@ -24,7 +24,7 @@
     </record>
 
     <!-- MENU -->
-    <menuitem id="menu_open_finding_stage" name="Stages" parent="menu_config_finding"
+    <menuitem id="finding_menu_stage" name="Stages" parent="finding_menu_config"
         action="open_qms_finding_stage_list" sequence="15" />
 
 </odoo>

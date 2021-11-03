@@ -1,8 +1,8 @@
 <odoo>
 
     <!-- TREE VIEW -->
-    <record id="view_qms_process_tree" model="ir.ui.view">
-        <field name="name">qms.process.tree</field>
+    <record id="process_view_tree" model="ir.ui.view">
+        <field name="name">qms.process.view.tree</field>
         <field name="model">qms.process</field>
         <field name="type">tree</field>
         <field name="arch" type="xml">
@@ -18,8 +18,8 @@
     </record>
 
     <!-- FORM VIEW -->
-    <record id="view_qms_process_form" model="ir.ui.view">
-        <field name="name">qms.process.form</field>
+    <record id="process_view_form" model="ir.ui.view">
+        <field name="name">qms.process.view.form</field>
         <field name="model">qms.process</field>
         <field name="arch" type="xml">
             <form>
@@ -62,13 +62,13 @@
     </record>
 
     <!-- WINDOW ACTION -->
-    <record id="open_qms_process_list" model="ir.actions.act_window">
+    <record id="process_action_view_tree" model="ir.actions.act_window">
         <field name="name">Process</field>
         <field name="res_model">qms.process</field>
         <field name="view_mode">tree,form</field>
     </record>
 
     <!-- MENU -->
-    <menuitem id="menu_open_process" action="open_qms_process_list" parent="qms.menu_qms_main" sequence="15" />
+    <menuitem id="menu_open_process" parent="qms.menu_qms_main" sequence="15" action="process_action_view_tree" />
 
 </odoo>

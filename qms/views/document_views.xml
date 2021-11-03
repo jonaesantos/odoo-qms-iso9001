@@ -1,8 +1,8 @@
 <odoo>
 
     <!-- TREE VIEW -->
-    <record id="view_qms_document_tree" model="ir.ui.view">
-        <field name="name">qms.document.tree</field>
+    <record id="document_view_tree" model="ir.ui.view">
+        <field name="name">qms.document.view.tree</field>
         <field name="model">qms.document</field>
         <field name="arch" type="xml">
             <tree name="document">
@@ -22,8 +22,8 @@
     </record>
 
     <!-- FORM VIEW -->
-    <record id="view_qms_document_form" model="ir.ui.view">
-        <field name="name">qms.document.form</field>
+    <record id="document_view_form" model="ir.ui.view">
+        <field name="name">qms.document.view_form</field>
         <field name="model">qms.document</field>
         <field name="arch" type="xml">
             <form>
@@ -73,7 +73,7 @@
     </record>
 
     <!-- WINDOW ACTION -->
-    <record id="open_qms_document_list" model="ir.actions.act_window">
+    <record id="document_action_view_tree" model="ir.actions.act_window">
         <field name="name">Documents</field>
         <field name="res_model">qms.document</field>
         <field name="view_mode">tree,form</field>
@@ -81,6 +81,6 @@
 
     <!-- MENU -->
     <!-- FIXME -->
-    <menuitem id="menu_qms_documents" name="Documents" parent="menu_qms_root" sequence="5" />
-    <menuitem id="menu_open_document" name="Documents" parent="qms.menu_qms_main" sequence="60" />
+    <menuitem id="documents_menu" name="Documents" parent="menu_qms_root" sequence="5" />
+    <menuitem id="document_menu" name="Documents" parent="qms.menu_qms_main" sequence="60" />
 </odoo>

@@ -1,8 +1,8 @@
 <odoo>
 
     <!-- TREE VIEW -->
-    <record id="view_qms_revision_by_direction_tree" model="ir.ui.view">
-        <field name="name">qms.revision_by_direction.tree</field>
+    <record id="revision_by_direction_view_tree" model="ir.ui.view">
+        <field name="name">qms.revision.by.direction.view.tree</field>
         <field name="model">qms.revision_by_direction</field>
         <field name="type">tree</field>
         <field name="arch" type="xml">
@@ -16,8 +16,8 @@
     </record>
 
     <!-- FORM VIEW -->
-    <record id="view_qms_revision_by_direction_form" model="ir.ui.view">
-        <field name="name">qms.revision_by_direction.form</field>
+    <record id="revision_by_direction_view_form" model="ir.ui.view">
+        <field name="name">qms.revision.by.direction.view.form</field>
         <field name="model">qms.revision_by_direction</field>
         <field name="arch" type="xml">
             <form>
@@ -46,7 +46,7 @@
                         </page>
                         <page string="NC" name="non_conformitys">
                             <field name="non_conformity_ids" nolabel="1"
-                                context="{'form_view_ref': 'qms.view_qms_non_conformity_form'}">
+                                context="{'form_view_ref': 'qms.non_conformity_view_form'}">
                                 <tree>
                                     <field name="name" />
                                     <field name="description" />
@@ -60,7 +60,7 @@
                         </page>
                         <page string="OBS" name="observations">
                             <field name="observation_ids" nolabel="1"
-                                context="{'form_view_ref': 'qms.view_qms_observation_form'}">
+                                context="{'form_view_ref': 'qms.observation_view_form'}">
                                 <tree>
                                     <field name="name" />
                                     <field name="description" />
@@ -74,7 +74,7 @@
                         </page>
                         <page string="OM" name="opportunitys">
                             <field name="opportunity_ids" nolabel="1"
-                                context="{'form_view_ref': 'qms.view_qms_opportunity_form'}">
+                                context="{'form_view_ref': 'qms.opportunity_view_form'}">
                                 <tree>
                                     <field name="name" />
                                     <field name="description" />
@@ -96,14 +96,14 @@
     </record>
 
     <!-- WINDOW ACTION -->
-    <record id="open_qms_revision_by_direction_list" model="ir.actions.act_window">
+    <record id="revision_by_direction_action_view_tree" model="ir.actions.act_window">
         <field name="name">Revisions Direction</field>
         <field name="res_model">qms.revision_by_direction</field>
         <field name="view_mode">tree,form</field>
     </record>
 
     <!-- MENU -->
-    <menuitem id="menu_open_revision_by_direction" action="open_qms_revision_by_direction_list"
+    <menuitem id="revision_by_direction_menu" action="revision_by_direction_action_view_tree"
         parent="qms.menu_qms_main" sequence="50" />
 
 </odoo>

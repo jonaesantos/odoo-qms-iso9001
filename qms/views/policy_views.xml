@@ -1,8 +1,8 @@
 <odoo>
 
     <!-- TREE VIEW -->
-    <record id="view_qms_policy_tree" model="ir.ui.view">
-        <field name="name">qms.policy.tree</field>
+    <record id="policy_view_tree" model="ir.ui.view">
+        <field name="name">qms.policy.view_tree</field>
         <field name="model">qms.policy</field>
         <field name="type">tree</field>
         <field name="arch" type="xml">
@@ -17,7 +17,7 @@
     </record>
 
     <!-- FORM VIEW -->
-    <record id="view_qms_policy_form" model="ir.ui.view">
+    <record id="policy_view_form" model="ir.ui.view">
         <field name="name">qms.policy.form</field>
         <field name="model">qms.policy</field>
         <field name="arch" type="xml">
@@ -61,13 +61,13 @@
     </record>
 
     <!-- WINDOW ACTION -->
-    <record id="open_qms_policy_list" model="ir.actions.act_window">
+    <record id="policy_action_view_tree" model="ir.actions.act_window">
         <field name="name">Policies</field>
         <field name="res_model">qms.policy</field>
         <field name="view_mode">tree,form</field>
     </record>
 
     <!-- MENU -->
-    <menuitem id="menu_open_policy" action="open_qms_policy_list" parent="qms.menu_qms_main" sequence="5" />
+    <menuitem id="policy_menu" parent="qms.menu_qms_main" sequence="5" action="policy_action_view_tree" />
 
 </odoo>

@@ -1,10 +1,10 @@
 <odoo>
 
     <!-- TREE VIEW -->
-    <record id="view_qms_weakness_cause_tree" model="ir.ui.view">
-        <field name="name">qms.weakness.cause.tree</field>
+    <record id="weakness_cause_view_tree" model="ir.ui.view">
+        <field name="name">qms.weakness.cause.view.tree</field>
         <field name="model">qms.weakness.cause</field>
-        <field name="inherit_id" ref="qms.view_qms_finding_milestone_tree" />
+        <field name="inherit_id" ref="qms.finding_milestone_view_tree" />
         <field name="arch" type="xml">
             <field name="name" position="before">
                 <field name="parent_id" />
@@ -13,11 +13,11 @@
     </record>
 
     <!-- FORM VIEW -->
-    <record id="view_qms_weakness_cause_form" model="ir.ui.view">
-        <field name="name">qms.weakness.cause.form</field>
+    <record id="weakness_cause_view_form" model="ir.ui.view">
+        <field name="name">qms.weakness.cause.view.form</field>
         <field name="type">form</field>
         <field name="model">qms.weakness.cause</field>
-        <field name="inherit_id" ref="qms.view_qms_finding_milestone_form" />
+        <field name="inherit_id" ref="qms.finding_milestone_view_form" />
         <field name="arch" type="xml">
             <field name="name" position="after">
                 <field name="parent_id" />
@@ -26,11 +26,11 @@
     </record>
 
     <!-- SEARCH VIEW -->
-    <record id="view_qms_weakness_cause_filter" model="ir.ui.view">
-        <field name="name">qms.weakness.cause.search</field>
+    <record id="weakness_cause_view_search" model="ir.ui.view">
+        <field name="name">qms.weakness.cause.view.search</field>
         <field name="model">qms.weakness.cause</field>
         <field name="type">search</field>
-        <field name="inherit_id" ref="qms.view_qms_finding_milestone_filter" />
+        <field name="inherit_id" ref="qms.finding_milestone_view_search" />
         <field name="arch" type="xml">
             <field name="name" position="before">
                 <field name="parent_id" />
@@ -39,16 +39,16 @@
     </record>
 
     <!-- WINDOW ACTION -->
-    <record id="open_qms_weakness_cause_list" model="ir.actions.act_window">
+    <record id="weakness_cause_action_view_tree" model="ir.actions.act_window">
         <field name="name">Causes</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">qms.weakness.cause</field>
-        <field name="view_id" eval="view_qms_weakness_cause_tree" />
-        <field name="search_view_id" ref="view_qms_weakness_cause_filter" />
+        <field name="view_id" eval="weakness_cause_view_tree" />
+        <field name="search_view_id" ref="weakness_cause_view_search" />
     </record>
 
     <!-- MENU -->
-    <menuitem id="menu_open_weakness_cause" name="Causes" parent="menu_config_finding"
-        action="open_qms_weakness_cause_list" sequence="5" />
+    <menuitem id="weakness_cause_menu" name="Causes" parent="finding_menu_config"
+        action="weakness_cause_action_view_tree" sequence="5" />
 
 </odoo>

@@ -1,11 +1,11 @@
 <odoo>
 
     <!-- TREE VIEW -->
-    <record id="view_qms_observation_tree" model="ir.ui.view">
-        <field name="name">qms.observation.tree</field>
+    <record id="observation_view_tree" model="ir.ui.view">
+        <field name="name">qms.observation.view.tree</field>
         <field name="type">tree</field>
         <field name="model">qms.observation</field>
-        <field name="inherit_id" ref="qms.view_qms_finding_tree" />
+        <field name="inherit_id" ref="qms.finding_view_tree" />
         <field name="arch" type="xml">
             <tree name="finding" position="attributes">
                 <attribute name="string">Observation</attribute>
@@ -14,11 +14,11 @@
     </record>
 
     <!-- FORM VIEW -->
-    <record id="view_qms_observation_form" model="ir.ui.view">
-        <field name="name">qms.observation.form</field>
+    <record id="observation_view_form" model="ir.ui.view">
+        <field name="name">qms.observation.view_form</field>
         <field name="type">form</field>
         <field name="model">qms.observation</field>
-        <field name="inherit_id" ref="qms.view_qms_finding_form" />
+        <field name="inherit_id" ref="qms.finding_view_form" />
         <field name="arch" type="xml">
             <page name="actions" position="before">
                 <page string="Causes and Analysis" attrs="{'invisible':[('state','in',['draft','cancel'])]}">
@@ -32,11 +32,11 @@
     </record>
 
     <!-- KANBAN VIEW -->
-    <record id="view_qms_observation_kanban" model="ir.ui.view">
-        <field name="name">qms.observation.kanban</field>
+    <record id="observation_view_kanban" model="ir.ui.view">
+        <field name="name">qms.observation.view.kanban</field>
         <field name="type">kanban</field>
         <field name="model">qms.observation</field>
-        <field name="inherit_id" ref="qms.view_qms_finding_kanban" />
+        <field name="inherit_id" ref="qms.finding_view_kanban" />
         <field name="arch" type="xml">
             <kanban name="finding" position="attributes">
                 <attribute name="string">Observation</attribute>
@@ -45,35 +45,35 @@
     </record>
 
     <!-- WINDOW ACTION -->
-    <record model="ir.actions.act_window" id="open_qms_observation_list">
+    <record id="observation_action_view" model="ir.actions.act_window" >
         <field name="name">Observations</field>
         <field name="res_model">qms.observation</field>
         <field name="view_mode">tree,kanban,form</field>
     </record>
 
-    <record model="ir.actions.act_window.view" id="action_qms_observation_kanban">
+    <record id="observation_action_view_kanban" model="ir.actions.act_window.view" >
         <field name="sequence" eval="1" />
         <field name="view_mode">kanban</field>
-        <field name="view_id" ref="view_qms_observation_kanban" />
-        <field name="act_window_id" ref="open_qms_observation_list" />
+        <field name="view_id" ref="observation_view_kanban" />
+        <field name="act_window_id" ref="observation_action_view" />
     </record>
 
-    <record model="ir.actions.act_window.view" id="action_qms_observation_tree">
+    <record id="observation_action_view_tree" model="ir.actions.act_window.view" >
         <field name="sequence" eval="2" />
         <field name="view_mode">tree</field>
-        <field name="view_id" ref="view_qms_observation_tree" />
-        <field name="act_window_id" ref="open_qms_observation_list" />
+        <field name="view_id" ref="observation_view_tree" />
+        <field name="act_window_id" ref="observation_action_view" />
     </record>
 
-    <record model="ir.actions.act_window.view" id="action_qms_observation_form">
+    <record id="observation_action_view_form" model="ir.actions.act_window.view" >
         <field name="sequence" eval="3" />
         <field name="view_mode">form</field>
-        <field name="view_id" ref="view_qms_observation_form" />
-        <field name="act_window_id" ref="open_qms_observation_list" />
+        <field name="view_id" ref="observation_view_form" />
+        <field name="act_window_id" ref="observation_action_view" />
     </record>
 
     <!-- MENU -->
-    <menuitem id="menu_open_observation" name="Observations" parent="qms.menu_open_finding"
-        action="open_qms_observation_list" sequence="10" />
+    <menuitem id="observation_menu" name="Observations" parent="qms.finding_menu"
+        action="observation_action_view" sequence="10" />
 
 </odoo>

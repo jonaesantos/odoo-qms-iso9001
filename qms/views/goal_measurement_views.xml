@@ -1,8 +1,8 @@
 <odoo>
 
     <!-- TREE VIEW -->
-    <record id="view_qms_goal_measurement_tree" model="ir.ui.view">
-        <field name="name">qms.goal.measurement.tree</field>
+    <record id="goal_measurement_view_tree" model="ir.ui.view">
+        <field name="name">qms.goal.measurement.view.tree</field>
         <field name="model">qms.goal.measurement</field>
         <field name="type">tree</field>
         <field name="arch" type="xml">
@@ -18,8 +18,8 @@
     </record>
 
     <!-- SEARCH VIEW -->
-    <record id="view_qms_goal_measurement_filter" model="ir.ui.view">
-        <field name="name">qms.goal.measurement.filter</field>
+    <record id="goal_measurement_view_search" model="ir.ui.view">
+        <field name="name">qms.goal.measurement.search</field>
         <field name="model">qms.goal.measurement</field>
         <field name="type">search</field>
         <field name="arch" type="xml">
@@ -37,8 +37,8 @@
     </record>
 
     <!-- FORM VIEW -->
-    <record id="view_qms_goal_measurement_form" model="ir.ui.view">
-        <field name="name">qms.goal.measurement.form</field>
+    <record id="goal_measurement_view_form" model="ir.ui.view">
+        <field name="name">qms.goal.measurement.view_form</field>
         <field name="model">qms.goal.measurement</field>
         <field name="type">form</field>
         <field name="arch" type="xml">
@@ -63,7 +63,7 @@
     </record>
 
     <!-- WINDOW ACTION -->
-    <record id="open_qms_goal_measurement_list" model="ir.actions.act_window">
+    <record id="goal_measurement_action_view_tree" model="ir.actions.act_window">
         <field name="name">Goal Measurements</field>
         <field name="res_model">qms.goal.measurement</field>
         <field name="view_mode">tree,form</field>

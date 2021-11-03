@@ -5,7 +5,7 @@
         <field name="name">qms.opportunity.tree</field>
         <field name="type">tree</field>
         <field name="model">qms.opportunity</field>
-        <field name="inherit_id" ref="qms.view_qms_finding_tree" />
+        <field name="inherit_id" ref="qms.finding_view_tree" />
         <field name="arch" type="xml">
             <tree name="finding" position="attributes">
                 <attribute name="string">Opportunity</attribute>
@@ -18,7 +18,7 @@
         <field name="name">qms.opportunity.form</field>
         <field name="type">form</field>
         <field name="model">qms.opportunity</field>
-        <field name="inherit_id" ref="qms.view_qms_finding_form" />
+        <field name="inherit_id" ref="qms.finding_view_form" />
         <field name="arch" type="xml">
             <form name="finding" position="attributes">
                 <attribute name="string">Opportunity</attribute>
@@ -31,7 +31,7 @@
         <field name="name">qms.opportunity.kanban</field>
         <field name="type">kanban</field>
         <field name="model">qms.opportunity</field>
-        <field name="inherit_id" ref="qms.view_qms_finding_kanban" />
+        <field name="inherit_id" ref="qms.finding_view_kanban" />
         <field name="arch" type="xml">
             <kanban name="finding" position="attributes">
                 <attribute name="string">Opportunity</attribute>
@@ -68,7 +68,7 @@
     </record>
 
     <!-- MENU -->
-    <menuitem id="menu_open_opportunity" name="Opportunities" parent="qms.menu_open_finding"
+    <menuitem id="menu_open_opportunity" name="Opportunities" parent="qms.finding_menu"
         action="open_qms_opportunity_list" sequence="20" />
 
 </odoo>

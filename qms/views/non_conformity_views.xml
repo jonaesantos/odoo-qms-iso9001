@@ -1,11 +1,11 @@
 <odoo>
 
     <!-- TREE VIEW -->
-    <record id="view_qms_non_conformity_tree" model="ir.ui.view">
-        <field name="name">qms.non_conformity.tree</field>
+    <record id="non_conformity_view_tree" model="ir.ui.view">
+        <field name="name">qms.non.conformity.view.tree</field>
         <field name="type">tree</field>
         <field name="model">qms.non_conformity</field>
-        <field name="inherit_id" ref="qms.view_qms_finding_tree" />
+        <field name="inherit_id" ref="qms.finding_view_tree" />
         <field name="arch" type="xml">
             <tree name="finding" position="attributes">
                 <attribute name="string">Non Conformity</attribute>
@@ -14,11 +14,11 @@
     </record>
 
     <!-- FORM VIEW -->
-    <record id="view_qms_non_conformity_form" model="ir.ui.view">
-        <field name="name">qms.non_conformity.form</field>
+    <record id="non_conformity_view_form" model="ir.ui.view">
+        <field name="name">qms.non.conformity.view.form</field>
         <field name="type">form</field>
         <field name="model">qms.non_conformity</field>
-        <field name="inherit_id" ref="qms.view_qms_finding_form" />
+        <field name="inherit_id" ref="qms.finding_view_form" />
         <field name="arch" type="xml">
             <page name="actions" position="before">
                 <page string="Causes and Analysis" attrs="{'invisible':[('state','in',['draft','cancel'])]}">
@@ -33,11 +33,11 @@
     </record>
 
     <!-- KANBAN VIEW -->
-    <record id="view_qms_non_conformity_kanban" model="ir.ui.view">
-        <field name="name">qms.non_conformity.kanban</field>
+    <record id="non_conformity_view_kanban" model="ir.ui.view">
+        <field name="name">qms.non.conformity.kanban</field>
         <field name="type">kanban</field>
         <field name="model">qms.non_conformity</field>
-        <field name="inherit_id" ref="qms.view_qms_finding_kanban" />
+        <field name="inherit_id" ref="qms.finding_view_kanban" />
         <field name="arch" type="xml">
             <kanban name="finding" position="attributes">
                 <attribute name="string">Non Conformity</attribute>
@@ -46,35 +46,35 @@
     </record>
 
     <!-- WINDOW ACTION -->
-    <record model="ir.actions.act_window" id="open_qms_non_conformity_list">
+    <record id="non_conformity_action_view" model="ir.actions.act_window" >
         <field name="name">Non Conformities</field>
         <field name="res_model">qms.non_conformity</field>
         <field name="view_mode">kanban,tree,form</field>
     </record>
 
-    <record model="ir.actions.act_window.view" id="action_qms_non_conformity_kanban">
+    <record id="non_conformity_action_view_kanban" model="ir.actions.act_window.view" >
         <field name="sequence" eval="1" />
         <field name="view_mode">kanban</field>
-        <field name="view_id" ref="view_qms_non_conformity_kanban" />
-        <field name="act_window_id" ref="open_qms_non_conformity_list" />
+        <field name="view_id" ref="non_conformity_view_kanban" />
+        <field name="act_window_id" ref="non_conformity_action_view" />
     </record>
 
-    <record model="ir.actions.act_window.view" id="action_qms_non_conformity_tree">
+    <record id="non_conformity_action_view_tree" model="ir.actions.act_window.view" >
         <field name="sequence" eval="2" />
         <field name="view_mode">tree</field>
-        <field name="view_id" ref="view_qms_non_conformity_tree" />
-        <field name="act_window_id" ref="open_qms_non_conformity_list" />
+        <field name="view_id" ref="non_conformity_view_tree" />
+        <field name="act_window_id" ref="non_conformity_action_view" />
     </record>
 
-    <record model="ir.actions.act_window.view" id="action_qms_non_conformity_form">
+    <record  id="non_conformity_action_view_form" model="ir.actions.act_window.view">
         <field name="sequence" eval="3" />
         <field name="view_mode">form</field>
-        <field name="view_id" ref="view_qms_non_conformity_form" />
-        <field name="act_window_id" ref="open_qms_non_conformity_list" />
+        <field name="view_id" ref="non_conformity_view_form" />
+        <field name="act_window_id" ref="non_conformity_action_view" />
     </record>
 
     <!-- MENU -->
-    <menuitem id="menu_open_non_conformity" name="Non Conformities" parent="qms.menu_open_finding"
-        action="open_qms_non_conformity_list" sequence="5" />
+    <menuitem id="non_conformity_menu" name="Non Conformities" parent="qms.finding_menu"
+        action="non_conformity_action_view" sequence="5" />
 
 </odoo>

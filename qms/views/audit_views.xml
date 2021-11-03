@@ -1,8 +1,8 @@
 <odoo>
 
     <!-- TREE VIEW -->
-    <record id="view_qms_audit_tree" model="ir.ui.view">
-        <field name="name">qms.audit.tree</field>
+    <record id="audit_view_tree" model="ir.ui.view">
+        <field name="name">qms.audit.view.tree</field>
         <field name="model">qms.audit</field>
         <field name="type">tree</field>
         <field name="arch" type="xml">
@@ -16,8 +16,8 @@
     </record>
 
     <!-- SEARCH VIEW -->
-    <record id="view_qms_audit_filter" model="ir.ui.view">
-        <field name="name">qms.audit.filter</field>
+    <record id="audit_view_filter" model="ir.ui.view">
+        <field name="name">qms.audit.view.filter</field>
         <field name="model">qms.audit</field>
         <field name="type">search</field>
         <field name="arch" type="xml">
@@ -33,8 +33,8 @@
     </record>
 
     <!-- FORM VIEW -->
-    <record id="view_qms_audit_form" model="ir.ui.view">
-        <field name="name">qms.audit.form</field>
+    <record id="audit_view_form" model="ir.ui.view">
+        <field name="name">qms.audit.view.form</field>
         <field name="model">qms.audit</field>
         <field name="arch" type="xml">
             <form>
@@ -117,8 +117,8 @@
     </record>
 
     <!--CALENDAR VIEW -->
-    <record id="view_qms_audit_calendar" model="ir.ui.view">
-        <field name="name">qms.audit.calendar</field>
+    <record id="audit_view_calendar" model="ir.ui.view">
+        <field name="name">qms.audit.view.calendar</field>
         <field name="model">qms.audit</field>
         <field name="type">calendar</field>
         <field eval="2" name="priority" />
@@ -130,16 +130,16 @@
     </record>
 
     <!-- WINDOW ACTION -->
-    <record id="open_qms_audit_list" model="ir.actions.act_window">
+    <record id="audit_action_view_tree" model="ir.actions.act_window">
         <field name="name">Audits</field>
         <field name="res_model">qms.audit</field>
         <field name="view_mode">tree,form,calendar</field>
-        <field name="view_id" ref="view_qms_audit_tree" />
-        <field name="search_view_id" ref="view_qms_audit_filter" />
+        <field name="view_id" ref="audit_view_tree" />
+        <field name="search_view_id" ref="audit_view_filter" />
         <field name="context">{"search_default_open": True}</field>
     </record>
 
     <!-- MENU -->
-    <menuitem id="menu_open_audit" action="open_qms_audit_list" parent="qms.menu_qms_main" sequence="35" />
+    <menuitem id="audit_menu" parent="qms.menu_qms_main" action="audit_action_view_tree" sequence="35" />
 
 </odoo>

@@ -1,7 +1,7 @@
 <odoo>
 
     <!-- TREE VIEW -->
-    <record id="view_qms_finding_milestone_tree" model="ir.ui.view">
+    <record id="finding_milestone_view_tree" model="ir.ui.view">
         <field name="name">qms.finding.milestone.tree</field>
         <field name="model">qms.finding.milestone</field>
         <field name="type">tree</field>
@@ -15,8 +15,8 @@
     </record>
 
     <!-- SEARCH VIEW -->
-    <record id="view_qms_finding_milestone_filter" model="ir.ui.view">
-        <field name="name">qms.finding.milestone.search</field>
+    <record id="finding_milestone_view_search" model="ir.ui.view">
+        <field name="name">qms.finding.milestone.view.search</field>
         <field name="model">qms.finding.milestone</field>
         <field name="type">search</field>
         <field name="arch" type="xml">
@@ -27,7 +27,7 @@
     </record>
 
     <!-- FORM VIEW -->
-    <record id="view_qms_finding_milestone_form" model="ir.ui.view">
+    <record id="finding_milestone_view_form" model="ir.ui.view">
         <field name="name">qms.finding.milestone.form</field>
         <field name="type">form</field>
         <field name="model">qms.finding.milestone</field>

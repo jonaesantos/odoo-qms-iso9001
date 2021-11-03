@@ -1,8 +1,8 @@
 <odoo>
 
     <!-- TREE VIEW -->
-    <record id="view_qms_finding_tree" model="ir.ui.view">
-        <field name="name">qms.finding.tree</field>
+    <record id="finding_view_tree" model="ir.ui.view">
+        <field name="name">qms.finding.view.tree</field>
         <field name="model">qms.finding</field>
         <field name="arch" type="xml">
             <tree name="finding">
@@ -54,8 +54,8 @@
     </record> -->
 
     <!-- KANBAN VIEW -->
-    <record id="view_qms_finding_kanban" model="ir.ui.view">
-        <field name="name">qms.finding.kanban</field>
+    <record id="finding_view_kanban" model="ir.ui.view">
+        <field name="name">qms.finding.view.kanban</field>
         <field name="model">qms.finding</field>
         <field name="arch" type="xml">
             <kanban name="finding" quick_create="false" default_group_by="stage_id" class="o_kanban_small_column">
@@ -96,7 +96,7 @@
     </record>
 
     <!-- FORM VIEW -->
-    <record id="view_qms_finding_form" model="ir.ui.view">
+    <record id="finding_view_form" model="ir.ui.view">
         <field name="name">qms.finding.form</field>
         <field name="model">qms.finding</field>
         <field name="arch" type="xml">
@@ -162,7 +162,7 @@
     </record>
 
     <!-- MENU -->
-    <menuitem id="menu_open_finding" name="Findings" parent="qms.menu_qms_main" sequence="55" />
-    <menuitem id="menu_config_finding" name="Findings" parent="qms.menu_qms_configuration" sequence="10" />
+    <menuitem id="finding_menu" name="Findings" parent="qms.menu_qms_main" sequence="55" />
+    <menuitem id="finding_menu_config" name="Findings" parent="qms.menu_qms_configuration" sequence="10" />
 
 </odoo>

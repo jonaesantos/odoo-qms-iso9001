@@ -5,7 +5,7 @@
         <field name="name">qms.procedure.tree</field>
         <field name="model">qms.procedure</field>
         <field name="type">tree</field>
-        <field name="inherit_id" ref="qms.view_qms_document_tree" />
+        <field name="inherit_id" ref="qms.document_view_tree" />
         <field name="arch" type="xml">
             <tree name="document" position="attributes">
                 <attribute name="string">Procedure</attribute>
@@ -18,7 +18,7 @@
         <field name="name">qms.procedure.form</field>
         <field name="type">form</field>
         <field name="model">qms.procedure</field>
-        <field name="inherit_id" ref="qms.view_qms_document_form" />
+        <field name="inherit_id" ref="qms.document_view_form" />
         <field name="arch" type="xml">
             <form>
 
@@ -48,7 +48,7 @@
     </record>
 
     <!-- MENU -->
-    <menuitem id="menu_open_procedure" name="Procedures" parent="qms.menu_open_document"
+    <menuitem id="menu_open_procedure" name="Procedures" parent="qms.document_menu"
         action="open_qms_procedure_list" sequence="5" />
 
 </odoo>
