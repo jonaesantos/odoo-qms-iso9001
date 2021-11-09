@@ -142,7 +142,7 @@ class Action(models.Model):
     # return super(Action, self).write(vals)
 
     @api.model
-    def _stage_groups(self, stages, domain, order):
+    def _stage_groups(self):
         stage_ids = self.env["qms.action.stage"].search([])
         return stage_ids
 
