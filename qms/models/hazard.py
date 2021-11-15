@@ -127,10 +127,14 @@ class Hazard(models.Model):
         selection=_evaluation_results_,
         compute=_compute_result_and_evaluation,
         readonly=True,
+        compute_sudo=True,
     )
 
     result = fields.Integer(
-        compute=_compute_result_and_evaluation, readonly=True, store=True
+        compute=_compute_result_and_evaluation,
+        readonly=True,
+        store=True,
+        compute_sudo=True,
     )
 
     process_ids = fields.Many2many(comodel_name="qms.process", required=False)
