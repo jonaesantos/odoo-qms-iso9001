@@ -8,12 +8,15 @@ from odoo import _, fields, models
 class GoalMeasurement(models.Model):
 
     _name = "qms.goal.measurement"
+    _description = "Goal Measurement"
 
     name = fields.Char(string="Measurement", required=True)
 
     goal = fields.Char()
 
-    goal_id = fields.Many2one(comodel_name="qms.goal", ondelete="cascade")
+    goal_id = fields.Many2one(
+        comodel_name="qms.goal", ondelete="cascade", string="goal_id"
+    )
 
     expected_date = fields.Date()
 

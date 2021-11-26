@@ -4,6 +4,8 @@ from odoo import api, fields, models
 class Observation(models.Model):
 
     _name = "qms.observation"
+    _description = "Observation"
+
     _inherit = ["qms.finding", "qms.weakness"]
 
     action_ids = fields.One2many(

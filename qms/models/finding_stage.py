@@ -4,6 +4,7 @@ from odoo import _, fields, models
 class FindingStage(models.Model):
 
     _name = "qms.finding.stage"
+    _description = "Finding Stage"
     _inherit = ["qms.stage"]
 
     _states_ = [

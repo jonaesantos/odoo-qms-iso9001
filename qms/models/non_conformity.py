@@ -4,6 +4,7 @@ from odoo import api, fields, models
 class NonConformity(models.Model):
 
     _name = "qms.non_conformity"
+    _description = "Non Conformity"
     _inherit = ["qms.finding", "qms.weakness"]
 
     action_ids = fields.One2many(

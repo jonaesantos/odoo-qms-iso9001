@@ -4,6 +4,7 @@ from odoo import _, fields, models
 class Resource(models.Model):
 
     _name = "qms.resource"
+    _description = "Resource"
 
     _resource_types_ = [("internal", "Internal"), ("external", _("External"))]
 

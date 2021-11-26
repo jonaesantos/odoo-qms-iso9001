@@ -4,6 +4,7 @@ from odoo import fields, models
 class Review(models.Model):
 
     _name = "qms.review"
+    _description = "Review"
 
     name = fields.Char(required=True)
 

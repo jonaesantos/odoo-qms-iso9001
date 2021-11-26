@@ -4,6 +4,7 @@ from odoo import fields, models
 class Weakness(models.Model):
 
     _name = "qms.weakness"
+    _description = "Weakness"
 
     analysis = fields.Text()
 

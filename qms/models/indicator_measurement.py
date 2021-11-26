@@ -8,6 +8,7 @@ from odoo import _, fields, models
 class IndicatorMeasurement(models.Model):
 
     _name = "qms.indicator.measurement"
+    _description = "Indicatore Measurement"
 
     name = fields.Char(string="Measurement", required=True)
 

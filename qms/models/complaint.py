@@ -4,6 +4,7 @@ from odoo import api, fields, models
 class Complaint(models.Model):
 
     _name = "qms.complaint"
+    _description = "Complaint"
     _inherit = ["qms.finding", "qms.weakness"]
 
     action_ids = fields.One2many(

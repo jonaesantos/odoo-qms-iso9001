@@ -4,6 +4,7 @@ from odoo import fields, models
 class FindingMilestone(models.Model):
 
     _name = "qms.finding.milestone"
+    _description = "Finding Milestone"
     _order = "sequence"
 
     name = fields.Char(required=True, translate=True)

@@ -4,6 +4,7 @@ from odoo import _, api, fields, models
 class Process(models.Model):
 
     _name = "qms.process"
+    _description = "Process"
 
     name = fields.Char(required=True)
 

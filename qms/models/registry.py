@@ -4,6 +4,8 @@ from odoo import fields, models
 class Registry(models.Model):
 
     _name = "qms.registry"
+    _description = "Registry"
+
     _inherit = "qms.document"
 
     name = fields.Char(required=True)

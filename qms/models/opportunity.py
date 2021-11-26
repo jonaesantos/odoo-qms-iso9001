@@ -4,6 +4,7 @@ from odoo import api, fields, models
 class Opportunity(models.Model):
 
     _name = "qms.opportunity"
+    _description = "Opportunity"
     _inherit = ["qms.finding"]
 
     action_ids = fields.One2many(

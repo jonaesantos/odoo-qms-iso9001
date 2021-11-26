@@ -8,6 +8,8 @@ from odoo import fields, models
 class AuditVerificationLine(models.Model):
 
     _name = "qms.audit.verification.line"
+    _description = "Audit Verification Line"
+
     _order = "seq"
 
     name = fields.Char(string="Question", required=True)

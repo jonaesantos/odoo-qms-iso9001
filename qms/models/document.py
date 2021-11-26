@@ -4,6 +4,7 @@ from odoo import api, fields, models
 class Document(models.Model):
 
     _name = "qms.document"
+    _description = "Document"
 
     identification = fields.Char(required=True)
 

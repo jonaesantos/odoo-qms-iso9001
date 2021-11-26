@@ -4,6 +4,7 @@ from odoo import fields, models
 class Instructive(models.Model):
 
     _name = "qms.instructive"
+    _description = "Instructive"
     _inherit = "qms.document"
 
     name = fields.Char(required=True)

@@ -9,6 +9,7 @@ class Audit(models.Model):
 
     _name = "qms.audit"
     _rec_name = "reference"
+    _description = "Audit"
 
     _system_ = [
         ("iso9001_2015", "ISO 9001:2015"),

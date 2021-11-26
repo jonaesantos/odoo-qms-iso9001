@@ -4,6 +4,7 @@ from odoo import _, api, fields, models
 class Indicator(models.Model):
 
     _name = "qms.indicator"
+    _description = "Indicator"
 
     name = fields.Char(required=True)
 

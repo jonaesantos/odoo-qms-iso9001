@@ -4,8 +4,7 @@ from odoo import _, api, fields, models
 class Hazard(models.Model):
 
     _name = "qms.hazard"
-
-    _description = "Action"
+    _description = "Hazard"
 
     number = fields.Integer()
 

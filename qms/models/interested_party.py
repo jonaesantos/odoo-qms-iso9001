@@ -4,6 +4,7 @@ from odoo import _, api, fields, models
 class InterestedParty(models.Model):
 
     _name = "qms.interested_party"
+    _description = "INterested Party"
 
     _interested_party_types_ = [
         ("internal", _("Internal")),

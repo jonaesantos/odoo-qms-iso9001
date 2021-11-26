@@ -4,6 +4,7 @@ from odoo import _, api, exceptions, fields, models
 class FindingOrigin(models.Model):
 
     _name = "qms.finding.origin"
+    _description = "Finding Origin"
     _order = "parent_id, sequence"
     _parent_store = True
     _inherit = ["qms.finding.milestone"]

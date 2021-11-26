@@ -4,6 +4,7 @@ from odoo import fields, models
 class RevisionByDirection(models.Model):
 
     _name = "qms.revision_by_direction"
+    _description = "Revision By Direction"
 
     name = fields.Char(required=True)
 

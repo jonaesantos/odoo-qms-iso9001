@@ -4,6 +4,7 @@ from odoo import _, api, fields, models
 class Goal(models.Model):
 
     _name = "qms.goal"
+    _description = "Goal"
 
     name = fields.Char(required=True)
 

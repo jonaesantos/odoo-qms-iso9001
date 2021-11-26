@@ -4,6 +4,7 @@ from odoo import fields, models
 class Version(models.Model):
 
     _name = "qms.version"
+    _description = "Version"
 
     version = fields.Char()
 

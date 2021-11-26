@@ -4,6 +4,7 @@ from odoo import _, api, exceptions, fields, models
 class WeaknessCause(models.Model):
 
     _name = "qms.weakness.cause"
+    _description = "Weakness Cause"
     _order = "parent_id, sequence"
     _parent_store = True
     _inherit = ["qms.finding.milestone"]

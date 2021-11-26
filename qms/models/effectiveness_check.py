@@ -5,6 +5,7 @@ from odoo.exceptions import ValidationError
 class EffectivenessCheck(models.Model):
 
     _name = "qms.effectiveness_check"
+    _description = "Effectiveness Check"
 
     _states_ = [("pending", "Pending"), ("closed", "Closed")]
 
