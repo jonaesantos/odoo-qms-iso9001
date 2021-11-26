@@ -2,7 +2,7 @@
 
     <!-- TREE VIEW -->
     <record id="policy_view_tree" model="ir.ui.view">
-        <field name="name">qms.policy.view_tree</field>
+        <field name="name">qms.policy.view.tree</field>
         <field name="model">qms.policy</field>
         <field name="type">tree</field>
         <field name="arch" type="xml">

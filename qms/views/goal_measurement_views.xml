@@ -38,7 +38,7 @@
 
     <!-- FORM VIEW -->
     <record id="goal_measurement_view_form" model="ir.ui.view">
-        <field name="name">qms.goal.measurement.view_form</field>
+        <field name="name">qms.goal.measurement.view.form</field>
         <field name="model">qms.goal.measurement</field>
         <field name="type">form</field>
         <field name="arch" type="xml">
