@@ -66,7 +66,7 @@
                     <t t-name="kanban-box">
                         <div t-attf-class="#{kanban_color(red)} oe_kanban_global_click">
                             <div class="o_dropdown_kanban dropdown">
-                                <a class="dropdown-toggle btn" data-toggle="dropdown" href="#">
+                                <a class="dropdown-toggle btn" data-toggle="dropdown" href="#" role="button" aria-label="Dropdown menu" title="Dropdown menu">
                                     <span class="fa fa-bars fa-lg" />
                                 </a>
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
@@ -128,7 +128,7 @@
                         <page string="Process">
                             <field name="process_ids" attrs="{'readonly':[('state','not in',['draft','analysis'])]}" />
                         </page>
-                        <page string="Related Audits" groups="base.group_extended,qms.group_qms_audit">
+                        <page string="Related Audits">
                             <field name="audit_ids" colspan="4" nolabel="1" />
                         </page>
                         <page name="actions" string="Actions"
