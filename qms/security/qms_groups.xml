@@ -6,20 +6,20 @@
         <field name="sequence">90</field>
     </record>
 
-    <record id="qms_group_user" model="res.groups">
+    <record id="group_user" model="res.groups">
         <field name="name">User</field>
         <field name="category_id" ref="qms.module_category_qms" />
         <field name="users" eval="[(4, ref('base.user_root'))]" />
     </record>
 
-    <record id="qms_group_manager" model="res.groups">
+    <record id="group_manager" model="res.groups">
         <field name="name">Manager</field>
         <field name="category_id" ref="module_category_qms" />
         <field name="users" eval="[(4, ref('base.user_root'))]" />
-        <field name="implied_ids" eval="[(4,ref('qms_group_user'))]" />
+        <field name="implied_ids" eval="[(4,ref('group_user'))]" />
     </record>
 
-    <record id="qms_group_read_only" model="res.groups">
+    <record id="group_read_only" model="res.groups">
         <field name="name">Read Only</field>
         <field name="category_id" ref="module_category_qms" />
         <field name="users" eval="[(4, ref('base.user_root'))]" />

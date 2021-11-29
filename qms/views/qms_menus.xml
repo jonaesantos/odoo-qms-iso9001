@@ -1,12 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <menuitem id="menu_qms_root" name="Quality Management System" sequence="0" />
+    <menuitem id="menu_qms_root"
+        name="Quality Management System"
+        sequence="0"
+        groups="qms.group_user,qms.group_read_only" />
 
-    <menuitem id="menu_qms_main" name="Quality Management System" parent="menu_qms_root" sequence="0" />
+    <menuitem id="menu_qms_main" 
+        name="ISO 9001:2015"
+        parent="menu_qms_root"
+        sequence="5" />
 
-    <menuitem id="menu_qms_context" name="Context" parent="qms.menu_qms_root" sequence="10" />
+    <menuitem id="menu_qms_context"
+        name="Context" 
+        parent="qms.menu_qms_root" 
+        sequence="10"
+        groups="qms.group_manager" />
 
-    <menuitem id="menu_qms_configuration" name="Configuration" parent="qms.menu_qms_root" sequence="15" />
+    <menuitem id="menu_qms_configuration" 
+        name="Configuration" 
+        parent="qms.menu_qms_root" 
+        sequence="15"
+        groups="qms.group_manager" />
 
 </odoo>
