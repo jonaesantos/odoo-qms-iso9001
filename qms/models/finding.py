@@ -8,7 +8,7 @@ from odoo import api, fields, models
 class Finding(models.Model):
 
     _name = "qms.finding"
-    _description = "Finding Stage"
+    _description = "Finding"
     _order = "create_date desc"
     # _rec_name = 'description'
 
@@ -25,7 +25,7 @@ class Finding(models.Model):
         ].search([("is_starting", "=", True)], limit=1)
 
     @api.model
-    def _stage_groups(self):
+    def _stage_groups(self, stages, domain, order):
         return self.env["qms.finding.stage"].search([])
 
     name = fields.Char()
