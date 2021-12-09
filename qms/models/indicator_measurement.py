@@ -8,7 +8,7 @@ from odoo import _, fields, models
 class IndicatorMeasurement(models.Model):
 
     _name = "qms.indicator.measurement"
-    _description = "Indicatore Measurement"
+    _description = "Indicator Measurement"
 
     name = fields.Char(string="Measurement", required=True)
 
@@ -25,9 +25,9 @@ class IndicatorMeasurement(models.Model):
     comments = fields.Text()
 
     _result_ = [
-        ("goal_ok", _("Meta alcanzada")),
-        ("goal_with_obs", _("Meta alcanzada con observaciones")),
-        ("goal_no_ok", _("Meta no alzanzada")),
+        ("goal_ok", _("Goal reached")),
+        ("goal_with_obs", _("Goal reached with observations")),
+        ("goal_no_ok", _("Unachieved target")),
     ]
 
     result = fields.Selection(selection=_result_, required=False, store=True)

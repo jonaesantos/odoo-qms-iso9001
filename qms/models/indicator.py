@@ -56,7 +56,7 @@ class Indicator(models.Model):
         comodel_name="qms.opportunity", inverse_name="indicator_id"
     )
 
-    description = fields.Html(string="Objetivo")
+    description = fields.Html(string="Objetive")
 
     last_measurement_date = fields.Date(
         compute="_compute_last_measurement_date"
@@ -77,7 +77,6 @@ class Indicator(models.Model):
         for indicator in self:
             domain = [
                 ("indicator_id", "=", indicator.id),
-                # ('modify_concession', '=', True)
             ]
             related_measurement = indicator.env[
                 "qms.indicator.measurement"
@@ -94,7 +93,6 @@ class Indicator(models.Model):
         for indicator in self:
             domain = [
                 ("indicator_id", "=", indicator.id),
-                # ('modify_concession', '=', True)
             ]
             related_measurement = indicator.env[
                 "qms.indicator.measurement"
@@ -109,7 +107,6 @@ class Indicator(models.Model):
         for indicator in self:
             domain = [
                 ("indicator_id", "=", indicator.id),
-                # ('modify_concession', '=', True)
             ]
             related_measurement = indicator.env[
                 "qms.indicator.measurement"
@@ -126,7 +123,6 @@ class Indicator(models.Model):
         for indicator in self:
             domain = [
                 ("indicator_id", "=", indicator.id),
-                # ('modify_concession', '=', True)
             ]
             related_reviews = indicator.env["qms.review"].search(domain)
             last_review = related_reviews.sorted(

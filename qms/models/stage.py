@@ -13,4 +13,4 @@ class Stage(models.Model):
         help="Used to order stages. Lower is better.", default=100
     )
 
-    is_starting = fields.Boolean(string="Starting stage")
+    is_starting = fields.Boolean(string="Starting Stage")

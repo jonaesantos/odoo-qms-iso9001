@@ -103,3 +103,6 @@ ENV/
 # json
 .json
 .vscode/settings.json
+
+# drawio
+*.drawio

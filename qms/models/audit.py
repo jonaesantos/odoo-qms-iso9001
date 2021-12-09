@@ -2,7 +2,7 @@
 # Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import fields, models
+from odoo import _, fields, models
 
 
 class Audit(models.Model):
@@ -18,7 +18,7 @@ class Audit(models.Model):
 
     system = fields.Selection(selection=_system_, required=True)
 
-    _states_ = [("open", "Open"), ("done", "Closed")]
+    _states_ = [("open", _("Open")), ("closed", _("Closed"))]
 
     reference = fields.Char(readonly=False, required=False)
 
@@ -35,15 +35,11 @@ class Audit(models.Model):
     state = fields.Selection(selection=_states_, default="open")
 
     audited_ids = fields.Many2many(
-        comodel_name="qms.interested_party",
-        relation="audit_audited_rel"
-        # domain="[('auditor', '=', False)]"
+        comodel_name="qms.interested_party", relation="audit_audited_rel"
     )
 
     auditors_ids = fields.Many2many(
-        comodel_name="qms.interested_party",
-        relation="audit_auditor_rel"
-        # domain="[('auditor', '=', True)]"
+        comodel_name="qms.interested_party", relation="audit_auditor_rel"
     )
 
     audit_evaluation_ids = fields.One2many(
@@ -63,16 +59,6 @@ class Audit(models.Model):
     )
 
     process_ids = fields.Many2many(comodel_name="qms.process", required=True)
-
-    # @api.model
-    # def create(self, vals):
-    #     vals.update({
-    #         'reference': self.env['ir.sequence'].next_by_code(
-    #             'qms.audit'
-    #         ),
-    #     })
-    #     audit_id = super(Audit, self).create(vals)
-    #     return audit_id
 
     def button_close(self):
         return self.write(

@@ -52,7 +52,7 @@
         <field name="type">calendar</field>
         <field eval="2" name="priority" />
         <field name="arch" type="xml">
-            <calendar color="id" date_start="expected_date" string="Effectiveness_Check">
+            <calendar color="id" date_start="expected_date" string="Effectiveness Check">
                 <field name="state" />
             </calendar>
         </field>

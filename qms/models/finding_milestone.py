@@ -13,14 +13,6 @@ class FindingMilestone(models.Model):
 
     sequence = fields.Integer()
 
-    # parent_left = fields.Integer(
-    #     index=True
-    # )
-
-    # parent_right = fields.Integer(
-    #     index=True
-    # )
-
     parent_path = fields.Char(index=True)
 
     reference_code = fields.Char()

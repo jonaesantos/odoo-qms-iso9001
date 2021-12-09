@@ -1,4 +1,4 @@
-from odoo import api, fields, models
+from odoo import _, api, fields, models
 
 
 class Document(models.Model):
@@ -10,7 +10,7 @@ class Document(models.Model):
 
     name = fields.Char()
 
-    _format_ = [("paper", "Paper"), ("electronic", "Electronic")]
+    _format_ = [("paper", ("Paper")), ("electronic", _("Electronic"))]
 
     format = fields.Selection(
         selection=_format_, default="electronic", required=True
@@ -34,7 +34,7 @@ class Document(models.Model):
 
     disposition = fields.Char()
 
-    _type_ = [("internal", "Internal"), ("external", "External")]
+    _type_ = [("internal", _("Internal")), ("external", _("External"))]
 
     type = fields.Selection(
         selection=_type_, default="internal", required=True
@@ -63,7 +63,6 @@ class Document(models.Model):
         for document in self:
             domain = [
                 ("document_id", "=", document.id),
-                # ('modify_concession', '=', True)
             ]
             related_reviews = document.env["qms.review"].search(domain)
             last_review = related_reviews.sorted(
@@ -76,14 +75,11 @@ class Document(models.Model):
         for document in self:
             domain = [
                 ("document_id", "=", document.id),
-                # ('modify_concession', '=', True)
             ]
             related_versions = document.env["qms.version"].search(domain)
             last_version = related_versions.sorted(
                 key=lambda r: r.date_open, reverse=True
             )
-            # print(last_version)
-            # print(related_versions)
             document.last_version = last_version[0].version
 
     def toggle_approved(self):

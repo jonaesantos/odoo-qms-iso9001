@@ -4,7 +4,7 @@ from odoo import fields, models
 class RevisionByDirection(models.Model):
 
     _name = "qms.revision_by_direction"
-    _description = "Revision By Direction"
+    _description = "Revision by Direction"
 
     name = fields.Char(required=True)
 
@@ -38,9 +38,7 @@ class RevisionByDirection(models.Model):
     )
 
     responsibles_ids = fields.Many2many(
-        comodel_name="qms.interested_party",
-        relation="audit_auditor_rel"
-        # domain="[('auditor', '=', True)]"
+        comodel_name="qms.interested_party", relation="audit_auditor_rel"
     )
 
     state = fields.Selection(selection=_states_, default="open")

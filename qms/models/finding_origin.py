@@ -16,7 +16,7 @@ class FindingOrigin(models.Model):
     child_ids = fields.One2many(
         comodel_name="qms.finding.origin",
         inverse_name="parent_id",
-        string="Child origins",
+        string="Child Origins",
     )
 
     @api.constrains("parent_id")

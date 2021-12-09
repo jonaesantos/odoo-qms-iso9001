@@ -14,7 +14,7 @@ class AuditVerificationLine(models.Model):
 
     name = fields.Char(string="Question", required=True)
 
-    point_norm = fields.Char(string="Point of the norm", required=True)
+    clause = fields.Char(required=True)
 
     audit_id = fields.Many2one(
         comodel_name="qms.audit", ondelete="cascade", index=True

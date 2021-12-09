@@ -62,7 +62,6 @@ class Goal(models.Model):
         for goal in self:
             domain = [
                 ("goal_id", "=", goal.id),
-                # ('modify_concession', '=', True)
             ]
             related_measurement = goal.env["qms.goal.measurement"].search(
                 domain
@@ -77,7 +76,6 @@ class Goal(models.Model):
         for goal in self:
             domain = [
                 ("goal_id", "=", goal.id),
-                # ('modify_concession', '=', True)
             ]
             related_measurement = goal.env["qms.goal.measurement"].search(
                 domain
@@ -92,7 +90,6 @@ class Goal(models.Model):
         for goal in self:
             domain = [
                 ("goal_id", "=", goal.id),
-                # ('modify_concession', '=', True)
             ]
             related_reviews = goal.env["qms.review"].search(domain)
             last_review = related_reviews.sorted(

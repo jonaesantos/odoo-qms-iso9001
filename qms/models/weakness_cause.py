@@ -16,7 +16,7 @@ class WeaknessCause(models.Model):
     child_ids = fields.One2many(
         comodel_name="qms.weakness.cause",
         inverse_name="parent_id",
-        string="Child causes",
+        string="Child Causes",
     )
 
     @api.constrains("parent_id")

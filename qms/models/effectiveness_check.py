@@ -7,7 +7,7 @@ class EffectivenessCheck(models.Model):
     _name = "qms.effectiveness_check"
     _description = "Effectiveness Check"
 
-    _states_ = [("pending", "Pending"), ("closed", "Closed")]
+    _states_ = [("pending", _("Pending")), ("closed", _("Closed"))]
 
     expected_date = fields.Date()
 

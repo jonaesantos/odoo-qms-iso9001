@@ -1,4 +1,4 @@
-from odoo import fields, models
+from odoo import _, fields, models
 
 
 class AuditEvaluation(models.Model):
@@ -20,13 +20,12 @@ class AuditEvaluation(models.Model):
         comodel_name="qms.interested_party", required=True
     )
 
-    _type_ = [("internal", "Internal"), ("external", "External")]
+    _type_ = [("internal", _("Internal")), ("external", _("External"))]
 
     type = fields.Selection(selection=_type_, string="System", required=False)
 
     auditors_ids = fields.Many2many(
         comodel_name="qms.interested_party",
-        # domain="[('auditor', '=', True)]"
     )
 
     audit_id = fields.Many2one(comodel_name="qms.audit")

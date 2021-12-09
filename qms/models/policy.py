@@ -29,7 +29,7 @@ class Policy(models.Model):
     version_ids = fields.One2many(
         comodel_name="qms.version",
         inverse_name="policy_id",
-        string="version_ids",
+        string="Policy Version",
     )
 
     @api.depends("review_ids")
@@ -37,7 +37,6 @@ class Policy(models.Model):
         for policy in self:
             domain = [
                 ("policy_id", "=", policy.id),
-                # ('modify_concession', '=', True)
             ]
             related_reviews = policy.env["qms.review"].search(domain)
             last_review = related_reviews.sorted(

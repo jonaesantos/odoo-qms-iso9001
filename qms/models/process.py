@@ -54,7 +54,6 @@ class Process(models.Model):
         for process in self:
             domain = [
                 ("process_id", "=", process.id),
-                # ('modify_concession', '=', True)
             ]
             related_reviews = process.env["qms.review"].search(domain)
             last_review = related_reviews.sorted(

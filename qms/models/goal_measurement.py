@@ -15,7 +15,7 @@ class GoalMeasurement(models.Model):
     goal = fields.Char()
 
     goal_id = fields.Many2one(
-        comodel_name="qms.goal", ondelete="cascade", string="goal_id"
+        comodel_name="qms.goal", ondelete="cascade", string="Goals"
     )
 
     expected_date = fields.Date()
@@ -25,9 +25,9 @@ class GoalMeasurement(models.Model):
     comments = fields.Text()
 
     _result_ = [
-        ("goal_ok", _("Meta alcanzada")),
-        ("goal_with_obs", _("Meta alcanzada con observaciones")),
-        ("goal_no_ok", _("Meta no alzanzada")),
+        ("goal_ok", _("Goal achieved")),
+        ("goal_with_obs", _("Goal achieved with comments")),
+        ("goal_no_ok", _("Goal not achieved")),
     ]
 
     result = fields.Selection(selection=_result_, required=False)

@@ -56,29 +56,29 @@ class Hazard(models.Model):
     ]
 
     _types_risks_ = [
-        ("strategic", _("Estrategico")),
-        ("image", _("Imagen")),
-        ("operative", _("Operativo")),
-        ("financial", _("Financiero")),
-        ("compliance", _("Cumplimiento")),
-        ("technological", _("Tecnologico")),
-        ("corruption", _("Corrupcion")),
-        ("information", _("Informacion")),
+        ("strategic", _("Strategic")),
+        ("image", _("Image")),
+        ("operative", _("Operative")),
+        ("financial", _("Financial")),
+        ("compliance", _("Compliance")),
+        ("technological", _("Technological")),
+        ("corruption", _("Corruption")),
+        ("information", _("Information")),
     ]
 
     _factors_ = [
-        ("e_economic", _("Economicos (e)")),
-        ("e_politicians", _("Politicos (e)")),
-        ("e_social", _("Sociales (e)")),
-        ("e_technological", _("Tecnologicos (e)")),
-        ("e_enviroment", _("Ambientales (e)")),
-        ("e_communication", _("Comunicacion (e)")),
-        ("i_financial", _("Financiero (i)")),
-        ("i_personal", _("Personal (i)")),
-        ("i_technological", _("Procesos (i)")),
-        ("i_strategic", _("Tecnologicos (i)")),
-        ("i_communication", _("Estrategicos (i)")),
-        ("i_factors", _("Comunicacion (i)")),
+        ("e_economic", _("Economics (external)")),
+        ("e_politicians", _("Politicians (external)")),
+        ("e_social", _("Social (external)")),
+        ("e_technological", _("Technological (external)")),
+        ("e_enviroment", _("Enviroment (external)")),
+        ("e_communication", _("Communication (external)")),
+        ("i_financial", _("Financial (internal)")),
+        ("i_personal", _("Personal (internal)")),
+        ("i_technological", _("Technological (internal)")),
+        ("i_strategic", _("Srategic (internal)")),
+        ("i_communication", _("Communication (internal)")),
+        ("i_factors", _("Factors (internal)")),
     ]
 
     description = fields.Html()
