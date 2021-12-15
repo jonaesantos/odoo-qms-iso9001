@@ -38,7 +38,7 @@ class Goal(models.Model):
     )
 
     action_ids = fields.One2many(
-        comodel_name="qms.action", inverse_name="goal_id", ondelete="cascade"
+        comodel_name="qms.action", inverse_name="goal_id"
     )
 
     state = fields.Selection(selection=_state_, default="draft", required=True)
