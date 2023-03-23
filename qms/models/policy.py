@@ -39,10 +39,13 @@ class Policy(models.Model):
                 ("policy_id", "=", policy.id),
             ]
             related_reviews = policy.env["qms.review"].search(domain)
-            last_review = related_reviews.sorted(
-                key=lambda r: r.date, reverse=True
-            )
-            policy.last_review_date = last_review[0].date
+            if related_reviews:
+                last_review = related_reviews.sorted(
+                    key=lambda r: r.date, reverse=True
+                )
+                policy.last_review_date = last_review[0].date
+            else:
+                policy.last_review_date = None
 
     def toggle_approved(self):
         self.approved = not self.approved

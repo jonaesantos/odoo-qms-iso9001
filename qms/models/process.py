@@ -56,7 +56,10 @@ class Process(models.Model):
                 ("process_id", "=", process.id),
             ]
             related_reviews = process.env["qms.review"].search(domain)
-            last_review = related_reviews.sorted(
-                key=lambda r: r.date, reverse=True
-            )
-            process.last_review_date = last_review[0].date
+            if related_reviews:
+                last_review = related_reviews.sorted(
+                    key=lambda r: r.date, reverse=True
+                )
+                process.last_review_date = last_review[0].date
+            else:
+                process.last_review_date = None

@@ -160,10 +160,13 @@ class Hazard(models.Model):
                 # ('modify_concession', '=', True)
             ]
             related_reviews = hazard.env["qms.review"].search(domain)
-            last_review = related_reviews.sorted(
-                key=lambda r: r.date, reverse=True
-            )
-            hazard.last_review_date = last_review[0].date
+            if related_reviews:
+                last_review = related_reviews.sorted(
+                    key=lambda r: r.date, reverse=True
+                )
+                hazard.last_review_date = last_review[0].date
+            else:
+                hazard.last_review_date = None
 
     _sql_constraints = [
         ("number_uniq", "unique(number)", "Number must be unique")
