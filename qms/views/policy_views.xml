@@ -39,6 +39,7 @@
                         <group>
                             <field name="version" />
                             <field name="date" />
+                            <field name="last_review_date" />
                         </group>
                     </group>
                     <notebook>

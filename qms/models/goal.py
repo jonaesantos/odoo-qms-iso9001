@@ -92,10 +92,13 @@ class Goal(models.Model):
                 ("goal_id", "=", goal.id),
             ]
             related_reviews = goal.env["qms.review"].search(domain)
-            last_review = related_reviews.sorted(
-                key=lambda r: r.date, reverse=True
-            )
-            goal.last_review_date = last_review[0].date
-
+            if related_reviews:
+                last_review = related_reviews.sorted(
+                    key=lambda r: r.date, reverse=True
+                )
+                goal.last_review_date = last_review[0].date
+            else:
+                goal.last_review_date = None
+                
     def toggle_approved(self):
         self.approved = not self.approved
