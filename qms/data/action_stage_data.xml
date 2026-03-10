@@ -6,6 +6,7 @@
         <field name="sequence">0</field>
         <field name="is_starting" eval="True" />
         <field name="is_ending" eval="False" />
+        <field name="color">7</field>
     </record>
 
     <record id="action_stage_open" model="qms.action.stage">
@@ -13,6 +14,7 @@
         <field name="sequence">10</field>
         <field name="is_starting" eval="False" />
         <field name="is_ending" eval="False" />
+        <field name="color">2</field>
     </record>
 
     <record id="action_stage_close" model="qms.action.stage">
@@ -20,6 +22,7 @@
         <field name="sequence">20</field>
         <field name="is_starting" eval="False" />
         <field name="is_ending" eval="True" />
+        <field name="color">10</field>
     </record>
 
     <record id="action_stage_cancel" model="qms.action.stage">
@@ -27,6 +30,7 @@
         <field name="sequence">30</field>
         <field name="is_starting" eval="False" />
         <field name="is_ending" eval="True" />
+        <field name="color">1</field>
     </record>
 
 </odoo>

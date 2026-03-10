@@ -4,14 +4,13 @@
     <record id="resource_view_tree" model="ir.ui.view">
         <field name="name">qms.resource.view.tree</field>
         <field name="model">qms.resource</field>
-        <field name="type">tree</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="name" />
                 <field name="resource_type" />
                 <field name="responsible_id" />
                 <field name="state" />
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -22,7 +21,7 @@
         <field name="arch" type="xml">
             <form>
                 <header>
-                    <field name="state" widget="statusbar" clickable="True" />
+                    <field name="state" widget="statusbar" options='{"clickable": "1"}' />
                 </header>
                 <sheet>
                     <group>
@@ -48,7 +47,7 @@
     <record id="resource_action_view_tree" model="ir.actions.act_window">
         <field name="name">Resources</field>
         <field name="res_model">qms.resource</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
     </record>
 
     <!-- MENU -->

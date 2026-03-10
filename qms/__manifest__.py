@@ -2,7 +2,7 @@
     "name": "Quality Management System",
     "summary": "ISO 9001 Quality Management System",
     "website": "https://www.tmcrosario.gob.ar",
-    "version": "14.0.1.0.0",
+    "version": "19.0.1.0.0",
     "author": "TMC Rosario, Odoo Community Association",
     "license": "AGPL-3",
     "depends": [],
@@ -19,6 +19,7 @@
         "data/weakness_cause_data.xml",
         "data/finding_origin_data.xml",
         "data/finding_stage_data.xml",
+        "data/hazard_data.xml",
         "views/qms_menus.xml",
         "views/policy_views.xml",
         "views/review_views.xml",
@@ -55,5 +56,4 @@
     "demo": [],
     "installable": True,
     "application": True,
-    "qweb": [],
 }

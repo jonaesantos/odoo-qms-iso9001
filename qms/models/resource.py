@@ -1,4 +1,4 @@
-from odoo import _, fields, models
+from odoo import fields, models
 
 
 class Resource(models.Model):
@@ -6,22 +6,26 @@ class Resource(models.Model):
     _name = "qms.resource"
     _description = "Resource"
 
-    _resource_types_ = [("internal", "Internal"), ("external", _("External"))]
-
-    _resource_states_ = [
-        ("available", _("Available")),
-        ("in_process", _("In Process")),
-        ("not_available", _("Not Available")),
-    ]
-
     responsible_id = fields.Many2one(
-        comodel_name="qms.interested_party", required=True
+        comodel_name="qms.interested_party", required=True, ondelete="restrict"
     )
 
     name = fields.Char(required=True)
 
     description = fields.Html()
 
-    resource_type = fields.Selection(selection=_resource_types_)
+    resource_type = fields.Selection(
+        selection=[
+            ("internal", "Internal"),
+            ("external", "External"),
+        ]
+    )
 
-    state = fields.Selection(selection=_resource_states_, default="available")
+    state = fields.Selection(
+        selection=[
+            ("available", "Available"),
+            ("in_process", "In Process"),
+            ("not_available", "Not Available"),
+        ],
+        default="available",
+    )

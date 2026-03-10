@@ -1,29 +1,11 @@
-# This model is based in some code used in OCA Management System Addons Project
-# Copyright (C) 2010 Savoir-faire Linux (<http://www.savoirfairelinux.com>).
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-
 from odoo import _, api, fields, models
+from odoo.exceptions import ValidationError
 
 
 class Action(models.Model):
 
     _name = "qms.action"
     _description = "Action"
-
-    _response_types_ = [
-        ("improvement", _("Improvement Action")),
-        ("immediate", _("Immediate Action")),
-        ("correction", _("Corrective Action")),
-        ("preventive", _("Action for Risks")),
-    ]
-
-    _complexity_levels_ = [
-        ("very_low", _("Very Low")),
-        ("low", _("Low")),
-        ("medium", _("Medium")),
-        ("high", _("High")),
-        ("very_high", _("Very High")),
-    ]
 
     def _default_stage(self):
         return self.env["qms.action.stage"].search(
@@ -36,17 +18,25 @@ class Action(models.Model):
 
     date_deadline = fields.Date()
 
-    create_date = fields.Date(readonly=True, default=fields.datetime.now())
+    create_date = fields.Date(readonly=True, default=fields.Date.today)
 
     cancel_date = fields.Date(readonly=True)
 
-    opening_date = fields.Date(readonly=False)
+    opening_date = fields.Datetime(readonly=False)
 
-    date_closed = fields.Date(readonly=False)
+    date_closed = fields.Datetime(readonly=False)
 
     description = fields.Html()
 
-    response_type = fields.Selection(selection=_response_types_, required=True)
+    response_type = fields.Selection(
+        selection=[
+            ("improvement", "Improvement Action"),
+            ("immediate", "Immediate Action"),
+            ("correction", "Corrective Action"),
+            ("preventive", "Action for Risks"),
+        ],
+        required=True,
+    )
 
     stage_id = fields.Many2one(
         comodel_name="qms.action.stage",
@@ -54,14 +44,26 @@ class Action(models.Model):
         index=True,
         default=_default_stage,
         group_expand="_stage_groups",
+        ondelete="restrict",
     )
+
+    color = fields.Integer(related="stage_id.color", store=False)
 
     reference = fields.Char(required=False, readonly=True)
 
-    complexity = fields.Selection(selection=_complexity_levels_, required=True)
+    complexity = fields.Selection(
+        selection=[
+            ("very_low", "Very Low"),
+            ("low", "Low"),
+            ("medium", "Medium"),
+            ("high", "High"),
+            ("very_high", "Very High"),
+        ],
+        required=True,
+    )
 
     responsible_id = fields.Many2one(
-        comodel_name="qms.interested_party", required=True
+        comodel_name="qms.interested_party", required=True, ondelete="restrict"
     )
 
     effectiveness_check_ids = fields.One2many(
@@ -70,34 +72,42 @@ class Action(models.Model):
         required=False,
     )
 
-    observation_id = fields.Many2one(comodel_name="qms.finding")
+    observation_id = fields.Many2one(comodel_name="qms.observation", ondelete="set null")
 
-    non_conformity_id = fields.Many2one(comodel_name="qms.finding")
+    non_conformity_id = fields.Many2one(comodel_name="qms.non_conformity", ondelete="set null")
 
-    complaint_id = fields.Many2one(comodel_name="qms.finding")
+    complaint_id = fields.Many2one(comodel_name="qms.complaint", ondelete="set null")
 
-    opportunity_id = fields.Many2one(comodel_name="qms.finding")
+    opportunity_id = fields.Many2one(comodel_name="qms.opportunity", ondelete="set null")
 
-    hazard_id = fields.Many2one(comodel_name="qms.hazard")
+    hazard_id = fields.Many2one(comodel_name="qms.hazard", ondelete="set null")
 
-    goal_id = fields.Many2one(comodel_name="qms.goal")
+    goal_id = fields.Many2one(comodel_name="qms.goal", ondelete="set null")
 
     revision_by_direction_id = fields.Many2one(
-        comodel_name="qms.revision_by_direction"
+        comodel_name="qms.revision_by_direction", ondelete="set null"
     )
 
-    @api.model
-    def create(self, vals):
+    @api.model_create_multi
+    def create(self, vals_list):
         seq = self.env["ir.sequence"]
-        vals["reference"] = seq.next_by_code("qms.action")
-        action = super(Action, self).create(vals)
-        return action
+        for vals in vals_list:
+            vals["reference"] = seq.next_by_code("qms.action")
+        return super(Action, self).create(vals_list)
 
     @api.model
-    def _stage_groups(self):
-        stage_ids = self.env["qms.action.stage"].search([])
-        return stage_ids
+    def _stage_groups(self, stages, domain):
+        return self.env["qms.action.stage"].search([])
 
     @api.model
     def _get_stage_new(self):
         return self.env["qms.action.stage"].search([])
+
+    @api.constrains("opening_date", "date_closed")
+    def _check_dates(self):
+        for action in self:
+            if action.date_closed and action.opening_date:
+                if action.date_closed < action.opening_date:
+                    raise ValidationError(
+                        _("Close date must be after opening date")
+                    )

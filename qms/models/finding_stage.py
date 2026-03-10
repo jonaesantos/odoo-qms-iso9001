@@ -1,4 +1,4 @@
-from odoo import _, fields, models
+from odoo import fields, models
 
 
 class FindingStage(models.Model):
@@ -7,17 +7,17 @@ class FindingStage(models.Model):
     _description = "Finding Stage"
     _inherit = ["qms.stage"]
 
-    _states_ = [
-        ("draft", _("Draft")),
-        ("analysis", _("Analysis")),
-        ("pending", _("Action Plan")),
-        ("open", _("In Progress")),
-        ("done", _("Closed")),
-        ("cancel", _("Cancelled")),
-    ]
-
     state = fields.Selection(
-        selection=_states_, readonly=True, default="draft"
+        selection=[
+            ("draft", "Draft"),
+            ("analysis", "Analysis"),
+            ("pending", "Action Plan"),
+            ("open", "In Progress"),
+            ("done", "Closed"),
+            ("cancel", "Cancelled"),
+        ],
+        readonly=True,
+        default="draft",
     )
 
     fold = fields.Boolean()

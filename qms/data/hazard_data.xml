@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="seq_qms_hazard" model="ir.sequence">
+            <field name="name">QMS Hazard</field>
+            <field name="code">qms.hazard</field>
+            <field name="padding">4</field>
+            <field name="prefix">R-</field>
+        </record>
+
+    </data>
+</odoo>

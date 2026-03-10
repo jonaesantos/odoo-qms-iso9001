@@ -1,4 +1,5 @@
-from odoo import fields, models
+from odoo import _, api, fields, models
+from odoo.exceptions import ValidationError
 
 
 class RevisionByDirection(models.Model):
@@ -10,11 +11,9 @@ class RevisionByDirection(models.Model):
 
     description = fields.Html()
 
-    date_open = fields.Date()
+    date_open = fields.Datetime()
 
-    date_close = fields.Date()
-
-    _states_ = [("open", "Open"), ("done", "Closed")]
+    date_close = fields.Datetime()
 
     resource_ids = fields.Many2many(comodel_name="qms.resource")
 
@@ -43,9 +42,26 @@ class RevisionByDirection(models.Model):
     #     ondelete="cascade",
     # )
 
-    state = fields.Selection(selection=_states_, default="open")
+    state = fields.Selection(
+        selection=[
+            ("draft", "Draft"),
+            ("open", "Open"),
+            ("done", "Closed"),
+        ],
+        default="draft",
+    )
 
     def button_close(self):
-        return self.write(
-            {"state": "done", "closing_date": fields.Datetime.now()}
+        self.write(
+            {"state": "done", "date_close": fields.Datetime.now()}
         )
+        return True
+
+    @api.constrains("date_open", "date_close")
+    def _check_dates(self):
+        for revision in self:
+            if revision.date_close and revision.date_open:
+                if revision.date_close < revision.date_open:
+                    raise ValidationError(
+                        _("Close date must be after open date")
+                    )

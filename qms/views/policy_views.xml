@@ -4,15 +4,14 @@
     <record id="policy_view_tree" model="ir.ui.view">
         <field name="name">qms.policy.view.tree</field>
         <field name="model">qms.policy</field>
-        <field name="type">tree</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="name" />
                 <field name="version" />
                 <field name="date" />
                 <field name="last_review_date" />
                 <field name="approved" />
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -23,16 +22,25 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
+                    <widget name="web_ribbon" text="Approved" bg_color="text-bg-success" invisible="not approved"/>
                     <div class="oe_button_box" name="button_box">
-                        <button name="toggle_approved" string="Approved" type="object" class="oe_stat_button"
-                            icon="fa-check-square-o">
-                            <field name="approved" widget="boolean_button" options="{'terminology': {'string_true': 'Approved',
-                                    'string_false': 'Not Approved'}}" />
+                        <button name="action_toggle_approved" type="object" class="oe_stat_button" invisible="approved">
+                            <i class="fa fa-check-square-o" title="Not Approved" style="color: #ff8c42; font-size: 22px; margin-top: 2px;"/>
+                            <div class="o_field_widget o_stat_info" style="margin-left: 7px;">
+                                <span class="o_stat_text" style="color: #212529;">Not Approved</span>
+                            </div>
                         </button>
+                        <button name="action_toggle_approved" type="object" class="oe_stat_button" invisible="not approved">
+                            <i class="fa fa-check-square-o" title="Approved" style="color: #5cb85c; font-size: 22px; margin-top: 2px;"/>
+                            <div class="o_field_widget o_stat_info" style="margin-left: 7px;">
+                                <span class="o_stat_text" style="color: #212529;">Approved</span>
+                            </div>
+                        </button>
+                        <field name="approved" invisible="1"/>
                     </div>
                     <div class="oe_title">
                         <h1>
-                            <field name="name" />
+                            <field name="name" placeholder="e.g. Quality Policy 2025"/>
                         </h1>
                     </div>
                     <group>
@@ -65,7 +73,7 @@
     <record id="policy_action_view_tree" model="ir.actions.act_window">
         <field name="name">Policies</field>
         <field name="res_model">qms.policy</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
     </record>
 
     <!-- MENU -->

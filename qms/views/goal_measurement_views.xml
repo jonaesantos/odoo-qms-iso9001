@@ -4,16 +4,15 @@
     <record id="goal_measurement_view_tree" model="ir.ui.view">
         <field name="name">qms.goal.measurement.view.tree</field>
         <field name="model">qms.goal.measurement</field>
-        <field name="type">tree</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="name" />
                 <field name="goal" />
                 <field name="expected_date" />
                 <field name="measurement_date" />
                 <field name="result" />
                 <field name="result_detail" />
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -21,7 +20,6 @@
     <record id="goal_measurement_view_search" model="ir.ui.view">
         <field name="name">qms.goal.measurement.search</field>
         <field name="model">qms.goal.measurement</field>
-        <field name="type">search</field>
         <field name="arch" type="xml">
             <search>
                 <group>
@@ -40,7 +38,6 @@
     <record id="goal_measurement_view_form" model="ir.ui.view">
         <field name="name">qms.goal.measurement.view.form</field>
         <field name="model">qms.goal.measurement</field>
-        <field name="type">form</field>
         <field name="arch" type="xml">
             <form>
                 <group>
@@ -66,7 +63,7 @@
     <record id="goal_measurement_action_view_tree" model="ir.actions.act_window">
         <field name="name">Goal Measurements</field>
         <field name="res_model">qms.goal.measurement</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
     </record>
 
 </odoo>

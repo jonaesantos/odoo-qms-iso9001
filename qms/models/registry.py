@@ -13,3 +13,7 @@ class Registry(models.Model):
     version_ids = fields.One2many(
         comodel_name="qms.version", inverse_name="registry_id"
     )
+
+    review_ids = fields.One2many(
+        comodel_name="qms.review", inverse_name="registry_id"
+    )

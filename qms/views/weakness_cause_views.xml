@@ -15,7 +15,6 @@
     <!-- FORM VIEW -->
     <record id="weakness_cause_view_form" model="ir.ui.view">
         <field name="name">qms.weakness.cause.view.form</field>
-        <field name="type">form</field>
         <field name="model">qms.weakness.cause</field>
         <field name="inherit_id" ref="qms.finding_milestone_view_form" />
         <field name="arch" type="xml">
@@ -29,7 +28,6 @@
     <record id="weakness_cause_view_search" model="ir.ui.view">
         <field name="name">qms.weakness.cause.view.search</field>
         <field name="model">qms.weakness.cause</field>
-        <field name="type">search</field>
         <field name="inherit_id" ref="qms.finding_milestone_view_search" />
         <field name="arch" type="xml">
             <field name="name" position="before">
@@ -43,7 +41,7 @@
         <field name="name">Causes</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">qms.weakness.cause</field>
-        <field name="view_id" eval="weakness_cause_view_tree" />
+        <field name="view_id" ref="weakness_cause_view_tree" />
         <field name="search_view_id" ref="weakness_cause_view_search" />
     </record>
 

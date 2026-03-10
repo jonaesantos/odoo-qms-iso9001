@@ -7,17 +7,21 @@ class EffectivenessCheck(models.Model):
     _name = "qms.effectiveness_check"
     _description = "Effectiveness Check"
 
-    _states_ = [("pending", _("Pending")), ("closed", _("Closed"))]
-
     expected_date = fields.Date()
 
     verification_date = fields.Date()
 
     was_effective = fields.Boolean()
 
-    action_id = fields.Many2one(comodel_name="qms.action", required=True)
+    action_id = fields.Many2one(comodel_name="qms.action", required=True, ondelete="cascade")
 
-    state = fields.Selection(selection=_states_, default="pending")
+    state = fields.Selection(
+        selection=[
+            ("pending", "Pending"),
+            ("closed", "Closed"),
+        ],
+        default="pending",
+    )
 
     observations = fields.Text()
 
@@ -34,3 +38,12 @@ class EffectivenessCheck(models.Model):
                         effectiveness_check 'closed'"
                     )
                 )
+
+    @api.constrains("expected_date", "verification_date")
+    def _check_dates(self):
+        for check in self:
+            if check.verification_date and check.expected_date:
+                if check.verification_date < check.expected_date:
+                    raise ValidationError(
+                        _("Verification date must be after expected date")
+                    )

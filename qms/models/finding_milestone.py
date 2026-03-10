@@ -1,4 +1,4 @@
-from odoo import fields, models
+from odoo import api, fields, models
 
 
 class FindingMilestone(models.Model):
@@ -17,11 +17,7 @@ class FindingMilestone(models.Model):
 
     reference_code = fields.Char()
 
-    def name_get(self):
-        res = []
+    @api.depends("name")
+    def _compute_display_name(self):
         for obj in self:
-            name = obj.name
-            if obj.parent_id:
-                name = obj.parent_id.name_get()[0][1] + " / " + name
-            res.append((obj.id, name))
-        return res
+            obj.display_name = obj.name

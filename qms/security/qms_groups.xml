@@ -7,22 +7,16 @@
     </record>
 
     <record id="group_user" model="res.groups">
-        <field name="name">User</field>
-        <field name="category_id" ref="qms.module_category_qms" />
-        <field name="users" eval="[(4, ref('base.user_root'))]" />
+        <field name="name">QMS / User</field>
     </record>
 
     <record id="group_manager" model="res.groups">
-        <field name="name">Manager</field>
-        <field name="category_id" ref="module_category_qms" />
-        <field name="users" eval="[(4, ref('base.user_root'))]" />
+        <field name="name">QMS / Manager</field>
         <field name="implied_ids" eval="[(4,ref('group_user'))]" />
     </record>
 
     <record id="group_read_only" model="res.groups">
-        <field name="name">Read Only</field>
-        <field name="category_id" ref="module_category_qms" />
-        <field name="users" eval="[(4, ref('base.user_root'))]" />
+        <field name="name">QMS / Read Only</field>
     </record>
 
 </odoo>

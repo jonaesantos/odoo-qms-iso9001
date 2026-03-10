@@ -12,3 +12,7 @@ class Procedure(models.Model):
     version_ids = fields.One2many(
         comodel_name="qms.version", inverse_name="procedure_id"
     )
+
+    review_ids = fields.One2many(
+        comodel_name="qms.review", inverse_name="procedure_id"
+    )

@@ -4,9 +4,8 @@
     <record id="goal_view_tree" model="ir.ui.view">
         <field name="name">qms.goal.view_tree</field>
         <field name="model">qms.goal</field>
-        <field name="type">tree</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="name" />
                 <field name="date_open" />
                 <field name="cancel_date" />
@@ -17,7 +16,27 @@
                 <!--<field name="last_measurement_date" />
                 <field name="last_measurement_result" />-->
                 <field name="last_review_date" />
-            </tree>
+            </list>
+        </field>
+    </record>
+
+    <!-- SEARCH VIEW -->
+    <record id="goal_view_search" model="ir.ui.view">
+        <field name="name">qms.goal.view.search</field>
+        <field name="model">qms.goal</field>
+        <field name="arch" type="xml">
+            <search>
+                <group>
+                    <filter string="Draft" name="draft" domain="[('state', '=', 'draft')]"/>
+                    <filter string="Open" name="open" domain="[('state', '=', 'open')]"/>
+                    <filter string="Closed" name="closed" domain="[('state', '=', 'closed')]"/>
+                    <filter string="Cancelled" name="cancelled" domain="[('state', '=', 'cancelled')]"/>
+                    <filter string="Approved" name="approved" domain="[('approved', '=', True)]"/>
+                    <filter string="Not Approved" name="not_approved" domain="[('approved', '=', False)]"/>
+                    <field name="name"/>
+                    <field name="responsible_id"/>
+                </group>
+            </search>
         </field>
     </record>
 
@@ -27,13 +46,22 @@
         <field name="model">qms.goal</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <field name="state" widget="statusbar" options="{'clickable': '1'}"/>
+                </header>
                 <sheet>
                     <div class="oe_button_box" name="button_box">
-                        <button name="toggle_approved" string="Approved" type="object" class="oe_stat_button"
-                            icon="fa-check-square-o">
-                            <field name="approved" widget="boolean_button" options="{'terminology': {'string_true': 'Approved',
-                                    'string_false': 'Not Approved'}}" />
+                        <button name="action_toggle_approved" type="object" class="oe_stat_button" icon="fa-check-square-o" invisible="approved">
+                            <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_text">Not Approved</span>
+                            </div>
                         </button>
+                        <button name="action_toggle_approved" type="object" class="oe_stat_button" icon="fa-check-square-o" invisible="not approved">
+                            <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_text">Approved</span>
+                            </div>
+                        </button>
+                        <field name="approved" invisible="1"/>
                     </div>
                     <div class="oe_title">
                         <h1>
@@ -50,11 +78,6 @@
                             <field name="date_close" />
                         </group>
                     </group>
-                    <group>
-                        <group>
-                            <field name="state" />
-                        </group>
-                    </group>
                     <notebook>
                         <page string="Description">
                             <field name="description" />
@@ -69,7 +92,7 @@
                             <field name="action_ids" nolabel="1" />
                         </page>
                         <page string="Measurements">
-                            <field name="measurement_ids" nolabel="True" attrs="{'readonly':[('state','=','done')]}" />
+                            <field name="measurement_ids" nolabel="True" readonly="state == 'done'" />
                         </page>
                         <page string="Reviews">
                             <field name="review_ids" />
@@ -84,7 +107,7 @@
     <record id="goal_action_view_tree" model="ir.actions.act_window">
         <field name="name">Goals</field>
         <field name="res_model">qms.goal</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
     </record>
 
     <!-- MENU -->

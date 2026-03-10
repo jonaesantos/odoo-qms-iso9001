@@ -12,7 +12,7 @@ class Policy(models.Model):
 
     date = fields.Date()
 
-    last_review_date = fields.Date(compute="_compute_last_review_date")
+    last_review_date = fields.Date(compute="_compute_last_review_date", store=True)
 
     approved = fields.Boolean()
 
@@ -32,20 +32,16 @@ class Policy(models.Model):
         string="Policy Version",
     )
 
-    @api.depends("review_ids")
+    @api.depends("review_ids.date")
     def _compute_last_review_date(self):
         for policy in self:
-            domain = [
-                ("policy_id", "=", policy.id),
-            ]
-            related_reviews = policy.env["qms.review"].search(domain)
-            if related_reviews:
-                last_review = related_reviews.sorted(
+            if policy.review_ids:
+                last_review = policy.review_ids.sorted(
                     key=lambda r: r.date, reverse=True
                 )
                 policy.last_review_date = last_review[0].date
             else:
-                policy.last_review_date = None
+                policy.last_review_date = False
 
-    def toggle_approved(self):
+    def action_toggle_approved(self):
         self.approved = not self.approved

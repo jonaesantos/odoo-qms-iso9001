@@ -3,29 +3,27 @@
     <!-- TREE VIEW -->
     <record id="observation_view_tree" model="ir.ui.view">
         <field name="name">qms.observation.view.tree</field>
-        <field name="type">tree</field>
         <field name="model">qms.observation</field>
         <field name="inherit_id" ref="qms.finding_view_tree" />
         <field name="arch" type="xml">
-            <tree name="finding" position="attributes">
+            <list name="finding" position="attributes">
                 <attribute name="string">Observation</attribute>
-            </tree>
+            </list>
         </field>
     </record>
 
     <!-- FORM VIEW -->
     <record id="observation_view_form" model="ir.ui.view">
         <field name="name">qms.observation.view_form</field>
-        <field name="type">form</field>
         <field name="model">qms.observation</field>
         <field name="inherit_id" ref="qms.finding_view_form" />
         <field name="arch" type="xml">
             <page name="actions" position="before">
-                <page string="Causes and Analysis" attrs="{'invisible':[('state','in',['draft','cancel'])]}">
+                <page string="Causes and Analysis" invisible="state in ['draft','cancel']">
                     <separator string="Analysis" />
-                    <field name="analysis" attrs="{'readonly':[('state','not in', ['analysis'])]}" />
+                    <field name="analysis" readonly="state not in ['analysis']" />
                     <separator string="Causes" />
-                    <field name="cause_ids" attrs="{'readonly':[('state','not in', ['analysis'])]}" />
+                    <field name="cause_ids" readonly="state not in ['analysis']" />
                 </page>
             </page>
         </field>
@@ -34,7 +32,6 @@
     <!-- KANBAN VIEW -->
     <record id="observation_view_kanban" model="ir.ui.view">
         <field name="name">qms.observation.view.kanban</field>
-        <field name="type">kanban</field>
         <field name="model">qms.observation</field>
         <field name="inherit_id" ref="qms.finding_view_kanban" />
         <field name="arch" type="xml">
@@ -48,7 +45,7 @@
     <record id="observation_action_view" model="ir.actions.act_window" >
         <field name="name">Observations</field>
         <field name="res_model">qms.observation</field>
-        <field name="view_mode">tree,kanban,form</field>
+        <field name="view_mode">list,kanban,form</field>
     </record>
 
     <record id="observation_action_view_kanban" model="ir.actions.act_window.view" >
@@ -60,7 +57,7 @@
 
     <record id="observation_action_view_tree" model="ir.actions.act_window.view" >
         <field name="sequence" eval="2" />
-        <field name="view_mode">tree</field>
+        <field name="view_mode">list</field>
         <field name="view_id" ref="observation_view_tree" />
         <field name="act_window_id" ref="observation_action_view" />
     </record>

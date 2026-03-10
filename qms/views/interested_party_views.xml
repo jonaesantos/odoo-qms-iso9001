@@ -5,7 +5,7 @@
         <field name="name">qms.interested.party.organization.view.tree</field>
         <field name="model">qms.interested_party</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="name" />
                 <field name="interested_party_type" />
                 <field name="power" />
@@ -13,7 +13,7 @@
                 <field name="cooperation" />
                 <field name="impact" />
                 <field name="last_review_date" />
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -22,11 +22,11 @@
         <field name="name">qms.interested.party.individual.view.tree</field>
         <field name="model">qms.interested_party</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="name" />
                 <field name="interested_party_type" />
                 <field name="organization_id" />
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -47,11 +47,11 @@
                         <group>
                             <field name="interested_party_type" />
                         </group>
-                        <group attrs="{'invisible':[('is_organization', '=', True)]}">
+                        <group invisible="is_organization == True">
                             <field name="organization_id" />
                             <field name="area" />
                         </group>
-                        <group attrs="{'invisible':[('is_organization', '=', False)]}">
+                        <group invisible="is_organization == False">
                             <field name="power" />
                             <field name="interest" />
                             <field name="cooperation" />
@@ -60,14 +60,14 @@
                     </group>
                     <notebook position="inside">
                         <page name="requeriments" string="Requeriments Interested Party"
-                            attrs="{'invisible': [('is_organization', '=', False)]}">
+                            invisible="is_organization == False">
                             <field name="requeriments_interested_party" />
                         </page>
                         <page name="interest_tmc" string="Interest TMC"
-                            attrs="{'invisible': [('is_organization', '=', False)]}">
+                            invisible="is_organization == False">
                             <field name="interest_tmc" />
                         </page>
-                        <page string="Reviews" attrs="{'invisible': [('is_organization', '=', False)]}">
+                        <page string="Reviews" invisible="is_organization == False">
                             <field name="review_ids" />
                         </page>
                     </notebook>
@@ -80,7 +80,7 @@
     <record id="interested_party_organization_action_view_tree" model="ir.actions.act_window" >
         <field name="name">Organizations</field>
         <field name="res_model">qms.interested_party</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
         <field name="view_id" ref="interested_party_organization_view_tree" />
         <field name="domain">[('is_organization', '=', True)]</field>
         <field name="context">{'default_is_organization': True}</field>
@@ -90,7 +90,7 @@
     <record id="interested_party_individual_action_view_tree" model="ir.actions.act_window">
         <field name="name">Individuals</field>
         <field name="res_model">qms.interested_party</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
         <field name="view_id" ref="interested_party_individual_view_tree" />
         <field name="domain">[('is_organization', '=', False)]</field>
     </record>

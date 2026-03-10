@@ -4,15 +4,14 @@
     <record id="audit_verification_line_view_tree" model="ir.ui.view">
         <field name="name">qms.audit.verification.line.view.tree</field>
         <field name="model">qms.audit.verification.line</field>
-        <field name="type">tree</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="seq" />
                 <field name="name" />
                 <field name="clause" />
                 <field name="is_conformed" />
                 <field name="comments" />
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -20,7 +19,6 @@
     <record id="audit_verification_line_view_filter" model="ir.ui.view">
         <field name="name">qms.audit.verification.line.view_filter</field>
         <field name="model">qms.audit.verification.line</field>
-        <field name="type">search</field>
         <field name="arch" type="xml">
             <search>
                 <group>
@@ -38,17 +36,13 @@
     <record id="audit_verification_line_view_form" model="ir.ui.view">
         <field name="name">qms.audit.verification.line.view.form</field>
         <field name="model">qms.audit.verification.line</field>
-        <field name="type">form</field>
         <field name="arch" type="xml">
             <form>
-                <group colspan="4" col="4">
+                <group>
                     <field name="name" />
-                    <newline />
                     <field name="clause" />
                     <field name="is_conformed" />
-                    <newline />
                     <field name="seq" />
-                    <newline />
                     <field name="comments" />
                 </group>
             </form>
@@ -59,7 +53,7 @@
     <record id="audit_verification_action_view_tree" model="ir.actions.act_window">
         <field name="name">Verification Lines</field>
         <field name="res_model">qms.audit.verification.line</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
     </record>
 
 </odoo>

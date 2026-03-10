@@ -1,4 +1,4 @@
-from odoo import _, api, fields, models
+from odoo import api, fields, models
 
 
 class Process(models.Model):
@@ -8,19 +8,8 @@ class Process(models.Model):
 
     name = fields.Char(required=True)
 
-    _resource_types_ = [
-        ("strategic", _("Strategic")),
-        ("central", _("Central")),
-        ("support", _("Support")),
-    ]
-
-    _resource_states_ = [
-        ("enabled", _("Enabled")),
-        ("disabled", _("Disabled")),
-    ]
-
     responsible_id = fields.Many2one(
-        comodel_name="qms.interested_party", required=False
+        comodel_name="qms.interested_party", required=True, ondelete="restrict"
     )
 
     review_ids = fields.One2many(
@@ -29,9 +18,21 @@ class Process(models.Model):
 
     resource_ids = fields.Many2many(comodel_name="qms.resource")
 
-    resource_type = fields.Selection(selection=_resource_types_)
+    resource_type = fields.Selection(
+        selection=[
+            ("strategic", "Strategic"),
+            ("central", "Central"),
+            ("support", "Support"),
+        ]
+    )
 
-    state = fields.Selection(selection=_resource_states_, default="enabled")
+    state = fields.Selection(
+        selection=[
+            ("enabled", "Enabled"),
+            ("disabled", "Disabled"),
+        ],
+        default="enabled",
+    )
 
     indicator_ids = fields.One2many(
         comodel_name="qms.indicator", inverse_name="process_id", required=False
@@ -47,19 +48,26 @@ class Process(models.Model):
 
     outputs = fields.Html()
 
-    last_review_date = fields.Date(compute="_compute_last_review_date")
+    last_review_date = fields.Date(compute="_compute_last_review_date", store=True)
 
-    @api.depends("review_ids")
+    indicator_count = fields.Integer(
+        string="Indicators",
+        compute="_compute_indicator_count",
+        store=True,
+    )
+
+    @api.depends("review_ids.date")
     def _compute_last_review_date(self):
         for process in self:
-            domain = [
-                ("process_id", "=", process.id),
-            ]
-            related_reviews = process.env["qms.review"].search(domain)
-            if related_reviews:
-                last_review = related_reviews.sorted(
+            if process.review_ids:
+                last_review = process.review_ids.sorted(
                     key=lambda r: r.date, reverse=True
                 )
                 process.last_review_date = last_review[0].date
             else:
-                process.last_review_date = None
+                process.last_review_date = False
+
+    @api.depends("indicator_ids")
+    def _compute_indicator_count(self):
+        for process in self:
+            process.indicator_count = len(process.indicator_ids)

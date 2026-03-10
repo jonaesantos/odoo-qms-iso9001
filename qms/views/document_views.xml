@@ -5,7 +5,7 @@
         <field name="name">qms.document.view.tree</field>
         <field name="model">qms.document</field>
         <field name="arch" type="xml">
-            <tree name="document">
+            <list name="document">
                 <field name="identification" />
                 <field name="name" />
                 <field name="process_ids" />
@@ -15,9 +15,9 @@
                 <field name="format" />
                 <field name="holding_time" />
                 <field name="disposition" />
-                <field name="link" widget="html" />
+                <field name="link" />
 
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -29,11 +29,17 @@
             <form>
                 <sheet>
                     <div class="oe_button_box" name="button_box">
-                        <button name="toggle_approved" string="Approved" type="object" class="oe_stat_button"
-                            icon="fa-check-square-o">
-                            <field name="approved" widget="boolean_button" options="{'terminology': {'string_true': 'Approved',
-                                    'string_false': 'Not Approved'}}" />
+                        <button name="action_toggle_approved" type="object" class="oe_stat_button" icon="fa-check-square-o" invisible="approved">
+                            <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_text">Not Approved</span>
+                            </div>
                         </button>
+                        <button name="action_toggle_approved" type="object" class="oe_stat_button" icon="fa-check-square-o" invisible="not approved">
+                            <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_text">Approved</span>
+                            </div>
+                        </button>
+                        <field name="approved" invisible="1"/>
                     </div>
                     <group>
                         <group>
@@ -51,7 +57,7 @@
                         </group>
                     </group>
                     <group>
-                        <field name="link" widget="html" />
+                        <field name="link" nolabel="True" />
                     </group>
                     <notebook>
                         <page string="Description">
@@ -64,7 +70,10 @@
                             <field name="version_ids" nolabel="True" />
                         </page>
                         <page string="Reviews">
-                            <field name="review_ids" />
+                            <div class="alert alert-info" role="alert" invisible="id">
+                                Please save the document before adding reviews.
+                            </div>
+                            <field name="review_ids" readonly="not id" />
                         </page>
                     </notebook>
                 </sheet>
@@ -76,7 +85,7 @@
     <record id="document_action_view_tree" model="ir.actions.act_window">
         <field name="name">Documents</field>
         <field name="res_model">qms.document</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
     </record>
 
     <!-- MENU -->

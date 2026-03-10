@@ -14,3 +14,5 @@ class Stage(models.Model):
     )
 
     is_starting = fields.Boolean(string="Starting Stage")
+
+    color = fields.Integer(string="Color", default=0)

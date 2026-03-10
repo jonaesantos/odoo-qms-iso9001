@@ -12,3 +12,7 @@ class Instructive(models.Model):
     version_ids = fields.One2many(
         comodel_name="qms.version", inverse_name="instructive_id"
     )
+
+    review_ids = fields.One2many(
+        comodel_name="qms.review", inverse_name="instructive_id"
+    )
